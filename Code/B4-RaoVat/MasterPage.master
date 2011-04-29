@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="header-wrapper">
+	    <div id="header">
+		    <div id="menu">
+			    <ul>
+				    <li><a href="#" class="first">Trang Chủ</a></li>
+				    <li class="current_page_item"><a href="#">Hướng Dẫn</a></li>
+				    <li><a href="#">Đăng Kí</a></li>
+				    <li><a href="#">Quên Mật Khẩu</a></li>
+				    <li><a href="#">Đăng Nhập</a></li>
+				    <li><a href="#">Thông Tin Tài Khoản</a></li>
+			    </ul>
+		    </div>
+		    <!-- end #menu -->
+		    <div id="search">
+			    <fieldset>
+			        <input type="text" name="s" id="search-text" size="15" />
+			        <input type="submit" id="search-submit" value="GO" />
+			    </fieldset>
+			</div>
+		    <!-- end #search -->
+		</div>
+	</div>
+    <div id="logo">
+	    <h1><a href="#">B4-StarFish</a></h1>
+
+	    <div id="banner"><a href="http://www.freecsstemplates.org/"><img src="images/baner.jpg" alt="" /></a></div>
+
+	    <p>Chính xác, Tin cậy, Hiệu quả</p>
+    </div>
+    <div id="wrapper">
+	    <div id="page">
+		    <div id="sidebar">
+		        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+                </asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+		    </div>
+		    <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                </asp:ContentPlaceHolder>
+		    </div>
+		    <div style="clear: both;">&nbsp;</div>
+	    </div>
+    </div>
+    <div id="footer-bgcontent">
+	    <div id="footer">
+		    <p>Copyright (c) 2008 B4-StarFish. All rights reserved. <br />
+			    Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.</p>
+
+	    </div>
+    </div>
+    </form>
+</body>
+</html>
