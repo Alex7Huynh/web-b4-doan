@@ -76,6 +76,18 @@
 		    </div>
 		    <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                    <div id="col_main_left">
+				        <div id="featured_item">
+				        </div>
+				        <div id="announcements">
+				        </div>
+			        </div>
+			        <div id="col_main_right">
+				        <h3 class="section">
+					        Browse Categories</h3>
+				        <div class="content_right">
+				        </div>
+			        </div>
                 </asp:ContentPlaceHolder>
 		    </div>
 		    <div style="clear: both;">&nbsp;</div>
