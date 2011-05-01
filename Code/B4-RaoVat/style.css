@@ -198,6 +198,47 @@ hr { display: none; }
 	background: url(images/img04.jpg) no-repeat left bottom;
 }
 
+#color_bar
+{
+	font-size: 10px;
+	font-weight: bold;
+	border-bottom: #ccc 1px solid;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 27px;
+	padding-top: 13px;
+	color: #FFFFFF;
+}
+
+#color_bar
+{
+	background: #971B1E;
+}
+
+#nav_browse
+{
+	float: right;
+}
+
+#nav_login
+{
+	float: left;
+}
+
+#crumbs
+{
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	height: 26px;
+	padding-right: 10px;
+	padding-left: 10px;
+	vertical-align: middle;
+	background: #75746E url(images/background_crumbs.jpg) repeat-x top;
+	margin: 0px auto 5px;
+}
 
 /** LOGO */
 
@@ -244,20 +285,6 @@ hr { display: none; }
 	float: right;
 	margin-top: -100px;
 	padding: 0px 20px 0px 0px;
-}
-
-/* Content */
-
-#content {
-	float: left;
-	width: 100%;
-}
-
-/* Sidebar */
-
-#sidebar {
-	float: left;
-	width: 100%;
 }
 
 /* Footer */
