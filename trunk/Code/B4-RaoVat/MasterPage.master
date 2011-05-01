@@ -6,8 +6,6 @@
 <head id="Head1" runat="server">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,10 +40,39 @@
     </div>
     <div id="wrapper">
 	    <div id="page">
+	        <div id="color_bar">
+			    <div id="nav_login">
+				    <asp:LoginView ID="LoginView" runat="server">
+					    <AnonymousTemplate>
+						    <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+						    |
+						    <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="~/Register.aspx">Register</asp:HyperLink>
+					    </AnonymousTemplate>
+					    <LoggedInTemplate>
+						    Welcome,
+						    <asp:LoginName ID="MemberName" runat="server" />
+						    |
+						    <asp:LoginStatus ID="MemberLoginStatus" runat="server" />
+					    </LoggedInTemplate>
+				    </asp:LoginView>
+			    </div>
+			    <div id="nav_browse">
+				    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/Search.aspx">Browse all Categories</asp:HyperLink></div>
+		    </div>
+		    <div id="crumbs">
+			    <asp:ContentPlaceHolder ID="SecondBar" runat="server">
+				    <div id="crumbs_text">
+					    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="">
+					    </asp:SiteMapPath>
+				    </div>
+			    </asp:ContentPlaceHolder>
+		    </div>
 		    <div id="sidebar">
-		        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
-                </asp:Menu>
+		        <%--<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+                </asp:Menu>--%>
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" SkipLinkText="">
+                </asp:Menu>
 		    </div>
 		    <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
