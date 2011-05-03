@@ -14,7 +14,7 @@ namespace DTO
         private string _dienThoai;
         private string _diaChi;
         private int _maKichHoatTaiKhoan;
-        private string _tinhTrangKichHoatTaiKhoan;
+        private bool _tinhTrangKichHoatTaiKhoan;
         private DateTime _thoiGianDangKy;
         private DateTime _thoiGianHetHan;
         private LoaiNguoiDungDTO _loaiNguoiDung;
@@ -55,7 +55,7 @@ namespace DTO
             get { return _maKichHoatTaiKhoan; }
             set { _maKichHoatTaiKhoan = value; }
         }
-        public string TinhTrangKichHoatTaiKhoan
+        public bool TinhTrangKichHoatTaiKhoan
         {
             get { return _tinhTrangKichHoatTaiKhoan; }
             set { _tinhTrangKichHoatTaiKhoan = value; }

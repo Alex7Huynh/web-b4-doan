@@ -25,7 +25,7 @@ namespace DAO
                     + "N'" + ndDTO.DiaChi + "',"
                     + ndDTO.MaKichHoatTaiKhoan + ","
                     + "'" + ndDTO.MaKichHoatTaiKhoan + "',"
-                    + "N'" + ndDTO.TinhTrangKichHoatTaiKhoan + "',"
+                    + "'" + ndDTO.TinhTrangKichHoatTaiKhoan.ToString() + "',"
                     + "'" + ndDTO.ThoiGianDangKy + "',"
                     + "'" + ndDTO.ThoiGianHetHan + "',"
                     + ndDTO.MaKichHoatTaiKhoan + ","
@@ -104,7 +104,7 @@ namespace DAO
                     nd.DienThoai = dr["DienThoai"].ToString();
                     nd.DiaChi = dr["DienThoai"].ToString();
                     nd.MaKichHoatTaiKhoan = (int)dr["MaKichHoatTaiKhoan"];
-                    nd.TinhTrangKichHoatTaiKhoan = dr["TinhTrangKichHoatTaiKhoan"].ToString();
+                    nd.TinhTrangKichHoatTaiKhoan = (bool)dr["TinhTrangKichHoatTaiKhoan"];
                     nd.ThoiGianDangKy = (DateTime)dr["ThoiGianDangKy"];
                     nd.ThoiGianHetHan = (DateTime)dr["ThoiGianHetHan"];
                     int maLoaiNguoiDung = (int)dr["MaLoaiNguoiDung"];
@@ -140,7 +140,7 @@ namespace DAO
                 nd.DienThoai = dt.Rows[0]["DienThoai"].ToString();
                 nd.DiaChi = dt.Rows[0]["DienThoai"].ToString();
                 nd.MaKichHoatTaiKhoan = (int)dt.Rows[0]["MaKichHoatTaiKhoan"];
-                nd.TinhTrangKichHoatTaiKhoan = dt.Rows[0]["TinhTrangKichHoatTaiKhoan"].ToString();
+                nd.TinhTrangKichHoatTaiKhoan = (bool)dt.Rows[0]["TinhTrangKichHoatTaiKhoan"];
                 nd.ThoiGianDangKy = (DateTime)dt.Rows[0]["ThoiGianDangKy"];
                 nd.ThoiGianHetHan = (DateTime)dt.Rows[0]["ThoiGianHetHan"];
                 int maLoaiNguoiDung = (int)dt.Rows[0]["MaLoaiNguoiDung"];

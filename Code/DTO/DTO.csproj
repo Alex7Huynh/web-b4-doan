@@ -45,13 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoSoTuyenDungDTO.cs" />
     <Compile Include="DanhMucChinhDTO.cs" />
     <Compile Include="DanhMucConDTO.cs" />
     <Compile Include="DiaDiemDTO.cs" />
+    <Compile Include="HoSoTuyenDungDTO.cs" />
     <Compile Include="LoaiNguoiDungDTO.cs" />
+    <Compile Include="NganhNgheDTO.cs" />
     <Compile Include="NguoiDungDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinRaoVatBatDongSanDTO.cs" />
     <Compile Include="TinRaoVatDTO.cs" />
+    <Compile Include="TinRaoVatThuongDTO.cs" />
+    <Compile Include="TinTuyenDungDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
