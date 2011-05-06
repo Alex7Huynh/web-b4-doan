@@ -45,14 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanhMucChinhDAO.cs" />
-    <Compile Include="DanhMucConDAO.cs" />
+    <Compile Include="DanhMuc\DanhMucChinhDAO.cs" />
+    <Compile Include="DanhMuc\DanhMucConDAO.cs" />
     <Compile Include="DataProvider\DataProvider.cs" />
     <Compile Include="DiaDiemDAO.cs" />
-    <Compile Include="LoaiNguoiDungDAO.cs" />
-    <Compile Include="NguoiDungDAO.cs" />
+    <Compile Include="NganhNgheDAO.cs" />
+    <Compile Include="NguoiDung\LoaiNguoiDungDAO.cs" />
+    <Compile Include="NguoiDung\NguoiDungDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TinRaoVatDAO.cs" />
+    <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungDAO.cs" />
+    <Compile Include="TinRaoVat\HoSoTuyenDungDAO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatBatDongSanDAO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatDAO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatThuongDAO.cs" />
+    <Compile Include="TinRaoVat\TinTuyenDungDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

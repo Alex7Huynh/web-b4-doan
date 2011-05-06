@@ -26,5 +26,17 @@ namespace DTO
             get { return _deleted; }
             set { _deleted = value; }
         }
+
+        public DiaDiemDTO()
+        {
+            _tenDiaDiem = string.Empty;
+            _deleted = false;
+        }
+        public DiaDiemDTO(DiaDiemDTO ddDTO)
+        {
+            _maDiaDiem = ddDTO.MaDiaDiem;
+            _tenDiaDiem = ddDTO.TenDiaDiem;
+            _deleted = ddDTO.Deleted;
+        }
     }
 }
