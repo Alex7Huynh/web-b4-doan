@@ -1,0 +1,13 @@
+http://www.asp.net/web-forms/fundamentals
+	AJAX Style Services
+	Master Pages and ASP.NET AJAX     
+	ASP.NET AJAX Support in Visual Studio 2008
+	IntelliSense for Jscript and ASP.NET AJAX
+	Adding AJAX Functionality to an Existing Page
+	Creating and Using an AJAX-Enabled Web Service
+	A Demonstration of ASP.NET AJAX
+	File Uploads with an AJAX Style Interface
+http://www.asp.net/ajax
+	AJAX Control Toolkit
+	jQuery
+	Microsoft AJAX Content Delivery Network

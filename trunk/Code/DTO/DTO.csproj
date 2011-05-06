@@ -45,19 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietHoSoTuyenDungDTO.cs" />
-    <Compile Include="DanhMucChinhDTO.cs" />
-    <Compile Include="DanhMucConDTO.cs" />
+    <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungDTO.cs" />
+    <Compile Include="DanhMuc\DanhMucChinhDTO.cs" />
+    <Compile Include="DanhMuc\DanhMucConDTO.cs" />
     <Compile Include="DiaDiemDTO.cs" />
-    <Compile Include="HoSoTuyenDungDTO.cs" />
-    <Compile Include="LoaiNguoiDungDTO.cs" />
+    <Compile Include="TinRaoVat\HoSoTuyenDungDTO.cs" />
+    <Compile Include="NguoiDung\LoaiNguoiDungDTO.cs" />
     <Compile Include="NganhNgheDTO.cs" />
-    <Compile Include="NguoiDungDTO.cs" />
+    <Compile Include="NguoiDung\NguoiDungDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TinRaoVatBatDongSanDTO.cs" />
-    <Compile Include="TinRaoVatDTO.cs" />
-    <Compile Include="TinRaoVatThuongDTO.cs" />
-    <Compile Include="TinTuyenDungDTO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatBatDongSanDTO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatDTO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatThuongDTO.cs" />
+    <Compile Include="TinRaoVat\TinTuyenDungDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

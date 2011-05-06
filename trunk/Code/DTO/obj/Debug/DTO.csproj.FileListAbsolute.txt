@@ -1,0 +1,5 @@
+E:\Web_B4\Code\DTO\bin\Debug\DTO.dll
+E:\Web_B4\Code\DTO\bin\Debug\DTO.pdb
+E:\Web_B4\Code\DTO\obj\Debug\ResolveAssemblyReference.cache
+E:\Web_B4\Code\DTO\obj\Debug\DTO.dll
+E:\Web_B4\Code\DTO\obj\Debug\DTO.pdb

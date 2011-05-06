@@ -7,18 +7,18 @@ namespace DTO
 {
     public class NganhNgheDTO
     {
-        private int _maNghanhNghe;
-        private string _tenNghanhNghe;
+        private int _maNganhNghe;
+        private string _tenNganhNghe;
 
-        public int MaNghanhNghe
+        public int MaNganhNghe
         {
-            get { return _maNghanhNghe; }
-            set { _maNghanhNghe = value; }
+            get { return _maNganhNghe; }
+            set { _maNganhNghe = value; }
         }
-        public string TenNghanhNghe
+        public string TenNganhNghe
         {
-            get { return _tenNghanhNghe; }
-            set { _tenNghanhNghe = value; }
+            get { return _tenNganhNghe; }
+            set { _tenNganhNghe = value; }
         }
     }
 }
