@@ -1,7 +1,0 @@
-E:\Web_B4\Code\DAO\bin\Debug\DAO.dll
-E:\Web_B4\Code\DAO\bin\Debug\DAO.pdb
-E:\Web_B4\Code\DAO\bin\Debug\DTO.dll
-E:\Web_B4\Code\DAO\bin\Debug\DTO.pdb
-E:\Web_B4\Code\DAO\obj\Debug\ResolveAssemblyReference.cache
-E:\Web_B4\Code\DAO\obj\Debug\DAO.dll
-E:\Web_B4\Code\DAO\obj\Debug\DAO.pdb

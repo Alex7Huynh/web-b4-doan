@@ -1,9 +1,0 @@
-E:\Web_B4\Code\BUS\bin\Debug\BUS.dll
-E:\Web_B4\Code\BUS\bin\Debug\BUS.pdb
-E:\Web_B4\Code\BUS\bin\Debug\DAO.dll
-E:\Web_B4\Code\BUS\bin\Debug\DTO.dll
-E:\Web_B4\Code\BUS\bin\Debug\DAO.pdb
-E:\Web_B4\Code\BUS\bin\Debug\DTO.pdb
-E:\Web_B4\Code\BUS\obj\Debug\ResolveAssemblyReference.cache
-E:\Web_B4\Code\BUS\obj\Debug\BUS.dll
-E:\Web_B4\Code\BUS\obj\Debug\BUS.pdb
