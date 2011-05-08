@@ -347,12 +347,16 @@ Create table EMAILDANGKYNHANTINRAOVAT
 	CONSTRAINT PK_EMAILDANGKYNHANTINRAOVAT PRIMARY KEY (MaEmailDangKyNhanTinRaoVat),	
 )
 
---18. Tao bang CHITIETEMAIL_TINRAOVAT
-Create table CHITIETEMAILTINRAOVAT
+--18. Tao bang CHITIETEMAILDANGKYNHANTINRAOVAT
+Create table CHITIETEMAILDANGKYNHANTINRAOVAT
 (
 	MaEmailDangKyNhanTinRaoVat int identity(1,1),
-	MaTinRaoVat int,
-	CONSTRAINT PK_CHITIETEMAILTINRAOVAT PRIMARY KEY (MaEmailDangKyNhanTinRaoVat, MaTinRaoVat),
+	NhanTatCaCacTin bit Default 1,
+	NhanTheoMucChinh bit Default 0,
+	MaDanhMucChinh int,
+	NhanTheoMucCon bit Default 0,
+	MaDanhMucCon int,
+	CONSTRAINT PK_CHITIETEMAILTINRAOVAT PRIMARY KEY (MaEmailDangKyNhanTinRaoVat),
 )
 
 --19. Tao bang BAITRALOI
@@ -530,27 +534,32 @@ ADD CONSTRAINT FK_HOSOTUYENDUNG_TINRAOVAT
 FOREIGN KEY (MaTinRaoVat)
 REFERENCES TINRAOVAT(MaTinRaoVat)
 
-ALTER TABLE HOSOTUYENDUNG
-ADD CONSTRAINT FK_HOSOTUYENDUNG_NGANHNGHE
-FOREIGN KEY (MaNganhNghe)
-REFERENCES NGANHNGHE(MaNganhNghe)
-
 --7.5. CHITIETHOSOTUYENDUNG
 ALTER TABLE CHITIETHOSOTUYENDUNG
 ADD CONSTRAINT FK_CHITIETHOSOTUYENDUNG_HOSOTUYENDUNG
 FOREIGN KEY (MaHoSoTuyenDung)
 REFERENCES HOSOTUYENDUNG(MaHoSoTuyenDung)
 
---8. CHITIETEMAILTINRAOVAT
-ALTER TABLE CHITIETEMAILTINRAOVAT
-ADD CONSTRAINT PK_CHITIETEMAILTINRAOVAT_EMAIL 
+ALTER TABLE CHITIETHOSOTUYENDUNG
+ADD CONSTRAINT FK_CHITIETHOSOTUYENDUNG_NGANHNGHE
+FOREIGN KEY (MaNganhNghe)
+REFERENCES NGANHNGHE(MaNganhNghe)
+
+--8. CHITIETEMAILDANGKYNHANTINRAOVAT
+ALTER TABLE CHITIETEMAILDANGKYNHANTINRAOVAT
+ADD CONSTRAINT PK_CHITIETEMAILDANGKYNHANTINRAOVAT_EMAILDANGKYNHANTINRAOVAT
 FOREIGN KEY (MaEmailDangKyNhanTinRaoVat) 
 REFERENCES EMAILDANGKYNHANTINRAOVAT(MaEmailDangKyNhanTinRaoVat)
 
-ALTER TABLE CHITIETEMAILTINRAOVAT
-ADD CONSTRAINT PK_CHITIETEMAILTINRAOVAT_TINRAOVAT 
-FOREIGN KEY (MaTinRaoVat) 
-REFERENCES TINRAOVATTHUONG(MaTinRaoVat)
+ALTER TABLE CHITIETEMAILDANGKYNHANTINRAOVAT
+ADD CONSTRAINT PK_CHITIETEMAILDANGKYNHANTINRAOVAT_DANHMUCCHINH
+FOREIGN KEY (MaDanhMucChinh) 
+REFERENCES DANHMUCCHINH(MaDanhMucChinh)
+
+ALTER TABLE CHITIETEMAILDANGKYNHANTINRAOVAT
+ADD CONSTRAINT PK_CHITIETEMAILDANGKYNHANTINRAOVAT_DANHMUCCHINH
+FOREIGN KEY (MaDanhMucChinh) 
+REFERENCES DANHMUCCHINH(MaDanhMucChinh)
 
 --9. BAITRALOI
 ALTER TABLE BAITRALOI
@@ -562,7 +571,7 @@ REFERENCES NGUOIDUNG(MaNguoiDung)
 ALTER TABLE LIKED
 ADD CONSTRAINT FK_LIKED_TINRAOVAT 
 FOREIGN KEY (MaTinRaoVat) 
-REFERENCES TINRAOVATTHUONG(MaTinRaoVat)
+REFERENCES TINRAOVAT(MaTinRaoVat)
 
 ALTER TABLE LIKED
 ADD CONSTRAINT FK_LIKED_BAITRALOI 
@@ -583,7 +592,7 @@ REFERENCES NGUOIDUNG(MaNguoiDung)
 ALTER TABLE TINRAOVATDALUU
 ADD CONSTRAINT FK_TINRAOVATDALUU_MaTinRaoVat 
 FOREIGN KEY (MaTinRaoVat) 
-REFERENCES TINRAOVATTHUONG(MaTinRaoVat)
+REFERENCES TINRAOVAT(MaTinRaoVat)
 
 --12. TINNHAN
 ALTER TABLE TINNHAN
@@ -605,7 +614,7 @@ REFERENCES NGUOIDUNG(MaNguoiDung)
 ALTER TABLE LICHSUTINRAOVATVIPHAM
 ADD CONSTRAINT FK_LSTINRAOVATVIPHAM_TINRAOVAT 
 FOREIGN KEY (MaTinRaoVatViPham) 
-REFERENCES TINRAOVATTHUONG(MaTinRaoVat)
+REFERENCES TINRAOVAT(MaTinRaoVat)
 ----------------------------------------------------------------------------------------------------------------------------------------
 --Insert Du Lieu
 
@@ -768,28 +777,28 @@ INSERT INTO QUANGCAO (TenQuangCao, Link, ThoiGianDang, ThoiGianHetHan, Deleted, 
 VALUES (N'Tuyển dụng',	'http://tuyendung.com',	'4/11/2011 11:59',	'5/11/2011 11:59',	0,	N'HCM- tuyển nhân viên làm part time từ 17h20-20h20',	20,	20)
 
 --7. DANHMUCCHINH
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Tất cả', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Thời trang', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Xây dựng - Nội thất – Ngoại thất', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Điện thoại', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Máy vi tính – Laptop', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Điện tử - Kỹ thuật số', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Ô tô', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Xe máy- Xe đạp', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Văn phòng phẩm', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Ẩm thực', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Đồ chơi - Mô hình', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Đào tạo - Giáo dục', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Sức Khỏe - Y tế', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Dụng cụ thể thao', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Du lịch', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Cây cảnh -  Thú nuôi', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Chứng khoán', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Dịch vụ', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Thủ công mỹ nghệ', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Việc làm', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Bất động sản', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Linh tinh', N'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Tất cả', N'~/images/DanhMucChinh/(1).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Thời trang', N'~/images/DanhMucChinh/(2).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Xây dựng - Nội thất – Ngoại thất', N'~/images/DanhMucChinh/(3).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Điện thoại', N'~/images/DanhMucChinh/(4).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Máy vi tính – Laptop', N'~/images/DanhMucChinh/(5).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Điện tử - Kỹ thuật số', N'~/images/DanhMucChinh/(6).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Ô tô', N'~/images/DanhMucChinh/(7).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Xe máy- Xe đạp', N'~/images/DanhMucChinh/(8).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Văn phòng phẩm', N'~/images/DanhMucChinh/(9).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Ẩm thực', N'~/images/DanhMucChinh/(10).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Đồ chơi - Mô hình', N'~/images/DanhMucChinh/(11).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Đào tạo - Giáo dục', N'~/images/DanhMucChinh/(12).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Sức Khỏe - Y tế', N'~/images/DanhMucChinh/(13).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Dụng cụ thể thao', N'~/images/DanhMucChinh/(14).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Du lịch', N'~/images/DanhMucChinh/(15).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Cây cảnh -  Thú nuôi', N'~/images/DanhMucChinh/(16).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Chứng khoán', N'~/images/DanhMucChinh/(17).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Dịch vụ', N'~/images/DanhMucChinh/(18).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Thủ công mỹ nghệ', N'~/images/DanhMucChinh/(19).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Việc làm', N'~/images/DanhMucChinh/(20).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Bất động sản', N'~/images/DanhMucChinh/(21).png',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Linh tinh', N'~/images/DanhMucChinh/(22).png',0)
 
 
 --8. DANHMUCCON
@@ -952,46 +961,46 @@ INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoi
 VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	14,	0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
-	TieuDe nchar(50),	
-	Thumbnail varchar(155),
-	NoiDungTinRaoVat nvarchar(1000),
-	Gia int,
-	DiaChi nvarchar(400),
-	DienTich int,
-	Huong nvarchar(100),
-	LoGioi nvarchar(100),
-	Lau int,
-	Lung int, 
-	MatTien bit,
-	GiayTo nvarchar(100),
-	DuongTruocNha nvarchar(100),
-	DongHoDien bit,
-	NuocMay bit,
-	SoPhongNgu int,
-	SoNhaVeSinh int,
-	NamXayDung int,
+	TieuDe,	
+	Thumbnail,
+	NoiDungTinRaoVat,
+	Gia,
+	DiaChi,
+	DienTich,
+	Huong,
+	LoGioi,
+	Lau,
+	Lung, 
+	MatTien,
+	GiayTo,
+	DuongTruocNha,
+	DongHoDien,
+	NuocMay,
+	SoPhongNgu,
+	SoNhaVeSinh,
+	NamXayDung,
 	
 	--noi that, tien nghi
-	PhongKhach bit,
-	GaraOto bit,
-	NhaBep bit,
-	HoBoi bit,
-	SanThuong bit,
-	DieuHoa bit,
-	SanVuon bit,
-	ThangMay bit,
+	PhongKhach,
+	GaraOto,
+	NhaBep,
+	HoBoi,
+	SanThuong,
+	DieuHoa,
+	SanVuon,
+	ThangMay,
 	--van hoa, xa hoi
-	GanTruongMauGiao bit,
-	GanTruongCap1 bit,
-	GanTruongCap2 bit,
-	GanTruongCap3 bit,
-	GanCho bit,
-	GanBenhVien bit,
-	GanTrungTamThuongMai bit,
-	GanTrungTamGiaiTri bit,
-	GanCongVien bit,
+	GanTruongMauGiao,
+	GanTruongCap1,
+	GanTruongCap2,
+	GanTruongCap3,
+	GanCho,
+	GanBenhVien,
+	GanTrungTamThuongMai,
+	GanTrungTamGiaiTri,
+	GanCongVien,
 	
-	Deleted bit
+	Deleted
 )
 VALUES (
 	3, 
@@ -1133,11 +1142,11 @@ VALUES (
 --16.3.1. NGANHNGHE
 INSERT INTO NGANHNGHE
 (
-	TenNganhNghe,
+	TenNganhNghe
 )
 VALUES
 (
-	N'Kế toán/Tài chính',
+	N'Kế toán/Tài chính'
 )
 	
 --16.3. TINTUYENDUNG
@@ -1170,7 +1179,7 @@ INSERT INTO TINTUYENDUNG
 	ThoiHanKetThucNopHoSo,
 	
 	Thumbnail,
-	Deleted,
+	Deleted
 )
 VALUES (
 	5,
@@ -1297,41 +1306,31 @@ insert into EMAILDANGKYNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Delete
 insert into EMAILDANGKYNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('khocviai@yahoo.com','01/12/2008',0)
 insert into EMAILDANGKYNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',1)
 
-
---18. CHITIETEMAIL_TINRAOVAT
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('11')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('12')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('13')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('14')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('15')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('16')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('17')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('18')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('19')
-INSERT INTO CHITIETEMAILTINRAOVAT (MaTinRaoVat) VALUES ('20')
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (1 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (2 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (3 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (4 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (5 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (6 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (7 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (8 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (9 )
-insert into CHITIETEMAILTINRAOVAT (MaTinRaoVat) values (10 )
+--18
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 1, 5, 0, 0)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 0, 0, 1, 6)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 1, 7, 0, 0)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 1, 9, 0, 0)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 0, 0, 1, 1)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 1, 21, 0, 0)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 1, 2, 0, 0)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 0, 0, 1, 4)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 0, 0, 1, 6)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 0, 0, 1, 9)
+INSERT INTO CHITIETEMAILDANGKYNHANTINRAOVAT (NhanTatCaCacTin, NhanTheoMucChinh, MaDanhMucChinh, NhanTheoMucCon, MaDanhMucCon) VALUES (0, 1, 14, 0, 0)
 
 
 --19. BAITRALOI
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('11',	N'Up',	'2/3/2009',	'0', 11)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('11',	N'Up nè',	'5/6/2008',	'0', 12)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('13',	N'Up tiếp',	'4/1/2009',	'0', 1)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('14',	N'Sẽ tới chọn một bộ',	'2/3/2009',	'0', 13)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('15',	N'Up',	'5/6/2008',	'0', 4)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('16',	N'good',	'4/1/2009',	'0', 6)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('17',	N'Up dùm cho bạn',	'2/3/2009',	'0', 9)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('18',	N'thanks',	'5/6/2008',	'0', 8)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('19',	N'Bạn có bảo hành không vậy',	'4/1/2009',	'0', 8)
-INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES ('20',	N'Up',	'2/3/2009',	'0', 3)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (11,	N'Up',	'2/3/2009',	0, 11)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (11,	N'Up nè',	'5/6/2008',	0, 12)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (13,	N'Up tiếp',	'4/1/2009',0, 1)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (14,	N'Sẽ tới chọn một bộ',	'2/3/2009',	0, 13)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (15,	N'Up',	'5/6/2008',0, 4)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (16,	N'good',	'4/1/2009',	0, 6)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (17,	N'Up dùm cho bạn',	'2/3/2009',	0, 9)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (18,	N'thanks',	'5/6/2008',	0, 8)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (19,	N'Bạn có bảo hành không vậy',	'4/1/2009',	0, 8)
+INSERT INTO BAITRALOI (MaTinRaoVat,	NoiDungTraLoi,	ThoiGianTraLoi,	Deleted,	MaNguoiDung) VALUES (20,	N'Up',	'2/3/2009',	0, 3)
 insert into BAITRALOI (MaTinRaoVat, NoiDungTraLoi,  ThoiGianTraLoi, Deleted,	MaNguoiDung) values (1,N'Up','04/04/2011',0,1)
 insert into BAITRALOI (MaTinRaoVat, NoiDungTraLoi,  ThoiGianTraLoi, Deleted,	MaNguoiDung) values (1,N'Up nè','02/03/2011',0,11)
 insert into BAITRALOI (MaTinRaoVat, NoiDungTraLoi,  ThoiGianTraLoi, Deleted,	MaNguoiDung) values (1,N'Up tiếp','10/04/2011',0,14)
@@ -1344,16 +1343,16 @@ insert into BAITRALOI (MaTinRaoVat, NoiDungTraLoi,  ThoiGianTraLoi, Deleted,	MaN
 insert into BAITRALOI (MaTinRaoVat, NoiDungTraLoi,  ThoiGianTraLoi, Deleted,	MaNguoiDung) values (1,N'Up','02/02/2011',0,12)
 
 --20. LIKED
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('11',	1,	'2/4/2011',	'0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('12',	2,	'2/5/2011',	'0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('13',	3,	'2/6/2011',	'0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('14',	4,	'2/7/2011',	'0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('15',	5,	'2/8/2011',	'0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('16',	6,	'2/9/2011',	'0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('17',	7,	'2/10/2011','0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('18',	8,	'2/11/2011','0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('19',	9,	'2/12/2011','0', null)
-INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES ('20',	10,	'2/13/2011','0', null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (11,	1,	'2/4/2011',	0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (12,	2,	'2/5/2011',	0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (13,	3,	'2/6/2011',	0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (14,	4,	'2/7/2011',	0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (15,	5,	'2/8/2011',	0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (16,	6,	'2/9/2011',	0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (17,	7,	'2/10/2011',0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (18,	8,	'2/11/2011',0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (19,	9,	'2/12/2011',0, null)
+INSERT INTO LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) VALUES (20,	10,	'2/13/2011',0, null)
 insert into LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) values (1,11,'04/04/2011',0,null)
 insert into LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) values (2,12,'02/03/2011',0,null)
 insert into LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) values (3,13,'05/04/2011',0,null)
@@ -1366,16 +1365,16 @@ insert into LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi)
 insert into LIKED (MaTinRaoVat,	MaNguoiDung,	ThoiGianLike,	Deleted,	MaBaiTraLoi) values (10,20,'07/04/2011',0,null)
 
 --11. TINRAOVATDALUU
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('11',	'11',	'10/18/2010 19:15',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('12',	'12',	'4/5/2011 20:54',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('13',	'13',	'4/6/2011 16:50',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('14',	'14',	'8/7/2010 16:02',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('15',	'15',	'3/17/2011 15:15',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('16',	'16',	'3/17/2011 15:15',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('17',	'17',	'4/8/2011 13:41',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('18',	'18',	'4/1/2011 13:59',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('19',	'19',	'4/11/2011 13:59',	'0')
-INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES ('20',	'20',	'4/11/2011 11:59',	'0')
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (11,	11,	'10/18/2010 19:15',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (12,	12,	'4/5/2011 20:54',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (13,	13,	'4/6/2011 16:50',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (14,	14,	'8/7/2010 16:02',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (15,	15,	'3/17/2011 15:15',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (16,	16,	'3/17/2011 15:15',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (17,	17,	'4/8/2011 13:41',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (18,	18,	'4/1/2011 13:59',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (19,	19,	'4/11/2011 13:59',	0)
+INSERT INTO TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) VALUES (20,	20,	'4/11/2011 11:59',	0)
 insert into TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) values (1,1,'04/04/2011',0)
 insert into TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) values (2,2,'04/04/2011',0)
 insert into TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) values (3,3,'05/04/2011',0)
@@ -1390,25 +1389,25 @@ insert into TINRAOVATDALUU (MaNguoiDung,	MaTinRaoVat,	ThoiGianLuu,	Deleted) valu
 
 --12. TINNHAN
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('11',	'12',	N'Reply',	N'Xin hỏi mua cây cảnh',	'10/18/2010 20:20',	'1',	'0')
+VALUES (11,	12,	N'Reply',	N'Xin hỏi mua cây cảnh',	'10/18/2010 20:20',	1,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('12',	'13',	N'Reply',	N'Xin hỏi mua thú nuôi',	'4/5/2011 13:59',	'1',	'0')
+VALUES (12,	13,	N'Reply',	N'Xin hỏi mua thú nuôi',	'4/5/2011 13:59',	1,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('13',	'14',	N'Reply',	N'Xin tư vấn về chứng khoán',	'4/6/2011 19:59',	'1',	'0')
+VALUES (13,	14,	N'Reply',	N'Xin tư vấn về chứng khoán',	'4/6/2011 19:59',	1,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('14',	'15',	N'Reply',	N'Xin tư vấn về chứng khoán',	'8/7/2010 18:15',	'0',	'0')
+VALUES (14,	15,	N'Reply',	N'Xin tư vấn về chứng khoán',	'8/7/2010 18:15',	0,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('15',	'16',	N'Reply',	N'Xin hỏi mua hàng thủ công mỹ nghệ',	'3/17/2011 17:20',	'0',	'0')
+VALUES (15,	16,	N'Reply',	N'Xin hỏi mua hàng thủ công mỹ nghệ',	'3/17/2011 17:20',	0,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('16',	'17',	N'Reply',	N'Xin hỏi mua hàng thủ công mỹ nghệ',	'3/17/2011 18:20',	'1',	'0')
+VALUES (16,	17,	N'Reply',	N'Xin hỏi mua hàng thủ công mỹ nghệ',	'3/17/2011 18:20',1,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('17',	'18',	N'Reply',	N'Xin tư vấn việc làm',	'4/8/2011 19:50',	'1',	'0')
+VALUES (17,	18,	N'Reply',	N'Xin tư vấn việc làm',	'4/8/2011 19:50',	1,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('18',	'19',	N'Reply',	N'Xin tư vấn việc làm',	'4/2/2011 7:20',	'1',	'0')
+VALUES (18,	19,	N'Reply',	N'Xin tư vấn việc làm',	'4/2/2011 7:20',	1,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('19',	'20',	N'Reply',	N'Xin tư vấn tìm việc',	'4/15/2011 3:15',	'0',	'0')
+VALUES (19,	20,	N'Reply',	N'Xin tư vấn tìm việc',	'4/15/2011 3:15',	0,	0)
 INSERT INTO TINNHAN (MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
-VALUES ('20',	'11',	N'Reply',	N'Xin tư vấn tìm việc',	'4/11/2011 17:05',	'0',	'0')
+VALUES (20,	11,	N'Reply',	N'Xin tư vấn tìm việc',	'4/11/2011 17:05',	0,	0)
 insert into  TINNHAN(MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
 values (1,2,N'Hi',N'Chào bạn, làm quen nha.','01/03/2010',0 ,0 )
 insert into  TINNHAN(MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,	ThoiGianNhanTin,	Readed,	Deleted) 
@@ -1432,13 +1431,13 @@ values (1,7,N'Kaka',N'Còn hàng không bạn','11/04/2011', 1,1 )
 
 
 --13. LICHSUTINRAOVATVIPHAM
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('11', null, '2/3/2011',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('12', null, '3/4/2009',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('13', null, '5/6/2008',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('14', null, '2/3/2011',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, '15', '5/6/2009',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, '16', '2/3/2018',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, '17', '2/3/2011',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('18', null, '3/4/2009',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('19', null, '5/6/2008',	'0')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES ('20', null, '2/3/2011',    '0'))
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (11, null, '2/3/2011',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (12, null, '3/4/2009',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (13, null, '5/6/2008',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (14, null, '2/3/2011',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, 15, '5/6/2009',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, 16, '2/3/2018',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, 17, '2/3/2011',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (18, null, '3/4/2009',0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (19, null, '5/6/2008',	0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (20, null, '2/3/2011',    0)
