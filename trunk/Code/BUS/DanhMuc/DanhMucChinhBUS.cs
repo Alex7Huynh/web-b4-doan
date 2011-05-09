@@ -21,7 +21,7 @@ namespace BUS
         {
             return DanhMucChinhDAO.capNhatDanhMucChinh(dmcDTO);
         }
-        public static List<DanhMucChinhDTO> layDanhSachDanhMucChinh()
+        public static List<DANHMUCCHINH> layDanhSachDanhMucChinh()
         {
             return DanhMucChinhDAO.layDanhSachDanhMucChinh();
         }

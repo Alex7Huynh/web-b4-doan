@@ -1,9 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "B4-RaoVat", "B4-RaoVat\", "{928838B0-42D2-4073-86FF-0FB4C3AAA397}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "B4-RaoVat", "B4-RaoVat", "{928838B0-42D2-4073-86FF-0FB4C3AAA397}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "3.5"
+		ProjectReferences = "{DD5D9E08-23C9-470B-BF07-B928D739B989}|BUS.dll;{6482CBD0-FEA9-436D-A0F2-E34810649BB0}|DAO.dll;{1373F11F-229C-4685-927C-64CA10458886}|DTO.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/B4-RaoVat"
 		Debug.AspNetCompiler.PhysicalPath = "B4-RaoVat\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\B4-RaoVat\"

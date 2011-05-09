@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using System.Text;
 using System.Data;
 using DTO;
@@ -62,25 +63,16 @@ namespace DAO
         }
 
         //Load list of DANHMUCCHINH
-        public static List<DanhMucChinhDTO> layDanhSachDanhMucChinh()
+        public static List<DANHMUCCHINH> layDanhSachDanhMucChinh()
         {
-            List<DanhMucChinhDTO> lstDanhMucChinh = new List<DanhMucChinhDTO>();
+            List<DANHMUCCHINH> lstDanhMucChinh = new List<DANHMUCCHINH>();
             try
             {
-
-                DataProvider d = new DataProvider();
-                String strSQL = "SELECT * FROM DANHMUCCHINH";
-                DataTable dt = d.ExecuteQuery(strSQL);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    DanhMucChinhDTO dmc = new DanhMucChinhDTO();
-                    dmc.MaDanhMucChinh = (int)dr["MaDanhMucChinh"];
-                    dmc.TenDanhMucChinh = dr["TenDanhMucChinh"].ToString();
-                    dmc.Deleted = (bool)dr["Deleted"];
-
-                    lstDanhMucChinh.Add(dmc);
-                }
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDanhMucChinh = from q in db.DANHMUCCHINHs
+                                     where q.Deleted == false
+                                     select q;
+                lstDanhMucChinh = dsDanhMucChinh.ToList<DANHMUCCHINH>();
             }
             catch (Exception ex)
             {

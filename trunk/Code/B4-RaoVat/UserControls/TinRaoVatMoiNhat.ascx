@@ -1,5 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TinRaoVatMoiNhat.ascx.cs" Inherits="UserControl_TinRaoVatMoiNhat" %>
 <asp:Repeater ID="FeaturedAd" runat="server" DataSourceID="FeaturedAdDataSource">
+    <HeaderTemplate>
+		<ul>
+	</HeaderTemplate>
 	<ItemTemplate>
 		<div id="featured_item" style="height: 200px;
 	                                    width: 176px;
@@ -29,6 +32,9 @@
 				<asp:HyperLink ID="TitleLink" runat="server" Text='<%# Eval("Title") %>' NavigateUrl='<%# Eval("AdId", "~/ShowAd.aspx?id={0}") %>'></asp:HyperLink></p>
 		</div>
 	</ItemTemplate>
+	<FooterTemplate>
+	    </ul>
+    </FooterTemplate>
 </asp:Repeater>
 <asp:ObjectDataSource ID="FeaturedAdDataSource" runat="server" TypeName="AspNet.StarterKits.Classifieds.Web.FeaturedAdCache"
-	SelectMethod="GetFeaturedAd" OnSelected="FeaturedAdDataSource_Selected"></asp:ObjectDataSource>
+	SelectMethod="GetFeaturedAd"></asp:ObjectDataSource>
