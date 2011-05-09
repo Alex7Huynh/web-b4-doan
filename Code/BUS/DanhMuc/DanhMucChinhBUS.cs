@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DTO;
 using DAO;
 
 namespace BUS
 {
     public class DanhMucChinhBUS
     {
-        public static bool themDanhMucChinh(DanhMucChinhDTO dmcDTO)
+        public static bool themDanhMucChinh(DANHMUCCHINH dmcDTO)
         {
             return DanhMucChinhDAO.themDanhMucChinh(dmcDTO);
         }
@@ -17,7 +16,7 @@ namespace BUS
         {
             return DanhMucChinhDAO.xoaDanhMucChinh(maDanhMucChinh);
         }
-        public static bool capNhatDanhMucChinh(DanhMucChinhDTO dmcDTO)
+        public static bool capNhatDanhMucChinh(DANHMUCCHINH dmcDTO)
         {
             return DanhMucChinhDAO.capNhatDanhMucChinh(dmcDTO);
         }
@@ -25,7 +24,7 @@ namespace BUS
         {
             return DanhMucChinhDAO.layDanhSachDanhMucChinh();
         }
-        public static DanhMucChinhDTO timDanhMucChinhTheoMa(int maDanhMucChinh)
+        public static DANHMUCCHINH timDanhMucChinhTheoMa(int maDanhMucChinh)
         {
             return DanhMucChinhDAO.timDanhMucChinhTheoMa(maDanhMucChinh);
         }

@@ -74,12 +74,6 @@
     <Compile Include="TinRaoVat\TinTuyenDungDAO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{1373F11F-229C-4685-927C-64CA10458886}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="RaoVatDataClasses.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>RaoVatDataClasses.designer.cs</LastGenOutput>
