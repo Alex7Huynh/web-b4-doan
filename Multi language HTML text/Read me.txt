@@ -1,0 +1,3 @@
+﻿Bước 1: Cài đặt gói ngôn ngữ tiếng Việt
+Bước 2: Cài đặt module localization
+Bước 3: Cài đặt module MLHTML/TEXT
