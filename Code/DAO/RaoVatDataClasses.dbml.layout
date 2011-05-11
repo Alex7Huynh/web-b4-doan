@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RaoVatDataClasses">
+  <DataContextMoniker Name="/RaoVatDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d05023b2-f3cb-4577-9121-6efe86a46c07" absoluteBounds="3.875, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCHINH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e7c71a3-c791-4951-bd0f-b76aa25fa096" absoluteBounds="3.89, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

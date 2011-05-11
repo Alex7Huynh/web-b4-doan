@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TIEN-PC;Initial Catalog=RAO_VAT;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DANHMUCCHINH" Member="DANHMUCCHINHs">
+    <Type Name="DANHMUCCHINH">
+      <Column Name="MaDanhMucChinh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucChinh" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
