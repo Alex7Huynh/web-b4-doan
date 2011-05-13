@@ -28,5 +28,10 @@ namespace BUS
         //{
         //    return TinRaoVatDAO.timTinRaoVatTheoMa(maTinRaoVat);
         //}
+
+        public static List<TINRAOVAT> LayDanhSachTinRaoVatMoiNhat()
+        {
+            return TinRaoVatDAO.LayDanhSachTinRaoVatMoiNhat();
+        }
     }
 }

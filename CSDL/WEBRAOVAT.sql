@@ -185,6 +185,8 @@ Create table TINRAOVAT
 	SoLanXem int,
 	MaNguoiDung int,
 	MaDanhMucCon int,
+	TieuDe nchar(50),
+	Thumbnail varchar(155),
 	Deleted bit,
 	CONSTRAINT PK_TINRAOVAT PRIMARY KEY (MaTinRaoVat),
 )
@@ -193,9 +195,7 @@ Create table TINRAOVAT
 Create table TINRAOVATTHUONG
 (
 	MaTinRaoVatThuong int identity(1,1),
-	MaTinRaoVat int,
-	TieuDe nchar(50),	
-	Thumbnail varchar(155),
+	MaTinRaoVat int,	
 	NoiDungTinRaoVat nvarchar(1000),
 	Gia int,
 	Deleted bit,
@@ -207,8 +207,6 @@ Create table TINRAOVATBATDONGSAN
 (
 	MaTinRaoVatBatDongSan int identity(1,1),
 	MaTinRaoVat int,
-	TieuDe nchar(50),	
-	Thumbnail varchar(155),
 	NoiDungTinRaoVat nvarchar(1000),
 	Gia int,
 	DiaChi nvarchar(400),
@@ -278,7 +276,6 @@ Create table TINTUYENDUNG
 	HoSoBaoGom nvarchar(100),
 	ThoiHanKetThucNopHoSo datetime,
 	
-	Thumbnail varchar(155),
 	Deleted bit,
 	CONSTRAINT PK_TINTUYENDUNG PRIMARY KEY (MaTinTuyenDung),
 )
@@ -938,37 +935,34 @@ insert into DIADIEM(TenDiaDiem,Deleted) values (N'Hải Phòng',0)
 
 
 --16.1. TINRAOVATTHUONG
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('10/18/2010 19:15',	2, 202,	1,	12,	12,	0)
-INSERT INTO TINRAOVATTHUONG (MaTinRaoVat, TieuDe,	Thumbnail,	NoiDungTinRaoVat,	Gia,	Deleted)
-VALUES (1, 'BÁN CÂY SANH CON 0935.818.711 (A Truyền)',	
-	'http://www.vatgia.com/raovat_pictures/1/naa1201713372.jpg',	
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
+VALUES ('10/18/2010 19:15',	2, 202,	1,	12,	12, 'BÁN CÂY SANH CON 0935.818.711 (A Truyền)',	'1.jpg',	0)
+INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
+VALUES (1,	
 	N'Chào các bác !Tại đây chuyên cung cấp tất cả các loại cây cảnh.Đặc biệt cung cấp :cây sanh con,vừng con,mai con...và còn nhiều cây cổ thụ như sanh, khế  ,sưa ,mai ...Mọi chi tiết xin liên hệ đt 0935.818.711 (A Truyền).NHẬN TRỒNG,UỐN CÂY VÀ CHĂM SÓC TẠI VƯỜN.Giá cả thương lượng khi xem hàng.ok',	
 	150000,	0)
 	
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('4/5/2011 20:54',	4, 70,	2,	11,	11,	0)
-INSERT INTO TINRAOVATTHUONG (MaTinRaoVat, TieuDe,	Thumbnail,	NoiDungTinRaoVat,	Gia,	Deleted)
-VALUES (2, N'Chuyên cung cấp -Ếch con(1000/con)',	
-	'http://www.vatgia.com/raovat_pictures/1/fet1202011149.jpg',	
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
+VALUES ('4/5/2011 20:54',	4, 70,	2,	11,	11, N'Chuyên cung cấp -Ếch con(1000/con)',	'2.jpg',	0)
+INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
+VALUES (2,	
 	N'Chuyên cung cấp -Ếch con(1000/con) -Ếch bố mẹ (400ngàn/cặp),cho đẻ liền ,tùy loại. -Tại Thị trấn Tân Túc Huyện Bình Chánh TPHCM. -LH:A_Nhân:01658404456',	
 	150000,	0)
 
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('4/6/2011 16:50',	4, 8, 3,	13,	13,	0)
-INSERT INTO TINRAOVATTHUONG (MaTinRaoVat, TieuDe,	Thumbnail,	NoiDungTinRaoVat,	Gia,	Deleted)
-VALUES (3, N'Tư vấn mở tài khoản đầu tư CKTT Mỹ tại Việt Nam.',	
-	'http://www.vatgia.com/raovat_pictures/1/naa1201713372.jpg',	
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
+VALUES ('4/6/2011 16:50',	4, 8, 3,	13,	13, N'Tư vấn mở tài khoản đầu tư CKTT Mỹ tại Việt Nam.',	'3.jpg',	0)
+INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
+VALUES (3,	
 	N'Chúng tôi hỗ trợ Quý nhà đầu tư mở tài khoản giao dịch cổ phiếu trên thị trường Mỹ. Những lợi thế khi tham gia thị trường: - Mở tài khoản đầu tư đơn giản như mở một tài khoản ngân hàng, vốn của Quý nhà đầu tư nằm trong tài khoản ngân hàng của Quý nhà đầu tư tại Việt Nam',	
 	150000,	0)
 	
 --16.2. TINRAOVATBTDONGSAN
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	14,	0)
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
+VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	14,
+	N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',
+	'4.jpg', 0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
-	TieuDe,	
-	Thumbnail,
 	NoiDungTinRaoVat,
 	Gia,
 	DiaChi,
@@ -1009,9 +1003,7 @@ INSERT INTO TINRAOVATBATDONGSAN (
 	Deleted
 )
 VALUES (
-	4, 
-	N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',	
-	'http://www.vatgia.com/raovat_pictures/1/naa1201713372.jpg',	
+	4,
 	N'Bán/ Cho thuê Kho 800m2 tại phường Tân Lập TP. Ban Mê Thuột
 	Giá cả thương lượng,
 	Liên hệ : 01232509999 - 0908858595',
@@ -1054,12 +1046,12 @@ VALUES (
 	
 	0)
 	
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('3-04-11 11:02',	4, 150, 5,	15,	15,	0)
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
+VALUES ('3-04-11 11:02',	4, 150, 5,	15,	15, 
+	N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	
+	'5.jpg',	0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
-	TieuDe,	
-	Thumbnail,
 	NoiDungTinRaoVat,
 	Gia,
 	DiaChi,
@@ -1100,9 +1092,7 @@ INSERT INTO TINRAOVATBATDONGSAN (
 	Deleted
 )
 VALUES (
-	5, 
-	N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	
-	'http://raovat.com/resize_image.php?f=upload/raovat/raovat_raovat_batdongsan543868.jpg',	
+	5,	
 	N'Căn hộ chung cư Mỹ Đức – Lô E – 21 tầng. 
 	Với tầm cao 22 tầng, tất cả các cảnh quan của đường phố, của Thảo Cầm Viên, của sông Sài Gòn, của khu du lịch Văn Thánh đều nằm trong tầm quan sát của cao Ốc Mỹ Đức. 
 	Kí hiệu căn hộ: A2, đơn nguyên: E1.',
@@ -1156,8 +1146,8 @@ VALUES
 )
 	
 --16.3. TINTUYENDUNG
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('4-30-2011 10:02',	30, 2, 6,	16,	16,	0)
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
+VALUES ('4-30-2011 10:02',	30, 2, 6,	16,	16,N'Tập đoàn Cathay Life Viet Nam tuyển dụng','6.jpg',	0)
 INSERT INTO TINTUYENDUNG
 (
 	MaTinRaoVat,
@@ -1184,7 +1174,6 @@ INSERT INTO TINTUYENDUNG
 	HoSoBaoGom,
 	ThoiHanKetThucNopHoSo,
 	
-	Thumbnail,
 	Deleted
 )
 VALUES (
@@ -1213,13 +1202,12 @@ VALUES (
 	N'01 bản phô tô bằng cấp có liên quan',
 	'5-20-2011 15:30',
 	
-	N'http://raovat.com/vieclam/imagesv2/top_logo.jpg',
 	0
 )
 
 --16.4. HOSOTUYENDUNG
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	Deleted)
-VALUES ('3-21-2011 12:02',	7, 62, 7,	17,	17,	0)
+INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
+VALUES ('3-21-2011 12:02',	7, 62, 7,	17,	17, N'NGUYEN THAI TRUC', '7.jpg',	0)
 INSERT INTO HOSOTUYENDUNG
 (
 	MaTinRaoVat,
@@ -1287,16 +1275,16 @@ VALUES (
 )
 
 --17. EMAILNHANTINRAOVAT
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T178@yahoo.com',	'10/18/2010 20:15',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T179@yahoo.com',	'4/5/2011 13:54',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T177@yahoo.com',	'4/6/2011 19:50',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T176@yahoo.com',	'8/7/2010 18:02',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T175@yahoo.com',	'3/17/2011 17:15',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T174@yahoo.com',	'3/17/2011 18:15',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T173@yahoo.com',	'4/8/2011 19:41',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T172@yahoo.com',	'4/2/2011 6:59',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T171@yahoo.com',	'4/15/2011 2:59',	'0')
-INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T170@yahoo.com',	'4/11/2011 18:59',	'0')
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T178@yahoo.com',	'10/18/2010 20:15',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T179@yahoo.com',	'4/5/2011 13:54',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T177@yahoo.com',	'4/6/2011 19:50',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T176@yahoo.com',	'8/7/2010 18:02',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T175@yahoo.com',	'3/17/2011 17:15',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T174@yahoo.com',	'3/17/2011 18:15',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T173@yahoo.com',	'4/8/2011 19:41',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T172@yahoo.com',	'4/2/2011 6:59',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T171@yahoo.com',	'4/15/2011 2:59',	0)
+INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T170@yahoo.com',	'4/11/2011 18:59',	0)
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('Hoangtam.cntt@gmail.com','03/07/2009',0)
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('boysitinh@yahoo.com','09/02/2010',0)
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('Hotboy2010@gmail.com','05/05/2010',0)

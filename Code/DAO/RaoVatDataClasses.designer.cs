@@ -33,6 +33,9 @@ namespace DAO
     partial void InsertDANHMUCCHINH(DANHMUCCHINH instance);
     partial void UpdateDANHMUCCHINH(DANHMUCCHINH instance);
     partial void DeleteDANHMUCCHINH(DANHMUCCHINH instance);
+    partial void InsertTINRAOVAT(TINRAOVAT instance);
+    partial void UpdateTINRAOVAT(TINRAOVAT instance);
+    partial void DeleteTINRAOVAT(TINRAOVAT instance);
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
@@ -70,6 +73,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<DANHMUCCHINH>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TINRAOVAT> TINRAOVATs
+		{
+			get
+			{
+				return this.GetTable<TINRAOVAT>();
 			}
 		}
 	}
@@ -143,6 +154,284 @@ namespace DAO
 					this._TenDanhMucChinh = value;
 					this.SendPropertyChanged("TenDanhMucChinh");
 					this.OnTenDanhMucChinhChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Thumbnail", DbType="VarChar(155)")]
+		public string Thumbnail
+		{
+			get
+			{
+				return this._Thumbnail;
+			}
+			set
+			{
+				if ((this._Thumbnail != value))
+				{
+					this.OnThumbnailChanging(value);
+					this.SendPropertyChanging();
+					this._Thumbnail = value;
+					this.SendPropertyChanged("Thumbnail");
+					this.OnThumbnailChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Deleted", DbType="Bit")]
+		public System.Nullable<bool> Deleted
+		{
+			get
+			{
+				return this._Deleted;
+			}
+			set
+			{
+				if ((this._Deleted != value))
+				{
+					this.OnDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._Deleted = value;
+					this.SendPropertyChanged("Deleted");
+					this.OnDeletedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.TINRAOVAT")]
+	public partial class TINRAOVAT : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTinRaoVat;
+		
+		private System.Nullable<System.DateTime> _ThoiGianDang;
+		
+		private System.Nullable<int> _ThoiHanLuuTin;
+		
+		private System.Nullable<int> _MaDiaDiem;
+		
+		private System.Nullable<int> _SoLanXem;
+		
+		private System.Nullable<int> _MaNguoiDung;
+		
+		private System.Nullable<int> _MaDanhMucCon;
+		
+		private string _TieuDe;
+		
+		private string _Thumbnail;
+		
+		private System.Nullable<bool> _Deleted;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTinRaoVatChanging(int value);
+    partial void OnMaTinRaoVatChanged();
+    partial void OnThoiGianDangChanging(System.Nullable<System.DateTime> value);
+    partial void OnThoiGianDangChanged();
+    partial void OnThoiHanLuuTinChanging(System.Nullable<int> value);
+    partial void OnThoiHanLuuTinChanged();
+    partial void OnMaDiaDiemChanging(System.Nullable<int> value);
+    partial void OnMaDiaDiemChanged();
+    partial void OnSoLanXemChanging(System.Nullable<int> value);
+    partial void OnSoLanXemChanged();
+    partial void OnMaNguoiDungChanging(System.Nullable<int> value);
+    partial void OnMaNguoiDungChanged();
+    partial void OnMaDanhMucConChanging(System.Nullable<int> value);
+    partial void OnMaDanhMucConChanged();
+    partial void OnTieuDeChanging(string value);
+    partial void OnTieuDeChanged();
+    partial void OnThumbnailChanging(string value);
+    partial void OnThumbnailChanged();
+    partial void OnDeletedChanging(System.Nullable<bool> value);
+    partial void OnDeletedChanged();
+    #endregion
+		
+		public TINRAOVAT()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaTinRaoVat", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTinRaoVat
+		{
+			get
+			{
+				return this._MaTinRaoVat;
+			}
+			set
+			{
+				if ((this._MaTinRaoVat != value))
+				{
+					this.OnMaTinRaoVatChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinRaoVat = value;
+					this.SendPropertyChanged("MaTinRaoVat");
+					this.OnMaTinRaoVatChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ThoiGianDang", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianDang
+		{
+			get
+			{
+				return this._ThoiGianDang;
+			}
+			set
+			{
+				if ((this._ThoiGianDang != value))
+				{
+					this.OnThoiGianDangChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianDang = value;
+					this.SendPropertyChanged("ThoiGianDang");
+					this.OnThoiGianDangChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ThoiHanLuuTin", DbType="Int")]
+		public System.Nullable<int> ThoiHanLuuTin
+		{
+			get
+			{
+				return this._ThoiHanLuuTin;
+			}
+			set
+			{
+				if ((this._ThoiHanLuuTin != value))
+				{
+					this.OnThoiHanLuuTinChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiHanLuuTin = value;
+					this.SendPropertyChanged("ThoiHanLuuTin");
+					this.OnThoiHanLuuTinChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaDiaDiem", DbType="Int")]
+		public System.Nullable<int> MaDiaDiem
+		{
+			get
+			{
+				return this._MaDiaDiem;
+			}
+			set
+			{
+				if ((this._MaDiaDiem != value))
+				{
+					this.OnMaDiaDiemChanging(value);
+					this.SendPropertyChanging();
+					this._MaDiaDiem = value;
+					this.SendPropertyChanged("MaDiaDiem");
+					this.OnMaDiaDiemChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_SoLanXem", DbType="Int")]
+		public System.Nullable<int> SoLanXem
+		{
+			get
+			{
+				return this._SoLanXem;
+			}
+			set
+			{
+				if ((this._SoLanXem != value))
+				{
+					this.OnSoLanXemChanging(value);
+					this.SendPropertyChanging();
+					this._SoLanXem = value;
+					this.SendPropertyChanged("SoLanXem");
+					this.OnSoLanXemChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaNguoiDung", DbType="Int")]
+		public System.Nullable<int> MaNguoiDung
+		{
+			get
+			{
+				return this._MaNguoiDung;
+			}
+			set
+			{
+				if ((this._MaNguoiDung != value))
+				{
+					this.OnMaNguoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._MaNguoiDung = value;
+					this.SendPropertyChanged("MaNguoiDung");
+					this.OnMaNguoiDungChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaDanhMucCon", DbType="Int")]
+		public System.Nullable<int> MaDanhMucCon
+		{
+			get
+			{
+				return this._MaDanhMucCon;
+			}
+			set
+			{
+				if ((this._MaDanhMucCon != value))
+				{
+					this.OnMaDanhMucConChanging(value);
+					this.SendPropertyChanging();
+					this._MaDanhMucCon = value;
+					this.SendPropertyChanged("MaDanhMucCon");
+					this.OnMaDanhMucConChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TieuDe", DbType="NChar(50)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this.OnTieuDeChanging(value);
+					this.SendPropertyChanging();
+					this._TieuDe = value;
+					this.SendPropertyChanged("TieuDe");
+					this.OnTieuDeChanged();
 				}
 			}
 		}
