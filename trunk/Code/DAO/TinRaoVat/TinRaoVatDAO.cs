@@ -145,5 +145,22 @@ namespace DAO
 
         //    return trv;
         //}
+        public static List<TINRAOVAT> LayDanhSachTinRaoVatMoiNhat()
+        {
+            List<TINRAOVAT> lstTinRaoVatMoiNhat = new List<TINRAOVAT>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDanhMucChinh = from q in db.TINRAOVATs
+                                     where q.Deleted == false
+                                     select q;
+                lstTinRaoVatMoiNhat = dsDanhMucChinh.ToList<TINRAOVAT>();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return lstTinRaoVatMoiNhat;
+        }
     }
 }
