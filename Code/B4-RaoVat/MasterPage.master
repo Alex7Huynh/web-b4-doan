@@ -70,9 +70,9 @@
 		    <div id="sidebar">
 		        <%--<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
                 </asp:Menu>--%>
-                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                <%--<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
                 <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" SkipLinkText="">
-                </asp:Menu>
+                </asp:Menu>--%>
 		    </div>
 		    <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
