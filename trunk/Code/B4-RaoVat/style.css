@@ -252,7 +252,7 @@ hr { display: none; }
 
 #featured_item
 {
-	height: 200px;
+	/*height: 200px;*/
 	width: 176px;
 	border-top-width: 1px;
 	border-right-width: 1px;

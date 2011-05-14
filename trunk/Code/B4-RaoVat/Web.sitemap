@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap>
 	<siteMapNode url="Default.aspx" title="Home"  description="">
-		<siteMapNode url="~/" title="Home"  roles="*"/>
-		<siteMapNode url="HuongDan.aspx" title="Hướng Dẫn"  roles="*"/>
-		<siteMapNode url="TaiKhoan/TaiKhoan.aspx" title="Tài Khoản" roles="*">
-			<siteMapNode url="./TaiKhoan/DangKi.aspx" title="Đăng Kí" roles="*" />
-			<siteMapNode url="./TaiKhoan/DangNhap.aspx" title="Đăng Nhập" roles="*" />
-			<siteMapNode url="./TaiKhoan/QuenMatKhau.aspx" title="Quên Mật Khẩu" roles="*" />
-			<siteMapNode url="./TaiKhoan/XemThongTinTaiKhoan.aspx" title="Xem Thông Tin Tài Khoản" roles="*" />
-			<siteMapNode url="./TaiKhoan/DangKiEmail.aspx" title="Đăng Kí Email" roles="*" />
+		<siteMapNode url="~/" title="Home"  roles="*" description=""/>
+		<siteMapNode url="HuongDan.aspx" title="Hướng Dẫn"  roles="*" description=""/>
+		<siteMapNode url="TaiKhoan/TaiKhoan.aspx" title="Tài Khoản" roles="*" description="parent">
+			<siteMapNode url="./TaiKhoan/DangKi.aspx" title="Đăng Kí" roles="*" description="begin"/>
+			<siteMapNode url="./TaiKhoan/DangNhap.aspx" title="Đăng Nhập" roles="*" description=""/>
+			<siteMapNode url="./TaiKhoan/QuenMatKhau.aspx" title="Quên Mật Khẩu" roles="*" description=""/>
+			<siteMapNode url="./TaiKhoan/XemThongTinTaiKhoan.aspx" title="Xem Thông Tin Tài Khoản" roles="*" description=""/>
+			<siteMapNode url="./TaiKhoan/DangKiEmail.aspx" title="Đăng Kí Email" roles="*" description="end"/>
 		</siteMapNode>
-		<siteMapNode url="DanhMuc/DanhMucChinh.aspx" title="Danh Mục" roles="*">
-			<siteMapNode url="./DanhMuc/DanhMucCon.aspx" title="Danh Mục Con" roles="*" />
-			<siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx" title="Danh Mục Tin Rao Vặt" roles="*" />
-			<siteMapNode url="./DanhMuc/XemNoiDungTin.aspx" title="Xem Nội Dung Tin Rao Vặt" roles="*" />
+		<siteMapNode url="DanhMuc/DanhMucChinh.aspx" title="Danh Mục" roles="*" description="parent">
+			<siteMapNode url="./DanhMuc/DanhMucCon.aspx" title="Danh Mục Con" roles="*" description="begin"/>
+			<siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx" title="Danh Mục Tin Rao Vặt" roles="*" description=""/>
+			<siteMapNode url="./DanhMuc/XemNoiDungTin.aspx" title="Xem Nội Dung Tin Rao Vặt" roles="*" description="end"/>
 		</siteMapNode>
-		<siteMapNode url="TimKiem.aspx" title="Tìm Kiếm" roles="*"/>
-		<siteMapNode url="TimKiemNangCao.aspx" title="Tìm Kiếm Nâng Cao" roles="*"/>
-		<siteMapNode url="Admin/" title="Site Administration" roles="Administrators">
-			<siteMapNode url="Admin/Settings.aspx" title="My Profile" roles="Administrators" />
+		<siteMapNode url="TimKiem.aspx" title="Tìm Kiếm" roles="*" description=""/>
+		<siteMapNode url="TimKiemNangCao.aspx" title="Tìm Kiếm Nâng Cao" roles="*" description=""/>
+		<siteMapNode url="Admin/" title="Site Administration" roles="Administrators" description="parent">
+			<siteMapNode url="Admin/Settings.aspx" title="My Profile" roles="Administrators" description=""/>
 		</siteMapNode>
 	</siteMapNode>
 </siteMap>
