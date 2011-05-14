@@ -26,13 +26,13 @@
 	                                    float:left">
 			<a id="content_start"></a>
 			<h2>
-				<asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("TenDanhMucChinh") %>' NavigateUrl='<%# Eval("MaDanhMucChinh", "~/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></h2>
+				<asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("TenDanhMucChinh") %>' NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></h2>
 			<p>
 				<asp:HyperLink ID="PhotoLink" runat="server" NavigateUrl='<%# Eval("MaDanhMucChinh", "~/ShowAd.aspx?id={0}") %>'><img src='<%# Eval("Thumbnail") %>' alt="Featured Image" style="border:0;width:176px;" /></asp:HyperLink></p>
 			<p>
-				<asp:HyperLink ID="SubCategoriesLink" runat="server" Text='Xem Tất Cả Các Mục Con' NavigateUrl='<%# Eval("MaDanhMucChinh", "~/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></p>
+				<asp:HyperLink ID="SubCategoriesLink" runat="server" Text='Xem Tất Cả Các Mục Con' NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></p>
 			<p>
-				<asp:HyperLink ID="AllAdsLink" runat="server" Text='Xem Tất Cả Các Tin Rao Vặt' NavigateUrl='<%# Eval("MaDanhMucChinh", "~/DanhMucTinRaoVat.aspx?id={0}") %>'></asp:HyperLink></p>
+				<asp:HyperLink ID="AllAdsLink" runat="server" Text='Xem Tất Cả Các Tin Rao Vặt' NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucTinRaoVat.aspx?id={0}") %>'></asp:HyperLink></p>
 		</div>
 	</ItemTemplate>
 	<FooterTemplate>

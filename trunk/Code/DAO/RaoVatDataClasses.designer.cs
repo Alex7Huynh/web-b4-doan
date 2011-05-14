@@ -36,6 +36,9 @@ namespace DAO
     partial void InsertTINRAOVAT(TINRAOVAT instance);
     partial void UpdateTINRAOVAT(TINRAOVAT instance);
     partial void DeleteTINRAOVAT(TINRAOVAT instance);
+    partial void InsertDANHMUCCON(DANHMUCCON instance);
+    partial void UpdateDANHMUCCON(DANHMUCCON instance);
+    partial void DeleteDANHMUCCON(DANHMUCCON instance);
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
@@ -83,6 +86,14 @@ namespace DAO
 				return this.GetTable<TINRAOVAT>();
 			}
 		}
+		
+		public System.Data.Linq.Table<DANHMUCCON> DANHMUCCONs
+		{
+			get
+			{
+				return this.GetTable<DANHMUCCON>();
+			}
+		}
 	}
 	
 	[Table(Name="dbo.DANHMUCCHINH")]
@@ -98,6 +109,8 @@ namespace DAO
 		private string _Thumbnail;
 		
 		private System.Nullable<bool> _Deleted;
+		
+		private EntitySet<DANHMUCCON> _DANHMUCCONs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -115,6 +128,7 @@ namespace DAO
 		
 		public DANHMUCCHINH()
 		{
+			this._DANHMUCCONs = new EntitySet<DANHMUCCON>(new Action<DANHMUCCON>(this.attach_DANHMUCCONs), new Action<DANHMUCCON>(this.detach_DANHMUCCONs));
 			OnCreated();
 		}
 		
@@ -198,6 +212,19 @@ namespace DAO
 			}
 		}
 		
+		[Association(Name="DANHMUCCHINH_DANHMUCCON", Storage="_DANHMUCCONs", ThisKey="MaDanhMucChinh", OtherKey="MaDanhMucChinh")]
+		public EntitySet<DANHMUCCON> DANHMUCCONs
+		{
+			get
+			{
+				return this._DANHMUCCONs;
+			}
+			set
+			{
+				this._DANHMUCCONs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -216,6 +243,18 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_DANHMUCCONs(DANHMUCCON entity)
+		{
+			this.SendPropertyChanging();
+			entity.DANHMUCCHINH = this;
+		}
+		
+		private void detach_DANHMUCCONs(DANHMUCCON entity)
+		{
+			this.SendPropertyChanging();
+			entity.DANHMUCCHINH = null;
 		}
 	}
 	
@@ -245,6 +284,8 @@ namespace DAO
 		
 		private System.Nullable<bool> _Deleted;
 		
+		private EntityRef<DANHMUCCON> _DANHMUCCON;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -273,6 +314,7 @@ namespace DAO
 		
 		public TINRAOVAT()
 		{
+			this._DANHMUCCON = default(EntityRef<DANHMUCCON>);
 			OnCreated();
 		}
 		
@@ -407,6 +449,10 @@ namespace DAO
 			{
 				if ((this._MaDanhMucCon != value))
 				{
+					if (this._DANHMUCCON.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaDanhMucConChanging(value);
 					this.SendPropertyChanging();
 					this._MaDanhMucCon = value;
@@ -476,6 +522,40 @@ namespace DAO
 			}
 		}
 		
+		[Association(Name="DANHMUCCON_TINRAOVAT", Storage="_DANHMUCCON", ThisKey="MaDanhMucCon", OtherKey="MaDanhMucCon", IsForeignKey=true)]
+		public DANHMUCCON DANHMUCCON
+		{
+			get
+			{
+				return this._DANHMUCCON.Entity;
+			}
+			set
+			{
+				DANHMUCCON previousValue = this._DANHMUCCON.Entity;
+				if (((previousValue != value) 
+							|| (this._DANHMUCCON.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DANHMUCCON.Entity = null;
+						previousValue.TINRAOVATs.Remove(this);
+					}
+					this._DANHMUCCON.Entity = value;
+					if ((value != null))
+					{
+						value.TINRAOVATs.Add(this);
+						this._MaDanhMucCon = value.MaDanhMucCon;
+					}
+					else
+					{
+						this._MaDanhMucCon = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DANHMUCCON");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -494,6 +574,209 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[Table(Name="dbo.DANHMUCCON")]
+	public partial class DANHMUCCON : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaDanhMucCon;
+		
+		private string _TenDanhMucCon;
+		
+		private System.Nullable<int> _MaDanhMucChinh;
+		
+		private System.Nullable<bool> _Deleted;
+		
+		private EntitySet<TINRAOVAT> _TINRAOVATs;
+		
+		private EntityRef<DANHMUCCHINH> _DANHMUCCHINH;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDanhMucConChanging(int value);
+    partial void OnMaDanhMucConChanged();
+    partial void OnTenDanhMucConChanging(string value);
+    partial void OnTenDanhMucConChanged();
+    partial void OnMaDanhMucChinhChanging(System.Nullable<int> value);
+    partial void OnMaDanhMucChinhChanged();
+    partial void OnDeletedChanging(System.Nullable<bool> value);
+    partial void OnDeletedChanged();
+    #endregion
+		
+		public DANHMUCCON()
+		{
+			this._TINRAOVATs = new EntitySet<TINRAOVAT>(new Action<TINRAOVAT>(this.attach_TINRAOVATs), new Action<TINRAOVAT>(this.detach_TINRAOVATs));
+			this._DANHMUCCHINH = default(EntityRef<DANHMUCCHINH>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaDanhMucCon", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaDanhMucCon
+		{
+			get
+			{
+				return this._MaDanhMucCon;
+			}
+			set
+			{
+				if ((this._MaDanhMucCon != value))
+				{
+					this.OnMaDanhMucConChanging(value);
+					this.SendPropertyChanging();
+					this._MaDanhMucCon = value;
+					this.SendPropertyChanged("MaDanhMucCon");
+					this.OnMaDanhMucConChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TenDanhMucCon", DbType="NChar(50)")]
+		public string TenDanhMucCon
+		{
+			get
+			{
+				return this._TenDanhMucCon;
+			}
+			set
+			{
+				if ((this._TenDanhMucCon != value))
+				{
+					this.OnTenDanhMucConChanging(value);
+					this.SendPropertyChanging();
+					this._TenDanhMucCon = value;
+					this.SendPropertyChanged("TenDanhMucCon");
+					this.OnTenDanhMucConChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaDanhMucChinh", DbType="Int")]
+		public System.Nullable<int> MaDanhMucChinh
+		{
+			get
+			{
+				return this._MaDanhMucChinh;
+			}
+			set
+			{
+				if ((this._MaDanhMucChinh != value))
+				{
+					if (this._DANHMUCCHINH.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaDanhMucChinhChanging(value);
+					this.SendPropertyChanging();
+					this._MaDanhMucChinh = value;
+					this.SendPropertyChanged("MaDanhMucChinh");
+					this.OnMaDanhMucChinhChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Deleted", DbType="Bit")]
+		public System.Nullable<bool> Deleted
+		{
+			get
+			{
+				return this._Deleted;
+			}
+			set
+			{
+				if ((this._Deleted != value))
+				{
+					this.OnDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._Deleted = value;
+					this.SendPropertyChanged("Deleted");
+					this.OnDeletedChanged();
+				}
+			}
+		}
+		
+		[Association(Name="DANHMUCCON_TINRAOVAT", Storage="_TINRAOVATs", ThisKey="MaDanhMucCon", OtherKey="MaDanhMucCon")]
+		public EntitySet<TINRAOVAT> TINRAOVATs
+		{
+			get
+			{
+				return this._TINRAOVATs;
+			}
+			set
+			{
+				this._TINRAOVATs.Assign(value);
+			}
+		}
+		
+		[Association(Name="DANHMUCCHINH_DANHMUCCON", Storage="_DANHMUCCHINH", ThisKey="MaDanhMucChinh", OtherKey="MaDanhMucChinh", IsForeignKey=true)]
+		public DANHMUCCHINH DANHMUCCHINH
+		{
+			get
+			{
+				return this._DANHMUCCHINH.Entity;
+			}
+			set
+			{
+				DANHMUCCHINH previousValue = this._DANHMUCCHINH.Entity;
+				if (((previousValue != value) 
+							|| (this._DANHMUCCHINH.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DANHMUCCHINH.Entity = null;
+						previousValue.DANHMUCCONs.Remove(this);
+					}
+					this._DANHMUCCHINH.Entity = value;
+					if ((value != null))
+					{
+						value.DANHMUCCONs.Add(this);
+						this._MaDanhMucChinh = value.MaDanhMucChinh;
+					}
+					else
+					{
+						this._MaDanhMucChinh = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("DANHMUCCHINH");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TINRAOVATs(TINRAOVAT entity)
+		{
+			this.SendPropertyChanging();
+			entity.DANHMUCCON = this;
+		}
+		
+		private void detach_TINRAOVATs(TINRAOVAT entity)
+		{
+			this.SendPropertyChanging();
+			entity.DANHMUCCON = null;
 		}
 	}
 }
