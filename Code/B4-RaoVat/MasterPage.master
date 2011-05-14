@@ -34,7 +34,7 @@
     <div id="logo">
 	    <h1><a href="#">B4-StarFish</a></h1>
 
-	    <div id="banner"><a href="http://www.freecsstemplates.org/"><img src="images/baner.jpg" alt="" /></a></div>
+	    <div id="banner"><a href="http://www.freecsstemplates.org/"><img src="./images/baner.jpg" alt="" /></a></div>
 
 	    <p>Chính xác, Tin cậy, Hiệu quả</p>
     </div>

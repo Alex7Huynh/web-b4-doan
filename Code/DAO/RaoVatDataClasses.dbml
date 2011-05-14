@@ -7,6 +7,7 @@
       <Column Name="TenDanhMucChinh" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DANHMUCCHINH_DANHMUCCON" Member="DANHMUCCONs" ThisKey="MaDanhMucChinh" OtherKey="MaDanhMucChinh" Type="DANHMUCCON" />
     </Type>
   </Table>
   <Table Name="dbo.TINRAOVAT" Member="TINRAOVATs">
@@ -21,6 +22,17 @@
       <Column Name="TieuDe" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DANHMUCCON_TINRAOVAT" Member="DANHMUCCON" ThisKey="MaDanhMucCon" OtherKey="MaDanhMucCon" Type="DANHMUCCON" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHMUCCON" Member="DANHMUCCONs">
+    <Type Name="DANHMUCCON">
+      <Column Name="MaDanhMucCon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucCon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="MaDanhMucChinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DANHMUCCON_TINRAOVAT" Member="TINRAOVATs" ThisKey="MaDanhMucCon" OtherKey="MaDanhMucCon" Type="TINRAOVAT" />
+      <Association Name="DANHMUCCHINH_DANHMUCCON" Member="DANHMUCCHINH" ThisKey="MaDanhMucChinh" OtherKey="MaDanhMucChinh" Type="DANHMUCCHINH" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -117,5 +117,24 @@ namespace DAO
 
         //    return dmc;
         //}
+
+        //Load list of DANHMUCCHINH
+        public static List<DANHMUCCON> layDanhSachDanhMucCon(int maDanhMucChinh)
+        {
+            List<DANHMUCCON> lstDanhMucCon = new List<DANHMUCCON>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDanhMucCon = from q in db.DANHMUCCONs
+                                     where q.Deleted == false &&  q.MaDanhMucChinh == maDanhMucChinh
+                                     select q;
+                lstDanhMucCon = dsDanhMucCon.ToList<DANHMUCCON>();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            return lstDanhMucCon;
+        }
     }
 }
