@@ -74,13 +74,6 @@
     <Compile Include="TinRaoVat\TinTuyenDungDAO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="RaoVatDataClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>RaoVatDataClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +82,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="RaoVatDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RaoVatDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="RaoVatDataClasses.dbml.layout">
       <DependentUpon>RaoVatDataClasses.dbml</DependentUpon>
     </None>
