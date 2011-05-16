@@ -20,9 +20,9 @@ namespace BUS
         //{
         //    return DanhMucConDAO.capNhatDanhMucCon(dmcDTO);
         //}
-        public static List<DANHMUCCON> layDanhSachDanhMucCon(int maDanhMucChinh)
+        public static List<DANHMUCCON> LayDanhSachDanhMucCon(int maDanhMucChinh)
         {
-            return DanhMucConDAO.layDanhSachDanhMucCon(maDanhMucChinh);
+            return DanhMucConDAO.LayDanhSachDanhMucCon(maDanhMucChinh);
         }
         //public static DanhMucConDTO timDanhMucConTheoMa(int maDanhMucCon)
         //{

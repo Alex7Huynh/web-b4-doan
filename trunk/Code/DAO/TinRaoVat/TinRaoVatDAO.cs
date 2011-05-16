@@ -69,97 +69,47 @@ namespace DAO
         //        return false;
         //    }
         //    return true;
-        //}
+        //}        
 
-        ////Load list of TINRAOVAT
-        //public static List<TinRaoVatDTO> layDanhSachTinRaoVat()
-        //{
-        //    List<TinRaoVatDTO> lstTinRaoVat = new List<TinRaoVatDTO>();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "SELECT * FROM TINRAOVAT";
-        //        DataTable dt = d.ExecuteQuery(strSQL);
+        /// <summary>
+        /// Find a TINRAOVAT
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
+        public static TINRAOVAT TimTinRaoVatTheoMa(int maTinRaoVat)
+        {
+            TINRAOVAT trv = new TINRAOVAT();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDanhMucChinh = from q in db.TINRAOVATs
+                                     where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                     select q;
+                trv = dsDanhMucChinh.ToList<TINRAOVAT>()[0];
+            }
+            catch (Exception ex)
+            { return null; }            
 
+            return trv;
+        }
 
-        //        foreach (DataRow dr in dt.Rows)
-        //        {
-        //            TinRaoVatDTO trv = new TinRaoVatDTO();
-        //            trv.MaTinRaoVat = (int)dr["MaTinRaoVat"];
-        //            trv.ThoiGianDang = (DateTime)dr["ThoiGianDang"];
-        //            trv.ThoiHanLuuTin = (int)dr["ThoiHanLuuTin"];
-
-        //            int MaDiaDiem = (int)dr["MaDiaDiem"];
-        //            trv.DiaDiem = new DiaDiemDTO(DiaDiemDAO.timDiaDiemTheoMa(MaDiaDiem));
-
-        //            trv.SoLanXem = (int)dr["SoLanXem"];
-
-        //            int MaNguoiDung = (int)dr["MaNguoiDung"];
-        //            trv.NguoiDung = new NguoiDungDTO(NguoiDungDAO.timNguoiDungTheoMa(MaNguoiDung));
-
-        //            int MaDanhMucCon = (int)dr["MaDanhMucCon"];
-        //            trv.DanhMucCon = new DanhMucConDTO(DanhMucConDAO.timDanhMucConTheoMa(MaDanhMucCon));
-
-        //            trv.Deleted = (bool)dr["Deleted"];
-
-        //            lstTinRaoVat.Add(trv);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    { return null; }
-
-        //    return lstTinRaoVat;
-        //}
-
-        ////Find a TINRAOVAT
-        //public static TinRaoVatDTO timTinRaoVatTheoMa(int maTinRaoVat)
-        //{
-        //    TinRaoVatDTO trv = new TinRaoVatDTO();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "SELECT * FROM TINRAOVAT WHERE MaTinRaoVat="
-        //            + maTinRaoVat.ToString();
-
-        //        DataTable dt = d.ExecuteQuery(strSQL);
-        //        trv.MaTinRaoVat = (int)dt.Rows[0]["MaTinRaoVat"];
-        //        trv.ThoiGianDang = (DateTime)dt.Rows[0]["ThoiGianDang"];
-        //        trv.ThoiHanLuuTin = (int)dt.Rows[0]["ThoiHanLuuTin"];
-
-        //        int MaDiaDiem = (int)dt.Rows[0]["MaDiaDiem"];
-        //        trv.DiaDiem = new DiaDiemDTO(DiaDiemDAO.timDiaDiemTheoMa(MaDiaDiem));
-
-        //        trv.SoLanXem = (int)dt.Rows[0]["SoLanXem"];
-
-        //        int MaNguoiDung = (int)dt.Rows[0]["MaNguoiDung"];
-        //        trv.NguoiDung = new NguoiDungDTO(NguoiDungDAO.timNguoiDungTheoMa(MaNguoiDung));
-
-        //        int MaDanhMucCon = (int)dt.Rows[0]["MaDanhMucCon"];
-        //        trv.DanhMucCon = new DanhMucConDTO(DanhMucConDAO.timDanhMucConTheoMa(MaDanhMucCon));
-
-        //        trv.Deleted = (bool)dt.Rows[0]["Deleted"];
-
-        //    }
-        //    catch (Exception ex)
-        //    { return null; }
-
-        //    return trv;
-        //}
+        /// <summary>
+        /// Load list of latest TINRAOVAT
+        /// </summary>
+        /// <returns></returns>
         public static List<TINRAOVAT> LayDanhSachTinRaoVatMoiNhat()
         {
             List<TINRAOVAT> lstTinRaoVatMoiNhat = new List<TINRAOVAT>();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsDanhMucChinh = from q in db.TINRAOVATs
+                var dsTinRaoVatMoiNhat = from q in db.TINRAOVATs
                                      where q.Deleted == false
                                      select q;
-                lstTinRaoVatMoiNhat = dsDanhMucChinh.ToList<TINRAOVAT>();
+                lstTinRaoVatMoiNhat = dsTinRaoVatMoiNhat.ToList<TINRAOVAT>();
             }
             catch (Exception ex)
-            {
-                return null;
-            }
+            { return null; }
             return lstTinRaoVatMoiNhat;
         }
     }

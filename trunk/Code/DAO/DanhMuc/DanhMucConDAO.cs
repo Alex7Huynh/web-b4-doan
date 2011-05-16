@@ -118,8 +118,12 @@ namespace DAO
         //    return dmc;
         //}
 
-        //Load list of DANHMUCCHINH
-        public static List<DANHMUCCON> layDanhSachDanhMucCon(int maDanhMucChinh)
+        /// <summary>
+        /// Load list of DANHMUCCHINH
+        /// </summary>
+        /// <param name="maDanhMucChinh"></param>
+        /// <returns></returns>
+        public static List<DANHMUCCON> LayDanhSachDanhMucCon(int maDanhMucChinh)
         {
             List<DANHMUCCON> lstDanhMucCon = new List<DANHMUCCON>();
             try
@@ -131,9 +135,8 @@ namespace DAO
                 lstDanhMucCon = dsDanhMucCon.ToList<DANHMUCCON>();
             }
             catch (Exception ex)
-            {
-                return null;
-            }
+            { return null; }
+
             return lstDanhMucCon;
         }
     }
