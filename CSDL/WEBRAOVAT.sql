@@ -1,7 +1,11 @@
 ﻿----------------------------------------------------------------------------------------------------------------------------------------
---Tao Bang
+--Xoa CSDL
+drop database RAO_VAT
+--Tao CSDL
 create database RAO_VAT
-
+go
+use RAO_VAT
+go
 --1. Tao bang LOAINGUOIDUNG
 Create table LOAINGUOIDUNG
 (

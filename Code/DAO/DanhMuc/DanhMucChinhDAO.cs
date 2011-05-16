@@ -10,7 +10,7 @@ namespace DAO
     public class DanhMucChinhDAO
     {
         //Insert new DANHMUCCHINH
-        public static bool themDanhMucChinh(DANHMUCCHINH dmcDTO)
+        public static bool ThemDanhMucChinh(DANHMUCCHINH dmcDTO)
         {
             //try
             //{
@@ -27,7 +27,7 @@ namespace DAO
         }
 
         //Delete old DANHMUCCHINH
-        public static bool xoaDanhMucChinh(int maDanhMucChinh)
+        public static bool XoaDanhMucChinh(int maDanhMucChinh)
         {
             //try
             //{
@@ -44,7 +44,7 @@ namespace DAO
         }
 
         //Upadate information for DANHMUCCHINH Object
-        public static bool capNhatDanhMucChinh(DANHMUCCHINH dmcDTO)
+        public static bool CapNhatDanhMucChinh(DANHMUCCHINH dmcDTO)
         {
             //try
             //{
@@ -61,8 +61,11 @@ namespace DAO
             return true;
         }
 
-        //Load list of DANHMUCCHINH
-        public static List<DANHMUCCHINH> layDanhSachDanhMucChinh()
+        /// <summary>
+        /// Load list of DANHMUCCHINH
+        /// </summary>
+        /// <returns></returns>
+        public static List<DANHMUCCHINH> LayDanhSachDanhMucChinh()
         {
             List<DANHMUCCHINH> lstDanhMucChinh = new List<DANHMUCCHINH>();
             try
@@ -81,7 +84,7 @@ namespace DAO
         }
 
         //Find a DANHMUCCHINH
-        public static DANHMUCCHINH timDanhMucChinhTheoMa(int maDanhMucChinh)
+        public static DANHMUCCHINH TimDanhMucChinhTheoMa(int maDanhMucChinh)
         {
             DANHMUCCHINH dmc = new DANHMUCCHINH();
             //try
