@@ -7,8 +7,6 @@
     <div id="body">
 		<div id="col_main_left">
 		    <div id="featured_item">
-		        <uc1:JQueryMenu ID="JQueryMenuMain" runat="server">
-                </uc1:JQueryMenu>
 			</div>
             <div id="announcements">
 				<ul>
@@ -16,7 +14,10 @@
 						Profile page. <a href="../MyAds.aspx" title="My Ads & Profile">My Ads & Profile</a>
 					</li>
 					<li>Placing a new ad is fast and easy. <a href="../PostAd.aspx" title="New Ad">Place a
-						New Ad</a> </li>
+						New 
+		        <uc1:JQueryMenu ID="JQueryMenuMain" runat="server">
+                </uc1:JQueryMenu>
+			            Ad</a> </li>
 				</ul>
 			</div>
 		</div>
