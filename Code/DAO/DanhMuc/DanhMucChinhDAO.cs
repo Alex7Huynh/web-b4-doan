@@ -75,11 +75,10 @@ namespace DAO
                                      where q.Deleted == false
                                      select q;
                 lstDanhMucChinh = dsDanhMucChinh.ToList<DANHMUCCHINH>();
+                
             }
             catch (Exception ex)
-            {
-                return null;
-            }
+            { return null; }
             return lstDanhMucChinh;
         }
 

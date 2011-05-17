@@ -8,68 +8,72 @@ namespace DAO
 {
     public class TinRaoVatDAO
     {
-        ////Insert new TINRAOVAT
-        //public static bool themTinRaoVat(TinRaoVatDTO trvDTO)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "INSERT INTO TINRAOVAT(ThoiGianDang,ThoiHanLuuTin,MaDiaDiem,"
-        //        + "SoLanXem,MaNguoiDung,MaDanhMucCon,Deleted)";
-        //        strSQL += " VALUES ('" + trvDTO.ThoiGianDang.ToString() + "',"
-        //            + trvDTO.ThoiHanLuuTin + ","
-        //            + trvDTO.DiaDiem.MaDiaDiem + "',"
-        //            + trvDTO.SoLanXem + "',"
-        //            + trvDTO.NguoiDung.MaNguoiDung + "',"
-        //            + trvDTO.DanhMucCon.MaDanhMucCon + ","
-        //            + ",0)";
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    { return false; }
+        /// <summary>
+        /// Insert new TINRAOVAT
+        /// </summary>
+        /// <param name="tinRaoVat"></param>
+        /// <returns></returns>
+        public static bool ThemTinRaoVat(TINRAOVAT tinRaoVat)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.TINRAOVATs.InsertOnSubmit(tinRaoVat);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
 
-        //    return true;
-        //}
+            return true;
 
-        ////Delete old TINRAOVAT
-        //public static bool xoaTinRaoVat(int maTinRaoVat)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "UPDATE TINRAOVAT SET Deleted=1";
-        //        strSQL += " WHERE MaTinRaoVat = " + maTinRaoVat.ToString();
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        }
 
-        ////Upadate information for TINRAOVAT Object
-        //public static bool capNhatTinRaoVat(TinRaoVatDTO trvDTO)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "UPDATE TINRAOVAT"
-        //            + " SET ThoiGianDang = '" + trvDTO.ThoiGianDang.ToString() + "',"
-        //            + " ThoiHanLuuTin = " + trvDTO.ThoiHanLuuTin + ","
-        //            + " MaDiaDiem = " + trvDTO.DiaDiem.MaDiaDiem + ","
-        //            + " SoLanXem = " + trvDTO.SoLanXem + ","
-        //            + " MaNguoiDung = " + trvDTO.NguoiDung.MaNguoiDung + ","
-        //            + " MaDanhMucCon = " + trvDTO.DanhMucCon.MaDanhMucCon
-        //            + " WHERE MaTinRaoVat = " + trvDTO.MaTinRaoVat.ToString();
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}        
+        /// <summary>
+        /// Delete old TINRAOVAT
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
+        public static bool XoaTinRaoVat(int maTinRaoVat)
+        {           
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                TINRAOVAT tinRaoVat = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat);
+                tinRaoVat.Deleted = true;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
+
+            return true;
+        }
+
+        /// <summary>
+        /// //Update information for TINRAOVAT Object
+        /// </summary>
+        /// <param name="trvDTO"></param>
+        /// <returns></returns>
+        public static bool CapNhatTinRaoVat(TINRAOVAT trvDTO)
+        {
+            //try
+            //{
+            //    DataProvider d = new DataProvider();
+            //    String strSQL = "UPDATE TINRAOVAT"
+            //        + " SET ThoiGianDang = '" + trvDTO.ThoiGianDang.ToString() + "',"
+            //        + " ThoiHanLuuTin = " + trvDTO.ThoiHanLuuTin + ","
+            //        + " MaDiaDiem = " + trvDTO.DiaDiem.MaDiaDiem + ","
+            //        + " SoLanXem = " + trvDTO.SoLanXem + ","
+            //        + " MaNguoiDung = " + trvDTO.NguoiDung.MaNguoiDung + ","
+            //        + " MaDanhMucCon = " + trvDTO.DanhMucCon.MaDanhMucCon
+            //        + " WHERE MaTinRaoVat = " + trvDTO.MaTinRaoVat.ToString();
+            //    d.ExecuteQuery(strSQL);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return false;
+            //}
+            return true;
+        }        
 
         /// <summary>
         /// Find a TINRAOVAT
@@ -82,15 +86,33 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsDanhMucChinh = from q in db.TINRAOVATs
-                                     where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
-                                     select q;
-                trv = dsDanhMucChinh.ToList<TINRAOVAT>()[0];
+                trv = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat);
             }
             catch (Exception ex)
-            { return null; }            
+            { return null; }
 
             return trv;
+        }
+
+        /// <summary>
+        /// Load list of TINRAOVAT
+        /// </summary>
+        /// <returns></returns>
+        public static List<TINRAOVAT> LayDanhSachTinRaoVat()
+        {
+            List<TINRAOVAT> lstTinRaoVat = new List<TINRAOVAT>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVat = from q in db.TINRAOVATs
+                                         where q.Deleted == false
+                                         select q;
+                lstTinRaoVat = dsTinRaoVat.ToList<TINRAOVAT>();                
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return lstTinRaoVat;
         }
 
         /// <summary>
@@ -102,14 +124,15 @@ namespace DAO
             List<TINRAOVAT> lstTinRaoVatMoiNhat = new List<TINRAOVAT>();
             try
             {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsTinRaoVatMoiNhat = from q in db.TINRAOVATs
-                                     where q.Deleted == false
-                                     select q;
-                lstTinRaoVatMoiNhat = dsTinRaoVatMoiNhat.ToList<TINRAOVAT>();
+                //RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                //var dsTinRaoVat = from q in db.TINRAOVATs
+                //                  where q.Deleted == false
+                //                  select q;
+                //lstTinRaoVatMoiNhat = dsTinRaoVat.ToList<TINRAOVAT>();
             }
             catch (Exception ex)
             { return null; }
+
             return lstTinRaoVatMoiNhat;
         }
     }
