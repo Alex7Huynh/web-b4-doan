@@ -53,25 +53,22 @@ namespace DAO
         /// </summary>
         /// <param name="trvDTO"></param>
         /// <returns></returns>
-        public static bool CapNhatTinRaoVat(TINRAOVAT trvDTO)
+        public static bool CapNhatTinRaoVat(TINRAOVAT tinRaoVat)
         {
-            //try
-            //{
-            //    DataProvider d = new DataProvider();
-            //    String strSQL = "UPDATE TINRAOVAT"
-            //        + " SET ThoiGianDang = '" + trvDTO.ThoiGianDang.ToString() + "',"
-            //        + " ThoiHanLuuTin = " + trvDTO.ThoiHanLuuTin + ","
-            //        + " MaDiaDiem = " + trvDTO.DiaDiem.MaDiaDiem + ","
-            //        + " SoLanXem = " + trvDTO.SoLanXem + ","
-            //        + " MaNguoiDung = " + trvDTO.NguoiDung.MaNguoiDung + ","
-            //        + " MaDanhMucCon = " + trvDTO.DanhMucCon.MaDanhMucCon
-            //        + " WHERE MaTinRaoVat = " + trvDTO.MaTinRaoVat.ToString();
-            //    d.ExecuteQuery(strSQL);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return false;
-            //}
+            try
+            {
+                //Search
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                TINRAOVAT trv = new TINRAOVAT();
+                trv = db.TINRAOVATs.Single(t => t.MaTinRaoVat == tinRaoVat.MaTinRaoVat);
+                //Update
+                trv.ThoiGianDang = tinRaoVat.ThoiGianDang;
+                //...
+                //Submit
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
             return true;
         }        
 

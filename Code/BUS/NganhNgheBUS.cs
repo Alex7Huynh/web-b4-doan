@@ -8,21 +8,21 @@ namespace BUS
 {
     public class NganhNgheBUS
     {
-        //public static bool themNganhNghe(NganhNgheDTO nnDTO)
-        //{
-        //    return NganhNgheDAO.themNganhNghe(nnDTO);
-        //}
-        //public static bool capNhatNganhNghe(NganhNgheDTO nnDTO)
-        //{
-        //    return capNhatNganhNghe(nnDTO);
-        //}
-        //public static List<NganhNgheDTO> layDanhSachNganhNghe()
-        //{
-        //    return NganhNgheDAO.layDanhSachNganhNghe();
-        //}
-        //public static NganhNgheDTO timNganhNgheTheoMa(int maNganhNghe)
-        //{
-        //    return NganhNgheDAO.timNganhNgheTheoMa(maNganhNghe);
-        //}
+        public static bool ThemNganhNghe(NGANHNGHE ngangNghe)
+        {
+            return NganhNgheDAO.ThemNganhNghe(ngangNghe);
+        }
+        public static bool CapNhatNganhNghe(NGANHNGHE ngangNghe)
+        {
+            return CapNhatNganhNghe(ngangNghe);
+        }
+        public static List<NGANHNGHE> LayDanhSachNganhNghe()
+        {
+            return NganhNgheDAO.LayDanhSachNganhNghe();
+        }
+        public static NGANHNGHE TimNganhNgheTheoMa(int maNganhNghe)
+        {
+            return NganhNgheDAO.TimNganhNgheTheoMa(maNganhNghe);
+        }
     }
 }

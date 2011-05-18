@@ -8,25 +8,25 @@ namespace BUS
 {
     public class TinRaoVatThuongBUS
     {
-        public static bool ThemTinRaoVat(TINRAOVAT tinRaoVat)
+        public static bool ThemTinRaoVatThuong(TINRAOVATTHUONG tinRaoVatThuong)
         {
-            return TinRaoVatThuongDAO.ThemTinRaoVat(tinRaoVat);
+            return TinRaoVatThuongDAO.ThemTinRaoVatThuong(tinRaoVatThuong);
         }
-        public static bool XoaTinRaoVat(int maTinRaoVat)
+        public static bool XoaTinRaoVatThuong(int maTinRaoVatThuong)
         {
-            return TinRaoVatThuongDAO.XoaTinRaoVat(maTinRaoVat);
+            return TinRaoVatThuongDAO.XoaTinRaoVatThuong(maTinRaoVatThuong);
         }
-        public static bool CapNhatTinRaoVat(TINRAOVAT tinRaoVat)
+        public static bool CapNhatTinRaoVat(TINRAOVATTHUONG tinRaoVatThuong)
         {
-            return TinRaoVatThuongDAO.CapNhatTinRaoVat(tinRaoVat);
+            return TinRaoVatThuongDAO.CapNhatTinRaoVatThuong(tinRaoVatThuong);
         }
-        public static List<TINRAOVAT> LayDanhSachTinRaoVat()
+        public static List<TINRAOVATTHUONG> LayDanhSachTinRaoVat()
         {
             return TinRaoVatThuongDAO.LayDanhSachTinRaoVatThuong();
         }
-        public static TINRAOVAT TimTinRaoVatTheoMa(int maTinRaoVat)
+        public static TINRAOVATTHUONG TimTinRaoVatTheoMa(int maTinRaoVatThuong)
         {
-            return TinRaoVatThuongDAO.TimTinRaoVatThuongTheoMa(maTinRaoVat);
+            return TinRaoVatThuongDAO.TimTinRaoVatThuongTheoMa(maTinRaoVatThuong);
         }
     }
 }

@@ -8,85 +8,85 @@ namespace DAO
 {
     public class NganhNgheDAO
     {
-        ////Insert new NGANGNGHE
-        //public static bool themNganhNghe(NganhNgheDTO nnDTO)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "INSERT INTO NganhNghe(TenNganhNghe)";
-        //        strSQL += " VALUES (N'" + nnDTO.TenNganhNghe + "')";
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        /// <summary>
+        /// Insert new NGANHNGHE
+        /// </summary>
+        /// <param name="nganhNghe"></param>
+        /// <returns></returns>
+        public static bool ThemNganhNghe(NGANHNGHE nganhNghe)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.NGANHNGHEs.InsertOnSubmit(nganhNghe);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
 
-        ////Upadate information for NGANGNGHE Object
-        //public static bool capNhatNganhNghe(NganhNgheDTO nnDTO)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "UPDATE NganhNghe SET TenNganhNghe = N'" + nnDTO.TenNganhNghe
-        //            + "' WHERE MaNganhNghe = " + nnDTO.MaNganhNghe.ToString();
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+            return true;
+        }
 
-        ////Load list of NGANGNGHE
-        //public static List<NganhNgheDTO> layDanhSachNganhNghe()
-        //{
-        //    List<NganhNgheDTO> lstNganhNghe = new List<NganhNgheDTO>();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "SELECT * FROM NganhNghe";
-        //        DataTable dt = d.ExecuteQuery(strSQL);
+        /// <summary>
+        /// //Update information for NGANHNGHE Object
+        /// </summary>
+        /// <param name="trvDTO"></param>
+        /// <returns></returns>
+        public static bool CapNhatNganhNghe(NGANHNGHE nganhNghe)
+        {
+            try
+            {
+                //Search
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                NGANHNGHE trv = new NGANHNGHE();
+                trv = db.NGANHNGHEs.Single(t => t.MaNganhNghe == nganhNghe.MaNganhNghe);
+                //Update
+                //...
+                //Submit
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
+            return true;
+        }
 
+        /// <summary>
+        /// Find a NGANHNGHE
+        /// </summary>
+        /// <param name="maNganhNghe"></param>
+        /// <returns></returns>
+        public static NGANHNGHE TimNganhNgheTheoMa(int maNganhNghe)
+        {
+            NGANHNGHE dd = new NGANHNGHE();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                dd = db.NGANHNGHEs.Single(t => t.MaNganhNghe == maNganhNghe);
+            }
+            catch (Exception ex)
+            { return null; }
 
-        //        foreach (DataRow dr in dt.Rows)
-        //        {
-        //            NganhNgheDTO dd = new NganhNgheDTO();
-        //            dd.MaNganhNghe = (int)dr["MaNganhNghe"];
-        //            dd.TenNganhNghe = dr["TenNganhNghe"].ToString();                    
+            return dd;
+        }
 
-        //            lstNganhNghe.Add(dd);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    { return null; }
+        /// <summary>
+        /// Load list of NGANHNGHE
+        /// </summary>
+        /// <returns></returns>
+        public static List<NGANHNGHE> LayDanhSachNganhNghe()
+        {
+            List<NGANHNGHE> lstNganhNghe = new List<NGANHNGHE>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsNganhNghe = from q in db.NGANHNGHEs 
+                                  select q;
+                lstNganhNghe = dsNganhNghe.ToList<NGANHNGHE>();
+            }
+            catch (Exception ex)
+            { return null; }
 
-        //    return lstNganhNghe;
-        //}
-
-        ////Find a NGANGNGHE
-        //public static NganhNgheDTO timNganhNgheTheoMa(int maNganhNghe)
-        //{
-        //    NganhNgheDTO dd = new NganhNgheDTO();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-
-        //        String strSQL = "SELECT * FROM NganhNghe WHERE MaNganhNghe = "
-        //            + maNganhNghe.ToString();
-
-        //        DataTable dt = d.ExecuteQuery(strSQL);
-        //        dd.MaNganhNghe = (int)dt.Rows[0]["MaNganhNghe"];
-        //        dd.TenNganhNghe = dt.Rows[0]["TenNganhNghe"].ToString();                
-        //    }
-        //    catch (Exception ex)
-        //    { return null; }
-
-        //    return dd;
-        //}
+            return lstNganhNghe;
+        }
     }
 }
