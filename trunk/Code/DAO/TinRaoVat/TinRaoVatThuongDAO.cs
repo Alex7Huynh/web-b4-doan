@@ -13,12 +13,12 @@ namespace DAO
         /// </summary>
         /// <param name="tinRaoVat"></param>
         /// <returns></returns>
-        public static bool ThemTinRaoVat(TINRAOVAT tinRaoVatThuong)
+        public static bool ThemTinRaoVatThuong(TINRAOVATTHUONG tinRaoVatThuong)
         {
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                db.TINRAOVATs.InsertOnSubmit(tinRaoVatThuong);
+                db.TINRAOVATTHUONGs.InsertOnSubmit(tinRaoVatThuong);
                 db.SubmitChanges();
             }
             catch (Exception ex)
@@ -29,18 +29,19 @@ namespace DAO
         }
 
         /// <summary>
-        /// Delete old TINRAOVAT
+        /// Delete old TINRAOVATTHUONG
         /// </summary>
         /// <param name="maTinRaoVatThuong"></param>
         /// <returns></returns>
-        public static bool XoaTinRaoVat(int maTinRaoVat)
+        public static bool XoaTinRaoVatThuong(int maTinRaoVatThuong)
         {
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                TINRAOVAT tinRaoVatThuong = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat);
-                tinRaoVatThuong.Deleted = true;
+                TINRAOVATTHUONG tinRaoVatThuong = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == maTinRaoVatThuong);
+                tinRaoVatThuong.Deleted = true;                
                 db.SubmitChanges();
+                TinRaoVatDAO.XoaTinRaoVat((int)tinRaoVatThuong.MaTinRaoVat);
             }
             catch (Exception ex)
             { return false; }
@@ -49,45 +50,40 @@ namespace DAO
         }
 
         /// <summary>
-        /// //Update information for TINRAOVAT Object
+        /// //Update information for TINRAOVATTHUONG Object
         /// </summary>
         /// <param name="trvDTO"></param>
         /// <returns></returns>
-        public static bool CapNhatTinRaoVat(TINRAOVAT tinRaoVatThuong)
+        public static bool CapNhatTinRaoVatThuong(TINRAOVATTHUONG tinRaoVatThuong)
         {
-            //try
-            //{
-            //    DataProvider d = new DataProvider();
-            //    String strSQL = "UPDATE TINRAOVAT"
-            //        + " SET ThoiGianDang = '" + tinRaoVatThuong.ThoiGianDang.ToString() + "',"
-            //        + " ThoiHanLuuTin = " + tinRaoVatThuong.ThoiHanLuuTin + ","
-            //        + " MaDiaDiem = " + tinRaoVatThuong.DiaDiem.MaDiaDiem + ","
-            //        + " SoLanXem = " + tinRaoVatThuong.SoLanXem + ","
-            //        + " MaNguoiDung = " + tinRaoVatThuong.NguoiDung.MaNguoiDung + ","
-            //        + " MaDanhMucCon = " + tinRaoVatThuong.DanhMucCon.MaDanhMucCon
-            //        + " WHERE MaTinRaoVat = " + tinRaoVatThuong.MaTinRaoVat.ToString();
-            //    d.ExecuteQuery(strSQL);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return false;
-            //}
+            try
+            {
+                //Search
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                TINRAOVATTHUONG trvt = new TINRAOVATTHUONG();
+                trvt = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == tinRaoVatThuong.MaTinRaoVatThuong);
+                //Update
+                //...
+                //Submit
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
             return true;
         }
 
         /// <summary>
-        /// Find a TINRAOVAT
+        /// Find a TINRAOVATTHUONG
         /// </summary>
         /// <param name="maTinRaoVatThuong"></param>
         /// <returns></returns>
-        public static TINRAOVAT TimTinRaoVatThuongTheoMa(int maTinRaoVat)
+        public static TINRAOVATTHUONG TimTinRaoVatThuongTheoMa(int maTinRaoVatThuong)
         {
-            TINRAOVAT tinRaoVatThuong = new TINRAOVAT();
+            TINRAOVATTHUONG tinRaoVatThuong = new TINRAOVATTHUONG();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                tinRaoVatThuong = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat);
-                TinRaoVatDAO.XoaTinRaoVat(tinRaoVatThuong.MaTinRaoVat);
+                tinRaoVatThuong = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == maTinRaoVatThuong);                
             }
             catch (Exception ex)
             { return null; }
@@ -99,16 +95,16 @@ namespace DAO
         /// Load list of TINRAOVAT
         /// </summary>
         /// <returns></returns>
-        public static List<TINRAOVAT> LayDanhSachTinRaoVatThuong()
+        public static List<TINRAOVATTHUONG> LayDanhSachTinRaoVatThuong()
         {
-            List<TINRAOVAT> lstTinRaoVatThuong = new List<TINRAOVAT>();
+            List<TINRAOVATTHUONG> lstTinRaoVatThuong = new List<TINRAOVATTHUONG>();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsTinRaoVatThuong = from q in db.TINRAOVATs
+                var dsTinRaoVatThuong = from q in db.TINRAOVATTHUONGs
                                   where q.Deleted == false
                                   select q;
-                lstTinRaoVatThuong = dsTinRaoVatThuong.ToList<TINRAOVAT>();
+                lstTinRaoVatThuong = dsTinRaoVatThuong.ToList<TINRAOVATTHUONG>();
             }
             catch (Exception ex)
             { return null; }

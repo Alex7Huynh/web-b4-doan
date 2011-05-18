@@ -8,104 +8,106 @@ namespace DAO
 {
     public class DiaDiemDAO
     {
-        ////Insert new DIADIEM
-        //public static bool themDiaDiem(DiaDiemDTO ddDTO)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "INSERT INTO DIADIEM(TenDiaDiem,Deleted)";
-        //        strSQL += " VALUES (N'" + ddDTO.TenDiaDiem + "',0)";
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        /// <summary>
+        /// Insert new DIADIEM
+        /// </summary>
+        /// <param name="diaDiem"></param>
+        /// <returns></returns>
+        public static bool ThemDiaDiem(DIADIEM diaDiem)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DIADIEMs.InsertOnSubmit(diaDiem);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
 
-        ////Delete old DIADIEM
-        //public static bool xoaDiaDiem(int maDiaDiem)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "UPDATE DIADIEM SET Deleted=1";
-        //        strSQL += " WHERE MaDiaDiem = " + maDiaDiem.ToString();
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+            return true;
+        }
 
-        ////Upadate information for DIADIEM Object
-        //public static bool capNhatDiaDiem(DiaDiemDTO ddDTO)
-        //{
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "UPDATE DIADIEM SET TenDiaDiem = N'" + ddDTO.TenDiaDiem
-        //            + "' WHERE MaDiaDiem = " + ddDTO.MaDiaDiem.ToString();
-        //        d.ExecuteQuery(strSQL);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        /// <summary>
+        /// Delete old DIADIEM
+        /// </summary>
+        /// <param name="maDiaDiem"></param>
+        /// <returns></returns>
+        public static bool XoaDiaDiem(int maDiaDiem)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                DIADIEM diaDiem = db.DIADIEMs.Single(t => t.MaDiaDiem == maDiaDiem);
+                diaDiem.Deleted = true;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
 
-        ////Load list of DIADIEM
-        //public static List<DiaDiemDTO> layDanhSachDiaDiem()
-        //{
-        //    List<DiaDiemDTO> lstDiaDiem = new List<DiaDiemDTO>();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "SELECT * FROM DIADIEM";
-        //        DataTable dt = d.ExecuteQuery(strSQL);
+            return true;
+        }
 
+        /// <summary>
+        /// //Update information for DIADIEM Object
+        /// </summary>
+        /// <param name="trvDTO"></param>
+        /// <returns></returns>
+        public static bool CapNhatDiaDiem(DIADIEM diaDiem)
+        {
+            try
+            {
+                //Search
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                DIADIEM trv = new DIADIEM();
+                trv = db.DIADIEMs.Single(t => t.MaDiaDiem == diaDiem.MaDiaDiem);
+                //Update
+                //...
+                //Submit
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
+            return true;
+        }
 
-        //        foreach (DataRow dr in dt.Rows)
-        //        {
-        //            DiaDiemDTO dd = new DiaDiemDTO();
-        //            dd.MaDiaDiem = (int)dr["MaDiaDiem"];
-        //            dd.TenDiaDiem = dr["TenDiaDiem"].ToString();
-        //            dd.Deleted = (bool)dr["Deleted"];
+        /// <summary>
+        /// Find a DIADIEM
+        /// </summary>
+        /// <param name="maDiaDiem"></param>
+        /// <returns></returns>
+        public static DIADIEM TimDiaDiemTheoMa(int maDiaDiem)
+        {
+            DIADIEM dd = new DIADIEM();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                dd = db.DIADIEMs.Single(t => t.MaDiaDiem == maDiaDiem);
+            }
+            catch (Exception ex)
+            { return null; }
 
-        //            lstDiaDiem.Add(dd);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    { return null; }
+            return dd;
+        }
 
-        //    return lstDiaDiem;
-        //}
+        /// <summary>
+        /// Load list of DIADIEM
+        /// </summary>
+        /// <returns></returns>
+        public static List<DIADIEM> LayDanhSachDiaDiem()
+        {
+            List<DIADIEM> lstDiaDiem = new List<DIADIEM>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDiaDiem = from q in db.DIADIEMs
+                                  where q.Deleted == false
+                                  select q;
+                lstDiaDiem = dsDiaDiem.ToList<DIADIEM>();
+            }
+            catch (Exception ex)
+            { return null; }
 
-        ////Find a DIADIEM
-        //public static DiaDiemDTO timDiaDiemTheoMa(int maDiaDiem)
-        //{
-        //    DiaDiemDTO dd = new DiaDiemDTO();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-
-        //        String strSQL = "SELECT * FROM DIADIEM WHERE MaDiaDiem = "
-        //            + maDiaDiem.ToString();
-
-        //        DataTable dt = d.ExecuteQuery(strSQL);
-        //        dd.MaDiaDiem = (int)dt.Rows[0]["MaDiaDiem"];
-        //        dd.TenDiaDiem = dt.Rows[0]["TenDiaDiem"].ToString();
-        //        dd.Deleted = (bool)dt.Rows[0]["Deleted"];
-        //    }
-        //    catch (Exception ex)
-        //    { return null; }
-
-        //    return dd;
-        //}
+            return lstDiaDiem;
+        }        
     }
 }
