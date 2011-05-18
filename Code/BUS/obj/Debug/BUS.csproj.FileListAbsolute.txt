@@ -1,7 +1,0 @@
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\bin\Debug\BUS.dll
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\bin\Debug\BUS.pdb
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\bin\Debug\DAO.dll
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\bin\Debug\DAO.pdb
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\obj\Debug\BUS.dll
-C:\Users\thang\Desktop\checkout website_ new\Code\BUS\obj\Debug\BUS.pdb
