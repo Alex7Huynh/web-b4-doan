@@ -1,6 +1,0 @@
-C:\Users\thang\Desktop\checkout website_ new\Code\DAO\bin\Debug\DAO.dll.config
-C:\Users\thang\Desktop\checkout website_ new\Code\DAO\bin\Debug\DAO.dll
-C:\Users\thang\Desktop\checkout website_ new\Code\DAO\bin\Debug\DAO.pdb
-C:\Users\thang\Desktop\checkout website_ new\Code\DAO\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\thang\Desktop\checkout website_ new\Code\DAO\obj\Debug\DAO.dll
-C:\Users\thang\Desktop\checkout website_ new\Code\DAO\obj\Debug\DAO.pdb
