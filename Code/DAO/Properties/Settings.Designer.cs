@@ -53,5 +53,16 @@ namespace DAO.Properties {
                 return ((string)(this["RAO_VATConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-CE2C677809DD\\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Securit" +
+            "y=True")]
+        public string RAO_VATConnectionString3 {
+            get {
+                return ((string)(this["RAO_VATConnectionString3"]));
+            }
+        }
     }
 }
