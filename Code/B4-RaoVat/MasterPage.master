@@ -34,7 +34,11 @@
     <div id="logo">
 	    <h1><a href="#">B4-StarFish</a></h1>
 
-	    <div id="banner"><a href="http://www.freecsstemplates.org/"><img src="./images/baner.jpg" alt="" /></a></div>
+        <asp:Image ID="bannerAsp" runat="server" ImageUrl="~/images/baner.jpg" 
+            style="float: right;
+            margin-top: -50px;
+            padding: 0px 0px 0px 0px;"
+            Height="136px" Width="724px"/>
 
 	    <p>Chính xác, Tin cậy, Hiệu quả</p>
     </div>
@@ -45,13 +49,13 @@
 				    <asp:LoginView ID="LoginView" runat="server">
 					    <AnonymousTemplate>
 						    <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="TaiKhoan/DangNhap.aspx">Login</asp:HyperLink>
-						    |
+						    
 						    <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="TaiKhoan/DangKi.aspx">Register</asp:HyperLink>
 					    </AnonymousTemplate>
 					    <LoggedInTemplate>
 						    Welcome,
 						    <asp:LoginName ID="MemberName" runat="server" />
-						    |
+						    
 						    <asp:LoginStatus ID="MemberLoginStatus" runat="server" />
 					    </LoggedInTemplate>
 				    </asp:LoginView>

@@ -9,7 +9,7 @@
 	                                    float:left">
 			<a id="content_start"></a>
 			<h2>
-				<asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("TenDanhMucCon") %>' NavigateUrl='<%# Eval("MaDanhMucCon", "~/DanhMucTinRaoVat.aspx?id={0}") %>'></asp:HyperLink></h2>
+				<asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("TenDanhMucCon") %>' NavigateUrl='<%# Eval("MaDanhMucCon", "~/DanhMuc/DanhMucTinRaoVat.aspx?id={0}") %>'></asp:HyperLink></h2>
 		</div>
 	</ItemTemplate>
 	<FooterTemplate>

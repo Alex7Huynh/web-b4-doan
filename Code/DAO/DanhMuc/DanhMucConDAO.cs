@@ -135,7 +135,9 @@ namespace DAO
                 lstDanhMucCon = dsDanhMucCon.ToList<DANHMUCCON>();
             }
             catch (Exception ex)
-            { return null; }
+            { 
+                return null; 
+            }
 
             return lstDanhMucCon;
         }

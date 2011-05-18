@@ -122,8 +122,8 @@ namespace DAO
     partial void DeleteTINTUYENDUNG(TINTUYENDUNG instance);
     #endregion
 		
-		public RaoVatDataClassesDataContext() : 
-				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString2, mappingSource)
+		public RaoVatDataClassesDataContext() :
+        base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

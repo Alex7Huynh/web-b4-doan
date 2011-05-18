@@ -11,8 +11,8 @@
 			<siteMapNode url="./TaiKhoan/DangKiEmail.aspx" title="Đăng Kí Email" roles="*" description="end"/>
 		</siteMapNode>
 		<siteMapNode url="DanhMuc/DanhMucChinh.aspx" title="Danh Mục" roles="*" description="parent">
-			<siteMapNode url="./DanhMuc/DanhMucCon.aspx" title="Danh Mục Con" roles="*" description="begin"/>
-			<siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx" title="Danh Mục Tin Rao Vặt" roles="*" description=""/>
+			<siteMapNode url="./DanhMuc/DanhMucCon.aspx?id=1" title="Danh Mục Con" roles="*" description="begin"/>
+			<siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx?id=1" title="Danh Mục Tin Rao Vặt" roles="*" description=""/>
 			<siteMapNode url="./DanhMuc/XemNoiDungTin.aspx" title="Xem Nội Dung Tin Rao Vặt" roles="*" description="end"/>
 		</siteMapNode>
 		<siteMapNode url="TimKiem.aspx" title="Tìm Kiếm" roles="*" description=""/>
