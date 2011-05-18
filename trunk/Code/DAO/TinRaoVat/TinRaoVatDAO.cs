@@ -121,14 +121,41 @@ namespace DAO
             List<TINRAOVAT> lstTinRaoVatMoiNhat = new List<TINRAOVAT>();
             try
             {
-                //RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                //var dsTinRaoVat = from q in db.TINRAOVATs
-                //                  where q.Deleted == false
-                //                  select q;
-                //lstTinRaoVatMoiNhat = dsTinRaoVat.ToList<TINRAOVAT>();
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVat = from q in db.TINRAOVATs
+                                  where q.Deleted == false
+                                  select q;
+                lstTinRaoVatMoiNhat = dsTinRaoVat.ToList<TINRAOVAT>();
             }
             catch (Exception ex)
-            { return null; }
+            { 
+                return null; 
+            }
+
+            return lstTinRaoVatMoiNhat;
+        }
+
+
+        /// <summary>
+        /// lay danh sach tin rao vat theo muc con
+        /// </summary>
+        /// <param name="maDanhMucCon">ma danh muc con</param>
+        /// <returns></returns>
+        public static List<TINRAOVAT> LayDanhSachTinRaoVatTheoNoiDung(int maDanhMucCon)
+        {
+            List<TINRAOVAT> lstTinRaoVatMoiNhat = new List<TINRAOVAT>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVat = from q in db.TINRAOVATs
+                                  where q.Deleted == false && q.MaDanhMucCon == maDanhMucCon
+                                  select q;
+                lstTinRaoVatMoiNhat = dsTinRaoVat.ToList<TINRAOVAT>();
+            }
+            catch (Exception ex)
+            {
+                return null; 
+            }
 
             return lstTinRaoVatMoiNhat;
         }

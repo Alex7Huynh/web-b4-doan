@@ -32,5 +32,10 @@ namespace BUS
         {
             return TinRaoVatDAO.LayDanhSachTinRaoVatMoiNhat();
         }
+
+        public static List<TINRAOVAT> LayDanhSachTinRaoVatTheoNoiDung(int maDanhMucCon)
+        {
+            return TinRaoVatDAO.LayDanhSachTinRaoVatTheoNoiDung(maDanhMucCon);
+        }
     }
 }

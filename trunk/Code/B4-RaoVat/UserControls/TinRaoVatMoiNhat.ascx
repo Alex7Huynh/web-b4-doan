@@ -16,7 +16,7 @@
 			    <asp:ImageField HeaderText="Image" DataImageUrlField="Thumbnail"
                     DataImageUrlFormatString="~/images/TinRaoVat/{0}">
 			    </asp:ImageField>
-			    <asp:HyperLinkField HeaderText="Title" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="ShowAd.aspx?id={0}"
+			    <asp:HyperLinkField HeaderText="Title" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="XemNoiDungTin.aspx?id={0}"
 				    DataTextField="TieuDe" HeaderStyle-CssClass="col_title"
 				    ItemStyle-CssClass="col_title">
                 <HeaderStyle CssClass="col_title" />
@@ -39,6 +39,11 @@
 				    HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general"></asp:BoundField>--%>
 			    <%--<asp:BoundField HeaderText="Category" DataField="CategoryName"
 				    HeaderStyle-CssClass="col_category" ItemStyle-CssClass="col_category"></asp:BoundField>--%>
+				<asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="XemNoiDungTin.aspx?id={0}"
+				    Text="Xem Chi Tiết" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
+			    <HeaderStyle CssClass="col_general" />
+                <ItemStyle CssClass="col_general" />
+			    </asp:HyperLinkField>
 			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="EditAd.aspx?id={0}"
 				    Text="Edit" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
