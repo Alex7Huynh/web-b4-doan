@@ -395,6 +395,24 @@ h3.section
 	padding: 0px 20px 0px 0px;
 }
 
+
+#user_assistance
+{
+	color: #7F4728;
+	padding: 10px;
+	font-size: 0.8em;
+	float: left;
+	width: 178px;
+	background: #F9F9F8 url(images/background_user_assist.jpg) repeat-x top;
+}
+
+#user_assistance h2, #user_assistance h3
+{
+	color: #000000;
+	font-size: 1em;
+}
+
+
 /* Footer */
 
 #footer-bgcontent {
