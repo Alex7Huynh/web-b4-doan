@@ -24,9 +24,14 @@ namespace BUS
         {
             return TinTuyenDungDAO.LayDanhSachTinTuyenDung();
         }
-        public static TINTUYENDUNG TimTinRaoVatTheoMa(int maTinTuyenDung)
+        public static TINTUYENDUNG TimTinTuyenDungTheoMa(int maTinTuyenDung)
         {
             return TinTuyenDungDAO.TimTinTuyenDungTheoMa(maTinTuyenDung);
+        }
+
+        public static TINTUYENDUNG TimTinTuyenDungTheoMaTinRaoVat(int maTinRaoVat)
+        {
+            return TinTuyenDungDAO.TimTinTuyenDungTheoMaTinRaoVat(maTinRaoVat);
         }
     }
 }

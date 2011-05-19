@@ -37,5 +37,10 @@ namespace BUS
         {
             return TinRaoVatDAO.LayDanhSachTinRaoVatTheoNoiDung(maDanhMucCon);
         }
+
+        public static CHUYENMUC LayChuyenMuc(int maTinRaoVat)
+        {
+            return TinRaoVatDAO.LayChuyenMuc(maTinRaoVat);
+        }
     }
 }
