@@ -8,6 +8,7 @@
 			<siteMapNode url="./TaiKhoan/DangNhap.aspx" title="Đăng Nhập" roles="*" description=""/>
 			<siteMapNode url="./TaiKhoan/QuenMatKhau.aspx" title="Quên Mật Khẩu" roles="*" description=""/>
 			<siteMapNode url="./TaiKhoan/XemThongTinTaiKhoan.aspx" title="Xem Thông Tin Tài Khoản" roles="*" description=""/>
+      <siteMapNode url="./TaiKhoan/TinNhan.aspx" title="Tin Nhắn" roles="*" description=""/>
 			<siteMapNode url="./TaiKhoan/DangKiEmail.aspx" title="Đăng Kí Email" roles="*" description="end"/>
 		</siteMapNode>
 		<siteMapNode url="DanhMuc/DanhMucChinh.aspx" title="Danh Mục" roles="*" description="parent">

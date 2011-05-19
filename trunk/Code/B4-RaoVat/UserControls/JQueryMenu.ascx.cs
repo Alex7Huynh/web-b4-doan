@@ -12,4 +12,8 @@ public partial class UserControls_JQueryMenu : System.Web.UI.UserControl
     {
 
     }
+    protected void menuMain_MenuItemClick(object sender, MenuEventArgs e)
+    {
+
+    }
 }

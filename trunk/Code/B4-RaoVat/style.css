@@ -31,6 +31,8 @@ p, ul, ol {
 	margin-top: 0;
 	line-height: 220%;
 	text-align: justify;
+    height: 108px;
+    width: 628px;
 }
 
 ul, ol { }
