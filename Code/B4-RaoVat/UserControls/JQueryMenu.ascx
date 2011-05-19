@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="JQueryMenu.ascx.cs" Inherits="UserControls_JQueryMenu" %>
 <div id="menu">
-<asp:Menu ID="menuMain" runat="server" DataSourceID="stmpDataSource">
+<asp:Menu ID="menuMain" runat="server" DataSourceID="stmpDataSource" 
+        onmenuitemclick="menuMain_MenuItemClick">
 </asp:Menu>
 </div>
 <asp:SiteMapDataSource ID="stmpDataSource" runat="server" ShowStartingNode="false" />
