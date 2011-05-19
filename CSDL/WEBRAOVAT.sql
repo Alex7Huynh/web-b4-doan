@@ -155,9 +155,19 @@ Create table DANHMUCCHINH
 (
 	MaDanhMucChinh int identity(1,1),
 	TenDanhMucChinh nchar(50),
+	MaChuyenMuc int,
 	Thumbnail varchar(155),		
 	Deleted bit,	
 	CONSTRAINT PK_DANHMUCCHINH PRIMARY KEY (MaDanhMucChinh),	
+)
+
+--kdlsjfsalfjdslafds
+Create table CHUYENMUC
+(
+	MaChuyenMuc int identity(1,1),
+	TenChuyenMuc nvarchar(200),
+	Deleted bit,
+	CONSTRAINT PK_CHUYENMUC PRIMARY KEY (MaChuyenMuc),
 )
 
 --14. Tao bang DANHMUCCON
@@ -222,7 +232,7 @@ Create table TINRAOVATBATDONGSAN
 	MatTien bit,
 	GiayTo nvarchar(100),
 	DuongTruocNha nvarchar(100),
-	DongHoDien bit,
+	DienNhaNuoc bit,
 	NuocMay bit,
 	SoPhongNgu int,
 	SoNhaVeSinh int,
@@ -493,6 +503,12 @@ ALTER TABLE QUANGCAO
 ADD CONSTRAINT PK_QUANGCAO_NGUOIDUNG 
 FOREIGN KEY (MaNguoiDung) 
 REFERENCES NGUOIDUNG(MaNguoiDung)
+
+--?. DANHMUCCHINH
+ALTER TABLE DANHMUCCHINH
+ADD CONSTRAINT FK_DANHMUCCHINH_CHUYENMUC
+FOREIGN KEY (MaChuyenMuc)
+REFERENCES CHUYENMUC(MaChuyenMuc)
 
 --6. DANHMUCCON
 ALTER TABLE DANHMUCCON
@@ -783,146 +799,153 @@ VALUES (N'Tuyển dụng',	'http://tuyendung.com',	'4/11/2011 13:59',	'5/11/2011
 INSERT INTO QUANGCAO (TenQuangCao, Link, ThoiGianDang, ThoiGianHetHan, Deleted, NoiDungQuangCao, MaLoaiQuangCao, MaNguoiDung) 
 VALUES (N'Tuyển dụng',	'http://tuyendung.com',	'4/11/2011 11:59',	'5/11/2011 11:59',	0,	N'HCM- tuyển nhân viên làm part time từ 17h20-20h20',	20,	20)
 
+--7. CHUYENMUC
+insert into CHUYENMUC (TenChuyenMuc, Deleted) values(N'Thường', 0)
+insert into CHUYENMUC (TenChuyenMuc, Deleted) values(N'Bất Động Sản', 0)
+insert into CHUYENMUC (TenChuyenMuc, Deleted) values(N'Tin Tuyển Dụng', 0)
+insert into CHUYENMUC (TenChuyenMuc, Deleted) values(N'Hồ Sơ Tuyển Dụng', 0)
+
 --7. DANHMUCCHINH
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Tất cả', N'1.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Thời trang', N'2.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Xây dựng - Nội thất – Ngoại thất', N'3.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Điện thoại', N'4.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Máy vi tính – Laptop', N'5.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Điện tử - Kỹ thuật số', N'6.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Ô tô', N'7.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Xe máy- Xe đạp', N'8.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Văn phòng phẩm', N'9.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Ẩm thực', N'10.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Đồ chơi - Mô hình', N'11.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Đào tạo - Giáo dục', N'12.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Sức Khỏe - Y tế', N'13.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Dụng cụ thể thao', N'14.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Du lịch', N'15.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Cây cảnh -  Thú nuôi', N'16.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Chứng khoán', N'17.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Dịch vụ', N'18.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Thủ công mỹ nghệ', N'19.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Việc làm', N'20.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Bất động sản', N'21.jpg',0)
-insert into DANHMUCCHINH (TenDanhMucChinh, Thumbnail, Deleted) values(N'Linh tinh', N'22.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Thời trang', 1, N'2.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Xây dựng - Nội thất – Ngoại thất', 1, N'3.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Điện thoại', 1, N'4.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Máy vi tính – Laptop', 1, N'5.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Điện tử - Kỹ thuật số', 1, N'6.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Ô tô', 1, N'7.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Xe máy- Xe đạp', 1, N'8.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Văn phòng phẩm', 1, N'9.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Ẩm thực', 1, N'10.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Đồ chơi - Mô hình', 1, N'11.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Đào tạo - Giáo dục', 1, N'12.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Sức Khỏe - Y tế', 1, N'13.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Dụng cụ thể thao', 1, N'14.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Du lịch', 1, N'15.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Cây cảnh -  Thú nuôi', 1, N'16.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Chứng khoán', 1, N'17.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Dịch vụ', 1, N'18.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Thủ công mỹ nghệ', 1, N'19.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Tin Tuyển Dụng', 3, N'20.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Hồ Sơ Tuyển Dụng', 4, N'20.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Bất động sản', 2, N'21.jpg',0)
+insert into DANHMUCCHINH (TenDanhMucChinh, MaChuyenMuc, Thumbnail, Deleted) values(N'Linh tinh', 1, N'22.jpg',0)
 
 
 --8. DANHMUCCON
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thời trang nam',2,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thời trang nữ',2,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Mỹ phẩm',2,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Trang sức',2,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Đồ hóa trang',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thời trang nam',1,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thời trang nữ',1,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Mỹ phẩm',1,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Trang sức',1,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Đồ hóa trang',1,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng ngủ',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng khách',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng tắm',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng bếp',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng làm việc',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Đồ thờ cúng',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phong thủy',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sân vườn',3,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Khác',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng ngủ',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng khách',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng tắm',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng bếp',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phòng làm việc',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Đồ thờ cúng',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phong thủy',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sân vườn',2,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Khác',2,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nokia',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nokia',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Apple',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Samsung',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sony Ericsson',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Motorola',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'BlackBerry',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Vertu',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'LG',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hãng khác',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Linh kiện',3,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sim số',3,0)
+
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Acer',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Asus',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'HP-Compaq',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dell',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'IBM-Lenovo',4,0)
 insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Apple',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Panasonic',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Toshiba',4,0)
 insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Samsung',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sony Ericsson',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Motorola',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'BlackBerry',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Vertu',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'LG',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Gateway',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sony',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Logitech',4,0)
 insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hãng khác',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Linh kiện',4,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sim số',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy tính bảng',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy chiếu-Máy in-Máy scan',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phần mềm',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thiết bị mạng',4,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Linh kiện - Phụ kiện',4,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Acer',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Asus',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'HP-Compaq',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dell',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'IBM-Lenovo',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Apple',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Panasonic',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Toshiba',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Samsung',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Gateway',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sony',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Logitech',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hãng khác',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy tính bảng',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy chiếu-Máy in-Máy scan',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phần mềm',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thiết bị mạng',5,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Linh kiện - Phụ kiện',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy ảnh – máy quay phim',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy nghe nhạc',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Loa – Karaoke – Âm thanh',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy chơi game',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy tính – Kim từ điển',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tivi – Tủ lạnh – Máy điều hòa',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thiết bị nhà bếp',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thiết bị khác',5,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Các thiết bị khác',5,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy ảnh – máy quay phim',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy nghe nhạc',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Loa – Karaoke – Âm thanh',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy chơi game',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Máy tính – Kim từ điển',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tivi – Tủ lạnh – Máy điều hòa',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thiết bị nhà bếp',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thiết bị khác',6,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Các thiết bị khác',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Toyota',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Ford',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Honda',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Mitsubishi',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'GM Daewoo',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hyundai',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Lamborghini',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hãng khác',6,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phụ tùng - Đồ chơi',6,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Toyota',7,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Ford',7,0)
 insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Honda',7,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Mitsubishi',7,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'GM Daewoo',7,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hyundai',7,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Lamborghini',7,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Suzuki',7,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Yamaha',7,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'SYM',7,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Piaggio',7,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Xe đạp',7,0)
 insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hãng khác',7,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phụ tùng - Đồ chơi',7,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phụ tùng - đồ chơi',7,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Honda',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Suzuki',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Yamaha',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'SYM',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Piaggio',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Xe đạp',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Hãng khác',8,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Phụ tùng - đồ chơi',8,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dụng cụ',8,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sách',8,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Băng đĩa',8,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Quà tặng',8,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dụng cụ',9,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Sách',9,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Băng đĩa',9,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Quà tặng',9,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà hàng - Quán ăn',9,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dụng cụ nhà bếp',9,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà hàng - Quán ăn',10,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dụng cụ nhà bếp',10,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nội địa',14,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nước ngoài',14,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Khách sạn',14,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Vé máy bay, tàu, xe',14,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thuê xe',14,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Địa điểm vui chơi - giải trí',14,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dịch vụ khác',14,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nội địa',15,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nước ngoài',15,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Khách sạn',15,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Vé máy bay, tàu, xe',15,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thuê xe',15,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Địa điểm vui chơi - giải trí',15,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Dịch vụ khác',15,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Cây cảnh',15,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thú nuôi',15,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Cây cảnh',16,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Thú nuôi',16,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Vận chuyển - sửa chữa',17,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Làm đẹp',17,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Giấy tờ - sổ sách',17,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'PR - Tổ chức sự kiện',17,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'In ấn - Quảng cáo',17,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tư vấn',17,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Khác',17,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Vận chuyển - sửa chữa',18,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Làm đẹp',18,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Giấy tờ - sổ sách',18,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'PR - Tổ chức sự kiện',18,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'In ấn - Quảng cáo',18,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tư vấn',18,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Khác',18,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tuyển dụng',19,0)
 
 insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tìm việc',20,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Tuyển dụng',20,0)
 
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Đất đai',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà ở',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Chung cư - Tập thể',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Chung cư cao cấp',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Biệt thự',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà xưởng - trang trại',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà cho thuê',11,0)
-insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'khác',11,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Đất đai',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà ở',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Chung cư - Tập thể',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Chung cư cao cấp',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Biệt thự',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà xưởng - trang trại',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'Nhà cho thuê',21,0)
+insert into DANHMUCCON (TenDanhMucCon, MaDanhMucChinh, Deleted) values(N'khác',21,0)
 
 
 --15. DiaDiem
@@ -962,7 +985,7 @@ VALUES (3,
 	
 --16.2. TINRAOVATBTDONGSAN
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
-VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	14,
+VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	94,
 	N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',
 	'4.jpg', 0)
 INSERT INTO TINRAOVATBATDONGSAN (
@@ -978,7 +1001,7 @@ INSERT INTO TINRAOVATBATDONGSAN (
 	MatTien,
 	GiayTo,
 	DuongTruocNha,
-	DongHoDien,
+	DienNhaNuoc,
 	NuocMay,
 	SoPhongNgu,
 	SoNhaVeSinh,
@@ -1051,7 +1074,7 @@ VALUES (
 	0)
 	
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('3-04-11 11:02',	4, 150, 5,	15,	15, 
+VALUES ('3-04-11 11:02',	4, 150, 5,	15,	94, 
 	N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	
 	'5.jpg',	0)
 INSERT INTO TINRAOVATBATDONGSAN (
@@ -1067,7 +1090,7 @@ INSERT INTO TINRAOVATBATDONGSAN (
 	MatTien,
 	GiayTo,
 	DuongTruocNha,
-	DongHoDien,
+	DienNhaNuoc,
 	NuocMay,
 	SoPhongNgu,
 	SoNhaVeSinh,
@@ -1151,7 +1174,7 @@ VALUES
 	
 --16.3. TINTUYENDUNG
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('4-30-2011 10:02',	30, 2, 6,	16,	16,N'Tập đoàn Cathay Life Viet Nam tuyển dụng','6.jpg',	0)
+VALUES ('4-30-2011 10:02',	30, 2, 6,	16,	92,N'Tập đoàn Cathay Life Viet Nam tuyển dụng','6.jpg',	0)
 INSERT INTO TINTUYENDUNG
 (
 	MaTinRaoVat,
@@ -1211,9 +1234,10 @@ VALUES (
 
 --16.4. HOSOTUYENDUNG
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('3-21-2011 12:02',	7, 62, 7,	17,	17, N'NGUYEN THAI TRUC', '7.jpg',	0)
+VALUES ('3-21-2011 12:02',	7, 62, 7,	17,93, N'NGUYEN THAI TRUC', '7.jpg',	0)
 INSERT INTO HOSOTUYENDUNG
 (
+	--thông tin cá nhân
 	MaTinRaoVat,
 	DongYHienThi,
 	HoTen,
