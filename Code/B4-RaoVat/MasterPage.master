@@ -64,19 +64,12 @@
 				    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/Search.aspx">Browse all Categories</asp:HyperLink></div>
 		    </div>
 		    <div id="crumbs">
-			    <asp:ContentPlaceHolder ID="SecondBar" runat="server">
-				    <div id="crumbs_text">
-					    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="">
-					    </asp:SiteMapPath>
-				    </div>
-			    </asp:ContentPlaceHolder>
+			    <div id="crumbs_text">
+				    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="">
+				    </asp:SiteMapPath>
+			    </div>
 		    </div>
 		    <div id="sidebar">
-		        <%--<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
-                </asp:Menu>--%>
-                <%--<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
-                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" SkipLinkText="">
-                </asp:Menu>--%>
 		    </div>
 		    <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">

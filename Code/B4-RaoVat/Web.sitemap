@@ -14,7 +14,7 @@
 		<siteMapNode url="DanhMuc/DanhMucChinh.aspx" title="Danh Mục" roles="*" description="parent">
 			<siteMapNode url="./DanhMuc/DanhMucCon.aspx?id=1" title="Danh Mục Con" roles="*" description="begin"/>
 			<siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx?id=1" title="Danh Mục Tin Rao Vặt" roles="*" description=""/>
-			<siteMapNode url="./DanhMuc/XemNoiDungTin.aspx" title="Xem Nội Dung Tin Rao Vặt" roles="*" description="end"/>
+			<siteMapNode url="./DanhMuc/XemNoiDungTin.aspx?id=1" title="Xem Nội Dung Tin Rao Vặt" roles="*" description="end"/>
 		</siteMapNode>
 		<siteMapNode url="TimKiem.aspx" title="Tìm Kiếm" roles="*" description=""/>
 		<siteMapNode url="TimKiemNangCao.aspx" title="Tìm Kiếm Nâng Cao" roles="*" description=""/>

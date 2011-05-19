@@ -178,5 +178,24 @@ namespace DAO
 
             return chuyenMuc;
         }
+
+        public static NGUOIDUNG LayNguoiDung(int maTinRaoVat)
+        {
+            NGUOIDUNG nguoiDung = new NGUOIDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsNguoiDung = from q in db.NGUOIDUNGs
+                                  where q.Deleted == false && TimTinRaoVatTheoMa(maTinRaoVat).MaNguoiDung == q.MaNguoiDung
+                                  select q;
+                nguoiDung = dsNguoiDung.ToList<NGUOIDUNG>().First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return nguoiDung;
+        }
     }
 }
