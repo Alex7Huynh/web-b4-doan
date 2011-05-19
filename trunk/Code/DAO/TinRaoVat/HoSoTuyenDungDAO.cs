@@ -110,6 +110,25 @@ namespace DAO
             { return null; }
 
             return lstHoSoTuyenDung;
-        }        
+        }
+
+        public static HOSOTUYENDUNG TimHoSoTuyenDungTheoMaTinRaoVat(int maTinRaoVat)
+        {
+            HOSOTUYENDUNG hoSoTuyenDung = new HOSOTUYENDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsHoSoTuyenDung = from q in db.HOSOTUYENDUNGs
+                                     where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                     select q;
+                hoSoTuyenDung = dsHoSoTuyenDung.ToList<HOSOTUYENDUNG>().First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return hoSoTuyenDung;
+        }
     }
 }

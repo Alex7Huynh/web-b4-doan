@@ -22,7 +22,9 @@ namespace DAO
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            { return false; }
+            { 
+                return false; 
+            }
 
             return true;
 
@@ -44,7 +46,9 @@ namespace DAO
                 TinRaoVatDAO.XoaTinRaoVat((int)tinRaoVatThuong.MaTinRaoVat);
             }
             catch (Exception ex)
-            { return false; }
+            { 
+                return false; 
+            }
 
             return true;
         }
@@ -68,7 +72,9 @@ namespace DAO
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            { return false; }
+            { 
+                return false; 
+            }
             return true;
         }
 
@@ -86,7 +92,9 @@ namespace DAO
                 tinRaoVatThuong = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == maTinRaoVatThuong);                
             }
             catch (Exception ex)
-            { return null; }
+            { 
+                return null; 
+            }
 
             return tinRaoVatThuong;
         }
@@ -107,9 +115,30 @@ namespace DAO
                 lstTinRaoVatThuong = dsTinRaoVatThuong.ToList<TINRAOVATTHUONG>();
             }
             catch (Exception ex)
-            { return null; }
+            { 
+                return null; 
+            }
 
             return lstTinRaoVatThuong;
-        }        
+        }
+
+        public static TINRAOVATTHUONG TimTinRaoVatThuongTheoMaTinRaoVat(int maTinRaoVat)
+        {
+            TINRAOVATTHUONG tinRaoVatThuong = new TINRAOVATTHUONG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVatThuong = from q in db.TINRAOVATTHUONGs
+                                        where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                        select q;
+                tinRaoVatThuong = dsTinRaoVatThuong.ToList<TINRAOVATTHUONG>().First();
+            }
+            catch (Exception ex)
+            { 
+                return null; 
+            }
+
+            return tinRaoVatThuong;
+        }
     }
 }

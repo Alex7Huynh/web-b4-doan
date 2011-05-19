@@ -159,5 +159,24 @@ namespace DAO
 
             return lstTinRaoVatMoiNhat;
         }
+
+        public static CHUYENMUC LayChuyenMuc(int maTinRaoVat)
+        {
+            CHUYENMUC chuyenMuc = new CHUYENMUC();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsChuyenMuc = from q in db.CHUYENMUCs
+                                  where q.Deleted == false && TimTinRaoVatTheoMa(maTinRaoVat).DANHMUCCON.DANHMUCCHINH.CHUYENMUC.MaChuyenMuc == q.MaChuyenMuc
+                                  select q;
+                chuyenMuc = dsChuyenMuc.ToList<CHUYENMUC>().First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return chuyenMuc;
+        }
     }
 }

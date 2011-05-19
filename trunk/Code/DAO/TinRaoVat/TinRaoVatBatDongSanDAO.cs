@@ -110,6 +110,25 @@ namespace DAO
             { return null; }
 
             return lstTinRaoVatBatDongSan;
-        }        
+        }
+
+        public static TINRAOVATBATDONGSAN TimTinRaoVatBatDongSanTheoMaTinRaoVat(int maTinRaoVat)
+        {
+            TINRAOVATBATDONGSAN tinRaoVatBatDongSan = new TINRAOVATBATDONGSAN();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
+                                        where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                        select q;
+                tinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>().First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return tinRaoVatBatDongSan;
+        }
     }    
 }
