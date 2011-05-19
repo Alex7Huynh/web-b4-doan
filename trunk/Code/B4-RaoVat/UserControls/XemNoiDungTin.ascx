@@ -357,6 +357,6 @@
 		</asp:View>
 	</asp:MultiView>
     <asp:HyperLink ID="hypXemThongTinLienHe" runat="server" 
-        Text="Xem Thông Tin Liên Hệ" NavigateUrl="../DanhMuc/XemThongTinLienHe.aspx" 
+        Text="Xem Thông Tin Liên Hệ" NavigateUrl="../DanhMuc/XemThongTinLienHe.aspx?id=1" 
         ForeColor="#990099"></asp:HyperLink>
 </div>

@@ -153,5 +153,20 @@ namespace DAO
 
         //    return nd;
         //}
+        public static NGUOIDUNG LayNguoiDungTheoMa(int maNguoiDung)
+        {
+            NGUOIDUNG nguoiDung = new NGUOIDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                nguoiDung = db.NGUOIDUNGs.Single(t => t.MaNguoiDung == maNguoiDung);
+            }
+            catch (Exception ex)
+            { 
+                return null; 
+            }
+
+            return nguoiDung;
+        }
     }
 }

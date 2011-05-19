@@ -21,6 +21,10 @@ public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
         string id = Request.QueryString["id"];
         Int32.TryParse(id, out maTinRaoVat);
 
+        NGUOIDUNG nguoiDung = TinRaoVatBUS.LayNguoiDung(maTinRaoVat);
+
+        hypXemThongTinLienHe.NavigateUrl = "../DanhMuc/XemThongTinLienHe.aspx?id=" + nguoiDung.MaNguoiDung.ToString();
+
         CHUYENMUC chuyenMuc = TinRaoVatBUS.LayChuyenMuc(maTinRaoVat);
 
         FillSummary(chuyenMuc, maTinRaoVat);

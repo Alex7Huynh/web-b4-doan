@@ -42,5 +42,10 @@ namespace BUS
         {
             return TinRaoVatDAO.LayChuyenMuc(maTinRaoVat);
         }
+
+        public static NGUOIDUNG LayNguoiDung(int maTinRaoVat)
+        {
+            return TinRaoVatDAO.LayNguoiDung(maTinRaoVat);
+        }
     }
 }

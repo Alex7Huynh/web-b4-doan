@@ -14,12 +14,12 @@
 						Profile page. <a href="../MyAds.aspx" title="My Ads & Profile">My Ads & Profile</a>
 					</li>
 					<li>Placing a new ad is fast and easy. <a href="../PostAd.aspx" title="New Ad">Place a
-						New 
-		        <uc1:JQueryMenu ID="JQueryMenuMain" runat="server">
-                </uc1:JQueryMenu>
-			            Ad</a> </li>
+						New Ad</a> 
+					</li>
 				</ul>
 			</div>
+			<uc1:JQueryMenu ID="JQueryMenuMain" runat="server">
+                </uc1:JQueryMenu>
 		</div>
 		<div id="col_main_right">
 	        <uc1:TinRaoVatMoiNhat ID="FeaturedAd" runat="server">

@@ -28,5 +28,9 @@ namespace BUS
         //{
         //    return NguoiDungDAO.timNguoiDungTheoMa(maNguoiDung);
         //}
+        public static NGUOIDUNG LayNguoiDungTheoMa(int maNguoiDung)
+        {
+            return NguoiDungDAO.LayNguoiDungTheoMa(maNguoiDung);
+        }
     }
 }
