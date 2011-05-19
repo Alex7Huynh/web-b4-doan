@@ -131,7 +131,8 @@ Create table MAILSERVER
 Create table LOAIQUANGCAO
 (
 	MaLoaiQuangCao int identity(1,1),
-	TenLoaiQuangCao nchar(50),		
+	TenLoaiQuangCao nchar(50),
+	Deleted bit,
 	CONSTRAINT PK_LOAIQUANGCAO PRIMARY KEY (MaLoaiQuangCao),	
 )
 
@@ -720,41 +721,41 @@ insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, T
 insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(4,2,'06/14/2011',10,0,N'Post vi rút')
 insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(2,4,'06/14/2011',3,0,N'Nhầm chuyên mục')
 insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(5,3,'06/14/2011',3,0,N'Nhầm chuyên mục')
-insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(3,5,'06/14/2011',10,1,N'Post vi rút')
-insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(2,3,'06/14/2011',3,1,N'Nhầm chuyên mục')
+insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(3,5,'06/14/2011',10,0,N'Post vi rút')
+insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(2,3,'06/14/2011',3,0,N'Nhầm chuyên mục')
 insert into LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) values(2,4,'06/14/2011',5,0,N'Spam')
 INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (11,13,	'3/4/2009',	3,0,N'Nhầm chuyên mục')
-INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (12,13,	'5/7/2009',	5,1,N'Nhầm chuyên mục')
+INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (12,13,	'5/7/2009',	5,0,N'Nhầm chuyên mục')
 INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (11,13,	'7/10/2009',2,0,N'Spam')
-INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (14,13,	'9/12/2009',1,1,N'Vi Phạm Nội Quy')
+INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (14,13,	'9/12/2009',1,0,N'Vi Phạm Nội Quy')
 INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (16,13,	'11/15/2009',3,0,N'Nhầm chuyên mục')
-INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (14,13,	'1/18/2010',2,1,N'Nhầm chuyên mục')
+INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (14,13,	'1/18/2010',2,0,N'Nhầm chuyên mục')
 INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (15,13,	'3/13/2010',2,0,N'Spam')
-INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (17,13,	'5/16/2010',2,1,N'Nhầm chuyên mục')
+INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (17,13,	'5/16/2010',2,0,N'Nhầm chuyên mục')
 INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (12,13,	'7/19/2010',1,0,N'Chửi thề, nói tục')
 INSERT INTO LICHSUNGUOIDUNGVIPHAM (MaNguoiDungViPham, MaNguoiDungBaoCaoViPham, ThoiGianBaoCaoViPham, ThoiGianCanhCao, Deleted, LyDo) VALUES (16,13,	'10/1/2010',3,0,N'Nhầm chuyên mục')
 
 --5. LOAIQUANGCAO
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao01')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao02')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao03')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao04')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao05')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao06')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao07')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao08')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao09')
-insert into LOAIQUANGCAO (TenLoaiQuangCao) values(N'LoaiQuangCao10')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Cây cảnh')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Thú nuôi')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Chứng khoán')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Chứng khoán')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Thủ công mỹ nghệ')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Thủ công mỹ nghệ')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Tìm việc')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Tìm việc')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Tuyển dụng')
-INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao) VALUES (N'Tuyển dụng')
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao01', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao02', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao03', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao04', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao05', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao06', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao07', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao08', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao09', 0)
+insert into LOAIQUANGCAO (TenLoaiQuangCao, Deleted) values(N'LoaiQuangCao10', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Cây cảnh', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Thú nuôi', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Chứng khoán', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Chứng khoán', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Thủ công mỹ nghệ', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Thủ công mỹ nghệ', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Tìm việc', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Tìm việc', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Tuyển dụng', 0)
+INSERT INTO LOAIQUANGCAO (TenLoaiQuangCao, Deleted) VALUES (N'Tuyển dụng', 0)
 
 --6. QUANGCAO
 insert into QUANGCAO (TenQuangCao, Link, ThoiGianDang, ThoiGianHetHan, Deleted, NoiDungQuangCao, MaLoaiQuangCao, MaNguoiDung) 
@@ -1319,10 +1320,10 @@ insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) val
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('Phamhoangan@yahoo.com','01/01/2011',0)
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('langtu09@yahoo.com','02/08/2010',0)
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('BoyPro@gmail.com','03/11/2009',0)
-insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('NusinhChayLinhTinh@yahoo.com','10/12/2010',1)
-insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('BacLieuCaoThu@gmail.com','05/12/2010',1)
+insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('NusinhChayLinhTinh@yahoo.com','10/12/2010',0)
+insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('BacLieuCaoThu@gmail.com','05/12/2010',0)
 insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('khocviai@yahoo.com','01/12/2008',0)
-insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',1)
+insert into EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',0)
 
 --18.1. EMAILNHANTINRAOVATTHEOMUCCHINH
 INSERT INTO EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) VALUES ('N_M_T178@yahoo.com',	'10/18/2010 20:15',	1, 0)
@@ -1341,10 +1342,10 @@ insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, 
 insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('Phamhoangan@yahoo.com','01/01/2011',1,0)
 insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('langtu09@yahoo.com','02/08/2010',1,0)
 insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('BoyPro@gmail.com','03/11/2009',1,0)
-insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('NusinhChayLinhTinh@yahoo.com','10/12/2010',1,1)
-insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('BacLieuCaoThu@gmail.com','05/12/2010',1,1)
+insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('NusinhChayLinhTinh@yahoo.com','10/12/2010',1,0)
+insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('BacLieuCaoThu@gmail.com','05/12/2010',1,0)
 insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('khocviai@yahoo.com','01/12/2008',1,0)
-insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',1,1)
+insert into EMAILNHANTINRAOVATTHEOMUCCHINH (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucChinh, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',1,0)
 
 --18.1. EMAILNHANTINRAOVATTHEOMUCCON
 INSERT INTO EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) VALUES ('N_M_T178@yahoo.com',	'10/18/2010 20:15',	1, 0)
@@ -1363,10 +1364,10 @@ insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, Ma
 insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('Phamhoangan@yahoo.com','01/01/2011',1,0)
 insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('langtu09@yahoo.com','02/08/2010',1,0)
 insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('BoyPro@gmail.com','03/11/2009',1,0)
-insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('NusinhChayLinhTinh@yahoo.com','10/12/2010',1,1)
-insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('BacLieuCaoThu@gmail.com','05/12/2010',1,1)
+insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('NusinhChayLinhTinh@yahoo.com','10/12/2010',1,0)
+insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('BacLieuCaoThu@gmail.com','05/12/2010',1,0)
 insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('khocviai@yahoo.com','01/12/2008',1,0)
-insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',1,1)
+insert into EMAILNHANTINRAOVATTHEOMUCCON (EmailNhanTinRaoVat, ThoiGianDangKy, MaDanhMucCon, Deleted) values ('TienKhongLaVanDe@gmail.com','02/08/2010',1,0)
 
 
 --19. BAITRALOI
