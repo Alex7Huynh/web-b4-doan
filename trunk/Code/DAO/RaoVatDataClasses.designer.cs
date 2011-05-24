@@ -126,7 +126,7 @@ namespace DAO
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
-				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString2, mappingSource)
+				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}

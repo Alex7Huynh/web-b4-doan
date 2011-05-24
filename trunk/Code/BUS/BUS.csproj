@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{DD5D9E08-23C9-470B-BF07-B928D739B989}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -49,6 +49,7 @@
     <Compile Include="DanhMuc\DanhMucConBUS.cs" />
     <Compile Include="DiaDiemBUS.cs" />
     <Compile Include="NganhNgheBUS.cs" />
+    <Compile Include="NguoiDung\TinNhanBUS.cs" />
     <Compile Include="NguoiDung\LoaiNguoiDungBUS.cs" />
     <Compile Include="NguoiDung\NguoiDungBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
