@@ -8,25 +8,25 @@ namespace BUS
 {
     public class DanhMucConBUS
     {
-        //public static bool themDanhMucCon(DanhMucConDTO dmcDTO)
-        //{
-        //    return DanhMucConDAO.themDanhMucCon(dmcDTO);
-        //}
-        //public static bool xoaDanhMucCon(int maDanhMucCon)
-        //{
-        //    return DanhMucConDAO.xoaDanhMucCon(maDanhMucCon);
-        //}
-        //public static bool capNhatDanhMucCon(DanhMucConDTO dmcDTO)
-        //{
-        //    return DanhMucConDAO.capNhatDanhMucCon(dmcDTO);
-        //}
+        public static bool ThemDanhMucCon(DANHMUCCON danhMucCon)
+        {
+            return DanhMucConDAO.ThemDanhMucCon(danhMucCon);
+        }
+        public static bool XoaDanhMucCon(int maDanhMucCon)
+        {
+            return DanhMucConDAO.XoaDanhMucCon(maDanhMucCon);
+        }
+        public static bool CapNhatDanhMucCon(DANHMUCCON danhMucCon)
+        {
+            return DanhMucConDAO.CapNhatDanhMucCon(danhMucCon);
+        }
         public static List<DANHMUCCON> LayDanhSachDanhMucCon(int maDanhMucChinh)
         {
             return DanhMucConDAO.LayDanhSachDanhMucCon(maDanhMucChinh);
         }
-        //public static DanhMucConDTO timDanhMucConTheoMa(int maDanhMucCon)
-        //{
-        //    return DanhMucConDAO.timDanhMucConTheoMa(maDanhMucCon);
-        //}
+        public static DANHMUCCON TimDanhMucConTheoMa(int maDanhMucCon)
+        {
+            return DanhMucConDAO.TimDanhMucConTheoMa(maDanhMucCon);
+        }
     }
 }

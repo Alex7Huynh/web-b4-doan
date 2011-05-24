@@ -4,8 +4,9 @@
 		<ul>
 	</HeaderTemplate>
 	<ItemTemplate>
-		<div id="featured_item" style="height: 50px;
-	                                    width: 75px;
+		<div id="featured_item" style="height: 75px;
+	                                    width: 100px;
+	                                    font-size: 1.0em;
 	                                    float:left">
 			<a id="content_start"></a>
 			<h2>

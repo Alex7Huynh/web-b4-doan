@@ -20,14 +20,14 @@
 	                                    border-left-color: #FFFFFF;
 	                                    text-align: center;
 	                                    padding: 10px;
-	                                    font-size: 0.8em;
+	                                    font-size: 1.5em;
 	                                    margin-bottom: 3px;
 	                                    margin-right: 0px;
 	                                    float:left">
 			<a id="content_start"></a>
 			<h2>
 				<asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("TenDanhMucChinh") %>' NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></h2>
-				
+			
 		    <p>
                 <asp:Image ID="PhotoLinkAsp" runat="server" Width="176" ImageUrl='<%# Eval("Thumbnail", "~/images/DanhMucChinh/{0}")%>'/></p>
 			<p>
