@@ -48,24 +48,28 @@
 			    <div id="nav_login">
 				    <asp:LoginView ID="LoginView" runat="server">
 					    <AnonymousTemplate>
-						    <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="TaiKhoan/DangNhap.aspx">Login</asp:HyperLink>
+						    <asp:HyperLink ID="LoginLink" runat="server" 
+                                NavigateUrl="TaiKhoan/DangNhap.aspx" ForeColor="White">Login</asp:HyperLink>
 						    
-						    <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="TaiKhoan/DangKi.aspx">Register</asp:HyperLink>
+						    <asp:HyperLink ID="RegisterLink" runat="server" 
+                                NavigateUrl="TaiKhoan/DangKi.aspx" ForeColor="White">Register</asp:HyperLink>
 					    </AnonymousTemplate>
 					    <LoggedInTemplate>
 						    Welcome,
-						    <asp:LoginName ID="MemberName" runat="server" />
+						    <asp:LoginName ID="MemberName" runat="server" ForeColor="White"/>
 						    
-						    <asp:LoginStatus ID="MemberLoginStatus" runat="server" />
+						    <asp:LoginStatus ID="MemberLoginStatus" runat="server" ForeColor="White"/>
 					    </LoggedInTemplate>
 				    </asp:LoginView>
 			    </div>
 			    <div id="nav_browse">
-				    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/Search.aspx">Browse all Categories</asp:HyperLink></div>
+				    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/Search.aspx" 
+                        ForeColor="White">Browse all Categories</asp:HyperLink></div>
 		    </div>
 		    <div id="crumbs">
 			    <div id="crumbs_text">
-				    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="">
+				    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="" 
+                        ForeColor="White">
 				    </asp:SiteMapPath>
 			    </div>
 		    </div>

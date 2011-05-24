@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=TIEN-PC;Initial Catalog=RAO_VAT;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KID\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=sa" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAITRALOI" Member="BAITRALOIs">
     <Type Name="BAITRALOI">
       <Column Name="MaBaiTraLoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -53,6 +53,26 @@
       <Column Name="MaNganhNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HOSOTUYENDUNG_CHITIETHOSOTUYENDUNG" Member="HOSOTUYENDUNG" ThisKey="MaHoSoTuyenDung" OtherKey="MaHoSoTuyenDung" Type="HOSOTUYENDUNG" IsForeignKey="true" />
       <Association Name="NGANHNGHE_CHITIETHOSOTUYENDUNG" Member="NGANHNGHE" ThisKey="MaNganhNghe" OtherKey="MaNganhNghe" Type="NGANHNGHE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHUYENMUC" Member="CHUYENMUCs">
+    <Type Name="CHUYENMUC">
+      <Column Name="MaChuyenMuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenChuyenMuc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="CHUYENMUC_DANHMUCCHINH" Member="DANHMUCCHINHs" ThisKey="MaChuyenMuc" OtherKey="MaChuyenMuc" Type="DANHMUCCHINH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHMUCCHINH" Member="DANHMUCCHINHs">
+    <Type Name="DANHMUCCHINH">
+      <Column Name="MaDanhMucChinh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMucChinh" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="MaChuyenMuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DANHMUCCHINH_DANHMUCCON" Member="DANHMUCCONs" ThisKey="MaDanhMucChinh" OtherKey="MaDanhMucChinh" Type="DANHMUCCON" />
+      <Association Name="DANHMUCCHINH_EMAILNHANTINRAOVATTHEOMUCCHINH" Member="EMAILNHANTINRAOVATTHEOMUCCHINHs" ThisKey="MaDanhMucChinh" OtherKey="MaDanhMucChinh" Type="EMAILNHANTINRAOVATTHEOMUCCHINH" />
+      <Association Name="CHUYENMUC_DANHMUCCHINH" Member="CHUYENMUC" ThisKey="MaChuyenMuc" OtherKey="MaChuyenMuc" Type="CHUYENMUC" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DANHMUCCON" Member="DANHMUCCONs">
@@ -192,6 +212,7 @@
     <Type Name="LOAIQUANGCAO">
       <Column Name="MaLoaiQuangCao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLoaiQuangCao" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="LOAIQUANGCAO_QUANGCAO" Member="QUANGCAOs" ThisKey="MaLoaiQuangCao" OtherKey="MaLoaiQuangCao" Type="QUANGCAO" />
     </Type>
   </Table>
@@ -310,13 +331,54 @@
       <Association Name="TINRAOVAT_HOSOTUYENDUNG" Member="HOSOTUYENDUNGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="HOSOTUYENDUNG" />
       <Association Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVatViPham" Type="LICHSUTINRAOVATVIPHAM" />
       <Association Name="TINRAOVAT_LIKED" Member="LIKEDs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="LIKED" />
+      <Association Name="TINRAOVAT_TINRAOVATBATDONGSAN" Member="TINRAOVATBATDONGSANs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATBATDONGSAN" />
       <Association Name="TINRAOVAT_TINRAOVATDALUU" Member="TINRAOVATDALUUs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATDALUU" />
       <Association Name="TINRAOVAT_TINRAOVATTHUONG" Member="TINRAOVATTHUONGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATTHUONG" />
       <Association Name="TINRAOVAT_TINTUYENDUNG" Member="TINTUYENDUNGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINTUYENDUNG" />
-      <Association Name="TINRAOVAT_TINRAOVATBATDONGSAN" Member="TINRAOVATBATDONGSANs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATBATDONGSAN" />
       <Association Name="DANHMUCCON_TINRAOVAT" Member="DANHMUCCON" ThisKey="MaDanhMucCon" OtherKey="MaDanhMucCon" Type="DANHMUCCON" IsForeignKey="true" />
       <Association Name="DIADIEM_TINRAOVAT" Member="DIADIEM" ThisKey="MaDiaDiem" OtherKey="MaDiaDiem" Type="DIADIEM" IsForeignKey="true" />
       <Association Name="NGUOIDUNG_TINRAOVAT" Member="NGUOIDUNG" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NGUOIDUNG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINRAOVATBATDONGSAN" Member="TINRAOVATBATDONGSANs">
+    <Type Name="TINRAOVATBATDONGSAN">
+      <Column Name="MaTinRaoVatBatDongSan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaTinRaoVat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoiDungTinRaoVat" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="DienTich" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Huong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LoGioi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Lau" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MatTien" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GiayTo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DuongTruocNha" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DienNhaNuoc" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NuocMay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SoPhongNgu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoNhaVeSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NamXayDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhongKhach" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GaraOto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NhaBep" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HoBoi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SanThuong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DieuHoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SanVuon" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ThangMay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanTruongMauGiao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanTruongCap1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanTruongCap2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanTruongCap3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanCho" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanBenhVien" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanTrungTamThuongMai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanTrungTamGiaiTri" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GanCongVien" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TINRAOVAT_TINRAOVATBATDONGSAN" Member="TINRAOVAT" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TINRAOVATDALUU" Member="TINRAOVATDALUUs">
@@ -366,67 +428,6 @@
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NGANHNGHE_TINTUYENDUNG" Member="NGANHNGHE" ThisKey="MaNganhNghe" OtherKey="MaNganhNghe" Type="NGANHNGHE" IsForeignKey="true" />
       <Association Name="TINRAOVAT_TINTUYENDUNG" Member="TINRAOVAT" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DANHMUCCHINH" Member="DANHMUCCHINHs">
-    <Type Name="DANHMUCCHINH">
-      <Column Name="MaDanhMucChinh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDanhMucChinh" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="MaChuyenMuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
-      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="DANHMUCCHINH_DANHMUCCON" Member="DANHMUCCONs" ThisKey="MaDanhMucChinh" OtherKey="MaDanhMucChinh" Type="DANHMUCCON" />
-      <Association Name="DANHMUCCHINH_EMAILNHANTINRAOVATTHEOMUCCHINH" Member="EMAILNHANTINRAOVATTHEOMUCCHINHs" ThisKey="MaDanhMucChinh" OtherKey="MaDanhMucChinh" Type="EMAILNHANTINRAOVATTHEOMUCCHINH" />
-      <Association Name="CHUYENMUC_DANHMUCCHINH" Member="CHUYENMUC" ThisKey="MaChuyenMuc" OtherKey="MaChuyenMuc" Type="CHUYENMUC" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CHUYENMUC" Member="CHUYENMUCs">
-    <Type Name="CHUYENMUC">
-      <Column Name="MaChuyenMuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenChuyenMuc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="CHUYENMUC_DANHMUCCHINH" Member="DANHMUCCHINHs" ThisKey="MaChuyenMuc" OtherKey="MaChuyenMuc" Type="DANHMUCCHINH" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TINRAOVATBATDONGSAN" Member="TINRAOVATBATDONGSANs">
-    <Type Name="TINRAOVATBATDONGSAN">
-      <Column Name="MaTinRaoVatBatDongSan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaTinRaoVat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NoiDungTinRaoVat" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
-      <Column Name="DienTich" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Huong" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="LoGioi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Lau" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Lung" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MatTien" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GiayTo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DuongTruocNha" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DienNhaNuoc" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="NuocMay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="SoPhongNgu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoNhaVeSinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NamXayDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PhongKhach" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GaraOto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="NhaBep" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="HoBoi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="SanThuong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="DieuHoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="SanVuon" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="ThangMay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanTruongMauGiao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanTruongCap1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanTruongCap2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanTruongCap3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanCho" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanBenhVien" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanTrungTamThuongMai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanTrungTamGiaiTri" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GanCongVien" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TINRAOVAT_TINRAOVATBATDONGSAN" Member="TINRAOVAT" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
