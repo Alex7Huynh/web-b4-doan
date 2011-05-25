@@ -1,0 +1,14 @@
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\BUS.dll
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\BUS.pdb
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\DAO.dll
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\DAO.pdb
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\ResolveAssemblyReference.cache
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\BUS.dll
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\BUS.pdb
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\ResolveAssemblyReference.cache
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\BUS.dll
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\BUS.dll
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\BUS.pdb
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\DAO.dll
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\DAO.pdb
+I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\BUS.pdb
