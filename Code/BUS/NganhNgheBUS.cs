@@ -24,5 +24,9 @@ namespace BUS
         {
             return NganhNgheDAO.TimNganhNgheTheoMa(maNganhNghe);
         }
+        public static NGANHNGHE TimNganhNgheTheoTen(string tenNganhNghe)
+        {
+            return NganhNgheDAO.TimNganhNgheTheoTen(tenNganhNghe);
+        }
     }
 }

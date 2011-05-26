@@ -47,7 +47,7 @@ namespace DAO.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KID\\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=" +
-            "sa" + ";Password=" + "123456789")]
+            "sa")]
         public string RAO_VATConnectionString2 {
             get {
                 return ((string)(this["RAO_VATConnectionString2"]));
@@ -62,6 +62,17 @@ namespace DAO.Properties {
         public string RAO_VATConnectionString3 {
             get {
                 return ((string)(this["RAO_VATConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KID\\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=" +
+            "sa;Password=123456789")]
+        public string RAO_VATConnectionString4 {
+            get {
+                return ((string)(this["RAO_VATConnectionString4"]));
             }
         }
     }

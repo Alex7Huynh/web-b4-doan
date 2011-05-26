@@ -12,6 +12,10 @@ public partial class ChonChuyenMucDang : System.Web.UI.Page
     {
         List<DANHMUCCHINH> lstDMC = new List<DANHMUCCHINH>();
         lstDMC = DanhMucChinhBUS.LayDanhSachDanhMucChinh();
+        Literal literal = new Literal();
+        literal = new Literal();
+        literal.Text = "<table>";
+        Panel1.Controls.Add(literal);
         foreach (DANHMUCCHINH dmchinh in lstDMC)
         {
             Label lblDanhMucChinh = new Label();
@@ -19,13 +23,18 @@ public partial class ChonChuyenMucDang : System.Web.UI.Page
             Panel1.Controls.Add(lblDanhMucChinh);
             List<DANHMUCCON> lstDMCon = new List<DANHMUCCON>();
             lstDMCon = DanhMucConBUS.LayDanhSachDanhMucCon(dmchinh.MaDanhMucChinh);
+            
             foreach (DANHMUCCON dmcon in lstDMCon)
             {
-                //Ký tự đầu
-                Literal b = new Literal();
-                b.Text = "--> ";
-                Panel1.Controls.Add(b);
-                //
+                //Thêm mũi tên
+                Image arrow = new Image();
+                arrow.ImageUrl = "~/images/muiten_xuong.gif";
+                Panel1.Controls.Add(arrow);
+                //Thêm khoảng trắng
+                literal = new Literal();
+                literal.Text = "&nbsp;&nbsp;";
+                Panel1.Controls.Add(literal);                
+                //Danh mục con - hyperlink
                 HyperLink a = new HyperLink();
                 a.Text = dmcon.TenDanhMucCon;
                 a.NavigateUrl = "DangTinRaoVat.aspx?chuyenmuc=" + dmchinh.MaChuyenMuc
@@ -33,13 +42,17 @@ public partial class ChonChuyenMucDang : System.Web.UI.Page
                     + "&danhmuccon=" + dmcon.MaDanhMucCon;
                 Panel1.Controls.Add(a);
                 //Ký tự xuống dòng
-                b = new Literal();
-                b.Text = "<br/>";
-                Panel1.Controls.Add(b);
+                literal = new Literal();
+                literal.Text = "<br/>";
+                Panel1.Controls.Add(literal);
             }
-            Literal c = new Literal();
-            c.Text = "<br/>";
-            Panel1.Controls.Add(c);
+            //Ký tự xuống dòng
+            literal = new Literal();
+            literal.Text = "<br/>";
+            Panel1.Controls.Add(literal);
         }
+        literal = new Literal();
+        literal.Text = "<table>";
+        Panel1.Controls.Add(literal);
     }
 }

@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -10,96 +9,97 @@
 <body>
     <form id="form1" runat="server">
     <div id="header-wrapper">
-	    <div id="header">
-		    <div id="menu">
-			    <ul>
-				    <li><a href="Default.aspx" class="first">Trang Chủ</a></li>
-				    <li class="current_page_item"><a href="#">Hướng Dẫn</a></li>
-				    <li><a href="DangKi.aspx">Đăng Kí</a></li>
-				    <li><a href="QuenMatKhau.aspx">Quên Mật Khẩu</a></li>
-				    <li><a href="DangNhap.aspx">Đăng Nhập</a></li>
-				    <li><a href="XemThongTinTaiKhoan.aspx">Thông Tin Tài Khoản</a></li>
-			    </ul>
-		    </div>
-		    <!-- end #menu -->
-		    <div id="search">
-			    <fieldset>
-			        <input type="text" name="s" id="search-text" size="15" />
-			        <input type="submit" id="search-submit" value="GO" />
-			    </fieldset>
-			</div>
-		    <!-- end #search -->
-		</div>
-	</div>
+        <div id="header">
+            <div id="menu">
+                <ul>
+                    <li><a href="~/Default.aspx" class="first">Trang Chủ</a></li>
+                    <li class="current_page_item"><a href="#">Hướng Dẫn</a></li>
+                    <li><a href="~/TaiKhoan/DangKi.aspx">Đăng Kí</a></li>
+                    <li><a href="~/TaiKhoan/QuenMatKhau.aspx">Quên Mật Khẩu</a></li>
+                    <li><a href="~/TaiKhoan/DangNhap.aspx">Đăng Nhập</a></li>
+                    <li><a href="~/TaiKhoan/XemThongTinTaiKhoan.aspx">Thông Tin Tài Khoản</a></li>
+                </ul>
+            </div>
+            <!-- end #menu -->
+            <div id="search">
+                <fieldset>
+                    <input type="text" name="s" id="search-text" size="15" />
+                    <input type="submit" id="search-submit" value="GO" />
+                </fieldset>
+            </div>
+            <!-- end #search -->
+        </div>
+    </div>
     <div id="logo">
-	    <h1><a href="#">B4-StarFish</a></h1>
-
-        <asp:Image ID="bannerAsp" runat="server" ImageUrl="~/images/baner.jpg" 
-            style="float: right;
-            margin-top: -50px;
-            padding: 0px 0px 0px 0px;"
-            Height="136px" Width="724px"/>
-
-	    <p>Chính xác, Tin cậy, Hiệu quả</p>
+        <h1>
+            <a href="#">B4-StarFish</a></h1>
+        <asp:Image ID="bannerAsp" runat="server" ImageUrl="~/images/baner.jpg" Style="float: right;
+            margin-top: -50px; padding: 0px 0px 0px 0px;" Height="136px" Width="724px" />
+        <p>
+            Chính xác, Tin cậy, Hiệu quả</p>
     </div>
     <div id="wrapper">
-	    <div id="page">
-	        <div id="color_bar">
-			    <div id="nav_login">
-				    <asp:LoginView ID="LoginView" runat="server">
-					    <AnonymousTemplate>
-						    <asp:HyperLink ID="LoginLink" runat="server" 
-                                NavigateUrl="TaiKhoan/DangNhap.aspx" ForeColor="White">Login</asp:HyperLink>
-						    
-						    <asp:HyperLink ID="RegisterLink" runat="server" 
-                                NavigateUrl="TaiKhoan/DangKi.aspx" ForeColor="White">Register</asp:HyperLink>
-					    </AnonymousTemplate>
-					    <LoggedInTemplate>
-						    Welcome,
-						    <asp:LoginName ID="MemberName" runat="server" ForeColor="White"/>
-						    
-						    <asp:LoginStatus ID="MemberLoginStatus" runat="server" ForeColor="White"/>
-					    </LoggedInTemplate>
-				    </asp:LoginView>
-			    </div>
-			    <div id="nav_browse">
-				    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/Search.aspx" 
-                        ForeColor="White">Browse all Categories</asp:HyperLink></div>
-		    </div>
-		    <div id="crumbs">
-			    <div id="crumbs_text">
-				    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="" 
-                        ForeColor="White">
-				    </asp:SiteMapPath>
-			    </div>
-		    </div>
-		    <div id="sidebar">
-		    </div>
-		    <div id="content">
+        <div id="page">
+            <div id="color_bar">
+                <div id="nav_login">
+                    <asp:LoginView ID="LoginView" runat="server">
+                        <AnonymousTemplate>
+                            <asp:HyperLink ID="LoginLink" runat="server" NavigateUrl="TaiKhoan/DangNhap.aspx"
+                                ForeColor="White">Login</asp:HyperLink>
+                            <asp:HyperLink ID="RegisterLink" runat="server" NavigateUrl="TaiKhoan/DangKi.aspx"
+                                ForeColor="White">Register</asp:HyperLink>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Welcome,
+                            <asp:LoginName ID="MemberName" runat="server" ForeColor="White" />
+                            <asp:LoginStatus ID="MemberLoginStatus" runat="server" ForeColor="White" />
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+                <div id="nav_dangtin">
+                    <asp:HyperLink ID="DanTinLink" runat="server" NavigateUrl="~/TinRaoVat/ChonChuyenMucDang.aspx"
+                        ForeColor="White">Đăng tin rao vặt</asp:HyperLink>
+                </div>
+                <div id="nav_browse">
+                    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/DanhMuc/DanhMucChinh.aspx"
+                        ForeColor="White">Xem tất cả danh mục chính</asp:HyperLink>
+                </div>
+            </div>
+            <div id="crumbs">
+                <div id="crumbs_text">
+                    <asp:SiteMapPath ID="SiteMapPath" runat="server" SkipLinkText="" ForeColor="White">
+                    </asp:SiteMapPath>
+                </div>
+            </div>
+            <div id="sidebar">
+            </div>
+            <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
                     <div id="col_main_left">
-				        <div id="featured_item">
-				        </div>
-				        <div id="announcements">
-				        </div>
-			        </div>
-			        <div id="col_main_right">
-				        <h3 class="section">
-					        Browse Categories</h3>
-				        <div class="content_right">
-				        </div>
-			        </div>
+                        <div id="featured_item">
+                        </div>
+                        <div id="announcements">
+                        </div>
+                    </div>
+                    <div id="col_main_right">
+                        <h3 class="section">
+                            Browse Categories</h3>
+                        <div class="content_right">
+                        </div>
+                    </div>
                 </asp:ContentPlaceHolder>
-		    </div>
-		    <div style="clear: both;">&nbsp;</div>
-	    </div>
+            </div>
+            <div style="clear: both;">
+                &nbsp;</div>
+        </div>
     </div>
     <div id="footer-bgcontent">
-	    <div id="footer">
-		    <p>Copyright (c) 2008 B4-StarFish. All rights reserved. <br />
-			    Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.</p>
-
-	    </div>
+        <div id="footer">
+            <p>
+                Copyright (c) 2008 B4-StarFish. All rights reserved.
+                <br />
+                Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.</p>
+        </div>
     </div>
     </form>
 </body>

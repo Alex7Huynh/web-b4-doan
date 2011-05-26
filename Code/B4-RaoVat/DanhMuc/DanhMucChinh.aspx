@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DanhMucChinh.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DanhMucChinh.aspx.cs" Inherits="Default2" %>
 
 <%--<%@ Register TagPrefix="uc1" TagName="AdvancedSearch" Src="Controls/AdvancedSearch.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="CategoryDropDown" Src="Controls/CategoryDropDown.ascx" %>
@@ -19,8 +19,8 @@
 			</div>
 		</div>
 		<div id="col_main_right">
-			<h3 class="section">
-				Browse Categories</h3>
+			<h3 class="section" style="color: #0000FF">
+				DANH SÁCH DANH MỤC CHÍNH</h3>
 			<div class="content_right">
 				<uc1:DanhMucChinh ID="CategoryBrowser" runat="server" AutoNavigate="True">
                 </uc1:DanhMucChinh>

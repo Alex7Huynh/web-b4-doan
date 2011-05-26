@@ -34,7 +34,7 @@ namespace DAO
         /// <param name="maTinRaoVat"></param>
         /// <returns></returns>
         public static bool XoaTinRaoVat(int maTinRaoVat)
-        {           
+        {
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
@@ -70,25 +70,6 @@ namespace DAO
             catch (Exception ex)
             { return false; }
             return true;
-        }        
-
-        /// <summary>
-        /// Find a TINRAOVAT
-        /// </summary>
-        /// <param name="maTinRaoVat"></param>
-        /// <returns></returns>
-        public static TINRAOVAT TimTinRaoVatTheoMa(int maTinRaoVat)
-        {
-            TINRAOVAT trv = new TINRAOVAT();
-            try
-            {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                trv = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat);
-            }
-            catch (Exception ex)
-            { return null; }
-
-            return trv;
         }
 
         /// <summary>
@@ -102,9 +83,9 @@ namespace DAO
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
                 var dsTinRaoVat = from q in db.TINRAOVATs
-                                         where q.Deleted == false
-                                         select q;
-                lstTinRaoVat = dsTinRaoVat.ToList<TINRAOVAT>();                
+                                  where q.Deleted == false
+                                  select q;
+                lstTinRaoVat = dsTinRaoVat.ToList<TINRAOVAT>();
             }
             catch (Exception ex)
             { return null; }
@@ -128,13 +109,12 @@ namespace DAO
                 lstTinRaoVatMoiNhat = dsTinRaoVat.ToList<TINRAOVAT>();
             }
             catch (Exception ex)
-            { 
-                return null; 
+            {
+                return null;
             }
 
             return lstTinRaoVatMoiNhat;
         }
-
 
         /// <summary>
         /// lay danh sach tin rao vat theo muc con
@@ -154,10 +134,54 @@ namespace DAO
             }
             catch (Exception ex)
             {
-                return null; 
+                return null;
             }
 
             return lstTinRaoVatMoiNhat;
+        }
+
+        /// <summary>
+        /// Find a TINRAOVAT
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
+        public static TINRAOVAT TimTinRaoVatTheoMa(int maTinRaoVat)
+        {
+            TINRAOVAT trv = new TINRAOVAT();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                trv = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat
+                    && t.Deleted == false);
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return trv;
+        }
+
+        /// <summary>
+        /// Find latest TINRAOVAT
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
+        public static TINRAOVAT TimTinRaoVatMoiNhat()
+        {
+            TINRAOVAT trv = new TINRAOVAT();
+            List<TINRAOVAT> lstTinRaoVat = new List<TINRAOVAT>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVat = from q in db.TINRAOVATs
+                                  where q.Deleted == false
+                                  select q;
+                lstTinRaoVat = dsTinRaoVat.ToList<TINRAOVAT>();
+                trv = lstTinRaoVat[lstTinRaoVat.Count - 1];
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return trv;
         }
 
         public static CHUYENMUC LayChuyenMuc(int maTinRaoVat)

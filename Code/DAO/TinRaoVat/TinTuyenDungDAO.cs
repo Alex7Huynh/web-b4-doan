@@ -73,7 +73,28 @@ namespace DAO
         }
 
         /// <summary>
-        /// Find a TINTUYENDUNG
+        /// Load list of TINTUYENDUNG
+        /// </summary>
+        /// <returns></returns>
+        public static List<TINTUYENDUNG> LayDanhSachTinTuyenDung()
+        {
+            List<TINTUYENDUNG> lstTinTuyenDung = new List<TINTUYENDUNG>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinTuyenDung = from q in db.TINTUYENDUNGs
+                                     where q.Deleted == false
+                                     select q;
+                lstTinTuyenDung = dsTinTuyenDung.ToList<TINTUYENDUNG>();
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return lstTinTuyenDung;
+        }
+
+        /// <summary>
+        /// Find a TINTUYENDUNG with maTinTuyenDung
         /// </summary>
         /// <param name="maTinTuyenDung"></param>
         /// <returns></returns>
@@ -92,26 +113,10 @@ namespace DAO
         }
 
         /// <summary>
-        /// Load list of TINTUYENDUNG
+        /// Find a TINTUYENDUNG with maTinRaoVat
         /// </summary>
+        /// <param name="maTinRaoVat"></param>
         /// <returns></returns>
-        public static List<TINTUYENDUNG> LayDanhSachTinTuyenDung()
-        {
-            List<TINTUYENDUNG> lstTinTuyenDung = new List<TINTUYENDUNG>();
-            try
-            {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsTinTuyenDung = from q in db.TINTUYENDUNGs
-                                  where q.Deleted == false
-                                  select q;
-                lstTinTuyenDung = dsTinTuyenDung.ToList<TINTUYENDUNG>();
-            }
-            catch (Exception ex)
-            { return null; }
-
-            return lstTinTuyenDung;
-        }
-
         public static TINTUYENDUNG TimTinTuyenDungTheoMaTinRaoVat(int maTinRaoVat)
         {
             TINTUYENDUNG tinTuyenDung = new TINTUYENDUNG();
@@ -119,8 +124,8 @@ namespace DAO
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
                 var dsTinTuyenDung = from q in db.TINTUYENDUNGs
-                                            where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
-                                            select q;
+                                     where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                     select q;
                 tinTuyenDung = dsTinTuyenDung.ToList<TINTUYENDUNG>().First();
             }
             catch (Exception ex)

@@ -22,8 +22,8 @@ namespace DAO
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            { 
-                return false; 
+            {
+                return false;
             }
 
             return true;
@@ -41,13 +41,13 @@ namespace DAO
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
                 TINRAOVATTHUONG tinRaoVatThuong = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == maTinRaoVatThuong);
-                tinRaoVatThuong.Deleted = true;                
+                tinRaoVatThuong.Deleted = true;
                 db.SubmitChanges();
                 TinRaoVatDAO.XoaTinRaoVat((int)tinRaoVatThuong.MaTinRaoVat);
             }
             catch (Exception ex)
-            { 
-                return false; 
+            {
+                return false;
             }
 
             return true;
@@ -72,31 +72,10 @@ namespace DAO
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            { 
-                return false; 
+            {
+                return false;
             }
             return true;
-        }
-
-        /// <summary>
-        /// Find a TINRAOVATTHUONG
-        /// </summary>
-        /// <param name="maTinRaoVatThuong"></param>
-        /// <returns></returns>
-        public static TINRAOVATTHUONG TimTinRaoVatThuongTheoMa(int maTinRaoVatThuong)
-        {
-            TINRAOVATTHUONG tinRaoVatThuong = new TINRAOVATTHUONG();
-            try
-            {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                tinRaoVatThuong = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == maTinRaoVatThuong);                
-            }
-            catch (Exception ex)
-            { 
-                return null; 
-            }
-
-            return tinRaoVatThuong;
         }
 
         /// <summary>
@@ -110,18 +89,23 @@ namespace DAO
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
                 var dsTinRaoVatThuong = from q in db.TINRAOVATTHUONGs
-                                  where q.Deleted == false
-                                  select q;
+                                        where q.Deleted == false
+                                        select q;
                 lstTinRaoVatThuong = dsTinRaoVatThuong.ToList<TINRAOVATTHUONG>();
             }
             catch (Exception ex)
-            { 
-                return null; 
+            {
+                return null;
             }
 
             return lstTinRaoVatThuong;
         }
 
+        /// <summary>
+        /// Find a TINRAOVATTHUONG with maTinRaoVat
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
         public static TINRAOVATTHUONG TimTinRaoVatThuongTheoMaTinRaoVat(int maTinRaoVat)
         {
             TINRAOVATTHUONG tinRaoVatThuong = new TINRAOVATTHUONG();
@@ -134,8 +118,29 @@ namespace DAO
                 tinRaoVatThuong = dsTinRaoVatThuong.ToList<TINRAOVATTHUONG>().First();
             }
             catch (Exception ex)
-            { 
-                return null; 
+            {
+                return null;
+            }
+
+            return tinRaoVatThuong;
+        }
+
+        /// <summary>
+        /// Find a TINRAOVATTHUONG with maTinRaoVatThuong
+        /// </summary>
+        /// <param name="maTinRaoVatThuong"></param>
+        /// <returns></returns>
+        public static TINRAOVATTHUONG TimTinRaoVatThuongTheoMa(int maTinRaoVatThuong)
+        {
+            TINRAOVATTHUONG tinRaoVatThuong = new TINRAOVATTHUONG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                tinRaoVatThuong = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == maTinRaoVatThuong);
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
 
             return tinRaoVatThuong;

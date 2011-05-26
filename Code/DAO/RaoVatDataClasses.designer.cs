@@ -45,6 +45,9 @@ namespace DAO
     partial void InsertCHITIETHOSOTUYENDUNG(CHITIETHOSOTUYENDUNG instance);
     partial void UpdateCHITIETHOSOTUYENDUNG(CHITIETHOSOTUYENDUNG instance);
     partial void DeleteCHITIETHOSOTUYENDUNG(CHITIETHOSOTUYENDUNG instance);
+    partial void InsertCHITIETTINRAOVATTHUONG(CHITIETTINRAOVATTHUONG instance);
+    partial void UpdateCHITIETTINRAOVATTHUONG(CHITIETTINRAOVATTHUONG instance);
+    partial void DeleteCHITIETTINRAOVATTHUONG(CHITIETTINRAOVATTHUONG instance);
     partial void InsertCHUYENMUC(CHUYENMUC instance);
     partial void UpdateCHUYENMUC(CHUYENMUC instance);
     partial void DeleteCHUYENMUC(CHUYENMUC instance);
@@ -126,7 +129,7 @@ namespace DAO
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
-				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString3, mappingSource)
+				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -192,6 +195,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<CHITIETHOSOTUYENDUNG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CHITIETTINRAOVATTHUONG> CHITIETTINRAOVATTHUONGs
+		{
+			get
+			{
+				return this.GetTable<CHITIETTINRAOVATTHUONG>();
 			}
 		}
 		
@@ -1516,6 +1527,157 @@ namespace DAO
 						this._MaNganhNghe = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("NGANHNGHE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.CHITIETTINRAOVATTHUONG")]
+	public partial class CHITIETTINRAOVATTHUONG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaChiTietTinRaoVatThuong;
+		
+		private System.Nullable<int> _MaTinRaoVatThuong;
+		
+		private string _FileUpload;
+		
+		private EntityRef<TINRAOVATTHUONG> _TINRAOVATTHUONG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaChiTietTinRaoVatThuongChanging(int value);
+    partial void OnMaChiTietTinRaoVatThuongChanged();
+    partial void OnMaTinRaoVatThuongChanging(System.Nullable<int> value);
+    partial void OnMaTinRaoVatThuongChanged();
+    partial void OnFileUploadChanging(string value);
+    partial void OnFileUploadChanged();
+    #endregion
+		
+		public CHITIETTINRAOVATTHUONG()
+		{
+			this._TINRAOVATTHUONG = default(EntityRef<TINRAOVATTHUONG>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaChiTietTinRaoVatThuong", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaChiTietTinRaoVatThuong
+		{
+			get
+			{
+				return this._MaChiTietTinRaoVatThuong;
+			}
+			set
+			{
+				if ((this._MaChiTietTinRaoVatThuong != value))
+				{
+					this.OnMaChiTietTinRaoVatThuongChanging(value);
+					this.SendPropertyChanging();
+					this._MaChiTietTinRaoVatThuong = value;
+					this.SendPropertyChanged("MaChiTietTinRaoVatThuong");
+					this.OnMaChiTietTinRaoVatThuongChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaTinRaoVatThuong", DbType="Int")]
+		public System.Nullable<int> MaTinRaoVatThuong
+		{
+			get
+			{
+				return this._MaTinRaoVatThuong;
+			}
+			set
+			{
+				if ((this._MaTinRaoVatThuong != value))
+				{
+					if (this._TINRAOVATTHUONG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaTinRaoVatThuongChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinRaoVatThuong = value;
+					this.SendPropertyChanged("MaTinRaoVatThuong");
+					this.OnMaTinRaoVatThuongChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_FileUpload", DbType="NVarChar(1000)")]
+		public string FileUpload
+		{
+			get
+			{
+				return this._FileUpload;
+			}
+			set
+			{
+				if ((this._FileUpload != value))
+				{
+					this.OnFileUploadChanging(value);
+					this.SendPropertyChanging();
+					this._FileUpload = value;
+					this.SendPropertyChanged("FileUpload");
+					this.OnFileUploadChanged();
+				}
+			}
+		}
+		
+		[Association(Name="TINRAOVATTHUONG_CHITIETTINRAOVATTHUONG", Storage="_TINRAOVATTHUONG", ThisKey="MaTinRaoVatThuong", OtherKey="MaTinRaoVatThuong", IsForeignKey=true)]
+		public TINRAOVATTHUONG TINRAOVATTHUONG
+		{
+			get
+			{
+				return this._TINRAOVATTHUONG.Entity;
+			}
+			set
+			{
+				TINRAOVATTHUONG previousValue = this._TINRAOVATTHUONG.Entity;
+				if (((previousValue != value) 
+							|| (this._TINRAOVATTHUONG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TINRAOVATTHUONG.Entity = null;
+						previousValue.CHITIETTINRAOVATTHUONGs.Remove(this);
+					}
+					this._TINRAOVATTHUONG.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETTINRAOVATTHUONGs.Add(this);
+						this._MaTinRaoVatThuong = value.MaTinRaoVatThuong;
+					}
+					else
+					{
+						this._MaTinRaoVatThuong = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TINRAOVATTHUONG");
 				}
 			}
 		}
@@ -8808,6 +8970,8 @@ namespace DAO
 		
 		private System.Nullable<bool> _Deleted;
 		
+		private EntitySet<CHITIETTINRAOVATTHUONG> _CHITIETTINRAOVATTHUONGs;
+		
 		private EntityRef<TINRAOVAT> _TINRAOVAT;
 		
     #region Extensibility Method Definitions
@@ -8828,6 +8992,7 @@ namespace DAO
 		
 		public TINRAOVATTHUONG()
 		{
+			this._CHITIETTINRAOVATTHUONGs = new EntitySet<CHITIETTINRAOVATTHUONG>(new Action<CHITIETTINRAOVATTHUONG>(this.attach_CHITIETTINRAOVATTHUONGs), new Action<CHITIETTINRAOVATTHUONG>(this.detach_CHITIETTINRAOVATTHUONGs));
 			this._TINRAOVAT = default(EntityRef<TINRAOVAT>);
 			OnCreated();
 		}
@@ -8936,6 +9101,19 @@ namespace DAO
 			}
 		}
 		
+		[Association(Name="TINRAOVATTHUONG_CHITIETTINRAOVATTHUONG", Storage="_CHITIETTINRAOVATTHUONGs", ThisKey="MaTinRaoVatThuong", OtherKey="MaTinRaoVatThuong")]
+		public EntitySet<CHITIETTINRAOVATTHUONG> CHITIETTINRAOVATTHUONGs
+		{
+			get
+			{
+				return this._CHITIETTINRAOVATTHUONGs;
+			}
+			set
+			{
+				this._CHITIETTINRAOVATTHUONGs.Assign(value);
+			}
+		}
+		
 		[Association(Name="TINRAOVAT_TINRAOVATTHUONG", Storage="_TINRAOVAT", ThisKey="MaTinRaoVat", OtherKey="MaTinRaoVat", IsForeignKey=true)]
 		public TINRAOVAT TINRAOVAT
 		{
@@ -8988,6 +9166,18 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_CHITIETTINRAOVATTHUONGs(CHITIETTINRAOVATTHUONG entity)
+		{
+			this.SendPropertyChanging();
+			entity.TINRAOVATTHUONG = this;
+		}
+		
+		private void detach_CHITIETTINRAOVATTHUONGs(CHITIETTINRAOVATTHUONG entity)
+		{
+			this.SendPropertyChanging();
+			entity.TINRAOVATTHUONG = null;
 		}
 	}
 	

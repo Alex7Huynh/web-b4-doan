@@ -1,10 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ChinhSuaBaiRaoVat.aspx.cs" Inherits="ChinhSuaBaiRaoVat" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="SecondBar" Runat="Server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
     <p>
-    <asp:Panel ID="Panel1" runat="server" BackColor="#99CCFF" 
+        &nbsp;<asp:Panel ID="Panel1" runat="server" BackColor="#99CCFF" 
         
         style="z-index: 1; left: 4px; top: 10px; position: relative; height: 505px; width: 1000px" 
         ForeColor="Black">

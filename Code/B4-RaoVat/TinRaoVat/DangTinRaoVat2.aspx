@@ -7,6 +7,7 @@
         &nbsp;&nbsp;&nbsp;
         <br />
         &nbsp;&nbsp;&nbsp;
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/muiten_xuong.gif" />
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Small" Text="Tiêu Đề:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox
             ID="txt_TieuDe" runat="server" OnTextChanged="txt_TieuDe_TextChanged" Width="427px"

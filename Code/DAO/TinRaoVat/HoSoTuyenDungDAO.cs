@@ -73,7 +73,52 @@ namespace DAO
         }
 
         /// <summary>
-        /// Find a HOSOTUYENDUNG
+        /// Load list of HOSOTUYENDUNG
+        /// </summary>
+        /// <returns></returns>
+        public static List<HOSOTUYENDUNG> LayDanhSachHoSoTuyenDung()
+        {
+            List<HOSOTUYENDUNG> lstHoSoTuyenDung = new List<HOSOTUYENDUNG>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsHoSoTuyenDung = from q in db.HOSOTUYENDUNGs
+                                      where q.Deleted == false
+                                      select q;
+                lstHoSoTuyenDung = dsHoSoTuyenDung.ToList<HOSOTUYENDUNG>();
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return lstHoSoTuyenDung;
+        }
+
+        /// <summary>
+        /// Find a HOSOTUYENDUNG with maTinRaoVat
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
+        public static HOSOTUYENDUNG TimHoSoTuyenDungTheoMaTinRaoVat(int maTinRaoVat)
+        {
+            HOSOTUYENDUNG hoSoTuyenDung = new HOSOTUYENDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsHoSoTuyenDung = from q in db.HOSOTUYENDUNGs
+                                      where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                      select q;
+                hoSoTuyenDung = dsHoSoTuyenDung.ToList<HOSOTUYENDUNG>().First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return hoSoTuyenDung;
+        }
+
+        /// <summary>
+        /// Find a HOSOTUYENDUNG with maHoSoTuyenDung
         /// </summary>
         /// <param name="maHoSoTuyenDung"></param>
         /// <returns></returns>
@@ -92,43 +137,27 @@ namespace DAO
         }
 
         /// <summary>
-        /// Load list of HOSOTUYENDUNG
+        /// Find latest HOSOTUYENDUNG
         /// </summary>
+        /// <param name="maHoSoTuyenDung"></param>
         /// <returns></returns>
-        public static List<HOSOTUYENDUNG> LayDanhSachHoSoTuyenDung()
+        public static HOSOTUYENDUNG TimHoSoTuyenDungMoiNhat()
         {
+            HOSOTUYENDUNG hstd = new HOSOTUYENDUNG();
             List<HOSOTUYENDUNG> lstHoSoTuyenDung = new List<HOSOTUYENDUNG>();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsHoSoTuyenDung = from q in db.HOSOTUYENDUNGs
-                                            where q.Deleted == false
-                                            select q;
-                lstHoSoTuyenDung = dsHoSoTuyenDung.ToList<HOSOTUYENDUNG>();
+                var dsTinRaoVat = from q in db.HOSOTUYENDUNGs
+                                  where q.Deleted == false
+                                  select q;
+                lstHoSoTuyenDung = dsTinRaoVat.ToList<HOSOTUYENDUNG>();
+                hstd = lstHoSoTuyenDung[lstHoSoTuyenDung.Count - 1];
             }
             catch (Exception ex)
             { return null; }
 
-            return lstHoSoTuyenDung;
-        }
-
-        public static HOSOTUYENDUNG TimHoSoTuyenDungTheoMaTinRaoVat(int maTinRaoVat)
-        {
-            HOSOTUYENDUNG hoSoTuyenDung = new HOSOTUYENDUNG();
-            try
-            {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsHoSoTuyenDung = from q in db.HOSOTUYENDUNGs
-                                     where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
-                                     select q;
-                hoSoTuyenDung = dsHoSoTuyenDung.ToList<HOSOTUYENDUNG>().First();
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-            return hoSoTuyenDung;
+            return hstd;
         }
     }
 }

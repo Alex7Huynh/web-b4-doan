@@ -51,25 +51,6 @@ namespace DAO
         }
 
         /// <summary>
-        /// Find a NGANHNGHE
-        /// </summary>
-        /// <param name="maNganhNghe"></param>
-        /// <returns></returns>
-        public static NGANHNGHE TimNganhNgheTheoMa(int maNganhNghe)
-        {
-            NGANHNGHE dd = new NGANHNGHE();
-            try
-            {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                dd = db.NGANHNGHEs.Single(t => t.MaNganhNghe == maNganhNghe);
-            }
-            catch (Exception ex)
-            { return null; }
-
-            return dd;
-        }
-
-        /// <summary>
         /// Load list of NGANHNGHE
         /// </summary>
         /// <returns></returns>
@@ -79,7 +60,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsNganhNghe = from q in db.NGANHNGHEs 
+                var dsNganhNghe = from q in db.NGANHNGHEs
                                   select q;
                 lstNganhNghe = dsNganhNghe.ToList<NGANHNGHE>();
             }
@@ -87,6 +68,44 @@ namespace DAO
             { return null; }
 
             return lstNganhNghe;
+        }
+
+        /// <summary>
+        /// Find a NGANHNGHE with
+        /// </summary>
+        /// <param name="maNganhNghe"></param>
+        /// <returns></returns>
+        public static NGANHNGHE TimNganhNgheTheoMa(int maNganhNghe)
+        {
+            NGANHNGHE nn = new NGANHNGHE();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                nn = db.NGANHNGHEs.Single(t => t.MaNganhNghe == maNganhNghe);
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return nn;
+        }
+
+        /// <summary>
+        /// Find a NGANHNGHE with tenNganhNghe
+        /// </summary>
+        /// <param name="maNganhNghe"></param>
+        /// <returns></returns>
+        public static NGANHNGHE TimNganhNgheTheoTen(string tenNganhNghe)
+        {
+            NGANHNGHE nn = new NGANHNGHE();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                nn = db.NGANHNGHEs.Single(t => t.TenNganhNghe == tenNganhNghe);
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return nn;
         }
     }
 }

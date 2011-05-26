@@ -28,5 +28,9 @@ namespace BUS
         {
             return DiaDiemDAO.TimDiaDiemTheoMa(maDiaDiem);
         }
+        public static DIADIEM TimDiaDiemTheoTen(string tenDiaDiem)
+        {
+            return DiaDiemDAO.TimDiaDiemTheoTen(tenDiaDiem);
+        }
     }
 }

@@ -28,7 +28,6 @@ namespace BUS
         {
             return TinRaoVatThuongDAO.TimTinRaoVatThuongTheoMa(maTinRaoVatThuong);
         }
-
         public static TINRAOVATTHUONG TimTinRaoVatThuongTheoMaTinRaoVat(int maTinRaoVat)
         {
             return TinRaoVatThuongDAO.TimTinRaoVatThuongTheoMaTinRaoVat(maTinRaoVat);
