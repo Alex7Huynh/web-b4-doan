@@ -273,8 +273,8 @@
                         <asp:Label ID="Label36" runat="server" Text="Điện - nước" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
-                        <asp:CheckBox ID="ckbDien2" runat="server" Text="Đồng hồ điện" />
-                        <asp:CheckBox ID="ckbNuocMay2" runat="server" Text="Nước máy" />
+                        <asp:CheckBox ID="ckbDien" runat="server" Text="Đồng hồ điện" />
+                        <asp:CheckBox ID="ckbNuocMay" runat="server" Text="Nước máy" />
                     </td>
                 </tr>
                 <tr>
@@ -293,7 +293,8 @@
                             ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
-                        <asp:TextBox ID="txtSoNhaTam" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txtSoNhaVeSinh" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -710,7 +711,7 @@
                     </td>
                     <td style="width: 262px">
                         <br />
-                        <asp:CheckBox ID="ckbDongY" runat="server" Text="Đồng ý" />
+                        <asp:CheckBox ID="ckbDongYHienThi" runat="server" Text="Đồng ý" />
                     </td>
                     <td>
                         <asp:Label ID="Label80" runat="server" Font-Size="Smaller" 
@@ -748,7 +749,7 @@
                             style="font-weight: bold"></asp:Label>
                     </td>
                     <td style="width: 262px">
-                        <asp:TextBox ID="txtTieuDe26" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txtHoTen" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
                     </td>
                     <td>
                         &nbsp;</td>
@@ -809,7 +810,8 @@
                             style="font-weight: 700"></asp:Label>
                     </td>
                     <td style="width: 262px">
-                        <asp:TextBox ID="txtDiaChi4" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txtDiaChiLienLac" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
                     </td>
                     <td>
                         &nbsp;</td>

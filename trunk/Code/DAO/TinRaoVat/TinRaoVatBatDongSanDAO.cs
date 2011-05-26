@@ -73,7 +73,28 @@ namespace DAO
         }
 
         /// <summary>
-        /// Find a TINRAOVATBATDONGSAN
+        /// Load list of TINRAOVATBATDONGSAN
+        /// </summary>
+        /// <returns></returns>
+        public static List<TINRAOVATBATDONGSAN> LayDanhSachTinRaoVatBatDongSan()
+        {
+            List<TINRAOVATBATDONGSAN> lstTinRaoVatBatDongSan = new List<TINRAOVATBATDONGSAN>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
+                                            where q.Deleted == false
+                                            select q;
+                lstTinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>();
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return lstTinRaoVatBatDongSan;
+        }
+
+        /// <summary>
+        /// Find a TINRAOVATBATDONGSAN with maTinRaoVatBatDongSan
         /// </summary>
         /// <param name="maTinRaoVatBatDongSan"></param>
         /// <returns></returns>
@@ -92,26 +113,10 @@ namespace DAO
         }
 
         /// <summary>
-        /// Load list of TINRAOVATBATDONGSAN
+        /// Find a TINRAOVATBATDONGSAN with maTinRaoVat
         /// </summary>
+        /// <param name="maTinRaoVat"></param>
         /// <returns></returns>
-        public static List<TINRAOVATBATDONGSAN> LayDanhSachTinRaoVatBatDongSan()
-        {
-            List<TINRAOVATBATDONGSAN> lstTinRaoVatBatDongSan = new List<TINRAOVATBATDONGSAN>();
-            try
-            {
-                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
-                                  where q.Deleted == false
-                                  select q;
-                lstTinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>();
-            }
-            catch (Exception ex)
-            { return null; }
-
-            return lstTinRaoVatBatDongSan;
-        }
-
         public static TINRAOVATBATDONGSAN TimTinRaoVatBatDongSanTheoMaTinRaoVat(int maTinRaoVat)
         {
             TINRAOVATBATDONGSAN tinRaoVatBatDongSan = new TINRAOVATBATDONGSAN();
@@ -119,8 +124,8 @@ namespace DAO
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
                 var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
-                                        where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
-                                        select q;
+                                            where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
+                                            select q;
                 tinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>().First();
             }
             catch (Exception ex)
@@ -130,5 +135,5 @@ namespace DAO
 
             return tinRaoVatBatDongSan;
         }
-    }    
+    }
 }

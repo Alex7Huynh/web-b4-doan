@@ -71,7 +71,28 @@ namespace DAO
         }
 
         /// <summary>
-        /// Find a DIADIEM
+        /// Load list of DIADIEM
+        /// </summary>
+        /// <returns></returns>
+        public static List<DIADIEM> LayDanhSachDiaDiem()
+        {
+            List<DIADIEM> lstDiaDiem = new List<DIADIEM>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDiaDiem = from q in db.DIADIEMs
+                                where q.Deleted == false
+                                select q;
+                lstDiaDiem = dsDiaDiem.ToList<DIADIEM>();
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return lstDiaDiem;
+        }
+
+        /// <summary>
+        /// Find a DIADIEM with maDiaDiem
         /// </summary>
         /// <param name="maDiaDiem"></param>
         /// <returns></returns>
@@ -90,24 +111,22 @@ namespace DAO
         }
 
         /// <summary>
-        /// Load list of DIADIEM
+        /// Find a DIADIEMw ith tenDiaDiem
         /// </summary>
+        /// <param name="maDiaDiem"></param>
         /// <returns></returns>
-        public static List<DIADIEM> LayDanhSachDiaDiem()
+        public static DIADIEM TimDiaDiemTheoTen(string tenDiaDiem)
         {
-            List<DIADIEM> lstDiaDiem = new List<DIADIEM>();
+            DIADIEM dd = new DIADIEM();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsDiaDiem = from q in db.DIADIEMs
-                                  where q.Deleted == false
-                                  select q;
-                lstDiaDiem = dsDiaDiem.ToList<DIADIEM>();
+                dd = db.DIADIEMs.Single(t => t.TenDiaDiem == tenDiaDiem);
             }
             catch (Exception ex)
             { return null; }
 
-            return lstDiaDiem;
-        }        
+            return dd;
+        }
     }
 }

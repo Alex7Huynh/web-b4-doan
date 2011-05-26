@@ -24,25 +24,26 @@ namespace BUS
         {
             return TinRaoVatDAO.LayDanhSachTinRaoVat();
         }
-        public static TINRAOVAT TimTinRaoVatTheoMa(int maTinRaoVat)
-        {
-            return TinRaoVatDAO.TimTinRaoVatTheoMa(maTinRaoVat);
-        }
         public static List<TINRAOVAT> LayDanhSachTinRaoVatMoiNhat()
         {
             return TinRaoVatDAO.LayDanhSachTinRaoVatMoiNhat();
         }
-
         public static List<TINRAOVAT> LayDanhSachTinRaoVatTheoNoiDung(int maDanhMucCon)
         {
             return TinRaoVatDAO.LayDanhSachTinRaoVatTheoNoiDung(maDanhMucCon);
         }
-
+        public static TINRAOVAT TimTinRaoVatTheoMa(int maTinRaoVat)
+        {
+            return TinRaoVatDAO.TimTinRaoVatTheoMa(maTinRaoVat);
+        }
+        public static TINRAOVAT TimTinRaoVatMoiNhat()
+        {
+            return TinRaoVatDAO.TimTinRaoVatMoiNhat();
+        }
         public static CHUYENMUC LayChuyenMuc(int maTinRaoVat)
         {
             return TinRaoVatDAO.LayChuyenMuc(maTinRaoVat);
         }
-
         public static NGUOIDUNG LayNguoiDung(int maTinRaoVat)
         {
             return TinRaoVatDAO.LayNguoiDung(maTinRaoVat);
