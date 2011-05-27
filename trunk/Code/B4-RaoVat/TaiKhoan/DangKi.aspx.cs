@@ -9,6 +9,10 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        this.CreateUserWizard1.MembershipProvider = "MyMembership";
+    }
+    protected void CreateUserWizard1_Load(object sender, EventArgs e)
+    {
 
     }
 }
