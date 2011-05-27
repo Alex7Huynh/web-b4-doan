@@ -12,12 +12,12 @@
         <div id="header">
             <div id="menu">
                 <ul>
-                    <li><a href="~/Default.aspx" class="first">Trang Chủ</a></li>
+                    <li><a href="./Default.aspx" class="first">Trang Chủ</a></li>
                     <li class="current_page_item"><a href="#">Hướng Dẫn</a></li>
-                    <li><a href="~/TaiKhoan/DangKi.aspx">Đăng Kí</a></li>
-                    <li><a href="~/TaiKhoan/QuenMatKhau.aspx">Quên Mật Khẩu</a></li>
-                    <li><a href="~/TaiKhoan/DangNhap.aspx">Đăng Nhập</a></li>
-                    <li><a href="~/TaiKhoan/XemThongTinTaiKhoan.aspx">Thông Tin Tài Khoản</a></li>
+                    <li><a href="./TaiKhoan/DangKi.aspx">Đăng Kí</a></li>
+                    <li><a href="./TaiKhoan/QuenMatKhau.aspx">Quên Mật Khẩu</a></li>
+                    <li><a href="./TaiKhoan/DangNhap.aspx">Đăng Nhập</a></li>
+                    <li><a href="./TaiKhoan/XemThongTinTaiKhoan.aspx">Thông Tin Tài Khoản</a></li>
                 </ul>
             </div>
             <!-- end #menu -->
