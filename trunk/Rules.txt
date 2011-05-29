@@ -1,0 +1,17 @@
+M?t s? quy ??nh:
+- Update v? tr??c khi b?t ??u làm.
+- Tr??c khi commit lên ph?i ??m b?o ch??ng trình không có l?i (error).
+- Vào B4-RaoVat\Bin, xóa 4 file DAO và BUS, không xóa CSSFriendly.dll.
+- Khi commit lên ph?i ghi rõ các ch?nh s?a trong ph?n message.
+	+ Ghi rõ các ch?c n?ng ?ã hoàn thành.
+	+ Ghi rõ các ch?nh s?a trong CSDL.
+- Sau khi làm m?t ch?c n?ng (hoàn thành trên 75%), vào Danh sach chuc nang\Features
+	+ ?i?n tên ch?c n?ng ?ã làm.
+	+ M?c t??ng ?ng.
+	+ Tên ng??i ph? trách.
+	+ ?ánh d?u vào c?t hoàn thành.
+	+ Ghi chú: ghi l?i các ph?n còn thi?u, ch?a hoàn thành. M?c này cho ng??i ph? trách ch?c n?ng hoàn thành ghi, ho?c các 	thành viên khi test ch?c n?ng ?ó ghi vào.
+- Khi ???c phân công làm m?t ch?c n?ng, vào Danh sach chuc nang\Features
+	+ ?i?n tên ch?c n?ng ?ã làm.
+	+ M?c t??ng ?ng.
+	+ Tên ng??i hoàn thành.

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=TIENPHAN-PC\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KID\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=sa" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAITRALOI" Member="BAITRALOIs">
     <Type Name="BAITRALOI">
       <Column Name="MaBaiTraLoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -55,14 +55,6 @@
       <Association Name="NGANHNGHE_CHITIETHOSOTUYENDUNG" Member="NGANHNGHE" ThisKey="MaNganhNghe" OtherKey="MaNganhNghe" Type="NGANHNGHE" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CHITIETTINRAOVATTHUONG" Member="CHITIETTINRAOVATTHUONGs">
-    <Type Name="CHITIETTINRAOVATTHUONG">
-      <Column Name="MaChiTietTinRaoVatThuong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaTinRaoVatThuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FileUpload" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Association Name="TINRAOVATTHUONG_CHITIETTINRAOVATTHUONG" Member="TINRAOVATTHUONG" ThisKey="MaTinRaoVatThuong" OtherKey="MaTinRaoVatThuong" Type="TINRAOVATTHUONG" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CHUYENMUC" Member="CHUYENMUCs">
     <Type Name="CHUYENMUC">
       <Column Name="MaChuyenMuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -100,6 +92,14 @@
       <Column Name="TenDiaDiem" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="DIADIEM_TINRAOVAT" Member="TINRAOVATs" ThisKey="MaDiaDiem" OtherKey="MaDiaDiem" Type="TINRAOVAT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMAILNHANTINRAOVAT" Member="EMAILNHANTINRAOVATs">
+    <Type Name="EMAILNHANTINRAOVAT">
+      <Column Name="MaEmailNhanTinRaoVat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmailNhanTinRaoVat" Member="EmailNhanTinRaoVat1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ThoiGianDangKy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.EMAILNHANTINRAOVATTHEOMUCCHINH" Member="EMAILNHANTINRAOVATTHEOMUCCHINHs">
@@ -327,6 +327,7 @@
       <Column Name="MaDanhMucCon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TieuDe" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
+      <Column Name="GhiChuHinhAnh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="TINRAOVAT_HOSOTUYENDUNG" Member="HOSOTUYENDUNGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="HOSOTUYENDUNG" />
       <Association Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVatViPham" Type="LICHSUTINRAOVATVIPHAM" />
@@ -399,7 +400,6 @@
       <Column Name="NoiDungTinRaoVat" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TINRAOVATTHUONG_CHITIETTINRAOVATTHUONG" Member="CHITIETTINRAOVATTHUONGs" ThisKey="MaTinRaoVatThuong" OtherKey="MaTinRaoVatThuong" Type="CHITIETTINRAOVATTHUONG" />
       <Association Name="TINRAOVAT_TINRAOVATTHUONG" Member="TINRAOVAT" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
     </Type>
   </Table>
@@ -429,14 +429,6 @@
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NGANHNGHE_TINTUYENDUNG" Member="NGANHNGHE" ThisKey="MaNganhNghe" OtherKey="MaNganhNghe" Type="NGANHNGHE" IsForeignKey="true" />
       <Association Name="TINRAOVAT_TINTUYENDUNG" Member="TINRAOVAT" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.EMAILNHANTINRAOVAT" Member="EMAILNHANTINRAOVATs">
-    <Type Name="EMAILNHANTINRAOVAT">
-      <Column Name="MaEmailNhanTinRaoVat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EmailNhanTinRaoVat" Member="EmailNhanTinRaoVat1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ThoiGianDangKy" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

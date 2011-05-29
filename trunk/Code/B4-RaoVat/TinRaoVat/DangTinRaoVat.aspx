@@ -61,7 +61,7 @@
                 </tr>
                 <tr>
                     <td style="width: 267px" align="right">
-                        <asp:Label ID="Label5" runat="server" Text="Hình ảnh 1:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label5" runat="server" Text="Hình ảnh:" ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="width: 301px">
                         <asp:FileUpload ID="fupHinhAnh1" runat="server" ForeColor="#003399" />
@@ -69,7 +69,8 @@
                 </tr>
                 <tr>
                     <td style="width: 267px" align="right">
-                        <asp:Label ID="Label6" runat="server" Text="Ghi chú hình ảnh 1:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label6" runat="server" Text="Ghi chú hình ảnh:" 
+                            ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="width: 301px">
                         <asp:TextBox ID="txtGhiChuAnh1" runat="server"></asp:TextBox>
@@ -77,43 +78,11 @@
                 </tr>
                 <tr>
                     <td style="width: 267px" align="right">
-                        <asp:Label ID="Label7" runat="server" Text="Hình ảnh 2:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label14" runat="server" Text="*Địa điểm" ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="width: 301px">
-                        <asp:FileUpload ID="fupHinhAnh2" runat="server" ForeColor="#003399" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 267px" align="right">
-                        <asp:Label ID="Label8" runat="server" Text="Ghi chú hình ảnh 2:" ForeColor="#003399"></asp:Label>
-                    </td>
-                    <td style="width: 301px">
-                        <asp:TextBox ID="txtGhiChuAnh2" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 267px" align="right">
-                        <asp:Label ID="Label9" runat="server" Text="Hình ảnh 3:" ForeColor="#003399"></asp:Label>
-                    </td>
-                    <td style="width: 301px">
-                        <asp:FileUpload ID="fupHinhAnh3" runat="server" ForeColor="#003399" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 267px" align="right">
-                        <asp:Label ID="Label10" runat="server" Text="Ghi chú hình ảnh 3:" ForeColor="#003399"></asp:Label>
-                    </td>
-                    <td style="width: 301px">
-                        <asp:TextBox ID="txtGhiChuAnh3" runat="server" ForeColor="#003399"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 267px" align="right">
-                        <asp:Label ID="Label14" runat="server" ForeColor="#003399" Text="*Địa điểm"></asp:Label>
-                    </td>
-                    <td style="width: 301px">
-                        <asp:DropDownList ID="ddlDiaDiem1" runat="server" ForeColor="#003399" 
-                            DataSourceID="lqDiaDiem">
+                        <asp:DropDownList ID="ddlDiaDiem1" runat="server" DataSourceID="lqDiaDiem" 
+                            ForeColor="#003399">
                         </asp:DropDownList>
                         <asp:LinqDataSource ID="lqDiaDiem" runat="server" 
                             ContextTypeName="DAO.RaoVatDataClassesDataContext" Select="TenDiaDiem" 
@@ -126,21 +95,21 @@
                 </tr>
                 <tr align="center">
                     <td colspan="2">
-                        <asp:CheckBox ID="ckbDongY1" runat="server" Text="Tôi đồng ý sau khi đã đọc Điều lệ sử dụng"
-                            ForeColor="#003399" />
+                        <asp:CheckBox ID="ckbDongY1" runat="server" ForeColor="#003399" 
+                            Text="Tôi đồng ý sau khi đã đọc Điều lệ sử dụng" />
                     </td>
                 </tr>
                 <tr align="center">
                     <td colspan="2">
-                        <asp:Button ID="btnDangTin1" runat="server" BackColor="#FF9933" BorderStyle="Groove"
-                            Font-Bold="True" ForeColor="White" Text="ĐĂNG TIN RAO VẶT" 
-                            onclick="btnDangTin1_Click" />
+                        <asp:Button ID="btnDangTin1" runat="server" BackColor="#FF9933" 
+                            BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
+                            onclick="btnDangTin1_Click" Text="ĐĂNG TIN RAO VẶT" />
                     </td>
                 </tr>
             </table>
         </asp:View>
         <asp:View ID="View2" runat="server">
-            <table style="width: 60%;">
+            <table style="width: 61%; background-color: #FFF2BF;">
                 <tr>
                     <td colspan="4">
                         <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">Thông tin chi tiết rao vặt của bạn :</asp:Label>
@@ -150,7 +119,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="#FF9900" style="width: 2831px">
+                    <td bgcolor="#FF9900" style="width: 129px">
                         <asp:Label ID="Label17" runat="server" Text="* Chuyên mục rao vặt :" ForeColor="#003399"></asp:Label>
                     </td>
                     <td bgcolor="#FF9900" colspan="3">
@@ -159,7 +128,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label18" runat="server" Text="* Tiêu đề" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3">
@@ -167,7 +136,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label19" runat="server" Text="Nội dung:" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3">
@@ -176,7 +145,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label20" runat="server" Text="Giá:" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3">
@@ -184,7 +153,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label119" runat="server" Text="*Địa điểm" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 40px;">
@@ -194,7 +163,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label24" runat="server" Text="Địa chỉ :" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -202,7 +171,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label26" runat="server" Text="Diện tích:" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -210,7 +179,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label29" runat="server" Text="Hướng :" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -218,7 +187,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label30" runat="server" Text="Lộ giới : " ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -226,7 +195,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label31" runat="server" Text="Lầu : " ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -234,7 +203,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label32" runat="server" Text="Lửng : " ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -242,7 +211,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label33" runat="server" Text="Vị trí :" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -251,7 +220,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label34" runat="server" Text="Giấy tờ :" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -259,7 +228,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label35" runat="server" Text="Đường trước nhà :" 
                             ForeColor="#003399"></asp:Label>
                     </td>
@@ -269,7 +238,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label36" runat="server" Text="Điện - nước" ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -278,7 +247,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label38" runat="server" Text="Số phòng ngủ :" 
                             ForeColor="#003399"></asp:Label>
                     </td>
@@ -288,7 +257,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label39" runat="server" Text="Số nhà tắm / vệ sinh :" 
                             ForeColor="#003399"></asp:Label>
                     </td>
@@ -298,7 +267,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         <asp:Label ID="Label40" runat="server" Text="Năm xây dựng :" 
                             ForeColor="#003399"></asp:Label>
                     </td>
@@ -308,14 +277,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td rowspan="3" style="width: 2831px" align="right">
+                    <td rowspan="3" style="width: 129px" align="right">
                         <asp:Label ID="Label41" runat="server" Text="Nội thất - Tiện nghi :" 
                             ForeColor="#003399"></asp:Label>
                     </td>
-                    <td style="width: 167px; margin-left: 80px;">
+                    <td style="width: 166px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbPhongKhach" runat="server" Text="Phòng khách" />
                     </td>
-                    <td style="width: 124px; margin-left: 80px;">
+                    <td style="width: 135px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGaraOto" runat="server" Text="Gara Ôtô" />
                     </td>
                     <td style="width: 118px; margin-left: 80px;">
@@ -323,10 +292,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 167px; margin-left: 80px;">
+                    <td style="width: 166px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbHoBoi" runat="server" Text="Hồ bơi" />
                     </td>
-                    <td style="width: 124px; margin-left: 80px;">
+                    <td style="width: 135px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbSanThuong" runat="server" Text="Sân thượng" />
                     </td>
                     <td style="width: 118px; margin-left: 80px;">
@@ -334,10 +303,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 167px; margin-left: 80px;">
+                    <td style="width: 166px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbSanVuon" runat="server" Text="Sân vườn" />
                     </td>
-                    <td style="width: 124px; margin-left: 80px;">
+                    <td style="width: 135px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbThangMay" runat="server" Text="Thang máy" />
                     </td>
                     <td style="width: 118px; margin-left: 80px;">
@@ -345,15 +314,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td rowspan="3" style="width: 2831px" align="right">
+                    <td rowspan="3" style="width: 129px" align="right">
                         <asp:Label ID="Label42" runat="server" Text="Văn hóa - Xã hội:" 
                             ForeColor="#003399"></asp:Label>
                     </td>
-                    <td style="width: 167px; margin-left: 80px;">
+                    <td style="width: 166px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGanTruongMauGiao" runat="server" 
                             Text="Gần trường mẫu giáo" />
                     </td>
-                    <td style="width: 124px; margin-left: 80px;">
+                    <td style="width: 135px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGanTruongCapMot" runat="server" Text="Gần trường cấp I" />
                     </td>
                     <td style="width: 118px; margin-left: 80px;">
@@ -361,10 +330,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 167px; margin-left: 80px;">
+                    <td style="width: 166px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGanTruongCapBa" runat="server" Text="Gần trường cấp III" />
                     </td>
-                    <td style="width: 124px; margin-left: 80px;">
+                    <td style="width: 135px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGanCho" runat="server" Text="Gần chợ" />
                     </td>
                     <td style="width: 118px; margin-left: 80px;">
@@ -372,11 +341,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 167px; margin-left: 80px;">
+                    <td style="width: 166px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGanTrungTamThuongMai" runat="server" 
                             Text="Gần trung tâm thương mại" />
                     </td>
-                    <td style="width: 124px; margin-left: 80px;">
+                    <td style="width: 135px; margin-left: 80px;">
                         <asp:CheckBox ID="ckbGanTrungTamGiaiTri" runat="server" 
                             Text="Gần trung tâm giải trí" />
                     </td>
@@ -385,7 +354,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
+                    <td style="width: 129px" align="right">
                         &nbsp;<asp:Label ID="Label43" runat="server" ForeColor="#003399" Text="Thời hạn lưu tin:"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -395,51 +364,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label44" runat="server" ForeColor="#003399" Text="Hình ảnh 1:"></asp:Label>
+                    <td style="width: 129px" align="right">
+                        <asp:Label ID="Label44" runat="server" ForeColor="#003399" Text="Hình ảnh:"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
-                        <asp:FileUpload ID="fupHinhAnh4" runat="server" ForeColor="#003399" />
+                        <asp:FileUpload ID="fupHinhAnh2" runat="server" ForeColor="#003399" />
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label45" runat="server" ForeColor="#003399" Text="Ghi chú hình ảnh 1:"></asp:Label>
+                    <td style="width: 129px" align="right">
+                        <asp:Label ID="Label45" runat="server" ForeColor="#003399" 
+                            Text="Ghi chú hình ảnh:"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
-                        <asp:TextBox ID="txtGhiChuAnh4" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label46" runat="server" ForeColor="#003399" Text="Hình ảnh 2:"></asp:Label>
-                    </td>
-                    <td colspan="3" style="margin-left: 80px;">
-                        <asp:FileUpload ID="fupHinhAnh5" runat="server" ForeColor="#003399" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label47" runat="server" ForeColor="#003399" Text="Ghi chú hình ảnh 2:"></asp:Label>
-                    </td>
-                    <td colspan="3" style="margin-left: 80px;">
-                        <asp:TextBox ID="txtGhiChuAnh5" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label48" runat="server" ForeColor="#003399" Text="Hình ảnh 3:"></asp:Label>
-                    </td>
-                    <td colspan="3" style="margin-left: 80px;">
-                        <asp:FileUpload ID="fupHinhAnh6" runat="server" ForeColor="#003399" />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label49" runat="server" ForeColor="#003399" Text="Ghi chú hình ảnh 3:"></asp:Label>
-                    </td>
-                    <td colspan="3" style="margin-left: 80px;">
-                        <asp:TextBox ID="txtGhiChuAnh6" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtGhiChuAnh2" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr align="center">
@@ -456,7 +394,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px">
+                    <td style="width: 129px">
                         &nbsp;
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
@@ -466,7 +404,7 @@
             </table>
         </asp:View>
         <asp:View ID="View3" runat="server">
-            <table style="width: 60%;">
+            <table style="width: 60%; background-color: #D9FFF0;">
                 <tr>
                     <td colspan="2" align="center">
                         <asp:Label ID="Label53" runat="server" Text="ĐĂNG TIN TUYỂN DỤNG MỚI " 
@@ -681,6 +619,34 @@
                     </td>
                 </tr>
                 <tr>
+                    <td align="right" style="width: 2831px">
+                        <asp:Label ID="Label120" runat="server" ForeColor="#003399" 
+                            Text="Thời hạn lưu tin:"></asp:Label>
+                    </td>
+                    <td style="margin-left: 40px">
+                        <asp:DropDownList ID="ddlThoiHanLuuTin3" runat="server" ForeColor="#003399" 
+                            Width="100px">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="width: 2831px">
+                        <asp:Label ID="Label122" runat="server" ForeColor="#003399" Text="Hình ảnh:"></asp:Label>
+                    </td>
+                    <td style="margin-left: 40px">
+                        <asp:FileUpload ID="fupHinhAnh3" runat="server" ForeColor="#003399" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="width: 2831px">
+                        <asp:Label ID="Label124" runat="server" ForeColor="#003399" 
+                            Text="Ghi chú hình ảnh:"></asp:Label>
+                    </td>
+                    <td style="margin-left: 40px">
+                        <asp:TextBox ID="txtGhiChuAnh3" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
                     <td align="center" colspan="2">
                         <asp:Button ID="btnDangTin3" runat="server" BackColor="#FF9933" 
                             BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
@@ -690,7 +656,7 @@
             </table>
         </asp:View>
         <asp:View ID="View4" runat="server">
-            <table style="width: 80%;">
+            <table style="width: 80%; background-color: #FFE1E1;">
             <tr>
             <td align="center" colspan="3">
                 <asp:Label ID="Label77" runat="server" ForeColor="#33CC33" 
@@ -1024,6 +990,40 @@
                     <td style="width: 262px">
                         <asp:TextBox ID="txtLuongMongMuon" runat="server" ForeColor="#003399" 
                             Width="300px"></asp:TextBox>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="RIGHT" style="width: 179px">
+                        <asp:Label ID="Label121" runat="server" ForeColor="#003399" 
+                            Text="Thời hạn lưu tin:"></asp:Label>
+                    </td>
+                    <td style="width: 262px">
+                        <asp:DropDownList ID="ddlThoiHanLuuTin4" runat="server" ForeColor="#003399" 
+                            Width="100px">
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="RIGHT" style="width: 179px">
+                        <asp:Label ID="Label125" runat="server" ForeColor="#003399" Text="Hình ảnh:"></asp:Label>
+                    </td>
+                    <td style="width: 262px">
+                        <asp:FileUpload ID="fupHinhAnh4" runat="server" ForeColor="#003399" />
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="RIGHT" style="width: 179px">
+                        <asp:Label ID="Label127" runat="server" ForeColor="#003399" 
+                            Text="Ghi chú hình ảnh:"></asp:Label>
+                    </td>
+                    <td style="width: 262px">
+                        <asp:TextBox ID="txtGhiChuAnh4" runat="server"></asp:TextBox>
                     </td>
                     <td>
                         &nbsp;</td>
