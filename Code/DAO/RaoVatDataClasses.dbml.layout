@@ -1,450 +1,437 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.25, 45.375" name="RaoVatDataClasses">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.25, 44.25" name="RaoVatDataClasses">
   <DataContextMoniker Name="/RaoVatDataClassesDataContext" />
   <nestedChildShapes>
-    <classShape Id="e1ce0885-c5a2-44fd-9663-98a2df981f7e" absoluteBounds="6.25, 23, 2, 1.9631982421875023">
+    <classShape Id="177e622b-ad8c-4777-9a69-c74e803aa6cd" absoluteBounds="6.25, 23, 2, 1.7535424804687523">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/BAITRALOI" />
       <nestedChildShapes>
-        <elementListCompartment Id="60120003-2209-4710-84b4-20e05858475a" absoluteBounds="6.265, 23.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2a58bd34-a855-45b9-b620-b0065332cf95" absoluteBounds="6.265, 23.46, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="18c3a87e-3a20-44cc-b329-683eba9c2aea" absoluteBounds="0.75, 1.375, 2, 1.3862939453125">
+    <classShape Id="3f03c16a-8d76-4ed3-aa06-7bf27338aa8e" absoluteBounds="0.75, 1.375, 2, 1.2605004882812503">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/TREATA" />
       <nestedChildShapes>
-        <elementListCompartment Id="a49110bc-85c1-44dd-9036-3f51f608e0b7" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="82e2ccce-7526-4a57-a7e9-1a918aa68733" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8aa947cf-2baa-46ac-a04c-4e366b974281" absoluteBounds="6.5, 13, 2, 1.5785953776041666">
+    <classShape Id="475c749c-a93f-4c06-aef4-68f57806a6a9" absoluteBounds="6.5, 13, 2, 1.4248478190104166">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/BANNERGIAODIEN" />
       <nestedChildShapes>
-        <elementListCompartment Id="ffd67cf5-7420-4fdb-aed0-6eaa2f256b90" absoluteBounds="6.515, 13.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9f5a68f3-f837-400b-a939-4abc897c3b70" absoluteBounds="6.515, 13.46, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="13f59d49-3fec-40d0-b22d-23a93a11bbf9" absoluteBounds="9.25, 19.125, 2, 2.3478011067708344">
+    <classShape Id="ab13ea4f-05dd-46ce-a8a2-0776e1d9f3f6" absoluteBounds="9.25, 19.125, 2, 2.0822371419270809">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/CHITIETGIAODIEN" />
       <nestedChildShapes>
-        <elementListCompartment Id="ea5db684-e57f-41dd-97f8-bebdbd5c4895" absoluteBounds="9.265, 19.585, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="65dee16f-d31d-422e-9d1b-b53ae175acb3" absoluteBounds="9.265, 19.585, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2759c456-d96e-4fc4-a046-5e54dfa66797" absoluteBounds="14.75, 33.5, 2, 1.3862939453125023">
+    <classShape Id="3a789540-4df8-43a2-9f8a-fd343f068e73" absoluteBounds="14.75, 33.5, 2, 1.2605004882812523">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/CHITIETHOSOTUYENDUNG" />
       <nestedChildShapes>
-        <elementListCompartment Id="565fb674-dffd-45b9-af24-a8c1367b6b04" absoluteBounds="14.765, 33.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5cd96abc-95a7-4a5f-a844-932730184efc" absoluteBounds="14.765, 33.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6d3369aa-2deb-41ea-81c1-4200e54a83be" absoluteBounds="14.75, 24.25, 2, 1.3862939453125023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/CHITIETTINRAOVATTHUONG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="78252477-fa2a-4dcf-856f-6a953eebe245" absoluteBounds="14.765, 24.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="aa9d99d6-3157-4842-a7c2-a65b4d0ea914" absoluteBounds="1, 37.5, 2, 1.3862939453125023">
+    <classShape Id="73ec56e6-1418-433d-9e3e-749c139a3a83" absoluteBounds="1, 37.5, 2, 1.2605004882812523">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/CHUYENMUC" />
       <nestedChildShapes>
-        <elementListCompartment Id="be07169c-63c8-42ae-9cb1-83e903ef7125" absoluteBounds="1.0150000000000001, 37.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d654a210-3007-4b12-9d58-322ccf434db9" absoluteBounds="1.0150000000000001, 37.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7e9fcbb2-9617-48f5-9fd9-b381475984c4" absoluteBounds="3.75, 37.375, 2, 1.770896809895838">
+    <classShape Id="e21d057a-e75b-4f12-b48a-4c36161f44db" absoluteBounds="3.75, 37.375, 2, 1.5891951497395809">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCHINH" />
       <nestedChildShapes>
-        <elementListCompartment Id="b46863c1-b6fb-428a-b523-a5e31eb119e8" absoluteBounds="3.765, 37.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0ec4d9a1-c154-4ff4-a267-f6dd35c22f26" absoluteBounds="3.765, 37.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="994c2ac8-3309-47e1-b187-5e077b2ff324" absoluteBounds="6.5, 37.5, 2, 1.5785953776041666">
+    <classShape Id="e1a36a42-bb39-40d8-b89b-b73d57616534" absoluteBounds="6.5, 37.5, 2, 1.4248478190104095">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCON" />
       <nestedChildShapes>
-        <elementListCompartment Id="4176a95d-0184-400a-8aac-f8fc8bc772db" absoluteBounds="6.515, 37.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60bee448-c7ea-4f39-a3c7-a9397eac6cc1" absoluteBounds="6.515, 37.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="52b3ff53-f310-43b6-9561-10a23298fa6a" absoluteBounds="6.5, 28.375, 2, 1.3862939453125023">
+    <classShape Id="3cc8c2c0-0f78-4ca3-adea-5179aff770f4" absoluteBounds="6.5, 28.375, 2, 1.2605004882812523">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/DIADIEM" />
       <nestedChildShapes>
-        <elementListCompartment Id="0a948841-d5a2-4676-b33a-97bae6e784e9" absoluteBounds="6.515, 28.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0a58b1ef-9208-4bc9-979a-4b7a8be52b39" absoluteBounds="6.515, 28.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="297334b7-85d2-441c-9938-38a29020e3c0" absoluteBounds="6.5, 40.25, 2, 1.770896809895838">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/EMAILNHANTINRAOVATTHEOMUCCHINH" />
-      <nestedChildShapes>
-        <elementListCompartment Id="01cb6fa7-f04f-4628-98df-4d1f44d633c3" absoluteBounds="6.515, 40.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7daf1702-20e5-455d-884b-349a221ee706" absoluteBounds="9.25, 37.375, 2, 1.770896809895838">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/EMAILNHANTINRAOVATTHEOMUCCON" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c2c12236-ff92-48de-981f-1f23f771d17c" absoluteBounds="9.265, 37.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="98849856-92ec-43e5-967c-ba874ce906ee" absoluteBounds="12, 31.625, 2, 5.809226888020838">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/HOSOTUYENDUNG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="844cf30f-aacb-4a8c-835f-435a5d40d4c7" absoluteBounds="12.015, 32.085, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="74eda39a-c51f-453d-bfa5-fa3b2e83f33d" absoluteBounds="6.25, 18.5, 2, 1.5785953776041701">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LICHSUNGUOIDUNG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e85e6875-9ee9-428e-9de0-095a8844c02e" absoluteBounds="6.265, 18.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="46da6ad4-d050-4440-b679-bc454cc3ddca" absoluteBounds="6.25, 25.5, 2, 2.15549967447917">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LICHSUNGUOIDUNGVIPHAM" />
-      <nestedChildShapes>
-        <elementListCompartment Id="441b0345-b903-481f-b996-af12490953d9" absoluteBounds="6.265, 25.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8d7054df-f72a-4df6-9490-c2ed4e67e963" absoluteBounds="9.25, 22.375, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LICHSUTINRAOVATVIPHAM" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d384817d-5fe8-4c59-b4ba-5b072d61294c" absoluteBounds="9.265, 22.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1d593fdc-d246-44c6-91cf-3fea585fb6a1" absoluteBounds="9, 25.375, 2, 1.9631982421875023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LIKED" />
-      <nestedChildShapes>
-        <elementListCompartment Id="29f37c06-9f35-4696-8472-f0eebb71bf25" absoluteBounds="9.015, 25.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c91ecce0-f891-473a-a7d8-c67415495713" absoluteBounds="0.75, 22.5, 2, 1.3862939453125023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LOAINGUOIDUNG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="04e5df4d-154c-49f1-9a43-71330eb32dc9" absoluteBounds="0.765, 22.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="785b216b-3b24-43d5-9efa-664d91dd6fb4" absoluteBounds="6.5, 15.5, 2, 1.3862939453125023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LOAIQUANGCAO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e4e8bda2-3a68-43e5-a87a-3cac5972d53a" absoluteBounds="6.515, 15.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="41d94672-168c-467e-b170-06b5908e8c90" absoluteBounds="6.5, 10.25, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LOGO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c073adbd-f6d5-4376-937d-35901ee7fc4b" absoluteBounds="6.515, 10.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9b9ebb40-2d14-484c-a662-75886b7a39e5" absoluteBounds="3.5, 0.875, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/MAILSERVER" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c060eebd-c572-48a5-8e16-9f4462ac44f1" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="dd714db9-da21-476f-9d40-1c382b06e8f2" absoluteBounds="12.25, 21.625, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/NGANHNGHE" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9bae7393-d47b-41f9-829f-12088b18d5f1" absoluteBounds="12.265, 22.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4319e8e3-de8c-462f-a201-249701b7a96f" absoluteBounds="3.5, 21.75, 2, 3.1170068359375023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f7c79b1f-20be-4aec-9060-d32d8df169ac" absoluteBounds="3.515, 22.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b1e6fed1-f675-4604-bcd7-4c0bdaace5f4" absoluteBounds="9.25, 16, 2, 2.5401025390625023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/QUANGCAO" />
-      <nestedChildShapes>
-        <elementListCompartment Id="43b3a132-1aa1-40f4-bbdd-e7acf6e15a87" absoluteBounds="9.265, 16.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7b825586-938c-40f1-9c83-e684e91ffd4d" absoluteBounds="6.5, 34.375, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/THEME" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2f197de1-cf7b-4471-b232-db0d0635cf9c" absoluteBounds="6.515, 34.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bb229be3-b667-4ae1-9508-fd1b2b4eb8a6" absoluteBounds="6.25, 31, 2, 2.347801106770838">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINNHAN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ad719467-621e-4516-9e5a-f3748e548365" absoluteBounds="6.265, 31.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="b479eab5-884c-4182-8e9a-3518d023aa30" absoluteBounds="9.25, 28, 2, 2.73240397135417">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8bb23810-4d45-4cd0-91f7-193317b16132" absoluteBounds="9.265, 28.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="217357ac-dc59-43ea-8c5a-87f620e95fda" absoluteBounds="12, 37.375, 2, 7.7322412109375023">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATBATDONGSAN" />
-      <nestedChildShapes>
-        <elementListCompartment Id="692fd3f1-8605-437d-a9cc-03119a667528" absoluteBounds="12.015, 37.835, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="760e5132-7ac4-45b1-9f45-4c68dc6d7a23" absoluteBounds="12, 27.25, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATDALUU" />
-      <nestedChildShapes>
-        <elementListCompartment Id="187a7b74-a18d-4a22-85e8-573d3158fef1" absoluteBounds="12.015, 27.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="cc302612-0836-4365-bfad-5412bf742150" absoluteBounds="12, 24.125, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATTHUONG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="217e9b91-2318-4318-aba8-198c8376fab2" absoluteBounds="12.015, 24.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4994dda5-ed8f-4e5f-a383-76c566f8c7fb" absoluteBounds="15, 27, 2, 5.0400211588541666">
-      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINTUYENDUNG" />
-      <nestedChildShapes>
-        <elementListCompartment Id="562eb349-cae9-4839-a893-86c74b65373c" absoluteBounds="15.015, 27.46, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(8.5 : 14.4248478190104); (8.875 : 14.7998478190104); (8.875 : 20.1661185709635); (9.25 : 20.1661185709635)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/BANNERGIAODIEN/BANNERGIAODIEN_CHITIETGIAODIEN" />
-      <nodes>
-        <classShapeMoniker Id="8aa947cf-2baa-46ac-a04c-4e366b974281" />
-        <classShapeMoniker Id="13f59d49-3fec-40d0-b22d-23a93a11bbf9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3 : 38.1302502441406); (3.75 : 38.1302502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/CHUYENMUC/CHUYENMUC_DANHMUCCHINH" />
-      <nodes>
-        <classShapeMoniker Id="aa9d99d6-3157-4842-a7c2-a65b4d0ea914" />
-        <classShapeMoniker Id="7e9fcbb2-9617-48f5-9fd9-b381475984c4" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 38.2124239095052); (6.5 : 38.2124239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCHINH/DANHMUCCHINH_DANHMUCCON" />
-      <nodes>
-        <classShapeMoniker Id="7e9fcbb2-9617-48f5-9fd9-b381475984c4" />
-        <classShapeMoniker Id="994c2ac8-3309-47e1-b187-5e077b2ff324" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 38.9641951497396); (4.75 : 41.0445975748698); (6.5 : 41.0445975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCHINH/DANHMUCCHINH_EMAILNHANTINRAOVATTHEOMUCCHINH" />
-      <nodes>
-        <classShapeMoniker Id="7e9fcbb2-9617-48f5-9fd9-b381475984c4" />
-        <classShapeMoniker Id="297334b7-85d2-441c-9938-38a29020e3c0" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 38.2124239095052); (9.25 : 38.2124239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCON/DANHMUCCON_EMAILNHANTINRAOVATTHEOMUCCON" />
-      <nodes>
-        <classShapeMoniker Id="994c2ac8-3309-47e1-b187-5e077b2ff324" />
-        <classShapeMoniker Id="7daf1702-20e5-455d-884b-349a221ee706" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14 : 34.1302502441406); (14.75 : 34.1302502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/HOSOTUYENDUNG/HOSOTUYENDUNG_CHITIETHOSOTUYENDUNG" />
-      <nodes>
-        <classShapeMoniker Id="98849856-92ec-43e5-967c-ba874ce906ee" />
-        <classShapeMoniker Id="2759c456-d96e-4fc4-a046-5e54dfa66797" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 24.3901188151042); (8.66666666666667 : 24.3901188151042 : JumpStart); (8.83333333333333 : 24.3901188151042 : JumpEnd); (9.09375 : 24.3901188151042); (9.09375 : 25.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/BAITRALOI/BAITRALOI_LIKED" />
-      <nodes>
-        <classShapeMoniker Id="e1ce0885-c5a2-44fd-9663-98a2df981f7e" />
-        <classShapeMoniker Id="1d593fdc-d246-44c6-91cf-3fea585fb6a1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 11.6123727223307); (9.0625 : 12.1748727223307); (9.0625 : 19.6143072854818); (9.25 : 19.6143072854818)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/LOGO/LOGO_CHITIETGIAODIEN" />
-      <nodes>
-        <classShapeMoniker Id="41d94672-168c-467e-b170-06b5908e8c90" />
-        <classShapeMoniker Id="13f59d49-3fec-40d0-b22d-23a93a11bbf9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TREATA/TREATA_MAILSERVER" />
-      <nodes>
-        <classShapeMoniker Id="18c3a87e-3a20-44cc-b329-683eba9c2aea" />
-        <classShapeMoniker Id="9b9ebb40-2d14-484c-a662-75886b7a39e5" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14.25 : 22.173076578776); (14.5 : 22.173076578776); (14.5 : 33.125); (15.75 : 33.125); (15.75 : 33.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGANHNGHE/NGANHNGHE_CHITIETHOSOTUYENDUNG" />
-      <nodes>
-        <classShapeMoniker Id="dd714db9-da21-476f-9d40-1c382b06e8f2" />
-        <classShapeMoniker Id="2759c456-d96e-4fc4-a046-5e54dfa66797" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 23.7448132324219); (6.25 : 23.7448132324219)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_BAITRALOI" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="e1ce0885-c5a2-44fd-9663-98a2df981f7e" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 21.75); (4.5 : 20.7179303564453); (4.94791916666667 : 20.7179303564453 : JumpStart); (5.11458583333333 : 20.7179303564453 : JumpEnd); (9.25 : 20.7179303564453)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_CHITIETGIAODIEN" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="13f59d49-3fec-40d0-b22d-23a93a11bbf9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.0312525 : 21.75); (5.0312525 : 19.2124239095052); (6.25 : 19.2124239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUNGUOIDUNG" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="74eda39a-c51f-453d-bfa5-fa3b2e83f33d" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 24.4896264648438); (4.5 : 26.458944905599); (4.68229291666667 : 26.458944905599 : JumpStart); (4.84895958333333 : 26.458944905599 : JumpEnd); (5.21354541666667 : 26.458944905599 : JumpStart); (5.38021208333333 : 26.458944905599 : JumpEnd); (6.25 : 26.458944905599)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="46da6ad4-d050-4440-b679-bc454cc3ddca" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.0312525 : 24.4896264648438); (5.0312525 : 25.9482199527995); (5.21354541666667 : 25.9482199527995 : JumpStart); (5.38021208333333 : 25.9482199527995 : JumpEnd); (6.25 : 25.9482199527995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM1" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="46da6ad4-d050-4440-b679-bc454cc3ddca" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 22.65625); (9.25 : 22.65625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUTINRAOVATVIPHAM" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="8d7054df-f72a-4df6-9490-c2ed4e67e963" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.9687475 : 24.4896264648438); (3.9687475 : 25.40625); (4.15104041666667 : 25.40625 : JumpStart); (4.31770708333333 : 25.40625 : JumpEnd); (4.68229291666667 : 25.40625 : JumpStart); (4.84895958333333 : 25.40625 : JumpEnd); (9 : 25.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LIKED" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="1d593fdc-d246-44c6-91cf-3fea585fb6a1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 23.1302502441406); (3.5 : 23.1302502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/LOAINGUOIDUNG/LOAINGUOIDUNG_NGUOIDUNG" />
-      <nodes>
-        <classShapeMoniker Id="c91ecce0-f891-473a-a7d8-c67415495713" />
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 16.3802502441406); (8.97916666666667 : 16.3802502441406 : JumpStart); (9.14583333333333 : 16.3802502441406 : JumpEnd); (9.25 : 16.3802502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/LOAIQUANGCAO/LOAIQUANGCAO_QUANGCAO" />
-      <nodes>
-        <classShapeMoniker Id="785b216b-3b24-43d5-9efa-664d91dd6fb4" />
-        <classShapeMoniker Id="b1e6fed1-f675-4604-bcd7-4c0bdaace5f4" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.9687475 : 21.75); (3.9687475 : 17.5347924804688); (8.97916666666667 : 17.5347924804688 : JumpStart); (9.14583333333333 : 17.5347924804688 : JumpEnd); (9.25 : 17.5347924804688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_QUANGCAO" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="b1e6fed1-f675-4604-bcd7-4c0bdaace5f4" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.5 : 34.375); (7.5 : 33.3322371419271); (8.75 : 33.3322371419271); (8.75 : 20.4420244637044); (9.25 : 20.4420244637044)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/THEME/THEME_CHITIETGIAODIEN" />
-      <nodes>
-        <classShapeMoniker Id="7b825586-938c-40f1-9c83-e684e91ffd4d" />
-        <classShapeMoniker Id="13f59d49-3fec-40d0-b22d-23a93a11bbf9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.29687875 : 24.4896264648438); (5.29687875 : 32.0411185709635); (6.25 : 32.0411185709635)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINNHAN" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="bb229be3-b667-4ae1-9508-fd1b2b4eb8a6" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.76562625 : 24.4896264648438); (4.76562625 : 31.4893067854818); (6.25 : 31.4893067854818)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINNHAN1" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="bb229be3-b667-4ae1-9508-fd1b2b4eb8a6" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.25 : 30.4109318033854); (10.25 : 34.145244547526); (12 : 34.145244547526)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_HOSOTUYENDUNG" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="98849856-92ec-43e5-967c-ba874ce906ee" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.15625 : 28); (11.15625 : 23.9641951497396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_LICHSUTINRAOVATVIPHAM" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="8d7054df-f72a-4df6-9490-c2ed4e67e963" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.125 : 28); (10.125 : 27.1285424804688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_LIKED" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="1d593fdc-d246-44c6-91cf-3fea585fb6a1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 37.5); (8.875 : 37.125); (8.875 : 29.2054659016927); (9.25 : 29.2054659016927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCON/DANHMUCCON_TINRAOVAT" />
-      <nodes>
-        <classShapeMoniker Id="994c2ac8-3309-47e1-b187-5e077b2ff324" />
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 28.7277329508464); (9.25 : 28.7277329508464)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DIADIEM/DIADIEM_TINRAOVAT" />
-      <nodes>
-        <classShapeMoniker Id="52b3ff53-f310-43b6-9561-10a23298fa6a" />
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(4.23437375 : 24.4896264648438); (4.23437375 : 30.0544661458333); (4.68229291666667 : 30.0544661458333 : JumpStart); (4.84895958333333 : 30.0544661458333 : JumpEnd); (8.79166666666667 : 30.0544661458333 : JumpStart); (8.95833333333333 : 30.0544661458333 : JumpEnd); (9.25 : 30.0544661458333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINRAOVAT" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 30.409392341847); (11.625 : 30.784392341847); (11.625 : 40.7169812011719); (12 : 40.7169812011719)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINRAOVATBATDONGSAN" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="217357ac-dc59-43ea-8c5a-87f620e95fda" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(3.70312125 : 24.4896264648438); (3.70312125 : 27.708944905599); (4.68229291666667 : 27.708944905599 : JumpStart); (4.84895958333333 : 27.708944905599 : JumpEnd); (12 : 27.708944905599)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINRAOVATDALUU" />
-      <nodes>
-        <classShapeMoniker Id="4319e8e3-de8c-462f-a201-249701b7a96f" />
-        <classShapeMoniker Id="760e5132-7ac4-45b1-9f45-4c68dc6d7a23" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 28.4195975748698); (12 : 28.4195975748698)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINRAOVATDALUU" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="760e5132-7ac4-45b1-9f45-4c68dc6d7a23" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14 : 24.8802502441406); (14.0729166666667 : 24.8802502441406 : JumpStart); (14.2395833333333 : 24.8802502441406 : JumpEnd); (14.75 : 24.8802502441406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATTHUONG/TINRAOVATTHUONG_CHITIETTINRAOVATTHUONG" />
-      <nodes>
-        <classShapeMoniker Id="cc302612-0836-4365-bfad-5412bf742150" />
-        <classShapeMoniker Id="6d3369aa-2deb-41ea-81c1-4200e54a83be" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.1875025 : 28); (11.1875025 : 24.71875); (12 : 24.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINRAOVATTHUONG" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="cc302612-0836-4365-bfad-5412bf742150" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14.15625 : 22.7211531575521); (14.15625 : 30.1423974609375); (15 : 30.1423974609375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGANHNGHE/NGANHNGHE_TINTUYENDUNG" />
-      <nodes>
-        <classShapeMoniker Id="dd714db9-da21-476f-9d40-1c382b06e8f2" />
-        <classShapeMoniker Id="4994dda5-ed8f-4e5f-a383-76c566f8c7fb" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.25 : 29.4595463053385); (14.0729166666667 : 29.4595463053385 : JumpStart); (14.2395833333333 : 29.4595463053385 : JumpEnd); (15 : 29.4595463053385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINTUYENDUNG" />
-      <nodes>
-        <classShapeMoniker Id="b479eab5-884c-4182-8e9a-3518d023aa30" />
-        <classShapeMoniker Id="4994dda5-ed8f-4e5f-a383-76c566f8c7fb" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="17b78b70-1ed5-4b93-9b25-50f8d20bac42" absoluteBounds="1.75, 3.75, 2, 1.5785953776041666">
+    <classShape Id="16853603-39f3-4c94-ba10-fad8e83bfc3b" absoluteBounds="0.75, 4.75, 2, 1.4248478190104166">
       <DataClassMoniker Name="/RaoVatDataClassesDataContext/EMAILNHANTINRAOVAT" />
       <nestedChildShapes>
-        <elementListCompartment Id="415f6ddb-16f6-4d3e-a7b1-6c302c7c6265" absoluteBounds="1.7650000000000001, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="73bb66ff-531b-4770-82c5-3071d92ba160" absoluteBounds="0.765, 5.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="69a98075-5985-49bf-9e24-32b440b23f29" absoluteBounds="6.5, 40.25, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/EMAILNHANTINRAOVATTHEOMUCCHINH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="688993bd-03c4-452b-865d-5e65dbba7359" absoluteBounds="6.515, 40.71, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0be90c68-1516-4db7-9a34-a578333d19a8" absoluteBounds="9.25, 37.375, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/EMAILNHANTINRAOVATTHEOMUCCON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d8f14c5-f867-4837-859b-86f6db0a88b5" absoluteBounds="9.265, 37.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9c5e8e4-89bc-4e72-a1d5-7ca747211bdf" absoluteBounds="12, 31.625, 2, 5.0404890950520809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/HOSOTUYENDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4c27f54-440a-497a-8b41-70122fc9dfb9" absoluteBounds="12.015, 32.085, 1.9700000000000002, 4.480489095052083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="216bee6c-5a76-4096-be73-bb8357b35340" absoluteBounds="6.25, 18.5, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LICHSUNGUOIDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2bafd569-9f22-42b4-8938-65eba24daaad" absoluteBounds="6.265, 18.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7a6abe7-6d61-459b-a1d3-83f4db65f0da" absoluteBounds="6.25, 25.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LICHSUNGUOIDUNGVIPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4aa05113-bc65-44fe-a1f4-e449e1844570" absoluteBounds="6.265, 25.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86a152ff-fa0e-40c4-b04b-ff87a8921bcf" absoluteBounds="9.25, 22.375, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LICHSUTINRAOVATVIPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1d41702-6a91-4101-9b22-9f564063bee9" absoluteBounds="9.265, 22.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c704595-a777-4ff3-8b74-411113a626a0" absoluteBounds="9, 25.375, 2, 1.7535424804687523">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LIKED" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d68dbe5e-1211-4c0d-9681-a3bfe244872b" absoluteBounds="9.015, 25.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5c3a10f-d713-4800-903d-26c089d4a89a" absoluteBounds="0.75, 22.5, 2, 1.2605004882812523">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LOAINGUOIDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ffea9981-addd-44df-9434-0ab4cdc263cb" absoluteBounds="0.765, 22.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25b8e2b4-e8e9-4720-b6ff-ab7b375654e6" absoluteBounds="6.5, 15.5, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LOAIQUANGCAO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11c0a112-314f-4899-b8dd-4c1cdc81198a" absoluteBounds="6.515, 15.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff61e47e-a2f1-4e25-aaa2-a668f0dae831" absoluteBounds="6.5, 10.25, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/LOGO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8df4aa64-d1b0-4de5-a0c9-93de468e1ae8" absoluteBounds="6.515, 10.71, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd85644f-c624-4e1d-8a53-b708af7ec27b" absoluteBounds="3.5, 0.875, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/MAILSERVER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64ebb43d-f5b4-471a-b883-2e0bb44f5c1f" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60b86f65-741d-4602-9250-73e32c71c85c" absoluteBounds="12.25, 21.625, 2, 1.0961531575520809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/NGANHNGHE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99a24e39-dd13-4ce4-b08a-0faeed2f7441" absoluteBounds="12.265, 22.085, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" absoluteBounds="3.5, 21.75, 2, 2.7396264648437523">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe8196a0-8508-45bd-a8c4-a811f63c6e71" absoluteBounds="3.515, 22.21, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e5744ca-6204-49c6-95c3-1a632a6868b9" absoluteBounds="9.25, 16, 2, 2.2465844726562523">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/QUANGCAO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a239a898-2eab-4456-a5ad-0ddaebcb3c35" absoluteBounds="9.265, 16.46, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b76d8ff3-592c-406d-b949-c986be66bbf9" absoluteBounds="6.5, 34.375, 2, 1.9178898111979237">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/THEME" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abb2877d-2288-4411-b729-2cc755613627" absoluteBounds="6.515, 34.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbba2803-c257-4afc-90b8-c2dc504977de" absoluteBounds="6.25, 31, 2, 2.0822371419270809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINNHAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3ea78f5-7ea2-4841-959a-b67e4075c2ea" absoluteBounds="6.265, 31.46, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f64148c-864b-422e-b398-8dd248b67a9c" absoluteBounds="9.25, 27.875, 2, 2.5752791341145809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e317b3e0-2d2e-4552-8228-67993b456cd1" absoluteBounds="9.265, 28.335, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abff33cb-cb49-41e0-b578-198ef9106e46" absoluteBounds="12, 37.375, 2, 6.6839624023437523">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATBATDONGSAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8db1a27f-fdb4-4ecc-b2eb-8bef8206479f" absoluteBounds="12.015, 37.835, 1.9700000000000002, 6.12396240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b2da357-a361-49f3-928a-dc0023faa406" absoluteBounds="12, 27.375, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATDALUU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0bc6f17d-ff82-4ede-b582-615c5ef64d05" absoluteBounds="12.015, 27.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f26d60f1-8c87-4ebd-a23a-53526c7be023" absoluteBounds="12, 24.125, 2, 1.5891951497395809">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINRAOVATTHUONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="474254f6-911f-48bb-aa9f-4a8547c8fbdb" absoluteBounds="12.015, 24.585, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30f08a5f-daae-46d5-b76b-4d7b3bc6f8d5" absoluteBounds="15, 27, 2, 4.3830997721354166">
+      <DataClassMoniker Name="/RaoVatDataClassesDataContext/TINTUYENDUNG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d481e489-f33d-41a8-91e5-fa6d19ddcb23" absoluteBounds="15.015, 27.46, 1.9700000000000002, 3.823099772135417" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 14.4248478190104); (8.875 : 14.7998478190104); (8.875 : 20.1661185709635); (9.25 : 20.1661185709635)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/BANNERGIAODIEN/BANNERGIAODIEN_CHITIETGIAODIEN" />
+      <nodes>
+        <classShapeMoniker Id="475c749c-a93f-4c06-aef4-68f57806a6a9" />
+        <classShapeMoniker Id="ab13ea4f-05dd-46ce-a8a2-0776e1d9f3f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 38.1302502441406); (3.75 : 38.1302502441406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/CHUYENMUC/CHUYENMUC_DANHMUCCHINH" />
+      <nodes>
+        <classShapeMoniker Id="73ec56e6-1418-433d-9e3e-749c139a3a83" />
+        <classShapeMoniker Id="e21d057a-e75b-4f12-b48a-4c36161f44db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 38.2124239095052); (6.5 : 38.2124239095052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCHINH/DANHMUCCHINH_DANHMUCCON" />
+      <nodes>
+        <classShapeMoniker Id="e21d057a-e75b-4f12-b48a-4c36161f44db" />
+        <classShapeMoniker Id="e1a36a42-bb39-40d8-b89b-b73d57616534" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 38.9641951497396); (4.75 : 41.0445975748698); (6.5 : 41.0445975748698)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCHINH/DANHMUCCHINH_EMAILNHANTINRAOVATTHEOMUCCHINH" />
+      <nodes>
+        <classShapeMoniker Id="e21d057a-e75b-4f12-b48a-4c36161f44db" />
+        <classShapeMoniker Id="69a98075-5985-49bf-9e24-32b440b23f29" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 38.2124239095052); (9.25 : 38.2124239095052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCON/DANHMUCCON_EMAILNHANTINRAOVATTHEOMUCCON" />
+      <nodes>
+        <classShapeMoniker Id="e1a36a42-bb39-40d8-b89b-b73d57616534" />
+        <classShapeMoniker Id="0be90c68-1516-4db7-9a34-a578333d19a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 34.1302502441406); (14.75 : 34.1302502441406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/HOSOTUYENDUNG/HOSOTUYENDUNG_CHITIETHOSOTUYENDUNG" />
+      <nodes>
+        <classShapeMoniker Id="d9c5e8e4-89bc-4e72-a1d5-7ca747211bdf" />
+        <classShapeMoniker Id="3a789540-4df8-43a2-9f8a-fd343f068e73" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 24.3901188151042); (8.66666666666667 : 24.3901188151042 : JumpStart); (8.83333333333333 : 24.3901188151042 : JumpEnd); (9.09375 : 24.3901188151042); (9.09375 : 25.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/BAITRALOI/BAITRALOI_LIKED" />
+      <nodes>
+        <classShapeMoniker Id="177e622b-ad8c-4777-9a69-c74e803aa6cd" />
+        <classShapeMoniker Id="6c704595-a777-4ff3-8b74-411113a626a0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 11.6123727223307); (9.0625 : 12.1748727223307); (9.0625 : 19.6143072854818); (9.25 : 19.6143072854818)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/LOGO/LOGO_CHITIETGIAODIEN" />
+      <nodes>
+        <classShapeMoniker Id="ff61e47e-a2f1-4e25-aaa2-a668f0dae831" />
+        <classShapeMoniker Id="ab13ea4f-05dd-46ce-a8a2-0776e1d9f3f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.00525024414063); (3.5 : 2.00525024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TREATA/TREATA_MAILSERVER" />
+      <nodes>
+        <classShapeMoniker Id="3f03c16a-8d76-4ed3-aa06-7bf27338aa8e" />
+        <classShapeMoniker Id="cd85644f-c624-4e1d-8a53-b708af7ec27b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 22.173076578776); (14.84375 : 22.173076578776); (14.84375 : 33.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGANHNGHE/NGANHNGHE_CHITIETHOSOTUYENDUNG" />
+      <nodes>
+        <classShapeMoniker Id="60b86f65-741d-4602-9250-73e32c71c85c" />
+        <classShapeMoniker Id="3a789540-4df8-43a2-9f8a-fd343f068e73" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 23.7448132324219); (6.25 : 23.7448132324219)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_BAITRALOI" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="177e622b-ad8c-4777-9a69-c74e803aa6cd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 21.75); (4.5 : 20.7179303564453); (4.94791916666667 : 20.7179303564453 : JumpStart); (5.11458583333333 : 20.7179303564453 : JumpEnd); (8.66666666666667 : 20.7179303564453 : JumpStart); (8.83333333333333 : 20.7179303564453 : JumpEnd); (9.25 : 20.7179303564453)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_CHITIETGIAODIEN" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="ab13ea4f-05dd-46ce-a8a2-0776e1d9f3f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 21.75); (5.0312525 : 19.2124239095052); (6.25 : 19.2124239095052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUNGUOIDUNG" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="216bee6c-5a76-4096-be73-bb8357b35340" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 24.4896264648438); (4.5 : 26.458944905599); (4.68229291666667 : 26.458944905599 : JumpStart); (4.84895958333333 : 26.458944905599 : JumpEnd); (5.21354541666667 : 26.458944905599 : JumpStart); (5.38021208333333 : 26.458944905599 : JumpEnd); (6.25 : 26.458944905599)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="e7a6abe7-6d61-459b-a1d3-83f4db65f0da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 24.4896264648438); (5.0312525 : 25.9482199527995); (5.21354541666667 : 25.9482199527995 : JumpStart); (5.38021208333333 : 25.9482199527995 : JumpEnd); (6.25 : 25.9482199527995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM1" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="e7a6abe7-6d61-459b-a1d3-83f4db65f0da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 22.65625); (8.66666666666667 : 22.65625 : JumpStart); (8.83333333333333 : 22.65625 : JumpEnd); (9.25 : 22.65625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LICHSUTINRAOVATVIPHAM" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="86a152ff-fa0e-40c4-b04b-ff87a8921bcf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9687475 : 24.4896264648438); (3.9687475 : 25.40625); (4.15104041666667 : 25.40625 : JumpStart); (4.31770708333333 : 25.40625 : JumpEnd); (4.41666666666667 : 25.40625 : JumpStart); (4.58333333333333 : 25.40625 : JumpEnd); (4.68229291666667 : 25.40625 : JumpStart); (4.84895958333333 : 25.40625 : JumpEnd); (4.94791916666667 : 25.40625 : JumpStart); (5.11458583333333 : 25.40625 : JumpEnd); (5.21354541666667 : 25.40625 : JumpStart); (5.38021208333333 : 25.40625 : JumpEnd); (8.66666666666667 : 25.40625 : JumpStart); (8.83333333333333 : 25.40625 : JumpEnd); (9 : 25.40625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_LIKED" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="6c704595-a777-4ff3-8b74-411113a626a0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 23.1302502441406); (3.5 : 23.1302502441406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/LOAINGUOIDUNG/LOAINGUOIDUNG_NGUOIDUNG" />
+      <nodes>
+        <classShapeMoniker Id="d5c3a10f-d713-4800-903d-26c089d4a89a" />
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 16.3802502441406); (8.79166666666667 : 16.3802502441406 : JumpStart); (8.95833333333333 : 16.3802502441406 : JumpEnd); (8.97916666666667 : 16.3802502441406 : JumpStart); (9.14583333333333 : 16.3802502441406 : JumpEnd); (9.25 : 16.3802502441406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/LOAIQUANGCAO/LOAIQUANGCAO_QUANGCAO" />
+      <nodes>
+        <classShapeMoniker Id="25b8e2b4-e8e9-4720-b6ff-ab7b375654e6" />
+        <classShapeMoniker Id="1e5744ca-6204-49c6-95c3-1a632a6868b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9687475 : 21.75); (3.9687475 : 17.5347924804688); (8.79166666666667 : 17.5347924804688 : JumpStart); (8.95833333333333 : 17.5347924804688 : JumpEnd); (8.97916666666667 : 17.5347924804688 : JumpStart); (9.14583333333333 : 17.5347924804688 : JumpEnd); (9.25 : 17.5347924804688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_QUANGCAO" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="1e5744ca-6204-49c6-95c3-1a632a6868b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 34.375); (7.5 : 33.3322371419271); (8.75 : 33.3322371419271); (8.75 : 20.4420244637044); (9.25 : 20.4420244637044)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/THEME/THEME_CHITIETGIAODIEN" />
+      <nodes>
+        <classShapeMoniker Id="b76d8ff3-592c-406d-b949-c986be66bbf9" />
+        <classShapeMoniker Id="ab13ea4f-05dd-46ce-a8a2-0776e1d9f3f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 24.4896264648438); (5.29687875 : 32.0411185709635); (6.25 : 32.0411185709635)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINNHAN" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="cbba2803-c257-4afc-90b8-c2dc504977de" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.76562625 : 24.4896264648438); (4.76562625 : 31.4893067854818); (5.21354541666667 : 31.4893067854818 : JumpStart); (5.38021208333333 : 31.4893067854818 : JumpEnd); (6.25 : 31.4893067854818)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINNHAN1" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="cbba2803-c257-4afc-90b8-c2dc504977de" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 30.4502791341146); (10.25 : 34.145244547526); (11.5416666666667 : 34.145244547526 : JumpStart); (11.7083333333333 : 34.145244547526 : JumpEnd); (12 : 34.145244547526)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_HOSOTUYENDUNG" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="d9c5e8e4-89bc-4e72-a1d5-7ca747211bdf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.15625 : 27.875); (11.15625 : 23.9641951497396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_LICHSUTINRAOVATVIPHAM" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="86a152ff-fa0e-40c4-b04b-ff87a8921bcf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.125 : 27.875); (10.125 : 27.1285424804688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_LIKED" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="6c704595-a777-4ff3-8b74-411113a626a0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 37.5); (8.875 : 37.125); (8.875 : 29.1626395670573); (9.25 : 29.1626395670573)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DANHMUCCON/DANHMUCCON_TINRAOVAT" />
+      <nodes>
+        <classShapeMoniker Id="e1a36a42-bb39-40d8-b89b-b73d57616534" />
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 28.7063197835286); (8.66666666666667 : 28.7063197835286 : JumpStart); (8.83333333333333 : 28.7063197835286 : JumpEnd); (9.25 : 28.7063197835286)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/DIADIEM/DIADIEM_TINRAOVAT" />
+      <nodes>
+        <classShapeMoniker Id="3cc8c2c0-0f78-4ca3-adea-5179aff770f4" />
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.23437375 : 24.4896264648438); (4.23437375 : 30.0741398111979); (4.68229291666667 : 30.0741398111979 : JumpStart); (4.84895958333333 : 30.0741398111979 : JumpEnd); (5.21354541666667 : 30.0741398111979 : JumpStart); (5.38021208333333 : 30.0741398111979 : JumpEnd); (8.66666666666667 : 30.0741398111979 : JumpStart); (8.95833333333333 : 30.0741398111979 : JumpEnd); (9.25 : 30.0741398111979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINRAOVAT" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 30.4487396725761); (11.625 : 30.8237396725761); (11.625 : 40.7169812011719); (12 : 40.7169812011719)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINRAOVATBATDONGSAN" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="abff33cb-cb49-41e0-b578-198ef9106e46" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.70312125 : 24.4896264648438); (3.70312125 : 27.646444905599); (4.15104041666667 : 27.646444905599 : JumpStart); (4.31770708333333 : 27.646444905599 : JumpEnd); (4.68229291666667 : 27.646444905599 : JumpStart); (4.84895958333333 : 27.646444905599 : JumpEnd); (5.21354541666667 : 27.646444905599 : JumpStart); (5.38021208333333 : 27.646444905599 : JumpEnd); (8.66666666666667 : 27.646444905599 : JumpStart); (8.83333333333333 : 27.646444905599 : JumpEnd); (10.0416666666667 : 27.646444905599 : JumpStart); (10.2083333333333 : 27.646444905599 : JumpEnd); (11.0729166666667 : 27.646444905599 : JumpStart); (11.2708358333333 : 27.646444905599 : JumpEnd); (12 : 27.646444905599)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGUOIDUNG/NGUOIDUNG_TINRAOVATDALUU" />
+      <nodes>
+        <classShapeMoniker Id="5f257e54-a5df-4895-a35e-ec7304cf28d6" />
+        <classShapeMoniker Id="0b2da357-a361-49f3-928a-dc0023faa406" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 28.4195975748698); (12 : 28.4195975748698)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINRAOVATDALUU" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="0b2da357-a361-49f3-928a-dc0023faa406" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.1875025 : 27.875); (11.1875025 : 24.71875); (12 : 24.71875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINRAOVATTHUONG" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="f26d60f1-8c87-4ebd-a23a-53526c7be023" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.15625 : 22.7211531575521); (14.15625 : 30.2048974609375); (14.7604166666667 : 30.2048974609375 : JumpStart); (14.9270833333333 : 30.2048974609375 : JumpEnd); (15 : 30.2048974609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/NGANHNGHE/NGANHNGHE_TINTUYENDUNG" />
+      <nodes>
+        <classShapeMoniker Id="60b86f65-741d-4602-9250-73e32c71c85c" />
+        <classShapeMoniker Id="30f08a5f-daae-46d5-b76b-4d7b3bc6f8d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 29.5532963053385); (14.0729166666667 : 29.5532963053385 : JumpStart); (14.2395833333333 : 29.5532963053385 : JumpEnd); (14.7604166666667 : 29.5532963053385 : JumpStart); (14.9270833333333 : 29.5532963053385 : JumpEnd); (15 : 29.5532963053385)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RaoVatDataClassesDataContext/TINRAOVAT/TINRAOVAT_TINTUYENDUNG" />
+      <nodes>
+        <classShapeMoniker Id="3f64148c-864b-422e-b398-8dd248b67a9c" />
+        <classShapeMoniker Id="30f08a5f-daae-46d5-b76b-4d7b3bc6f8d5" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
-    CodeFile="DangTinRaoVat2.aspx.cs" Inherits="DangTinRaoVat" %>
+    CodeFile="Demo.aspx.cs" Inherits="DangTinRaoVat" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
     &nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel1" runat="server" BackColor="#99CCFF" Style="z-index: 1;
@@ -11,7 +11,7 @@
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Small" Text="Tiêu Đề:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox
             ID="txt_TieuDe" runat="server" OnTextChanged="txt_TieuDe_TextChanged" Width="427px"
-            Height="22px"></asp:TextBox>
+            Height="22px">dasdasfas</asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_TieuDe"
             ErrorMessage="Tiêu Đề không được rỗng">*  tiêu đề ko được rỗng</asp:RequiredFieldValidator>
@@ -57,7 +57,10 @@
         &nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label3" runat="server" Text="Nơi Rao:" Font-Size="Small"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList
-            ID="List_NoiRao" runat="server" Height="25px" Width="233px">
+            ID="List_NoiRao" runat="server" Height="25px" Width="233px" 
+            AutoPostBack="True">
+            <asp:ListItem>sda</asp:ListItem>
+            <asp:ListItem>dasd</asp:ListItem>
         </asp:DropDownList>
         &nbsp;&nbsp;&nbsp;
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="List_NoiRao"
@@ -81,7 +84,8 @@
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp; &nbsp;
-        <asp:Button ID="Button1" runat="server" BackColor="#6699FF" Font-Bold="True" Text="Đăng Tin:" />
+        <asp:Button ID="Button1" runat="server" BackColor="#6699FF" Font-Bold="True" 
+            Text="Đăng Tin:" onclick="Button1_Click" />
         <br />
         <br />
         <br />
