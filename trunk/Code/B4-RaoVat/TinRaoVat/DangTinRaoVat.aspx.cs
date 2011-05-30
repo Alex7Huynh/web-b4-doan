@@ -13,7 +13,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
     string DanhMucChinh = string.Empty;
     string DanhMucCon = string.Empty;
     int MaDanhMucCon;
-    string ThumbnailLocation = "~/images/";
+    string ThumbnailLocation = "~/images/TinRaoVat/";
     /// <summary>
     /// Page_Load
     /// </summary>
@@ -138,7 +138,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
             //Thêm tin rao vặt
             TINRAOVAT TinRaoVat = new TINRAOVAT();
             TinRaoVat.ThoiGianDang = DateTime.Now;
-            TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin1.Items.ToString());
+            TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin1.SelectedValue);
             TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem1.SelectedValue).MaDiaDiem;
             TinRaoVat.SoLanXem = 0;
             ////Mã người dùng
@@ -147,6 +147,8 @@ public partial class DangTinRaoVat : System.Web.UI.Page
                 int userID = int.Parse(Request.Cookies["userID"].Value);
                 TinRaoVat.MaNguoiDung = userID;
             }
+            else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
             TinRaoVat.MaDanhMucCon = MaDanhMucCon;
             TinRaoVat.TieuDe = txtTieuDe1.Text;
             //Thumbnail            
@@ -165,7 +167,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
                 }
             }
             TinRaoVat.Deleted = false;
-            if (TinRaoVatBUS.ThemTinRaoVat(TinRaoVat))
+            if (!TinRaoVatBUS.ThemTinRaoVat(TinRaoVat))
             {
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
@@ -176,7 +178,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
             TinRaoVatThuong.NoiDungTinRaoVat = txtNoiDung1.Text;
             TinRaoVatThuong.Gia = int.Parse(txtGia1.Text);            
             TinRaoVatThuong.Deleted = false;
-            if (TinRaoVatThuongBUS.ThemTinRaoVatThuong(TinRaoVatThuong))
+            if (!TinRaoVatThuongBUS.ThemTinRaoVatThuong(TinRaoVatThuong))
             {
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
@@ -195,9 +197,10 @@ public partial class DangTinRaoVat : System.Web.UI.Page
         if (ckbDongY2.Checked)
         {
             //Thêm tin rao vặt
+            
             TINRAOVAT TinRaoVat = new TINRAOVAT();
             TinRaoVat.ThoiGianDang = DateTime.Now;
-            TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin2.Items.ToString());
+            TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin2.SelectedValue);
             TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem2.SelectedValue).MaDiaDiem;
             TinRaoVat.SoLanXem = 0;
             ////Mã người dùng
@@ -206,6 +209,8 @@ public partial class DangTinRaoVat : System.Web.UI.Page
                 int userID = int.Parse(Request.Cookies["userID"].Value);
                 TinRaoVat.MaNguoiDung = userID;
             }
+            else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
             TinRaoVat.MaDanhMucCon = MaDanhMucCon;
             TinRaoVat.TieuDe = txtTieuDe2.Text;
             //Thumbnail            
@@ -286,7 +291,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
         //Thêm tin rao vặt
         TINRAOVAT TinRaoVat = new TINRAOVAT();
         TinRaoVat.ThoiGianDang = DateTime.Now;
-        TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin3.Items.ToString());
+        TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin3.SelectedValue);
         //TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem2.SelectedValue).MaDiaDiem;
         TinRaoVat.SoLanXem = 0;
         ////Mã người dùng
@@ -295,6 +300,8 @@ public partial class DangTinRaoVat : System.Web.UI.Page
             int userID = int.Parse(Request.Cookies["userID"].Value);
             TinRaoVat.MaNguoiDung = userID;
         }
+        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
         TinRaoVat.MaDanhMucCon = MaDanhMucCon;
         //TinRaoVat.TieuDe = txtTieuDe2.Text;
         //Thumbnail            
@@ -392,7 +399,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
         //Thêm tin rao vặt
         TINRAOVAT TinRaoVat = new TINRAOVAT();
         TinRaoVat.ThoiGianDang = DateTime.Now;
-        TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin4.Items.ToString());
+        TinRaoVat.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin4.SelectedValue);
         //TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem2.SelectedValue).MaDiaDiem;
         TinRaoVat.SoLanXem = 0;
         ////Mã người dùng
@@ -401,6 +408,8 @@ public partial class DangTinRaoVat : System.Web.UI.Page
             int userID = int.Parse(Request.Cookies["userID"].Value);
             TinRaoVat.MaNguoiDung = userID;
         }
+        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
         TinRaoVat.MaDanhMucCon = MaDanhMucCon;
         //TinRaoVat.TieuDe = txtTieuDe2.Text;
         //Thumbnail
