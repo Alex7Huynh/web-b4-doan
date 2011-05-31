@@ -9,6 +9,20 @@ namespace DAO
 {
     public class TinNhanDAO
     {
+        public static bool ThemTinNhan(TINNHAN tinNhan)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.TINNHANs.InsertOnSubmit(tinNhan);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
+
+            return true;
+
+        }
         public static List<TINNHAN> LayDanhSachTinNhan()
         {
             List<TINNHAN> lstTinNhan = new List<TINNHAN>();

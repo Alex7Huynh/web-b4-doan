@@ -7,7 +7,6 @@
             <table style="width: 56%; background-color: #EAFFFF;">
                 <tr>
                     <td colspan="2">
-                        <asp:Label ID="Label11" runat="server" Font-Bold="True" ForeColor="#003399">Thông tin chi tiết rao vặt của bạn :</asp:Label>
                         <br />
                         <asp:Label ID="Label12" runat="server" Text=" (*Ghi chú : Bạn vui lòng nhập Tiếng Việt có dấu và thông tin đầy đủ)"
                             ForeColor="#000066"></asp:Label>
@@ -24,6 +23,8 @@
                 </tr>
                 <tr>
                     <td style="width: 267px" align="right">
+                        <asp:Label ID="Label11" runat="server" Font-Bold="True" ForeColor="#003399">Thông 
+                        tin chi tiết rao vặt của bạn :</asp:Label>
                         <asp:Label ID="Label1" runat="server" Text="* Tiêu đề" ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="width: 301px">
