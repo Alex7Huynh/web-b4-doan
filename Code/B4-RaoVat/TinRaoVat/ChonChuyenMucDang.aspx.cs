@@ -49,9 +49,9 @@ public partial class ChonChuyenMucDang : System.Web.UI.Page
                 //Danh mục con - hyperlink
                 HyperLink a = new HyperLink();
                 a.Text = dmcon.TenDanhMucCon;
-                a.NavigateUrl = "DangTinRaoVat.aspx?chuyenmuc=" + dmchinh.MaChuyenMuc
-                    + "&danhmucchinh=" + dmchinh.MaDanhMucChinh
-                    + "&danhmuccon=" + dmcon.MaDanhMucCon;
+                a.NavigateUrl = "DangTinRaoVat.aspx?cm=" + dmchinh.MaChuyenMuc
+                    + "&main=" + dmchinh.MaDanhMucChinh
+                    + "&sub=" + dmcon.MaDanhMucCon;
                 c.Controls.Add(a);
                 //Ký tự xuống dòng
                 literal = new Literal();

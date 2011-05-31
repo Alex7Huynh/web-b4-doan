@@ -14,6 +14,7 @@ public partial class DangTinRaoVat : System.Web.UI.Page
     string DanhMucCon = string.Empty;
     int MaDanhMucCon;
     string ThumbnailLocation = "~/images/TinRaoVat/";
+
     /// <summary>
     /// Page_Load
     /// </summary>
@@ -24,16 +25,16 @@ public partial class DangTinRaoVat : System.Web.UI.Page
         string ChuyenMuc = string.Empty;
         int MaDanhMucChinh;
         //Lấy thông tin chuyên mục, danh mục chính, danh mục con
-        if (Request.QueryString["chuyenmuc"] != null)
-            ChuyenMuc = Request.QueryString["chuyenmuc"];
-        if (Request.QueryString["danhmucchinh"] != null)
+        if (Request.QueryString["cm"] != null)
+            ChuyenMuc = Request.QueryString["cm"];
+        if (Request.QueryString["main"] != null)
         {
-            MaDanhMucChinh = int.Parse(Request.QueryString["danhmucchinh"]);
+            MaDanhMucChinh = int.Parse(Request.QueryString["main"]);
             DanhMucChinh = DanhMucChinhBUS.TimDanhMucChinhTheoMa(MaDanhMucChinh).TenDanhMucChinh.Trim();
         }
-        if (Request.QueryString["danhmuccon"] != null)
+        if (Request.QueryString["sub"] != null)
         {
-            MaDanhMucCon = int.Parse(Request.QueryString["danhmuccon"]);
+            MaDanhMucCon = int.Parse(Request.QueryString["sub"]);
             DanhMucCon = DanhMucConBUS.TimDanhMucConTheoMa(MaDanhMucCon).TenDanhMucCon.Trim();
         }
         //Hiển thị view tương ứng với chuyên mục
