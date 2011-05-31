@@ -1,20 +1,84 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="XemNoiDungTin.ascx.cs" Inherits="UserControls_XemNoiDungTin" %>
+<style type="text/css">
+    .style1
+    {
+        width: 128px;
+    }
+    .style2
+    {
+        width: 184px;
+    }
+    .style3
+    {
+        width: 588px;
+    }
+    .style4
+    {
+        width: 124px;
+    }
+</style>
 <div>
 	<asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
 	    <asp:View ID="ThuongView" runat="server">
-			<table cellpadding="4" cellspacing="4">
+			&nbsp;
+			<table cellpadding="4" cellspacing="4" class="style3">
 				<tr align="center">
 					<td colspan="2"><b>Nội Dung</b></td>
 				</tr>
 				<tr>
-					<td>Nội Dung:</td>
-					<td><asp:Label ID="lblNoiDungThuong" runat="server" /></td>
+					<td class="style2">Nội Dung:</td>
+					<td class="style4"><asp:Label ID="lblNoiDungThuong" runat="server" /></td>
 				</tr>
 				<tr>
-					<td>Giá:</td>
-					<td><asp:Label ID="lblGiaThuong" runat="server" /></td>
+					<td class="style2">Giá:</td>
+					<td class="style4"><asp:Label ID="lblGiaThuong" runat="server" /></td>
+				</tr>
+				
+				<tr>
+                <td class="style2"><asp:Button ID="btt_TraLoi" runat="server" Text="Trả Lời" 
+                        onclick="btt_TraLoi_Click" /></td>
+				</tr>
+				
+				<tr>
+                <td class="style2">
+                    <asp:Label ID="Label1" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
+                    :</td>
+				</tr>
+				
+				<tr>
+				<td class = "style2">
+                    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
+                        Width="202px">
+                        <ItemTemplate>
+                            NoiDungTraLoi:
+                            <asp:Label ID="NoiDungTraLoiLabel" runat="server" 
+                                Text='<%# Eval("NoiDungTraLoi") %>' />
+                            <br />
+                            ThoiGianTraLoi:
+                            <asp:Label ID="ThoiGianTraLoiLabel" runat="server" 
+                                Text='<%# Eval("ThoiGianTraLoi") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        
+                        SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)" 
+                        onselecting="SqlDataSource1_Selecting">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 
+                                Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    </td>
+				</tr>
+				<tr>
+				<td class = "style2">
+                    &nbsp;</td>
 				</tr>
 			</table>
+			
 		</asp:View>
 		<asp:View ID="BatDongSanView" runat="server">
 			<table cellpadding="4" cellspacing="4">
@@ -85,7 +149,9 @@
 					<td>Năm Xây Dựng:</td>
 					<td><asp:Label ID="lblNamXayDung" runat="server" /></td>
 				</tr>
+				
 			</table>
+			
 			<table cellpadding="4" cellspacing="4">
 				<tr>
 					<td colspan="2" align="center"><b>Nội Thất, Tiện Nghi</b></td>
@@ -122,7 +188,11 @@
 					<td>Thang Máy: </td>
 					<td><asp:CheckBox ID="chkThangMay" runat="server" Enabled="False" /></td>
 				</tr>
+				
+				
+				
 			</table>
+			
 			<table cellpadding="4" cellspacing="4">
 				<tr>
 					<td colspan="2" align="center"><b>Văn Hóa, Xã Hội</b></td>
@@ -163,6 +233,46 @@
 					<td>Gần Công Viên: </td>
 					<td><asp:CheckBox ID="chkGanCongVien" runat="server" Enabled="False" /></td>
 				</tr>
+				<tr>
+                <td class="style1"><asp:Button ID="Button3" runat="server" Text="Trả Lời" 
+                        onclick="btt_TraLoi_Click" /></td>
+				</tr>
+				<tr>
+                <td class="style2">
+                    <asp:Label ID="Label2" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
+                    :</td>
+				</tr>
+				
+				<tr>
+				<td class = "style2">
+                    <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource1" 
+                        Width="202px">
+                        <ItemTemplate>
+                            NoiDungTraLoi:
+                            <asp:Label ID="NoiDungTraLoiLabel" runat="server" 
+                                Text='<%# Eval("NoiDungTraLoi") %>' />
+                            <br />
+                            ThoiGianTraLoi:
+                            <asp:Label ID="ThoiGianTraLoiLabel" runat="server" 
+                                Text='<%# Eval("ThoiGianTraLoi") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 
+                                Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    </td>
+				</tr>
+				<tr>
+				<td class = "style2">
+                    &nbsp;</td>
+				</tr>
 			</table>	
 		</asp:View>
 		<asp:View ID="TinTuyenDungView" runat="server">
@@ -198,7 +308,9 @@
 					<td>Email:</td>
 					<td><asp:Label ID="lblEmail" runat="server" /></td>
 				</tr>
+				
 			</table>
+			
 			<table cellpadding="4" cellspacing="4">
 				<tr>
 					<td colspan="2" align="center"><b>Thông Tin Công Việc</b></td>
@@ -247,6 +359,46 @@
 					<td>Thời Hạn Kết Thúc Nộp Hồ Sơ:</td>
 					<td><asp:Label ID="lblThoiHanKetThucNopHoSo" runat="server" /></td>
 				</tr>
+				<tr>
+                <td class="style1"><asp:Button ID="Button5" runat="server" Text="Trả Lời" 
+                        onclick="btt_TraLoi_Click" /></td>
+				</tr>
+				<tr>
+                <td class="style2">
+                    <asp:Label ID="Label4" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
+                    :</td>
+				</tr>
+				
+				<tr>
+				<td class = "style2">
+                    <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource1" 
+                        Width="202px">
+                        <ItemTemplate>
+                            NoiDungTraLoi:
+                            <asp:Label ID="NoiDungTraLoiLabel" runat="server" 
+                                Text='<%# Eval("NoiDungTraLoi") %>' />
+                            <br />
+                            ThoiGianTraLoi:
+                            <asp:Label ID="ThoiGianTraLoiLabel" runat="server" 
+                                Text='<%# Eval("ThoiGianTraLoi") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 
+                                Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    </td>
+				</tr>
+				<tr>
+				<td class = "style2">
+                    &nbsp;</td>
+				</tr>
 			</table>
 		</asp:View>
 		<asp:View ID="HoSoTuyenDungView" runat="server">
@@ -291,7 +443,10 @@
 					<td>Email:</td>
 					<td colspan="2"><asp:Label ID="lblEmailCaNhan" runat="server" /></td>
 				</tr>
+			
+				
 			</table>
+			
 			<table cellpadding="4" cellspacing="4">
 				<tr>
 					<td colspan="2" align="center"><b>Học Vấn</b></td>
@@ -312,7 +467,9 @@
 					<td>Kỹ Năng:</td>
 					<td><asp:Label ID="lblKyNang" runat="server" /></td>
 				</tr>
+				
 			</table>
+			
 			<table cellpadding="4" cellspacing="4">
 				<tr>
 					<td colspan="2" align="center"><b>Kinh Nghiệm Làm Việc</b></td>
@@ -352,6 +509,46 @@
 				<tr>
 					<td>Lương Mong Muốn:</td>
 					<td><asp:Label ID="lblLuongMongMuon" runat="server" /></td>
+				</tr>
+				<tr>
+                <td class="style1"><asp:Button ID="Button8" runat="server" Text="Trả Lời" 
+                        onclick="btt_TraLoi_Click" /></td>
+				</tr>
+				<tr>
+                <td class="style2">
+                    <asp:Label ID="Label6" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
+                    :</td>
+				</tr>
+				
+				<tr>
+				<td class = "style2">
+                    <asp:DataList ID="DataList4" runat="server" DataSourceID="SqlDataSource1" 
+                        Width="202px">
+                        <ItemTemplate>
+                            NoiDungTraLoi:
+                            <asp:Label ID="NoiDungTraLoiLabel" runat="server" 
+                                Text='<%# Eval("NoiDungTraLoi") %>' />
+                            <br />
+                            ThoiGianTraLoi:
+                            <asp:Label ID="ThoiGianTraLoiLabel" runat="server" 
+                                Text='<%# Eval("ThoiGianTraLoi") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
+                    </asp:DataList>
+                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 
+                                Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    </td>
+				</tr>
+				<tr>
+				<td class = "style2">
+                    &nbsp;</td>
 				</tr>
 			</table>
 		</asp:View>

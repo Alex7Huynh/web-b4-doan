@@ -12,3 +12,10 @@ I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\BUS.pdb
 I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\DAO.dll
 I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\bin\Debug\DAO.pdb
 I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\BUS\obj\Debug\BUS.pdb
+C:\Users\thang\Desktop\web check out new\Code\BUS\bin\Debug\BUS.dll
+C:\Users\thang\Desktop\web check out new\Code\BUS\bin\Debug\BUS.pdb
+C:\Users\thang\Desktop\web check out new\Code\BUS\bin\Debug\DAO.dll
+C:\Users\thang\Desktop\web check out new\Code\BUS\bin\Debug\DAO.pdb
+C:\Users\thang\Desktop\web check out new\Code\BUS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\thang\Desktop\web check out new\Code\BUS\obj\Debug\BUS.dll
+C:\Users\thang\Desktop\web check out new\Code\BUS\obj\Debug\BUS.pdb
