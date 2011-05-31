@@ -168,5 +168,18 @@ namespace DAO
 
             return nguoiDung;
         }
+        public static NGUOIDUNG LayNguoiDungTheoTen(string tenNguoiDung)
+        {
+            NGUOIDUNG nguoiDung = new NGUOIDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                nguoiDung = db.NGUOIDUNGs.Single(t => t.TenNguoiDung == tenNguoiDung);
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return nguoiDung;
+        }
     }
 }

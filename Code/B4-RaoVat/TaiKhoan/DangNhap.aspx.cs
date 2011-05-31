@@ -31,7 +31,7 @@ public partial class Default2 : System.Web.UI.Page
         if (db.NGUOIDUNGs.Where(p => p.TenNguoiDung == this.Login1.UserName && p.MatKhau == this.Login1.Password).Count() == 1)
         {
             e.Authenticated = true;
-            Response.Redirect("..\\Default.aspx");
+            Response.Redirect("..\\Defaul.aspx");
         }
         else
             e.Authenticated = false;

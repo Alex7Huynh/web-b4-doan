@@ -32,5 +32,9 @@ namespace BUS
         {
             return NguoiDungDAO.LayNguoiDungTheoMa(maNguoiDung);
         }
+        public static NGUOIDUNG LayNguoiDungTheoTen(string maNguoiDung)
+        {
+            return NguoiDungDAO.LayNguoiDungTheoTen(maNguoiDung);
+        }
     }
 }
