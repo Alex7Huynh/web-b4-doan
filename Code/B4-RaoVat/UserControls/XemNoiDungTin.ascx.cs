@@ -9,26 +9,41 @@ using DAO;
 
 public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
 {
+    public static string idTinRaoVat;
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-    protected override void OnPreRender(EventArgs e)
+    protected override void OnPreRender(EventArgs e) 
     {
         //lay ma tin rao vat
         int maTinRaoVat = 1;
-        string id = Request.QueryString["id"];
-        Int32.TryParse(id, out maTinRaoVat);
+        string id;
+        if (Request.QueryString["id"] != null)
+        {
+            id = Request.QueryString["id"];
+            idTinRaoVat = Request.QueryString["id"];
+        }
+        else
+            id = idTinRaoVat;
+
+           Int32.TryParse(id, out maTinRaoVat);
 
         NGUOIDUNG nguoiDung = TinRaoVatBUS.LayNguoiDung(maTinRaoVat);
+        
+        Session["matinraovat"] = maTinRaoVat.ToString();
+        Session["manguoidung"] = nguoiDung.MaNguoiDung.ToString();
 
         hypXemThongTinLienHe.NavigateUrl = "../DanhMuc/XemThongTinLienHe.aspx?id=" + nguoiDung.MaNguoiDung.ToString();
 
         CHUYENMUC chuyenMuc = TinRaoVatBUS.LayChuyenMuc(maTinRaoVat);
 
         FillSummary(chuyenMuc, maTinRaoVat);
+        //lbMaTinRaoVat.Text =Session["matinraovat"].ToString();
         base.OnPreRender(e);
+
+        // load cac bai tra loi cua tin rao vat do len
     }
 
     private void FillSummary(CHUYENMUC chuyenMuc, int maTinRaoVat)
@@ -162,5 +177,14 @@ public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
             default:
                 break;
         }
+    }
+    protected void btt_TraLoi_Click(object sender, EventArgs e)
+    {
+       
+        Response.Redirect("~/TinRaoVat/BaiTraLoi_ChinhSua.aspx");
+    }
+    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
+
     }
 }

@@ -9,18 +9,15 @@
 				<h3>
 					Step 1: Select Category</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-					euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+					</p>
 				<h3>
 					Step 2: Specify Ad</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-					euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+					</p>
 				<h3>
 					Step 3: Add Photos</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-					euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+				</p>
 			</div>
 		</div>
 	</div>
