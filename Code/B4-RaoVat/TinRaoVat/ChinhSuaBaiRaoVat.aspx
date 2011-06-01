@@ -68,6 +68,8 @@
                     </td>
                     <td style="width: 301px">
                         <asp:FileUpload ID="fupHinhAnh1" runat="server" ForeColor="#003399" />
+                        <br />
+                        <asp:HyperLink ID="hplHinhAnh1" runat="server">HyperLink</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -91,11 +93,6 @@
                                 <asp:Parameter DefaultValue="false" Name="Deleted" Type="Boolean" />
                             </WhereParameters>
                         </asp:LinqDataSource>
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td colspan="2">
-                        <asp:CheckBox ID="ckbDongY1" runat="server" ForeColor="#003399" Text="Tôi đồng ý sau khi đã đọc Điều lệ sử dụng" />
                     </td>
                 </tr>
                 <tr align="center">
@@ -371,6 +368,8 @@
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
                         <asp:FileUpload ID="fupHinhAnh2" runat="server" ForeColor="#003399" />
+                        <br />
+                        <asp:HyperLink ID="hplHinhAnh2" runat="server">HyperLink</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -379,11 +378,6 @@
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
                         <asp:TextBox ID="txtGhiChuAnh2" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td colspan="4">
-                        <asp:CheckBox ID="ckbDongY2" runat="server" ForeColor="#003399" Text="Tôi đồng ý sau khi đã đọc Điều lệ sử dụng" />
                     </td>
                 </tr>
                 <tr align="center">
@@ -636,6 +630,8 @@
                     </td>
                     <td style="margin-left: 40px">
                         <asp:FileUpload ID="fupHinhAnh3" runat="server" ForeColor="#003399" />
+                        <br />
+                        <asp:HyperLink ID="hplHinhAnh3" runat="server">HyperLink</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
@@ -1035,6 +1031,8 @@
                     </td>
                     <td style="width: 288px">
                         <asp:FileUpload ID="fupHinhAnh4" runat="server" ForeColor="#003399" />
+                        <br />
+                        <asp:HyperLink ID="hplHinhAnh4" runat="server">HyperLink</asp:HyperLink>
                     </td>
                     <td>
                         &nbsp;

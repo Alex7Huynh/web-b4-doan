@@ -43,12 +43,12 @@
                 <ItemStyle CssClass="col_general" />
 			    </asp:HyperLinkField>
 			    
-			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="EditAd.aspx?id={0}"
+			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/ChinhSuaBaiRaoVat.aspx?id={0}"
 				    Text="Edit" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />
 			    </asp:HyperLinkField>
-			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="ManagePhotos.aspx?id={0}"
+			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/HienThiAnh.aspx?id={0}"
 				    Text="Photos" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />

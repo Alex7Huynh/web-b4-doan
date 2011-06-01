@@ -143,9 +143,9 @@ public partial class DangTinRaoVat : System.Web.UI.Page
             TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem1.SelectedValue).MaDiaDiem;
             TinRaoVat.SoLanXem = 0;
             ////Mã người dùng
-            if (Request.Cookies["userID"] != null)
+            if (Session["userID"] != null)
             {
-                int userID = int.Parse(Request.Cookies["userID"].Value);
+                int userID = int.Parse(Session["userID"].ToString());
                 TinRaoVat.MaNguoiDung = userID;
             }
             else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
