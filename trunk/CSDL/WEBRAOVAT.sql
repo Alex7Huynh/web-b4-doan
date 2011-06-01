@@ -198,7 +198,7 @@ Create table TINRAOVAT
 	SoLanXem int,
 	MaNguoiDung int,
 	MaDanhMucCon int,
-	TieuDe nchar(50),
+	TieuDe nvarchar(50),
 	Thumbnail varchar(155),
 	GhiChuHinhAnh nvarchar(100),
 	Deleted bit,
@@ -985,31 +985,23 @@ insert into DIADIEM(TenDiaDiem,Deleted) values (N'Hải Phòng',0)
 
 --16.1. TINRAOVATTHUONG
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
-VALUES ('10/18/2010 19:15',	2, 202,	1,	12,	12, 'BÁN CÂY SANH CON 0935.818.711 (A Truyền)',	'1.jpg',	0)
+VALUES ('10/18/2010 19:15',	2, 202,	1,	12,	95, N'BÁN CÂY SANH CON 0935.818.711 (A Tiến)',	'1.jpg',	0)
 INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
-VALUES (1,	
-	N'Chào các bác !Tại đây chuyên cung cấp tất cả các loại cây cảnh.Đặc biệt cung cấp :cây sanh con,vừng con,mai con...và còn nhiều cây cổ thụ như sanh, khế  ,sưa ,mai ...Mọi chi tiết xin liên hệ đt 0935.818.711 (A Truyền).NHẬN TRỒNG,UỐN CÂY VÀ CHĂM SÓC TẠI VƯỜN.Giá cả thương lượng khi xem hàng.ok',	
-	150000,	0)
+VALUES (1, N'Chào các bác !Tại đây chuyên cung cấp tất cả các loại cây cảnh.Đặc biệt cung cấp :cây sanh con,vừng con,mai con...và còn nhiều cây cổ thụ như sanh, khế  ,sưa ,mai ...Mọi chi tiết xin liên hệ đt 0935.818.711 (A Truyền).NHẬN TRỒNG,UỐN CÂY VÀ CHĂM SÓC TẠI VƯỜN.Giá cả thương lượng khi xem hàng.ok', 150000,	0)
 	
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
-VALUES ('4/5/2011 20:54',	4, 70,	2,	11,	11, N'Chuyên cung cấp -Ếch con(1000/con)',	'2.jpg',	0)
+VALUES ('4/5/2011 20:54',	4, 70,	2,	11,	96, N'Chuyên cung cấp -Ếch con(1000/con)',	'2.jpg',	0)
 INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
-VALUES (2,	
-	N'Chuyên cung cấp -Ếch con(1000/con) -Ếch bố mẹ (400ngàn/cặp),cho đẻ liền ,tùy loại. -Tại Thị trấn Tân Túc Huyện Bình Chánh TPHCM. -LH:A_Nhân:01658404456',	
-	150000,	0)
+VALUES (2,	N'Chuyên cung cấp -Ếch con(1000/con) -Ếch bố mẹ (400ngàn/cặp),cho đẻ liền ,tùy loại. -Tại Thị trấn Tân Túc Huyện Bình Chánh TPHCM. -LH:A_Nhân:01658404456',	150000,	0)
 
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
-VALUES ('4/6/2011 16:50',	4, 8, 3,	13,	13, N'Tư vấn mở tài khoản đầu tư CKTT Mỹ tại Việt Nam.',	'3.jpg',	0)
+VALUES ('4/6/2011 16:50',	4, 8, 3,	13,	99, N'Tư vấn mở tài khoản đầu tư CKTT Mỹ tại Việt Nam.',	'3.jpg',	0)
 INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
-VALUES (3,	
-	N'Chúng tôi hỗ trợ Quý nhà đầu tư mở tài khoản giao dịch cổ phiếu trên thị trường Mỹ. Những lợi thế khi tham gia thị trường: - Mở tài khoản đầu tư đơn giản như mở một tài khoản ngân hàng, vốn của Quý nhà đầu tư nằm trong tài khoản ngân hàng của Quý nhà đầu tư tại Việt Nam',	
-	150000,	0)
+VALUES (3,	N'Chúng tôi hỗ trợ Quý nhà đầu tư mở tài khoản giao dịch cổ phiếu trên thị trường Mỹ. Những lợi thế khi tham gia thị trường: - Mở tài khoản đầu tư đơn giản như mở một tài khoản ngân hàng, vốn của Quý nhà đầu tư nằm trong tài khoản ngân hàng của Quý nhà đầu tư tại Việt Nam', 150000, 0)
 	
 --16.2. TINRAOVATBTDONGSAN
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
-VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	94,
-	N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',
-	'4.jpg', 0)
+VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	2,	N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',	'4.jpg', 0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
 	NoiDungTinRaoVat,
@@ -1096,9 +1088,7 @@ VALUES (
 	0)
 	
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('3-04-11 11:02',	4, 150, 5,	15,	94, 
-	N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	
-	'5.jpg',	0)
+VALUES ('3-04-11 11:02', 4, 150, 5,	15,	1, N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	'5.jpg', 0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
 	NoiDungTinRaoVat,
@@ -1202,7 +1192,7 @@ INSERT INTO NGANHNGHE (TenNganhNghe) VALUES (N'Công việc khác')
 	
 --16.3. TINTUYENDUNG
 INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('4-30-2011 10:02',	30, 2, 6,	16,	92,N'Tập đoàn Cathay Life Viet Nam tuyển dụng','6.jpg',	0)
+VALUES ('4-30-2011 10:02', 30, 2, 6, 16, 6, N'Tập đoàn Cathay Life Viet Nam tuyển dụng','6.jpg', 0)
 INSERT INTO TINTUYENDUNG
 (
 	MaTinRaoVat,
@@ -1261,8 +1251,8 @@ VALUES (
 )
 
 --16.4. HOSOTUYENDUNG
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('3-21-2011 12:02',	7, 62, 7,	17,93, N'NGUYEN THAI TRUC', '7.jpg',	0)
+INSERT INTO TINRAOVAT (	ThoiGianDang,		ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,					Thumbnail,	Deleted)
+VALUES (				'3-21-2011 12:02',	7,				62,			7,			17,				7,				N'NGUYEN THAI TRUC',	'7.jpg',	0)
 INSERT INTO HOSOTUYENDUNG
 (
 	--thông tin cá nhân
