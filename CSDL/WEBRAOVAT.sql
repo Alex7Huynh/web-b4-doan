@@ -1000,8 +1000,8 @@ INSERT INTO TINRAOVATTHUONG (MaTinRaoVat,	NoiDungTinRaoVat,	Gia,	Deleted)
 VALUES (3,	N'Chúng tôi hỗ trợ Quý nhà đầu tư mở tài khoản giao dịch cổ phiếu trên thị trường Mỹ. Những lợi thế khi tham gia thị trường: - Mở tài khoản đầu tư đơn giản như mở một tài khoản ngân hàng, vốn của Quý nhà đầu tư nằm trong tài khoản ngân hàng của Quý nhà đầu tư tại Việt Nam', 150000, 0)
 	
 --16.2. TINRAOVATBTDONGSAN
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon, TieuDe,	Thumbnail,	Deleted)
-VALUES ('8/7/2010 16:02',	1, 54, 4,	14,	2,	N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',	'4.jpg', 0)
+INSERT INTO TINRAOVAT (	ThoiGianDang,		ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,											Thumbnail,	Deleted)
+VALUES (				'8/7/2010 16:02',	1,				54,			4,			14,				2,				N'Bán / Cho Thuê Kho và Đất tại Buôn Mê Thuột',	'4.jpg',	0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
 	NoiDungTinRaoVat,
@@ -1087,8 +1087,8 @@ VALUES (
 	
 	0)
 	
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('3-04-11 11:02', 4, 150, 5,	15,	1, N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	'5.jpg', 0)
+INSERT INTO TINRAOVAT (	ThoiGianDang,		ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,												Thumbnail,	Deleted)
+VALUES (				'3-04-11 11:02',	4,				150,		5,			15,				1,				N'Cần bán căn hộ chung cư Mỹ Đức – Lô E – 21 tầng',	'5.jpg',	0)
 INSERT INTO TINRAOVATBATDONGSAN (
 	MaTinRaoVat,
 	NoiDungTinRaoVat,
@@ -1191,8 +1191,8 @@ INSERT INTO NGANHNGHE (TenNganhNghe) VALUES (N'Viễn thông')
 INSERT INTO NGANHNGHE (TenNganhNghe) VALUES (N'Công việc khác')
 	
 --16.3. TINTUYENDUNG
-INSERT INTO TINRAOVAT (ThoiGianDang, ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,		Thumbnail,	Deleted)
-VALUES ('4-30-2011 10:02', 30, 2, 6, 16, 6, N'Tập đoàn Cathay Life Viet Nam tuyển dụng','6.jpg', 0)
+INSERT INTO TINRAOVAT (	ThoiGianDang,		ThoiHanLuuTin,	SoLanXem,	MaDiaDiem,	MaNguoiDung,	MaDanhMucCon,	TieuDe,											Thumbnail,	Deleted)
+VALUES (				'4-30-2011 10:02',	30,				2,			6,			16,				6,				N'Tập đoàn Cathay Life Viet Nam tuyển dụng',	'6.jpg',	0)
 INSERT INTO TINTUYENDUNG
 (
 	MaTinRaoVat,
@@ -1313,12 +1313,16 @@ VALUES (
 	N'Tổ trưởng',
 	N'QUẢN LÝ SẢN XUẤT (TỔ TRƯỞNG)',
 	N'ĐIỀU HÀNH DOANH NGHIỆP',
-	N'',
-	N'',
-	N'',
+	N'Nhanh được thăng cấp',
+	N'Hành chánh',
+	N'300USD',
 	
 	0
 )
+--16.5. CHITIETHOSOTUYENDUNG
+INSERT INTO CHITIETHOSOTUYENDUNG (MaHoSoTuyenDung,MaNganhNghe) VALUES (1, 1)
+INSERT INTO CHITIETHOSOTUYENDUNG (MaHoSoTuyenDung,MaNganhNghe) VALUES (1, 6)
+INSERT INTO CHITIETHOSOTUYENDUNG (MaHoSoTuyenDung,MaNganhNghe) VALUES (1, 11)
 
 --17. EMAILNHANTINRAOVAT
 INSERT INTO EMAILNHANTINRAOVAT (EmailNhanTinRaoVat, ThoiGianDangKy, Deleted) VALUES ('N_M_T178@yahoo.com',	'10/18/2010 20:15',	0)
