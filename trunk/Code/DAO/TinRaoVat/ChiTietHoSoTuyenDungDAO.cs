@@ -27,7 +27,7 @@ namespace DAO
             return true;
 
         }
-                
+
         /// <summary>
         /// //Update information for CHITIETHOSOTUYENDUNG Object
         /// </summary>
@@ -52,7 +52,27 @@ namespace DAO
         }
 
         /// <summary>
-        /// Find a CHITIETHOSOTUYENDUNG
+        /// Load list of CHITIETHOSOTUYENDUNG
+        /// </summary>
+        /// <returns></returns>
+        public static List<CHITIETHOSOTUYENDUNG> LayDanhSachChiTietHoSoTuyenDung()
+        {
+            List<CHITIETHOSOTUYENDUNG> lstChiTietHoSoTuyenDung = new List<CHITIETHOSOTUYENDUNG>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsChiTietHoSoTuyenDung = from q in db.CHITIETHOSOTUYENDUNGs
+                                             select q;
+                lstChiTietHoSoTuyenDung = dsChiTietHoSoTuyenDung.ToList<CHITIETHOSOTUYENDUNG>();
+            }
+            catch (Exception ex)
+            { return null; }
+
+            return lstChiTietHoSoTuyenDung;
+        }
+
+        /// <summary>
+        /// Find a CHITIETHOSOTUYENDUNG with maChiTietHoSoTuyenDung
         /// </summary>
         /// <param name="maChiTietHoSoTuyenDung"></param>
         /// <returns></returns>
@@ -71,16 +91,18 @@ namespace DAO
         }
 
         /// <summary>
-        /// Load list of CHITIETHOSOTUYENDUNG
+        /// Find a CHITIETHOSOTUYENDUNG with maChiTietHoSoTuyenDung
         /// </summary>
+        /// <param name="maChiTietHoSoTuyenDung"></param>
         /// <returns></returns>
-        public static List<CHITIETHOSOTUYENDUNG> LayDanhSachChiTietHoSoTuyenDung()
+        public static List<CHITIETHOSOTUYENDUNG> TimChiTietHoSoTuyenDungTheoMaHoTuyenDung(int maHoSoTuyenDung)
         {
             List<CHITIETHOSOTUYENDUNG> lstChiTietHoSoTuyenDung = new List<CHITIETHOSOTUYENDUNG>();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                var dsChiTietHoSoTuyenDung = from q in db.CHITIETHOSOTUYENDUNGs 
+                var dsChiTietHoSoTuyenDung = from q in db.CHITIETHOSOTUYENDUNGs
+                                             where q.MaHoSoTuyenDung == maHoSoTuyenDung
                                              select q;
                 lstChiTietHoSoTuyenDung = dsChiTietHoSoTuyenDung.ToList<CHITIETHOSOTUYENDUNG>();
             }
@@ -88,6 +110,6 @@ namespace DAO
             { return null; }
 
             return lstChiTietHoSoTuyenDung;
-        }        
+        }
     }
 }

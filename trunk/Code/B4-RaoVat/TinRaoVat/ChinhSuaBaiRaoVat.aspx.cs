@@ -10,7 +10,7 @@ using System.IO;
 
 public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
 {
-    int MyID;
+    int UserID;
     TINRAOVAT TinRaoVat = new TINRAOVAT();
     DANHMUCCON DanhMucCon = new DANHMUCCON();
     DANHMUCCHINH DanhMucChinh = new DANHMUCCHINH();
@@ -19,7 +19,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //Nếu chưa đăng nhập        
-        Session["userID"] = "13";
+        Session["userID"] = "12";
         if (Session["userID"] == null)
         {
             Response.Redirect("~/TaiKhoan/DangNhap.aspx");
@@ -27,13 +27,20 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         //Lấy ID của tin rao vặt
         if (Request.QueryString["id"] != null)
         {
-            MyID = int.Parse(Request.QueryString["id"]);
+            UserID = int.Parse(Request.QueryString["id"]);
         }
-        //Hiển thị view tương ứng với chuyên mục
-        TinRaoVat = TinRaoVatBUS.TimTinRaoVatTheoMa(MyID);
-        DanhMucCon = DanhMucConBUS.TimDanhMucConTheoMa((int)TinRaoVat.MaDanhMucCon);
-        DanhMucChinh = DanhMucChinhBUS.TimDanhMucChinhTheoMa((int)DanhMucCon.MaDanhMucChinh);
 
+        TinRaoVat = TinRaoVatBUS.TimTinRaoVatTheoMa(UserID);
+        DanhMucCon = DanhMucConBUS.TimDanhMucConTheoMa(TinRaoVat.MaDanhMucCon.Value);
+        DanhMucChinh = DanhMucChinhBUS.TimDanhMucChinhTheoMa(DanhMucCon.MaDanhMucChinh.Value);
+
+        //Nếu tin rao vặt không phải do user tạo ra
+        if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+        {
+            //Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+
+        //Hiển thị view tương ứng với chuyên mục
         if (DanhMucChinh.MaChuyenMuc == 1)
         {
             MultiView1.SetActiveView(View1);
@@ -55,6 +62,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
             InitFourthView();
         }
     }
+
     private void InitFirstView()
     {
         //Hiển thị danh mục
@@ -64,19 +72,13 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         ddlThoiHanLuuTin1.DataSource = ThoiHanLuuTin;
         ddlThoiHanLuuTin1.DataBind();
         //Tin rao vặt        
-        for (int i = 0; i < ddlThoiHanLuuTin1.Items.Count; ++i)
-            if (ddlThoiHanLuuTin1.SelectedValue == TinRaoVat.ThoiHanLuuTin.ToString())
-                ddlThoiHanLuuTin1.SelectedIndex = i;
-        DIADIEM DiaDiem = DiaDiemBUS.TimDiaDiemTheoMa((int)TinRaoVat.MaDiaDiem);
-        for (int i = 0; i < ddlDiaDiem1.Items.Count; ++i)
-            if (ddlDiaDiem1.SelectedValue == DiaDiem.TenDiaDiem.ToString())
-                ddlDiaDiem1.SelectedIndex = i;
-
         txtTieuDe1.Text = TinRaoVat.TieuDe;
+        ddlThoiHanLuuTin1.SelectedIndex = TinRaoVat.ThoiHanLuuTin.Value;
+        ddlDiaDiem1.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;
         txtGhiChuAnh1.Text = TinRaoVat.GhiChuHinhAnh;
         hplHinhAnh1.Text = TinRaoVat.Thumbnail;
-        hplHinhAnh1.NavigateUrl = ThumbnailLocation + TinRaoVat.Thumbnail;        
-        
+        hplHinhAnh1.NavigateUrl = ThumbnailLocation + TinRaoVat.Thumbnail;
+
         //Thêm tin rao vặt thường
         TINRAOVATTHUONG TinRaoVatThuong = TinRaoVatThuongBUS.TimTinRaoVatThuongTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
         txtNoiDung1.Text = TinRaoVatThuong.NoiDungTinRaoVat;
@@ -95,22 +97,15 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         ddlMatTien.DataSource = ViTri;
         ddlMatTien.DataBind();
         //Tin rao vặt
-        for (int i = 0; i < ddlThoiHanLuuTin2.Items.Count; ++i)
-            if (ddlThoiHanLuuTin2.SelectedValue == TinRaoVat.ThoiHanLuuTin.ToString())
-                ddlThoiHanLuuTin2.SelectedIndex = i;
-        DIADIEM DiaDiem = DiaDiemBUS.TimDiaDiemTheoMa((int)TinRaoVat.MaDiaDiem);
-        for (int i = 0; i < ddlDiaDiem2.Items.Count; ++i)
-            if (ddlDiaDiem2.SelectedValue == DiaDiem.TenDiaDiem.ToString())
-                ddlDiaDiem2.SelectedIndex = i;
-
         txtTieuDe2.Text = TinRaoVat.TieuDe;
+        ddlThoiHanLuuTin2.SelectedIndex = TinRaoVat.ThoiHanLuuTin.Value;
+        ddlDiaDiem2.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;        
         txtGhiChuAnh2.Text = TinRaoVat.GhiChuHinhAnh;
         hplHinhAnh2.Text = TinRaoVat.Thumbnail;
         hplHinhAnh2.NavigateUrl = ThumbnailLocation + TinRaoVat.Thumbnail;
 
         //Thêm tin rao vặt bất động sản
         TINRAOVATBATDONGSAN TinRaoVatBatDongSan = TinRaoVatBatDongSanBUS.TimTinRaoVatBatDongSanTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
-
         txtNoiDung2.Text = TinRaoVatBatDongSan.NoiDungTinRaoVat;
         txtGia2.Text = TinRaoVatBatDongSan.Gia.ToString();
         txtDiaChi.Text = TinRaoVatBatDongSan.DiaChi;
@@ -119,31 +114,31 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         txtHuong.Text = TinRaoVatBatDongSan.LoGioi;
         txtLau.Text = TinRaoVatBatDongSan.Lau.ToString();
         txtLung.Text = TinRaoVatBatDongSan.Lung.ToString();
-        ddlMatTien.SelectedIndex = ((bool)TinRaoVatBatDongSan.MatTien == true) ? 0 : 1;
+        ddlMatTien.SelectedIndex = (TinRaoVatBatDongSan.MatTien.Value == true) ? 0 : 1;
         txtGiayTo.Text = TinRaoVatBatDongSan.GiayTo;
         txtDuongTruocNha.Text = TinRaoVatBatDongSan.DuongTruocNha;
-        ckbDien.Checked = (bool)TinRaoVatBatDongSan.DienNhaNuoc;
-        ckbNuocMay.Checked = (bool)TinRaoVatBatDongSan.NuocMay;
+        ckbDien.Checked = TinRaoVatBatDongSan.DienNhaNuoc.Value;
+        ckbNuocMay.Checked = TinRaoVatBatDongSan.NuocMay.Value;
         txtSoPhongNgu.Text = TinRaoVatBatDongSan.SoPhongNgu.ToString();
         txtSoNhaVeSinh.Text = TinRaoVatBatDongSan.SoNhaVeSinh.ToString();
         txtNamXayDung.Text = TinRaoVatBatDongSan.NamXayDung.ToString();
-        ckbPhongKhach.Checked = (bool)TinRaoVatBatDongSan.PhongKhach;
-        ckbGaraOto.Checked = (bool)TinRaoVatBatDongSan.GaraOto;
-        ckbNhaBep.Checked = (bool)TinRaoVatBatDongSan.NhaBep;
-        ckbHoBoi.Checked = (bool)TinRaoVatBatDongSan.HoBoi;
-        ckbSanThuong.Checked = (bool)TinRaoVatBatDongSan.SanThuong;
-        ckbDieuHoa.Checked = (bool)TinRaoVatBatDongSan.DieuHoa;
-        ckbSanVuon.Checked = (bool)TinRaoVatBatDongSan.SanVuon;
-        ckbThangMay.Checked = (bool)TinRaoVatBatDongSan.ThangMay;
-        ckbGanTruongMauGiao.Checked = (bool)TinRaoVatBatDongSan.GanTruongMauGiao;
-        ckbGanTruongCapMot.Checked = (bool)TinRaoVatBatDongSan.GanTruongCap1;
-        ckbGanTruongCapHai.Checked = (bool)TinRaoVatBatDongSan.GanTruongCap2;
-        ckbGanTruongCapBa.Checked = (bool)TinRaoVatBatDongSan.GanTruongCap3;
-        ckbGanCho.Checked = (bool)TinRaoVatBatDongSan.GanCho;
-        ckbGanBenhVien.Checked = (bool)TinRaoVatBatDongSan.GanBenhVien;
-        ckbGanTrungTamThuongMai.Checked = (bool)TinRaoVatBatDongSan.GanTrungTamThuongMai;
-        ckbGanTrungTamGiaiTri.Checked = (bool)TinRaoVatBatDongSan.GanTrungTamGiaiTri;
-        ckbGanCongVien.Checked = (bool)TinRaoVatBatDongSan.GanCongVien;
+        ckbPhongKhach.Checked = TinRaoVatBatDongSan.PhongKhach.Value;
+        ckbGaraOto.Checked = TinRaoVatBatDongSan.GaraOto.Value;
+        ckbNhaBep.Checked = TinRaoVatBatDongSan.NhaBep.Value;
+        ckbHoBoi.Checked = TinRaoVatBatDongSan.HoBoi.Value;
+        ckbSanThuong.Checked = TinRaoVatBatDongSan.SanThuong.Value;
+        ckbDieuHoa.Checked = TinRaoVatBatDongSan.DieuHoa.Value;
+        ckbSanVuon.Checked = TinRaoVatBatDongSan.SanVuon.Value;
+        ckbThangMay.Checked = TinRaoVatBatDongSan.ThangMay.Value;
+        ckbGanTruongMauGiao.Checked = TinRaoVatBatDongSan.GanTruongMauGiao.Value;
+        ckbGanTruongCapMot.Checked = TinRaoVatBatDongSan.GanTruongCap1.Value;
+        ckbGanTruongCapHai.Checked = TinRaoVatBatDongSan.GanTruongCap2.Value;
+        ckbGanTruongCapBa.Checked = TinRaoVatBatDongSan.GanTruongCap3.Value;
+        ckbGanCho.Checked = TinRaoVatBatDongSan.GanCho.Value;
+        ckbGanBenhVien.Checked = TinRaoVatBatDongSan.GanBenhVien.Value;
+        ckbGanTrungTamThuongMai.Checked = TinRaoVatBatDongSan.GanTrungTamThuongMai.Value;
+        ckbGanTrungTamGiaiTri.Checked = TinRaoVatBatDongSan.GanTrungTamGiaiTri.Value;
+        ckbGanCongVien.Checked = TinRaoVatBatDongSan.GanCongVien.Value;
     }
     private void InitThirdView()
     {
@@ -155,6 +150,36 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         List<int> ThoiHanLuuTin = new List<int>() { 1, 3, 5, 7, 9, 10, 12, 15, 17, 20, 30 };
         ddlThoiHanLuuTin3.DataSource = ThoiHanLuuTin;
         ddlThoiHanLuuTin3.DataBind();
+
+        //Tin rao vặt
+        txtTieuDe3.Text = TinRaoVat.TieuDe;
+        ddlThoiHanLuuTin3.SelectedValue = TinRaoVat.ThoiHanLuuTin.ToString();
+        ddlDiaDiem3.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;
+        txtGhiChuAnh3.Text = TinRaoVat.GhiChuHinhAnh;
+        hplHinhAnh3.Text = TinRaoVat.Thumbnail;
+        hplHinhAnh3.NavigateUrl = ThumbnailLocation + TinRaoVat.Thumbnail;
+
+        //Tin tuyển dụng
+        TINTUYENDUNG TinTuyenDung = TinTuyenDungBUS.TimTinTuyenDungTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
+        txtTenNhaTuyenDung.Text = TinTuyenDung.TenNhaTuyenDung;
+        txtGioiThieuNhaTuyenDung.Text = TinTuyenDung.GioiThieuNhaTuyenDung;
+        txtWebsite.Text = TinTuyenDung.Website;
+        txtNguoiDaiDien.Text = TinTuyenDung.NguoiDaiDien;
+        txtDiaChiLienHe.Text = TinTuyenDung.DiaChiLienHe;
+        txtDienThoai.Text = TinTuyenDung.DienThoai;
+        txtEmail.Text = TinTuyenDung.Email;
+        ddlNganhNghe3.SelectedValue = NganhNgheBUS.TimNganhNgheTheoMa(TinTuyenDung.MaNganhNghe.Value).TenNganhNghe;
+        txtViTriTuyenDung.Text = TinTuyenDung.ViTriTuyenDung;
+        txtYeuCauCongViec.Text = TinTuyenDung.YeuCauCongViec;
+        txtYeuCauKinhNghiem.Text = TinTuyenDung.YeuCauKinhNghiem;
+        ddlThoiGianLamViec.SelectedValue = TinTuyenDung.ThoiGianLamViec;
+        txtSoLuongCanTuyen.Text = TinTuyenDung.SoLuongCanTuyen.ToString();
+        txtMucLuongKhoiDiem.Text = TinTuyenDung.MucLuongKhoiDiem.ToString();
+        txtThoiGianThuViec.Text = TinTuyenDung.ThoiGianThuViec;
+        txtLuongThuViec.Text = TinTuyenDung.LuongThuViec.ToString();
+        txtQuyenLoiDuocHuong.Text = TinTuyenDung.QuyenLoiDuocHuong;
+        txtHoSoBaoGom.Text = TinTuyenDung.HoSoBaoGom;
+        cldThoiHanKetThucNopHoSo.SelectedDate = TinTuyenDung.ThoiHanKetThucNopHoSo.Value;
     }
     private void InitFourthView()
     {
@@ -178,10 +203,116 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         List<int> ThoiHanLuuTin = new List<int>() { 1, 3, 5, 7, 9, 10, 12, 15, 17, 20, 30 };
         ddlThoiHanLuuTin4.DataSource = ThoiHanLuuTin;
         ddlThoiHanLuuTin4.DataBind();
+
+        //Tin rao vặt
+        txtTieuDe4.Text = TinRaoVat.TieuDe;
+        ddlThoiHanLuuTin4.SelectedValue = TinRaoVat.ThoiHanLuuTin.ToString();
+        ddlDiaDiem4.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;
+        txtGhiChuAnh4.Text = TinRaoVat.GhiChuHinhAnh;
+        hplHinhAnh4.Text = TinRaoVat.Thumbnail;
+        hplHinhAnh4.NavigateUrl = ThumbnailLocation + TinRaoVat.Thumbnail;
+
+        //Hồ sơ tuyển dụng
+        HOSOTUYENDUNG HoSoTuyenDung = HoSoTuyenDungBUS.TimHoSoTuyenDungTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
+        ckbDongYHienThi.Checked = HoSoTuyenDung.DongYHienThi.Value;
+        txtHoTen.Text = HoSoTuyenDung.HoTen;
+        cldNgaySinh.SelectedDate = HoSoTuyenDung.NgaySinh.Value;
+        ckbGioiTinh.Checked = HoSoTuyenDung.GioiTinh.Value;
+        ckbTinhTrangHonNhan.Checked = HoSoTuyenDung.TinhTrangHonNhan.Value;
+        txtQuocTich.Text = HoSoTuyenDung.QuocTich;
+        txtDiaChiLienLac.Text = HoSoTuyenDung.DiaChiLienLac;
+        txtDienThoai4.Text = HoSoTuyenDung.SoDienThoai;
+        txtDiDong.Text = HoSoTuyenDung.DiDong;
+        txtEmail4.Text = HoSoTuyenDung.Email;
+        txtThongTinHocVan.Text = HoSoTuyenDung.ThongTinHocVan;
+        ddlBangCap.SelectedValue = HoSoTuyenDung.BangCap;
+        txtTrinhDoNgoaiNgu.Text = HoSoTuyenDung.NgoaiNgu;
+        txtKyNang.Text = HoSoTuyenDung.KyNang;
+        //Cấp bậc
+        ddlCapBac.SelectedValue = HoSoTuyenDung.CapBac;
+        txtSoNamKinhNghiem.Text = HoSoTuyenDung.SoNamKinhNghiem.ToString();
+        txtCongTyLamViec.Text = HoSoTuyenDung.CongTyLamViec;
+        ddlChucDanh.SelectedValue = HoSoTuyenDung.ChucDanh;
+        txtTomTatKinhNghiem.Text = HoSoTuyenDung.TomTatKinhNghiem;
+        txtMoTaCongViecLyTuong.Text = HoSoTuyenDung.MoTaCongViecLyTuong;
+        txtNguyenVong.Text = HoSoTuyenDung.NguyenVong;
+        //Thời gian làm việc
+        ddlThoiGianLamViec4.SelectedValue = HoSoTuyenDung.ThoiGianLamViec;
+        txtLuongMongMuon.Text = HoSoTuyenDung.LuongMongMuon;
+
+        //Chi tiết hồ sơ tuyển dụng
+        List<CHITIETHOSOTUYENDUNG> lstChiTietHoSoTuyenDung = ChiTietHoSoTuyenDungBUS.TimChiTietHoSoTuyenDungTheoMaHoTuyenDung(HoSoTuyenDung.MaHoSoTuyenDung);
+        if (lstChiTietHoSoTuyenDung.Count != 0)
+        {
+            NGANHNGHE NganhNghe = NganhNgheBUS.TimNganhNgheTheoMa(lstChiTietHoSoTuyenDung[0].MaNganhNghe.Value);
+            ddlNganhNghe4a.SelectedValue = NganhNghe.TenNganhNghe;
+        }
+        if (lstChiTietHoSoTuyenDung.Count > 0 && lstChiTietHoSoTuyenDung[1] != null)
+        {
+            NGANHNGHE NganhNghe = NganhNgheBUS.TimNganhNgheTheoMa(lstChiTietHoSoTuyenDung[1].MaNganhNghe.Value);
+            ddlNganhNghe4b.SelectedValue = NganhNghe.TenNganhNghe;
+        }
+        if (lstChiTietHoSoTuyenDung.Count > 1 && lstChiTietHoSoTuyenDung[2] != null)
+        {
+            NGANHNGHE NganhNghe = NganhNgheBUS.TimNganhNgheTheoMa(lstChiTietHoSoTuyenDung[2].MaNganhNghe.Value);
+            ddlNganhNghe4c.SelectedValue = NganhNghe.TenNganhNghe;
+        }
     }
+
     protected void btnCapNhat1_Click(object sender, EventArgs e)
     {
+        //Cập nhật tin rao vặt
+        TINRAOVAT TinRaoVatMoi = new TINRAOVAT();
+        TinRaoVatMoi.ThoiGianDang = DateTime.Now;
+        TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin1.SelectedValue);
+        TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem1.SelectedValue).MaDiaDiem;
+        TinRaoVatMoi.SoLanXem = TinRaoVat.SoLanXem;
 
+        ////Mã người dùng
+        if (Session["userID"] != null)
+        {
+            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+            else { TinRaoVatMoi.MaNguoiDung = TinRaoVat.MaNguoiDung; }
+        }
+        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
+        TinRaoVatMoi.MaDanhMucCon = TinRaoVat.MaDanhMucCon;
+        TinRaoVatMoi.TieuDe = txtTieuDe1.Text;
+        ////Thumbnail
+        if (fupHinhAnh1.HasFile)
+        {
+            try
+            {
+                string filename = Path.GetFileName(fupHinhAnh1.FileName);
+                fupHinhAnh1.SaveAs(Server.MapPath(ThumbnailLocation) + filename);
+                TinRaoVatMoi.Thumbnail = filename;
+                TinRaoVatMoi.GhiChuHinhAnh = txtGhiChuAnh1.Text;
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+        TinRaoVatMoi.Deleted = false;
+        if (!TinRaoVatBUS.CapNhatTinRaoVat(TinRaoVatMoi))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+
+        //Cập nhật tin rao vặt thường
+        TINRAOVATTHUONG TinRaoVatThuong = TinRaoVatThuongBUS.TimTinRaoVatThuongTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
+        TinRaoVatThuong.NoiDungTinRaoVat = txtNoiDung1.Text;
+        TinRaoVatThuong.Gia = int.Parse(txtGia1.Text);
+        TinRaoVatThuong.Deleted = false;
+        if (!TinRaoVatThuongBUS.CapNhatTinRaoVatThuong(TinRaoVatThuong))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+        //Cập nhật thành công
+        Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
     }
     protected void btnCapNhat2_Click(object sender, EventArgs e)
     {

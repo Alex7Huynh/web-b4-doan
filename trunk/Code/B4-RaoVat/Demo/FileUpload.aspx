@@ -17,23 +17,21 @@
             ErrorMessage="Tiêu Đề không được rỗng">*  tiêu đề ko được rỗng</asp:RequiredFieldValidator>
         <br />
         <br />
-        &nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label2" runat="server" Font-Size="Small" Text="Chuyên Mục:"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label2" runat="server" Font-Size="Small" 
+            Text="Chuyên Mục:"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-        <asp:DropDownList
-            ID="list_ChuyenMuc" runat="server" Height="25px" Width="232px" ToolTip="bạn phải chọn chuyên mục phù hợp với tin đăng nếu không tin đăng sẽ bị xóa"
-            DataSourceID="LinqDataSource1">
+        <asp:DropDownList ID="list_ChuyenMuc" runat="server" 
+            DataSourceID="LinqDataSource1" Height="25px" 
+            ToolTip="bạn phải chọn chuyên mục phù hợp với tin đăng nếu không tin đăng sẽ bị xóa" 
+            Width="232px">
         </asp:DropDownList>
-        
-        <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="DAO.RaoVatDataClassesDataContext"
-            Select="TenChuyenMuc" TableName="CHUYENMUCs" 
-            Where="MaChuyenMuc != @MaChuyenMuc1">
+        <asp:LinqDataSource ID="LinqDataSource1" runat="server" 
+            ContextTypeName="DAO.RaoVatDataClassesDataContext" Select="TenChuyenMuc" 
+            TableName="CHUYENMUCs" Where="MaChuyenMuc != @MaChuyenMuc1">
             <WhereParameters>
                 <asp:Parameter DefaultValue="4" Name="MaChuyenMuc1" Type="Int32" />
             </WhereParameters>
         </asp:LinqDataSource>
-        
         &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="list_ChuyenMuc"
             ErrorMessage="* bạn phải chọn chuyên mục"></asp:RequiredFieldValidator>

@@ -37,4 +37,5 @@ public partial class DangTinRaoVat : System.Web.UI.Page
             }
         }
     }
+    
 }

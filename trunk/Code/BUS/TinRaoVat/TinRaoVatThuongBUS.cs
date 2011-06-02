@@ -16,11 +16,11 @@ namespace BUS
         {
             return TinRaoVatThuongDAO.XoaTinRaoVatThuong(maTinRaoVatThuong);
         }
-        public static bool CapNhatTinRaoVat(TINRAOVATTHUONG tinRaoVatThuong)
+        public static bool CapNhatTinRaoVatThuong(TINRAOVATTHUONG tinRaoVatThuong)
         {
             return TinRaoVatThuongDAO.CapNhatTinRaoVatThuong(tinRaoVatThuong);
         }
-        public static List<TINRAOVATTHUONG> LayDanhSachTinRaoVat()
+        public static List<TINRAOVATTHUONG> LayDanhSachTinRaoVatThuong()
         {
             return TinRaoVatThuongDAO.LayDanhSachTinRaoVatThuong();
         }

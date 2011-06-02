@@ -7,9 +7,12 @@
             <table style="width: 56%; background-color: #EAFFFF;">
                 <tr>
                     <td colspan="2">
+                        <asp:Label ID="Label11" runat="server" Font-Bold="True" ForeColor="#003399">Thông 
+                        tin chi tiết rao vặt của bạn :</asp:Label>
                         <br />
                         <asp:Label ID="Label12" runat="server" Text=" (*Ghi chú : Bạn vui lòng nhập Tiếng Việt có dấu và thông tin đầy đủ)"
                             ForeColor="#000066"></asp:Label>
+                        <br />
                     </td>
                 </tr>
                 <tr>
@@ -23,8 +26,6 @@
                 </tr>
                 <tr>
                     <td style="width: 267px" align="right">
-                        <asp:Label ID="Label11" runat="server" Font-Bold="True" ForeColor="#003399">Thông 
-                        tin chi tiết rao vặt của bạn :</asp:Label>
                         <asp:Label ID="Label1" runat="server" Text="* Tiêu đề" ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="width: 301px">
@@ -443,11 +444,22 @@
                 </tr>
                  
                 <tr>
-                    <td colspan="2" bgcolor="#00FF99">
-                        <asp:Label ID="Label50" runat="server" Text="Thông tin nhà tuyển dụng :" 
+                    <td align="right">
+                        <asp:Label ID="Label130" runat="server" Text="* Tiêu đề" 
                             ForeColor="#003399" style="font-weight: 700"></asp:Label>
-                        <br />
                     </td>
+                    <td>
+                        <asp:TextBox ID="txtTieuDe3" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTieuDe3" runat="server" 
+                            ControlToValidate="txtTieuDe1" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                 <tr>
+                     <td bgcolor="#00FF99" colspan="2">
+                         <asp:Label ID="Label50" runat="server" ForeColor="#003399" 
+                             style="font-weight: 700" Text="Thông tin nhà tuyển dụng :"></asp:Label>
+                         <br />
+                     </td>
                 </tr>
                  <tr>
                     <td style="width: 2831px" align="right">
@@ -476,14 +488,25 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label55" runat="server" Text="Website: " ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label128" runat="server" Text="*Địa điểm" ForeColor="#003399"></asp:Label>
+                    </td>
+                    <td style="margin-left: 40px">
+                        <asp:DropDownList ID="ddlDiaDiem3" runat="server" DataSourceID="lqDiaDiem" 
+                            ForeColor="#003399">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="width: 2831px">
+                        <asp:Label ID="Label55" runat="server" Text="Website: " 
+                            ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtWebsite" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" colspan="2" bgcolor="#33CCCC">
+                    <td align="left" bgcolor="#33CCCC" colspan="2">
                         <asp:Label ID="Label56" runat="server" Text="Thông tin liên hệ : " 
                             ForeColor="#003399" style="font-weight: 700"></asp:Label>
                     </td>
@@ -524,7 +547,8 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label60" runat="server" Text="*Email:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label60" runat="server" Text="*Email:" 
+                            ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtEmail" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
@@ -533,14 +557,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" colspan="2" bgcolor="#FFCC00">
+                    <td align="left" bgcolor="#FFCC00" colspan="2">
                         <asp:Label ID="Label61" runat="server" Text="Thông tin yêu cầu tuyển dụng : " 
                             ForeColor="#003399" style="font-weight: 700"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label62" runat="server" Text="*Nghành Nghề:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label62" runat="server" Text="*Nghành Nghề:" 
+                            ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:DropDownList ID="ddlNganhNghe3" runat="server" DataSourceID="lqNganhNghe">
@@ -582,8 +607,8 @@
                             ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtYeuCauKinhNghiem" runat="server" ForeColor="#003399" Height="116px" 
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtYeuCauKinhNghiem" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -663,14 +688,14 @@
                             ForeColor="#003399"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtHoSoBaoGom" runat="server" ForeColor="#003399" Height="116px" 
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtHoSoBaoGom" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label76" runat="server" Text="*Thời hạn kết thúc nộp hồ sơ: " 
-                            ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label76" runat="server" ForeColor="#003399" 
+                            Text="*Thời hạn kết thúc nộp hồ sơ: "></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:Calendar ID="cldThoiHanKetThucNopHoSo" runat="server"></asp:Calendar>
@@ -689,7 +714,8 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label122" runat="server" ForeColor="#003399" Text="Hình ảnh:"></asp:Label>
+                        <asp:Label ID="Label122" runat="server" ForeColor="#003399" 
+                            Text="Hình ảnh:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:FileUpload ID="fupHinhAnh3" runat="server" ForeColor="#003399" />
@@ -708,7 +734,7 @@
                     <td align="center" colspan="2">
                         <asp:Button ID="btnDangTin3" runat="server" BackColor="#FF9933" 
                             BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
-                            Text="ĐĂNG KÝ HỒ SƠ" onclick="btnDangTin3_Click" />
+                            onclick="btnDangTin3_Click" Text="ĐĂNG KÝ HỒ SƠ" />
                     </td>
                 </tr>
             </table>
@@ -722,7 +748,20 @@
             </td>
             </tr>
                 <tr>
-                    <td colspan="3" bgcolor="#00CC66">
+                    <td align="right">
+                        <asp:Label ID="Label131" runat="server" ForeColor="#003399" 
+                            style="font-weight: 700" Text="* Tiêu đề"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtTieuDe4" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTieuDe5" runat="server" 
+                            ControlToValidate="txtTieuDe1" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td bgcolor="#00CC66" colspan="3">
                         <asp:Label ID="Label78" runat="server" ForeColor="#003399" 
                             style="font-weight: 700" Text="Tuỳ chọn chuyên mục việc làm :"></asp:Label>
                     </td>
@@ -1078,6 +1117,19 @@
                         <asp:RangeValidator ID="rvdLuongMongMuon" runat="server" 
                             ControlToValidate="txtLuongMongMuon" ErrorMessage="Nhập số" 
                             MaximumValue="999999999" MinimumValue="0" Type="Integer"></asp:RangeValidator>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="RIGHT" style="width: 179px">
+                        <asp:Label ID="Label129" runat="server" ForeColor="#003399" 
+                            Text="*Địa điểm"></asp:Label>
+                    </td>
+                    <td style="width: 288px">
+                        <asp:DropDownList ID="ddlDiaDiem4" runat="server" DataSourceID="lqDiaDiem" 
+                            ForeColor="#003399">
+                        </asp:DropDownList>
                     </td>
                     <td>
                         &nbsp;</td>

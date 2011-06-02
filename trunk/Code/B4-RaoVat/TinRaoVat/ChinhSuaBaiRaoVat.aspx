@@ -28,8 +28,8 @@
                     </td>
                     <td style="width: 301px">
                         <asp:TextBox ID="txtTieuDe1" runat="server" Width="300px" ForeColor="#003399"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvTieuDe1" runat="server" ControlToValidate="txtTieuDe1"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvTieuDe1" runat="server" 
+                            ControlToValidate="txtTieuDe1" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -355,7 +355,8 @@
                 </tr>
                 <tr>
                     <td style="width: 129px" align="right">
-                        &nbsp;<asp:Label ID="Label43" runat="server" ForeColor="#003399" Text="Thời hạn lưu tin:"></asp:Label>
+                        <asp:Label ID="Label128" runat="server" ForeColor="#003399" 
+                            Text="Thời hạn lưu tin (ngày):"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
                         <asp:DropDownList ID="ddlThoiHanLuuTin2" runat="server" ForeColor="#003399" Width="100px">
@@ -400,149 +401,183 @@
         <asp:View ID="View3" runat="server">
             <table style="width: 60%; background-color: #D9FFF0;">
                 <tr>
-                    <td colspan="2" align="center">
+                    <td align="center">
                         <asp:Label ID="Label53" runat="server" Text="ĐĂNG TIN TUYỂN DỤNG MỚI " Style="font-weight: 700"
                             ForeColor="#33CC33"></asp:Label>
                         <br />
                     </td>
                 </tr>
+            </table>
+            <table style="width: 60%; background-color: #D9FFF0;">
                 <tr>
-                    <td colspan="2" bgcolor="#00FF99">
-                        <asp:Label ID="Label50" runat="server" Text="Thông tin nhà tuyển dụng :" ForeColor="#003399"
-                            Style="font-weight: 700"></asp:Label>
+                    <td align="right">
+                        <asp:Label ID="Label132" runat="server" ForeColor="#003399" 
+                            style="font-weight: 700" Text="* Tiêu đề"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtTieuDe3" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTieuDe3" runat="server" 
+                            ControlToValidate="txtTieuDe1" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#00FF99" colspan="2">
+                        <asp:Label ID="Label50" runat="server" ForeColor="#003399" 
+                            Style="font-weight: 700" Text="Thông tin nhà tuyển dụng :"></asp:Label>
                         <br />
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 2831px" align="right">
-                        <asp:Label ID="Label52" runat="server" Text="*Tên công ty/nhà tuyển dụng :" ForeColor="#003399"
-                            Font-Bold="True"></asp:Label>
+                    <td align="right" style="width: 2831px">
+                        <asp:Label ID="Label52" runat="server" Font-Bold="True" ForeColor="#003399" 
+                            Text="*Tên công ty/nhà tuyển dụng :"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtTenNhaTuyenDung" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvTenNhaTuyenDung" runat="server" ControlToValidate="txtTenNhaTuyenDung"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtTenNhaTuyenDung" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTenNhaTuyenDung" runat="server" 
+                            ControlToValidate="txtTenNhaTuyenDung" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label54" runat="server" Font-Bold="True" Text="*Giới thiệu về nhà tuyển dụng:"
-                            ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label54" runat="server" Font-Bold="True" ForeColor="#003399" 
+                            Text="*Giới thiệu về nhà tuyển dụng:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtGioiThieuNhaTuyenDung" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtGioiThieuNhaTuyenDung" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="rfvGioiThieuNhaTuyenDung" runat="server" ControlToValidate="txtGioiThieuNhaTuyenDung"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvGioiThieuNhaTuyenDung" runat="server" 
+                            ControlToValidate="txtGioiThieuNhaTuyenDung" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label55" runat="server" Text="Website: " ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label135" runat="server" ForeColor="#003399" Text="*Địa điểm"></asp:Label>
+                    </td>
+                    <td style="margin-left: 40px">
+                        <asp:DropDownList ID="ddlDiaDiem3" runat="server" DataSourceID="lqDiaDiem" 
+                            ForeColor="#003399">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" style="width: 2831px">
+                        <asp:Label ID="Label55" runat="server" ForeColor="#003399" Text="Website: "></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtWebsite" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" colspan="2" bgcolor="#33CCCC">
-                        <asp:Label ID="Label56" runat="server" Text="Thông tin liên hệ : " ForeColor="#003399"
-                            Style="font-weight: 700"></asp:Label>
+                    <td align="left" bgcolor="#33CCCC" colspan="2">
+                        <asp:Label ID="Label56" runat="server" ForeColor="#003399" 
+                            Style="font-weight: 700" Text="Thông tin liên hệ : "></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label57" runat="server" Text="*Người đại diện:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label57" runat="server" ForeColor="#003399" 
+                            Text="*Người đại diện:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtNguoiDaiDien" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvNguoiDaiDien" runat="server" ControlToValidate="txtNguoiDaiDien"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtNguoiDaiDien" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNguoiDaiDien" runat="server" 
+                            ControlToValidate="txtNguoiDaiDien" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label58" runat="server" Text="*Địa chỉ liên hệ:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label58" runat="server" ForeColor="#003399" 
+                            Text="*Địa chỉ liên hệ:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtDiaChiLienHe" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDiaChiLienHe" runat="server" ControlToValidate="txtDiaChiLienHe"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtDiaChiLienHe" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDiaChiLienHe" runat="server" 
+                            ControlToValidate="txtDiaChiLienHe" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label59" runat="server" Text="*Điện thoai:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label59" runat="server" ForeColor="#003399" Text="*Điện thoai:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtDienThoai" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDienThoai" runat="server" ControlToValidate="txtDienThoai"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDienThoai" runat="server" 
+                            ControlToValidate="txtDienThoai" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label60" runat="server" Text="*Email:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label60" runat="server" ForeColor="#003399" Text="*Email:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtEmail" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
+                            ControlToValidate="txtEmail" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td align="left" colspan="2" bgcolor="#FFCC00">
-                        <asp:Label ID="Label61" runat="server" Text="Thông tin yêu cầu tuyển dụng : " ForeColor="#003399"
-                            Style="font-weight: 700"></asp:Label>
+                    <td align="left" bgcolor="#FFCC00" colspan="2">
+                        <asp:Label ID="Label61" runat="server" ForeColor="#003399" 
+                            Style="font-weight: 700" Text="Thông tin yêu cầu tuyển dụng : "></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label62" runat="server" Text="*Nghành Nghề:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label62" runat="server" ForeColor="#003399" Text="*Nghành Nghề:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:DropDownList ID="ddlNganhNghe3" runat="server" DataSourceID="lqNganhNghe">
                         </asp:DropDownList>
-                        <asp:LinqDataSource ID="lqNganhNghe" runat="server" ContextTypeName="DAO.RaoVatDataClassesDataContext"
-                            Select="TenNganhNghe" TableName="NGANHNGHEs">
+                        <asp:LinqDataSource ID="lqNganhNghe" runat="server" 
+                            ContextTypeName="DAO.RaoVatDataClassesDataContext" Select="TenNganhNghe" 
+                            TableName="NGANHNGHEs">
                         </asp:LinqDataSource>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label63" runat="server" Text="*Vị trí tuyển dụng:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label63" runat="server" ForeColor="#003399" 
+                            Text="*Vị trí tuyển dụng:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtViTriTuyenDung" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvViTriTuyenDung" runat="server" ControlToValidate="txtViTriTuyenDung"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtViTriTuyenDung" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvViTriTuyenDung" runat="server" 
+                            ControlToValidate="txtViTriTuyenDung" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label64" runat="server" Text="*Yêu cầu công việc:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label64" runat="server" ForeColor="#003399" 
+                            Text="*Yêu cầu công việc:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtYeuCauCongViec" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtYeuCauCongViec" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                         <br />
-                        <asp:RequiredFieldValidator ID="rfvYeuCauCongViec" runat="server" ControlToValidate="txtYeuCauCongViec"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvYeuCauCongViec" runat="server" 
+                            ControlToValidate="txtYeuCauCongViec" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label67" runat="server" Text="Yêu cầu kinh nghiệm:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label67" runat="server" ForeColor="#003399" 
+                            Text="Yêu cầu kinh nghiệm:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtYeuCauKinhNghiem" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtYeuCauKinhNghiem" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label68" runat="server" Text="*Thời gian làm việc:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label68" runat="server" ForeColor="#003399" 
+                            Text="*Thời gian làm việc:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:DropDownList ID="ddlThoiGianLamViec" runat="server">
@@ -551,65 +586,79 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label70" runat="server" Text="*Số lượng cần tuyển:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label70" runat="server" ForeColor="#003399" 
+                            Text="*Số lượng cần tuyển:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtSoLuongCanTuyen" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvSoLuongCanTuyen" runat="server" ControlToValidate="txtSoLuongCanTuyen"
-                            ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
-                        <asp:RangeValidator ID="rvdSoLuongCanTuyen" runat="server" ControlToValidate="txtSoLuongCanTuyen"
-                            ErrorMessage="Nhập số" MaximumValue="1000" MinimumValue="1" Type="Integer"></asp:RangeValidator>
+                        <asp:TextBox ID="txtSoLuongCanTuyen" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvSoLuongCanTuyen" runat="server" 
+                            ControlToValidate="txtSoLuongCanTuyen" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="rvdSoLuongCanTuyen" runat="server" 
+                            ControlToValidate="txtSoLuongCanTuyen" ErrorMessage="Nhập số" 
+                            MaximumValue="1000" MinimumValue="1" Type="Integer"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label71" runat="server" Text="Mức lương khởi điểm" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label71" runat="server" ForeColor="#003399" 
+                            Text="Mức lương khởi điểm"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtMucLuongKhoiDiem" runat="server" ForeColor="#003399" Width="300px">0</asp:TextBox>
-                        <asp:RangeValidator ID="rvdMucLuongKhoiDiem" runat="server" ControlToValidate="txtMucLuongKhoiDiem"
-                            ErrorMessage="Nhập số" MaximumValue="999999999" MinimumValue="0" Type="Integer"></asp:RangeValidator>
+                        <asp:TextBox ID="txtMucLuongKhoiDiem" runat="server" ForeColor="#003399" 
+                            Width="300px">0</asp:TextBox>
+                        <asp:RangeValidator ID="rvdMucLuongKhoiDiem" runat="server" 
+                            ControlToValidate="txtMucLuongKhoiDiem" ErrorMessage="Nhập số" 
+                            MaximumValue="999999999" MinimumValue="0" Type="Integer"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label72" runat="server" Text="Thời gian thử việc:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label72" runat="server" ForeColor="#003399" 
+                            Text="Thời gian thử việc:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtThoiGianThuViec" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:TextBox ID="txtThoiGianThuViec" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label73" runat="server" Text="Mức lương thử việc:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label73" runat="server" ForeColor="#003399" 
+                            Text="Mức lương thử việc:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtLuongThuViec" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RangeValidator ID="rvdMucLuongThuViec" runat="server" ControlToValidate="txtLuongThuViec"
-                            ErrorMessage="Nhập số" MaximumValue="999999999" MinimumValue="0" Type="Integer"></asp:RangeValidator>
+                        <asp:TextBox ID="txtLuongThuViec" runat="server" ForeColor="#003399" 
+                            Width="300px"></asp:TextBox>
+                        <asp:RangeValidator ID="rvdMucLuongThuViec" runat="server" 
+                            ControlToValidate="txtLuongThuViec" ErrorMessage="Nhập số" 
+                            MaximumValue="999999999" MinimumValue="0" Type="Integer"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label74" runat="server" Text="Quyền lợi được hưởng:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label74" runat="server" ForeColor="#003399" 
+                            Text="Quyền lợi được hưởng:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtQuyenLoiDuocHuong" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtQuyenLoiDuocHuong" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label75" runat="server" Text="Hồ sơ bao gồm:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label75" runat="server" ForeColor="#003399" 
+                            Text="Hồ sơ bao gồm:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:TextBox ID="txtHoSoBaoGom" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px"></asp:TextBox>
+                        <asp:TextBox ID="txtHoSoBaoGom" runat="server" ForeColor="#003399" 
+                            Height="116px" TextMode="MultiLine" Width="417px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label76" runat="server" Text="*Thời hạn kết thúc nộp hồ sơ: " ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label76" runat="server" ForeColor="#003399" 
+                            Text="*Thời hạn kết thúc nộp hồ sơ: "></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:Calendar ID="cldThoiHanKetThucNopHoSo" runat="server"></asp:Calendar>
@@ -617,10 +666,12 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label120" runat="server" ForeColor="#003399" Text="Thời hạn lưu tin:"></asp:Label>
+                        <asp:Label ID="Label129" runat="server" ForeColor="#003399" 
+                            Text="Thời hạn lưu tin (ngày):"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
-                        <asp:DropDownList ID="ddlThoiHanLuuTin3" runat="server" ForeColor="#003399" Width="100px">
+                        <asp:DropDownList ID="ddlThoiHanLuuTin3" runat="server" ForeColor="#003399" 
+                            Width="100px">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -636,7 +687,8 @@
                 </tr>
                 <tr>
                     <td align="right" style="width: 2831px">
-                        <asp:Label ID="Label124" runat="server" ForeColor="#003399" Text="Ghi chú hình ảnh:"></asp:Label>
+                        <asp:Label ID="Label124" runat="server" ForeColor="#003399" 
+                            Text="Ghi chú hình ảnh:"></asp:Label>
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtGhiChuAnh3" runat="server"></asp:TextBox>
@@ -644,9 +696,9 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="2">
-                        <asp:Button ID="btnCapNhat3" runat="server" BackColor="#FF9933" BorderStyle="Groove"
-                            Font-Bold="True" ForeColor="White" Text="CẬP NHẬT THÔNG TIN" 
-                            OnClick="btnCapNhat3_Click" />
+                        <asp:Button ID="btnCapNhat3" runat="server" BackColor="#FF9933" 
+                            BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
+                            OnClick="btnCapNhat3_Click" Text="CẬP NHẬT THÔNG TIN" />
                     </td>
                 </tr>
             </table>
@@ -660,9 +712,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" bgcolor="#00CC66">
-                        <asp:Label ID="Label78" runat="server" ForeColor="#003399" Style="font-weight: 700"
-                            Text="Tuỳ chọn chuyên mục việc làm :"></asp:Label>
+                    <td align="right">
+                        <asp:Label ID="Label133" runat="server" ForeColor="#003399" 
+                            style="font-weight: 700" Text="* Tiêu đề"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtTieuDe4" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTieuDe4" runat="server" 
+                            ControlToValidate="txtTieuDe1" ErrorMessage="Không bỏ trống"></asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td bgcolor="#00CC66" colspan="3">
+                        <asp:Label ID="Label78" runat="server" ForeColor="#003399" 
+                            Style="font-weight: 700" Text="Tuỳ chọn chuyên mục việc làm :"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -1015,10 +1080,24 @@
                 </tr>
                 <tr>
                     <td align="RIGHT" style="width: 179px">
-                        <asp:Label ID="Label121" runat="server" ForeColor="#003399" Text="Thời hạn lưu tin:"></asp:Label>
+                        <asp:Label ID="Label136" runat="server" ForeColor="#003399" Text="*Địa điểm"></asp:Label>
                     </td>
                     <td style="width: 288px">
-                        <asp:DropDownList ID="ddlThoiHanLuuTin4" runat="server" ForeColor="#003399" Width="100px">
+                        <asp:DropDownList ID="ddlDiaDiem4" runat="server" DataSourceID="lqDiaDiem" 
+                            ForeColor="#003399">
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="RIGHT" style="width: 179px">
+                        <asp:Label ID="Label130" runat="server" ForeColor="#003399" 
+                            Text="Thời hạn lưu tin (ngày):"></asp:Label>
+                    </td>
+                    <td style="width: 288px">
+                        <asp:DropDownList ID="ddlThoiHanLuuTin4" runat="server" ForeColor="#003399" 
+                            Width="100px">
                         </asp:DropDownList>
                     </td>
                     <td>
