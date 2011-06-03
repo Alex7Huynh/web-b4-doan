@@ -169,5 +169,25 @@ namespace DAO
 
             return tinRaoVatBatDongSan;
         }
+        public static TINRAOVATBATDONGSAN TimTinRaoVatBatDongSanTheoChuoi(string chuoi)
+        {
+            TINRAOVATBATDONGSAN tinRaoVatBatDongSan = new TINRAOVATBATDONGSAN();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
+                                            where q.DiaChi.Contains(chuoi) || q.DuongTruocNha.Contains(chuoi) || 
+                                            q.GiayTo.Contains(chuoi) || q.Huong.Contains(chuoi) || 
+                                            q.LoGioi.Contains(chuoi) || q.NoiDungTinRaoVat.Contains(chuoi)
+                                            select q;
+                tinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>().First();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+            return tinRaoVatBatDongSan;
+        }
     }
 }
