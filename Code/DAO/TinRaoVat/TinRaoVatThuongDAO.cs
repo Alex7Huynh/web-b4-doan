@@ -67,7 +67,8 @@ namespace DAO
                 TINRAOVATTHUONG trvt = new TINRAOVATTHUONG();
                 trvt = db.TINRAOVATTHUONGs.Single(t => t.MaTinRaoVatThuong == tinRaoVatThuong.MaTinRaoVatThuong);
                 //Update
-                //...
+                trvt.NoiDungTinRaoVat = tinRaoVatThuong.NoiDungTinRaoVat;
+                trvt.Gia = tinRaoVatThuong.Gia;
                 //Submit
                 db.SubmitChanges();
             }

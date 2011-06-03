@@ -63,7 +63,14 @@ namespace DAO
                 trv = db.TINRAOVATs.Single(t => t.MaTinRaoVat == tinRaoVat.MaTinRaoVat);
                 //Update
                 trv.ThoiGianDang = tinRaoVat.ThoiGianDang;
-                //...
+                trv.ThoiHanLuuTin = tinRaoVat.ThoiHanLuuTin;
+                trv.MaDiaDiem = tinRaoVat.MaDiaDiem;
+                trv.SoLanXem = tinRaoVat.SoLanXem;
+                trv.MaNguoiDung = tinRaoVat.MaNguoiDung;
+                trv.MaDanhMucCon = tinRaoVat.MaDanhMucCon;
+                trv.TieuDe = tinRaoVat.TieuDe;
+                trv.Thumbnail = tinRaoVat.Thumbnail;
+                trv.GhiChuHinhAnh = tinRaoVat.GhiChuHinhAnh;               
                 //Submit
                 db.SubmitChanges();
             }
@@ -184,6 +191,11 @@ namespace DAO
             return trv;
         }
 
+        /// <summary>
+        /// Find CHUYENMUC with maTinRaoVat
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
         public static CHUYENMUC LayChuyenMuc(int maTinRaoVat)
         {
             CHUYENMUC chuyenMuc = new CHUYENMUC();
@@ -196,13 +208,16 @@ namespace DAO
                 chuyenMuc = dsChuyenMuc.ToList<CHUYENMUC>().First();
             }
             catch (Exception ex)
-            {
-                return null;
-            }
+            { return null; }
 
             return chuyenMuc;
         }
 
+        /// <summary>
+        /// Find NGUOIDUNG with maTinRaoVat
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
         public static NGUOIDUNG LayNguoiDung(int maTinRaoVat)
         {
             NGUOIDUNG nguoiDung = new NGUOIDUNG();

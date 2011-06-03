@@ -63,7 +63,31 @@ namespace DAO
                 HOSOTUYENDUNG hstd = new HOSOTUYENDUNG();
                 hstd = db.HOSOTUYENDUNGs.Single(t => t.MaHoSoTuyenDung == hoSoTuyenDung.MaHoSoTuyenDung);
                 //Update
-                //...
+                hstd.DongYHienThi = hoSoTuyenDung.DongYHienThi;
+                hstd.HoTen = hoSoTuyenDung.HoTen;
+                hstd.NgaySinh = hoSoTuyenDung.NgaySinh;
+                hstd.GioiTinh = hoSoTuyenDung.GioiTinh;
+                hstd.TinhTrangHonNhan = hoSoTuyenDung.TinhTrangHonNhan;
+                hstd.QuocTich = hoSoTuyenDung.QuocTich;
+                hstd.DiaChiLienLac = hoSoTuyenDung.DiaChiLienLac;
+                hstd.SoDienThoai = hoSoTuyenDung.SoDienThoai;
+                hstd.DiDong = hoSoTuyenDung.DiDong;
+                hstd.Email = hoSoTuyenDung.Email;
+
+                hstd.ThongTinHocVan = hoSoTuyenDung.ThongTinHocVan;
+                hstd.BangCap = hoSoTuyenDung.BangCap;
+                hstd.NgoaiNgu = hoSoTuyenDung.NgoaiNgu;
+                hstd.KyNang = hoSoTuyenDung.KyNang;
+
+                hstd.CapBac = hoSoTuyenDung.CapBac;
+                hstd.SoNamKinhNghiem = hoSoTuyenDung.SoNamKinhNghiem;
+                hstd.CongTyLamViec = hoSoTuyenDung.CongTyLamViec;
+                hstd.ChucDanh = hoSoTuyenDung.ChucDanh;
+                hstd.TomTatKinhNghiem = hoSoTuyenDung.TomTatKinhNghiem;
+                hstd.MoTaCongViecLyTuong = hoSoTuyenDung.MoTaCongViecLyTuong;
+                hstd.NguyenVong = hoSoTuyenDung.NguyenVong;
+                hstd.ThoiGianLamViec = hoSoTuyenDung.ThoiGianLamViec;
+                hstd.LuongMongMuon = hoSoTuyenDung.LuongMongMuon;
                 //Submit
                 db.SubmitChanges();
             }

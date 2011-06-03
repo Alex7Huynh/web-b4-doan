@@ -325,7 +325,7 @@
       <Column Name="SoLanXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaDanhMucCon" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TieuDe" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Thumbnail" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
       <Column Name="GhiChuHinhAnh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />

@@ -19,7 +19,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //Nếu chưa đăng nhập        
-        Session["userID"] = "12";
+        Session["userID"] = "19";
         if (Session["userID"] == null)
         {
             Response.Redirect("~/TaiKhoan/DangNhap.aspx");
@@ -73,7 +73,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         ddlThoiHanLuuTin1.DataBind();
         //Tin rao vặt        
         txtTieuDe1.Text = TinRaoVat.TieuDe;
-        ddlThoiHanLuuTin1.SelectedIndex = TinRaoVat.ThoiHanLuuTin.Value;
+        ddlThoiHanLuuTin1.SelectedValue = TinRaoVat.ThoiHanLuuTin.ToString();
         ddlDiaDiem1.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;
         txtGhiChuAnh1.Text = TinRaoVat.GhiChuHinhAnh;
         hplHinhAnh1.Text = TinRaoVat.Thumbnail;
@@ -98,8 +98,8 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         ddlMatTien.DataBind();
         //Tin rao vặt
         txtTieuDe2.Text = TinRaoVat.TieuDe;
-        ddlThoiHanLuuTin2.SelectedIndex = TinRaoVat.ThoiHanLuuTin.Value;
-        ddlDiaDiem2.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;        
+        ddlThoiHanLuuTin2.SelectedValue = TinRaoVat.ThoiHanLuuTin.ToString();
+        ddlDiaDiem2.SelectedValue = DiaDiemBUS.TimDiaDiemTheoMa(TinRaoVat.MaDiaDiem.Value).TenDiaDiem;
         txtGhiChuAnh2.Text = TinRaoVat.GhiChuHinhAnh;
         hplHinhAnh2.Text = TinRaoVat.Thumbnail;
         hplHinhAnh2.NavigateUrl = ThumbnailLocation + TinRaoVat.Thumbnail;
@@ -262,20 +262,19 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
     protected void btnCapNhat1_Click(object sender, EventArgs e)
     {
         //Cập nhật tin rao vặt
-        TINRAOVAT TinRaoVatMoi = new TINRAOVAT();
+        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);
         TinRaoVatMoi.ThoiGianDang = DateTime.Now;
         TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin1.SelectedValue);
         TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem1.SelectedValue).MaDiaDiem;
-        TinRaoVatMoi.SoLanXem = TinRaoVat.SoLanXem;
 
-        ////Mã người dùng
+        //Kiểm tra đăng nhập
         if (Session["userID"] != null)
         {
+            //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
             if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
             {
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
-            else { TinRaoVatMoi.MaNguoiDung = TinRaoVat.MaNguoiDung; }
         }
         else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
 
@@ -292,11 +291,9 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
                 TinRaoVatMoi.GhiChuHinhAnh = txtGhiChuAnh1.Text;
             }
             catch (Exception ex)
-            {
-                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
-            }
+            { Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail"); }
         }
-        TinRaoVatMoi.Deleted = false;
+
         if (!TinRaoVatBUS.CapNhatTinRaoVat(TinRaoVatMoi))
         {
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
@@ -306,7 +303,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         TINRAOVATTHUONG TinRaoVatThuong = TinRaoVatThuongBUS.TimTinRaoVatThuongTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
         TinRaoVatThuong.NoiDungTinRaoVat = txtNoiDung1.Text;
         TinRaoVatThuong.Gia = int.Parse(txtGia1.Text);
-        TinRaoVatThuong.Deleted = false;
+
         if (!TinRaoVatThuongBUS.CapNhatTinRaoVatThuong(TinRaoVatThuong))
         {
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
@@ -316,14 +313,254 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
     }
     protected void btnCapNhat2_Click(object sender, EventArgs e)
     {
+        //Cập nhật tin rao vặt
+        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);
+        TinRaoVatMoi.ThoiGianDang = DateTime.Now;
+        TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin2.SelectedValue);
+        TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem2.SelectedValue).MaDiaDiem;
 
+        //Kiểm tra đăng nhập
+        if (Session["userID"] != null)
+        {
+            //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
+            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
+        TinRaoVatMoi.MaDanhMucCon = TinRaoVat.MaDanhMucCon;
+        TinRaoVatMoi.TieuDe = txtTieuDe2.Text;
+        //Thumbnail
+        if (fupHinhAnh2.HasFile)
+        {
+            try
+            {
+                string filename = Path.GetFileName(fupHinhAnh2.FileName);
+                fupHinhAnh2.SaveAs(Server.MapPath(ThumbnailLocation) + filename);
+                TinRaoVatMoi.Thumbnail = filename;
+                TinRaoVatMoi.GhiChuHinhAnh = txtGhiChuAnh2.Text;
+            }
+            catch (Exception ex)
+            { Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail"); }
+        }
+
+        if (!TinRaoVatBUS.CapNhatTinRaoVat(TinRaoVatMoi))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+
+        //Cập nhật tin rao vặt bất động sản
+        TINRAOVATBATDONGSAN TinRaoVatBatDongSan = TinRaoVatBatDongSanBUS.TimTinRaoVatBatDongSanTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
+        TinRaoVatBatDongSan.NoiDungTinRaoVat = txtNoiDung2.Text;
+        TinRaoVatBatDongSan.Gia = int.Parse(txtGia2.Text);
+        TinRaoVatBatDongSan.DiaChi = txtDiaChi.Text;
+        TinRaoVatBatDongSan.DienTich = int.Parse(txtDienTich.Text);
+        TinRaoVatBatDongSan.Huong = txtHuong.Text;
+        TinRaoVatBatDongSan.LoGioi = txtHuong.Text;
+        TinRaoVatBatDongSan.Lau = int.Parse(txtLau.Text);
+        TinRaoVatBatDongSan.Lung = int.Parse(txtLung.Text);
+        TinRaoVatBatDongSan.MatTien = ddlMatTien.SelectedIndex == 0 ? true : false;
+        TinRaoVatBatDongSan.GiayTo = txtGiayTo.Text;
+        TinRaoVatBatDongSan.DuongTruocNha = txtDuongTruocNha.Text;
+        TinRaoVatBatDongSan.DienNhaNuoc = ckbDien.Checked;
+        TinRaoVatBatDongSan.NuocMay = ckbNuocMay.Checked;
+        TinRaoVatBatDongSan.SoPhongNgu = int.Parse(txtSoPhongNgu.Text);
+        TinRaoVatBatDongSan.SoNhaVeSinh = int.Parse(txtSoNhaVeSinh.Text);
+        TinRaoVatBatDongSan.NamXayDung = int.Parse(txtNamXayDung.Text);
+        TinRaoVatBatDongSan.PhongKhach = ckbPhongKhach.Checked;
+        TinRaoVatBatDongSan.GaraOto = ckbGaraOto.Checked;
+        TinRaoVatBatDongSan.NhaBep = ckbNhaBep.Checked;
+        TinRaoVatBatDongSan.HoBoi = ckbHoBoi.Checked;
+        TinRaoVatBatDongSan.SanThuong = ckbSanThuong.Checked;
+        TinRaoVatBatDongSan.DieuHoa = ckbDieuHoa.Checked;
+        TinRaoVatBatDongSan.SanVuon = ckbSanVuon.Checked;
+        TinRaoVatBatDongSan.ThangMay = ckbThangMay.Checked;
+        TinRaoVatBatDongSan.GanTruongMauGiao = ckbGanTruongMauGiao.Checked;
+        TinRaoVatBatDongSan.GanTruongCap1 = ckbGanTruongCapMot.Checked;
+        TinRaoVatBatDongSan.GanTruongCap2 = ckbGanTruongCapHai.Checked;
+        TinRaoVatBatDongSan.GanTruongCap3 = ckbGanTruongCapBa.Checked;
+        TinRaoVatBatDongSan.GanCho = ckbGanCho.Checked;
+        TinRaoVatBatDongSan.GanBenhVien = ckbGanBenhVien.Checked;
+        TinRaoVatBatDongSan.GanTrungTamThuongMai = ckbGanTrungTamThuongMai.Checked;
+        TinRaoVatBatDongSan.GanTrungTamGiaiTri = ckbGanTrungTamGiaiTri.Checked;
+        TinRaoVatBatDongSan.GanCongVien = ckbGanCongVien.Checked;
+
+        if (!TinRaoVatBatDongSanBUS.CapNhatTinRaoVatBatDongSan(TinRaoVatBatDongSan))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+        //Cập nhật thành công
+        Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
     }
     protected void btnCapNhat3_Click(object sender, EventArgs e)
     {
+        //Cập nhật tin rao vặt
+        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);
+        TinRaoVatMoi.ThoiGianDang = DateTime.Now;
+        TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin3.SelectedValue);
+        TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem3.SelectedValue).MaDiaDiem;
 
+        //Kiểm tra đăng nhập
+        if (Session["userID"] != null)
+        {
+            //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
+            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
+        TinRaoVatMoi.MaDanhMucCon = TinRaoVat.MaDanhMucCon;
+        TinRaoVatMoi.TieuDe = txtTieuDe3.Text;
+        //Thumbnail
+        if (fupHinhAnh3.HasFile)
+        {
+            try
+            {
+                string filename = Path.GetFileName(fupHinhAnh3.FileName);
+                fupHinhAnh3.SaveAs(Server.MapPath(ThumbnailLocation) + filename);
+                TinRaoVatMoi.Thumbnail = filename;
+                TinRaoVatMoi.GhiChuHinhAnh = txtGhiChuAnh3.Text;
+            }
+            catch (Exception ex)
+            { Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail"); }
+        }
+
+        if (!TinRaoVatBUS.CapNhatTinRaoVat(TinRaoVatMoi))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+
+        //Cập nhật tin tuyển dụng
+        TINTUYENDUNG TinTuyenDung = TinTuyenDungBUS.TimTinTuyenDungTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
+        TinTuyenDung.TenNhaTuyenDung = txtTenNhaTuyenDung.Text;
+        TinTuyenDung.GioiThieuNhaTuyenDung = txtGioiThieuNhaTuyenDung.Text;
+        TinTuyenDung.Website = txtWebsite.Text;
+        TinTuyenDung.NguoiDaiDien = txtNguoiDaiDien.Text;
+        TinTuyenDung.DiaChiLienHe = txtDiaChiLienHe.Text;
+        TinTuyenDung.DienThoai = txtDienThoai.Text;
+        TinTuyenDung.Email = txtEmail.Text;
+        TinTuyenDung.MaNganhNghe = NganhNgheBUS.TimNganhNgheTheoTen(ddlNganhNghe3.SelectedValue).MaNganhNghe;
+        TinTuyenDung.ViTriTuyenDung = txtViTriTuyenDung.Text;
+        TinTuyenDung.YeuCauCongViec = txtYeuCauCongViec.Text;
+        TinTuyenDung.YeuCauKinhNghiem = txtYeuCauKinhNghiem.Text;
+        TinTuyenDung.ThoiGianLamViec = ddlThoiGianLamViec.SelectedValue;
+        TinTuyenDung.SoLuongCanTuyen = int.Parse(txtSoLuongCanTuyen.Text);
+        TinTuyenDung.MucLuongKhoiDiem = int.Parse(txtMucLuongKhoiDiem.Text);
+        TinTuyenDung.ThoiGianThuViec = txtThoiGianThuViec.Text;
+        TinTuyenDung.LuongThuViec = int.Parse(txtLuongThuViec.Text);
+        TinTuyenDung.QuyenLoiDuocHuong = txtQuyenLoiDuocHuong.Text;
+        TinTuyenDung.HoSoBaoGom = txtHoSoBaoGom.Text;
+        TinTuyenDung.ThoiHanKetThucNopHoSo = cldThoiHanKetThucNopHoSo.SelectedDate;
+
+        if (!TinTuyenDungBUS.CapNhatTinTuyenDung(TinTuyenDung))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+        //Thêm thành công
+        Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
     }
     protected void btnCapNhat4_Click(object sender, EventArgs e)
     {
+        //Cập nhật tin rao vặt
+        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);
+        TinRaoVatMoi.ThoiGianDang = DateTime.Now;
+        TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin4.SelectedValue);
+        TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem4.SelectedValue).MaDiaDiem;
 
+        //Kiểm tra đăng nhập
+        if (Session["userID"] != null)
+        {
+            //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
+            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+
+        TinRaoVatMoi.MaDanhMucCon = TinRaoVat.MaDanhMucCon;
+        TinRaoVatMoi.TieuDe = txtTieuDe4.Text;
+        //Thumbnail
+        if (fupHinhAnh4.HasFile)
+        {
+            try
+            {
+                string filename = Path.GetFileName(fupHinhAnh4.FileName);
+                fupHinhAnh4.SaveAs(Server.MapPath(ThumbnailLocation) + filename);
+                TinRaoVatMoi.Thumbnail = filename;
+                TinRaoVatMoi.GhiChuHinhAnh = txtGhiChuAnh4.Text;
+            }
+            catch (Exception ex)
+            { Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail"); }
+        }
+
+        if (!TinRaoVatBUS.CapNhatTinRaoVat(TinRaoVatMoi))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+
+        //Cập nhật hồ sơ tuyển dụng
+        HOSOTUYENDUNG HoSoTuyenDung = HoSoTuyenDungBUS.TimHoSoTuyenDungTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
+        HoSoTuyenDung.DongYHienThi = ckbDongYHienThi.Checked;
+        HoSoTuyenDung.HoTen = txtHoTen.Text;
+        HoSoTuyenDung.NgaySinh = cldNgaySinh.SelectedDate;
+        HoSoTuyenDung.GioiTinh = ckbGioiTinh.Checked;
+        HoSoTuyenDung.TinhTrangHonNhan = ckbTinhTrangHonNhan.Checked;
+        HoSoTuyenDung.QuocTich = txtQuocTich.Text;
+        HoSoTuyenDung.DiaChiLienLac = txtDiaChiLienLac.Text;
+        HoSoTuyenDung.SoDienThoai = txtDienThoai4.Text;
+        HoSoTuyenDung.DiDong = txtDiDong.Text;
+        HoSoTuyenDung.Email = txtEmail4.Text;
+        HoSoTuyenDung.ThongTinHocVan = txtThongTinHocVan.Text;
+        HoSoTuyenDung.BangCap = ddlBangCap.SelectedValue;
+        HoSoTuyenDung.NgoaiNgu = txtTrinhDoNgoaiNgu.Text;
+        HoSoTuyenDung.KyNang = txtKyNang.Text;
+        HoSoTuyenDung.CapBac = ddlCapBac.SelectedValue;
+        HoSoTuyenDung.SoNamKinhNghiem = int.Parse(txtSoNamKinhNghiem.Text);
+        HoSoTuyenDung.CongTyLamViec = txtCongTyLamViec.Text;
+        HoSoTuyenDung.ChucDanh = ddlChucDanh.SelectedValue;
+        HoSoTuyenDung.TomTatKinhNghiem = txtTomTatKinhNghiem.Text;
+        HoSoTuyenDung.MoTaCongViecLyTuong = txtMoTaCongViecLyTuong.Text;
+        HoSoTuyenDung.NguyenVong = txtNguyenVong.Text;
+        HoSoTuyenDung.ThoiGianLamViec = ddlThoiGianLamViec4.SelectedValue;
+        HoSoTuyenDung.LuongMongMuon = txtLuongMongMuon.Text;
+
+        if (!HoSoTuyenDungBUS.CapNhatHoSoTuyenDung(HoSoTuyenDung))
+        {
+            Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+        //Cập nhật chi tiết hồ sơ tuyển dụng
+        List<CHITIETHOSOTUYENDUNG> lstChiTietHoSoTuyenDung = ChiTietHoSoTuyenDungBUS.TimChiTietHoSoTuyenDungTheoMaHoTuyenDung(HoSoTuyenDung.MaHoSoTuyenDung);
+        if (lstChiTietHoSoTuyenDung.Count != 0)
+        {
+            lstChiTietHoSoTuyenDung[0].MaNganhNghe = NganhNgheBUS.TimNganhNgheTheoTen(ddlNganhNghe4a.SelectedValue).MaNganhNghe;
+            if (!ChiTietHoSoTuyenDungBUS.CapNhatChiTietHoSoTuyenDung(lstChiTietHoSoTuyenDung[0]))
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+        if (lstChiTietHoSoTuyenDung.Count > 0 && lstChiTietHoSoTuyenDung[1] != null)
+        {
+            lstChiTietHoSoTuyenDung[1].MaNganhNghe = NganhNgheBUS.TimNganhNgheTheoTen(ddlNganhNghe4b.SelectedValue).MaNganhNghe;
+            if (!ChiTietHoSoTuyenDungBUS.CapNhatChiTietHoSoTuyenDung(lstChiTietHoSoTuyenDung[1]))
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+        if (lstChiTietHoSoTuyenDung.Count > 1 && lstChiTietHoSoTuyenDung[2] != null)
+        {
+            lstChiTietHoSoTuyenDung[2].MaNganhNghe = NganhNgheBUS.TimNganhNgheTheoTen(ddlNganhNghe4c.SelectedValue).MaNganhNghe;
+            if (!ChiTietHoSoTuyenDungBUS.CapNhatChiTietHoSoTuyenDung(lstChiTietHoSoTuyenDung[2]))
+            {
+                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+            }
+        }
+
+        //Cập nhật thành công
+        Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
     }
 }

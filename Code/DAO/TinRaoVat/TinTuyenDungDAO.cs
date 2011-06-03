@@ -63,7 +63,26 @@ namespace DAO
                 TINTUYENDUNG ttd = new TINTUYENDUNG();
                 ttd = db.TINTUYENDUNGs.Single(t => t.MaTinTuyenDung == tinTuyenDung.MaTinTuyenDung);
                 //Update
-                //...
+                ttd.TenNhaTuyenDung = tinTuyenDung.TenNhaTuyenDung;
+                ttd.GioiThieuNhaTuyenDung = tinTuyenDung.GioiThieuNhaTuyenDung;
+                ttd.Website = tinTuyenDung.Website;
+                ttd.NguoiDaiDien = tinTuyenDung.NguoiDaiDien;
+                ttd.DiaChiLienHe = tinTuyenDung.DiaChiLienHe;
+                ttd.DienThoai = tinTuyenDung.DienThoai;
+                ttd.Email = tinTuyenDung.Email;
+
+                ttd.MaNganhNghe = tinTuyenDung.MaNganhNghe;
+                ttd.ViTriTuyenDung = tinTuyenDung.ViTriTuyenDung;
+                ttd.YeuCauCongViec = tinTuyenDung.YeuCauCongViec;
+                ttd.YeuCauKinhNghiem = tinTuyenDung.YeuCauKinhNghiem;
+                ttd.ThoiGianLamViec = tinTuyenDung.ThoiGianLamViec;
+                ttd.SoLuongCanTuyen = tinTuyenDung.SoLuongCanTuyen;
+                ttd.MucLuongKhoiDiem = tinTuyenDung.MucLuongKhoiDiem;
+                ttd.ThoiGianThuViec = tinTuyenDung.ThoiGianThuViec;
+                ttd.LuongThuViec = tinTuyenDung.LuongThuViec;
+                ttd.QuyenLoiDuocHuong = tinTuyenDung.QuyenLoiDuocHuong;
+                ttd.HoSoBaoGom = tinTuyenDung.HoSoBaoGom;
+                ttd.ThoiHanKetThucNopHoSo = tinTuyenDung.ThoiHanKetThucNopHoSo;
                 //Submit
                 db.SubmitChanges();
             }

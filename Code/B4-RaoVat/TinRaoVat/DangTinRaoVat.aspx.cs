@@ -349,6 +349,8 @@ public partial class DangTinRaoVat : System.Web.UI.Page
         TinTuyenDung.QuyenLoiDuocHuong = txtQuyenLoiDuocHuong.Text;
         TinTuyenDung.HoSoBaoGom = txtHoSoBaoGom.Text;
         TinTuyenDung.ThoiHanKetThucNopHoSo = cldThoiHanKetThucNopHoSo.SelectedDate;
+        TinTuyenDung.Deleted = false;
+
         if (!TinTuyenDungBUS.ThemTinTuyenDung(TinTuyenDung))
         {
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");

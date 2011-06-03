@@ -9,6 +9,11 @@ namespace DAO
 {
     public class TinNhanDAO
     {
+        /// <summary>
+        /// Insert new TINNHAN
+        /// </summary>
+        /// <param name="tinNhan"></param>
+        /// <returns></returns>
         public static bool ThemTinNhan(TINNHAN tinNhan)
         {
             try
@@ -23,6 +28,11 @@ namespace DAO
             return true;
 
         }
+
+        /// <summary>
+        /// Load list of TINNHAN
+        /// </summary>
+        /// <returns></returns>
         public static List<TINNHAN> LayDanhSachTinNhan()
         {
             List<TINNHAN> lstTinNhan = new List<TINNHAN>();

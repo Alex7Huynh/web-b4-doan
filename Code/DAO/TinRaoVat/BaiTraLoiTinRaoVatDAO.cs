@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DAO.TinRaoVat
+namespace DAO
 {
     public class BaiTraLoiTinRaoVatDAO
     {
+        /// <summary>
+        /// Insert new BAITRALOI
+        /// </summary>
+        /// <param name="baiTraLoi"></param>
+        /// <returns></returns>
         public static bool ThemBaiTraLoi(BAITRALOI baiTraLoi)
         {
             try
@@ -17,14 +22,15 @@ namespace DAO.TinRaoVat
                 
             }
             catch(Exception ex)
-            {
-                
-                return false;
-            }
+            { return false; }
+
             return true;
-
         }
-
+        /// <summary>
+        /// Update information for BAITRALOI Object
+        /// </summary>
+        /// <param name="baiTraLoi"></param>
+        /// <returns></returns>
         public static bool ChinhSuaBaiTraLoi(BAITRALOI baiTraLoi)
         {
             try
@@ -37,9 +43,8 @@ namespace DAO.TinRaoVat
 
             }
             catch (Exception ex)
-            {
-                return false;
-            }
+            { return false; }
+
             return true;
         }
     }
