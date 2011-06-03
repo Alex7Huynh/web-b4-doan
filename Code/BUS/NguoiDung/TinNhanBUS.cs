@@ -6,15 +6,15 @@ using DAO;
 
 namespace BUS
 {
-    public class TinNhanBUS
+    public class TimKiemBUS
     {
         public static bool ThemTinNhan(TINNHAN tinNhan)
         {
-            return TinNhanDAO.ThemTinNhan(tinNhan);
+            return TimKiemDAO.ThemTinNhan(tinNhan);
         }
         public static List<TINNHAN> LayDanhSachTinNhan()
         {
-            return TinNhanDAO.LayDanhSachTinNhan();
+            return TimKiemDAO.LayDanhSachTinNhan();
         }
     }
 }

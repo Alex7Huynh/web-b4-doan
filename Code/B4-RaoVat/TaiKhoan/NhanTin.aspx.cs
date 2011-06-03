@@ -29,6 +29,6 @@ public partial class Default2 : System.Web.UI.Page
         TinNhan.NoiDungTinNhan = txtNoiDung1.Text;
         TinNhan.ThoiGianNhanTin = DateTime.Now;
         TinNhan.Deleted = false;
-        TinNhanBUS.ThemTinNhan(TinNhan);
+        TimKiemBUS.ThemTinNhan(TinNhan);
     }
 }

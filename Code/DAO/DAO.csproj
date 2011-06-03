@@ -62,14 +62,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TinRaoVat\BaiTraLoiTinRaoVatDAO.cs" />
+    <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungDAO.cs" />
+    <Compile Include="TinRaoVat\HoSoTuyenDungDAO.cs" />
     <Compile Include="RaoVatDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RaoVatDataClasses.dbml</DependentUpon>
     </Compile>
-    <Compile Include="TinRaoVat\BaiTraLoiTinRaoVatDAO.cs" />
-    <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungDAO.cs" />
-    <Compile Include="TinRaoVat\HoSoTuyenDungDAO.cs" />
     <Compile Include="TinRaoVat\TinRaoVatBatDongSanDAO.cs" />
     <Compile Include="TinRaoVat\TinRaoVatDAO.cs" />
     <Compile Include="TinRaoVat\TinRaoVatThuongDAO.cs" />

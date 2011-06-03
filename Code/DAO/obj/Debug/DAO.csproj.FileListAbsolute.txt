@@ -1,9 +1,3 @@
-F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\bin\Debug\DAO.dll.config
-F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\bin\Debug\DAO.dll
-F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\bin\Debug\DAO.pdb
-F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\ResolveAssemblyReference.cache
-F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\DAO.dll
-F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\DAO.pdb
 I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\ResolveAssemblyReference.cache
 I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\DAO.dll
 I:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\DAO.pdb
@@ -16,3 +10,9 @@ C:\Users\thang\Desktop\web check out new\Code\DAO\bin\Debug\DAO.pdb
 C:\Users\thang\Desktop\web check out new\Code\DAO\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\thang\Desktop\web check out new\Code\DAO\obj\Debug\DAO.dll
 C:\Users\thang\Desktop\web check out new\Code\DAO\obj\Debug\DAO.pdb
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\bin\Debug\DAO.dll.config
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\bin\Debug\DAO.dll
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\bin\Debug\DAO.pdb
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\ResolveAssemblyReference.cache
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\DAO.dll
+F:\Tai lieu\Nam 3\hk2\phat trien ung dung web\th\doan\Code\DAO\obj\Debug\DAO.pdb
