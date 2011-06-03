@@ -5,9 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAO;
-using BUS.TinRaoVat;
 using BUS;
-using System.Web.UI;
 
 public partial class BaiTraLoi_ChinhSua : System.Web.UI.Page
 {

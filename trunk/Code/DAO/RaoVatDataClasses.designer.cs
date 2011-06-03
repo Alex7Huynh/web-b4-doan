@@ -7255,7 +7255,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_TieuDe", DbType="NChar(50)")]
+		[Column(Storage="_TieuDe", DbType="NVarChar(50)")]
 		public string TieuDe
 		{
 			get

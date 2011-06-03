@@ -16,11 +16,11 @@ namespace BUS
         {
             return TinRaoVatBatDongSanDAO.XoaTinRaoVatBatDongSan(maTinRaoVatBatDongSan);
         }
-        public static bool CapNhatTinRaoVat(TINRAOVATBATDONGSAN tinRaoVatBatDongSan)
+        public static bool CapNhatTinRaoVatBatDongSan(TINRAOVATBATDONGSAN tinRaoVatBatDongSan)
         {
             return TinRaoVatBatDongSanDAO.CapNhatTinRaoVatBatDongSan(tinRaoVatBatDongSan);
         }
-        public static List<TINRAOVATBATDONGSAN> LayDanhSachTinRaoVat()
+        public static List<TINRAOVATBATDONGSAN> LayDanhSachTinRaoVatBatDongSan()
         {
             return TinRaoVatBatDongSanDAO.LayDanhSachTinRaoVatBatDongSan();
         }
@@ -28,7 +28,6 @@ namespace BUS
         {
             return TinRaoVatBatDongSanDAO.TimTinRaoVatBatDongSanTheoMa(maTinRaoVatBatDongSan);
         }
-
         public static TINRAOVATBATDONGSAN TimTinRaoVatBatDongSanTheoMaTinRaoVat(int maTinRaoVat)
         {
             return TinRaoVatBatDongSanDAO.TimTinRaoVatBatDongSanTheoMaTinRaoVat(maTinRaoVat);

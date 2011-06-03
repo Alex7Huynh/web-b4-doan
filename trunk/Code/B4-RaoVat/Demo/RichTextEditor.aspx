@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
     CodeFile="RichTextEditor.aspx.cs" Inherits="Default2" %>
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
 
     <script type="text/javascript" src="/js/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
@@ -44,7 +46,16 @@ tinyMCE.init({
     </script>
 
     
-    <textarea id="TextArea1" cols="20" name="S1" rows="2"></textarea>
+    <cc1:Editor ID="Editor1" runat="server" Width="500px" />
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+    <br />
+    <br />
+    <br />
+&nbsp;<asp:TextBox ID="TextBox1" runat="server" Height="101px" Width="298px">abc</asp:TextBox>
+    <asp:Panel ID="Panel1" runat="server">
+    </asp:Panel>
+    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
 
     
 </asp:Content>

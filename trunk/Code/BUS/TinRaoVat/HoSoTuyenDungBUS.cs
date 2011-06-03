@@ -16,11 +16,11 @@ namespace BUS
         {
             return HoSoTuyenDungDAO.XoaHoSoTuyenDung(maHoSoTuyenDung);
         }
-        public static bool CapNhatTinRaoVat(HOSOTUYENDUNG hoSoTuyenDung)
+        public static bool CapNhatHoSoTuyenDung(HOSOTUYENDUNG hoSoTuyenDung)
         {
             return HoSoTuyenDungDAO.CapNhatHoSoTuyenDung(hoSoTuyenDung);
         }
-        public static List<HOSOTUYENDUNG> LayDanhSachTinRaoVat()
+        public static List<HOSOTUYENDUNG> LayDanhSachHoSoTuyenDung()
         {
             return HoSoTuyenDungDAO.LayDanhSachHoSoTuyenDung();
         }

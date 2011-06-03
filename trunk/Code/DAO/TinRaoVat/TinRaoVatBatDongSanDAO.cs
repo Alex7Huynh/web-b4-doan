@@ -50,7 +50,7 @@ namespace DAO
         }
 
         /// <summary>
-        /// //Update information for TINRAOVATBATDONGSAN Object
+        /// Update information for TINRAOVATBATDONGSAN Object
         /// </summary>
         /// <param name="trvDTO"></param>
         /// <returns></returns>
@@ -60,10 +60,44 @@ namespace DAO
             {
                 //Search
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                TINRAOVATBATDONGSAN ttd = new TINRAOVATBATDONGSAN();
-                ttd = db.TINRAOVATBATDONGSANs.Single(t => t.MaTinRaoVatBatDongSan == tinRaoVatBatDongSan.MaTinRaoVatBatDongSan);
+                TINRAOVATBATDONGSAN trvbds = new TINRAOVATBATDONGSAN();
+                trvbds = db.TINRAOVATBATDONGSANs.Single(t => t.MaTinRaoVatBatDongSan == tinRaoVatBatDongSan.MaTinRaoVatBatDongSan);
                 //Update
-                //...
+                trvbds.NoiDungTinRaoVat = tinRaoVatBatDongSan.NoiDungTinRaoVat;
+                trvbds.Gia = tinRaoVatBatDongSan.Gia;
+                trvbds.DiaChi = tinRaoVatBatDongSan.DiaChi;
+                trvbds.DienTich = tinRaoVatBatDongSan.DienTich;
+                trvbds.Huong = tinRaoVatBatDongSan.Huong;
+                trvbds.LoGioi = tinRaoVatBatDongSan.LoGioi;
+                trvbds.Lau = tinRaoVatBatDongSan.Lau;
+                trvbds.Lung = tinRaoVatBatDongSan.Lung;
+                trvbds.MatTien = tinRaoVatBatDongSan.MatTien;
+                trvbds.GiayTo = tinRaoVatBatDongSan.GiayTo;
+                trvbds.DuongTruocNha = tinRaoVatBatDongSan.DuongTruocNha;
+                trvbds.DienNhaNuoc = tinRaoVatBatDongSan.DienNhaNuoc;
+                trvbds.NuocMay = tinRaoVatBatDongSan.NuocMay;
+                trvbds.SoPhongNgu = tinRaoVatBatDongSan.SoPhongNgu;
+                trvbds.SoNhaVeSinh = tinRaoVatBatDongSan.SoNhaVeSinh;
+                trvbds.NamXayDung = tinRaoVatBatDongSan.NamXayDung;
+
+                trvbds.PhongKhach = tinRaoVatBatDongSan.PhongKhach;
+                trvbds.GaraOto = tinRaoVatBatDongSan.GaraOto;
+                trvbds.NhaBep = tinRaoVatBatDongSan.NhaBep;
+                trvbds.HoBoi = tinRaoVatBatDongSan.HoBoi;
+                trvbds.SanThuong = tinRaoVatBatDongSan.SanThuong;
+                trvbds.DieuHoa = tinRaoVatBatDongSan.DieuHoa;
+                trvbds.SanVuon = tinRaoVatBatDongSan.SanVuon;
+                trvbds.ThangMay = tinRaoVatBatDongSan.ThangMay;
+
+                trvbds.GanTruongMauGiao = tinRaoVatBatDongSan.GanTruongMauGiao;
+                trvbds.GanTruongCap1 = tinRaoVatBatDongSan.GanTruongCap1;
+                trvbds.GanTruongCap2 = tinRaoVatBatDongSan.GanTruongCap2;
+                trvbds.GanTruongCap3 = tinRaoVatBatDongSan.GanTruongCap3;
+                trvbds.GanCho = tinRaoVatBatDongSan.GanCho;
+                trvbds.GanBenhVien = tinRaoVatBatDongSan.GanBenhVien;
+                trvbds.GanTrungTamThuongMai = tinRaoVatBatDongSan.GanTrungTamThuongMai;
+                trvbds.GanTrungTamGiaiTri = tinRaoVatBatDongSan.GanTrungTamGiaiTri;
+                trvbds.GanCongVien = tinRaoVatBatDongSan.GanCongVien;
                 //Submit
                 db.SubmitChanges();
             }

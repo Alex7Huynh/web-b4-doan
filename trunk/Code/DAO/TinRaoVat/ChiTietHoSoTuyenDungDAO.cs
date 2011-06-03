@@ -39,10 +39,10 @@ namespace DAO
             {
                 //Search
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-                CHITIETHOSOTUYENDUNG hstd = new CHITIETHOSOTUYENDUNG();
-                hstd = db.CHITIETHOSOTUYENDUNGs.Single(t => t.MaChiTietHoSoTuyenDung == chiTietHoSoTuyenDung.MaChiTietHoSoTuyenDung);
+                CHITIETHOSOTUYENDUNG cthstd = new CHITIETHOSOTUYENDUNG();
+                cthstd = db.CHITIETHOSOTUYENDUNGs.Single(t => t.MaChiTietHoSoTuyenDung == chiTietHoSoTuyenDung.MaChiTietHoSoTuyenDung);
                 //Update
-                //...
+                cthstd.MaNganhNghe = chiTietHoSoTuyenDung.MaNganhNghe;
                 //Submit
                 db.SubmitChanges();
             }

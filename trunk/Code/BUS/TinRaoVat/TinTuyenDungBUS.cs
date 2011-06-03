@@ -16,11 +16,11 @@ namespace BUS
         {
             return TinTuyenDungDAO.XoaTinTuyenDung(maTinTuyenDung);
         }
-        public static bool CapNhatTinRaoVat(TINTUYENDUNG tinTuyenDung)
+        public static bool CapNhatTinTuyenDung(TINTUYENDUNG tinTuyenDung)
         {
             return TinTuyenDungDAO.CapNhatTinTuyenDung(tinTuyenDung);
         }
-        public static List<TINTUYENDUNG> LayDanhSachTinRaoVat()
+        public static List<TINTUYENDUNG> LayDanhSachTinTuyenDung()
         {
             return TinTuyenDungDAO.LayDanhSachTinTuyenDung();
         }
@@ -28,7 +28,6 @@ namespace BUS
         {
             return TinTuyenDungDAO.TimTinTuyenDungTheoMa(maTinTuyenDung);
         }
-
         public static TINTUYENDUNG TimTinTuyenDungTheoMaTinRaoVat(int maTinRaoVat)
         {
             return TinTuyenDungDAO.TimTinTuyenDungTheoMaTinRaoVat(maTinRaoVat);
