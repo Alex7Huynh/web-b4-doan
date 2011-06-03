@@ -4,60 +4,62 @@
 		    EnableViewState="False" DataKeyNames="MaTinRaoVat"
 		    BorderWidth="0px" CssClass="item_list"
 		    ShowFooter="True" 
-    onselectedindexchanged="FeaturedAdGrid_SelectedIndexChanged">
+    onselectedindexchanged="FeaturedAdGrid_SelectedIndexChanged" 
+    AllowPaging="True" BorderStyle="Dashed">
 		    <EmptyDataTemplate>
 			    You have no currently active ads.
 			    <asp:HyperLink ID="PostAdLink" runat="server" NavigateUrl="~/PostAd.aspx">Click here to Post a new Ad.</asp:HyperLink>
 		    </EmptyDataTemplate>
 		    <Columns>
-			    <asp:ImageField HeaderText="Image" DataImageUrlField="Thumbnail"
+			    <asp:ImageField HeaderText="Hình ảnh" DataImageUrlField="Thumbnail"
                     DataImageUrlFormatString="~/images/TinRaoVat/{0}">
 			    </asp:ImageField>
-			    <asp:HyperLinkField HeaderText="Title" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../DanhMuc/XemNoiDungTin.aspx?id={0}"
+			    <asp:HyperLinkField HeaderText="Tiêu đề" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../DanhMuc/XemNoiDungTin.aspx?id={0}"
 				    DataTextField="TieuDe" HeaderStyle-CssClass="col_title"
 				    ItemStyle-CssClass="col_title">
                 <HeaderStyle CssClass="col_title" />
                 <ItemStyle CssClass="col_title" />
                 </asp:HyperLinkField>
-			    <asp:BoundField HeaderText="Posted" DataField="ThoiGianDang"
+			    <asp:BoundField HeaderText="Ngày đăng" DataField="ThoiGianDang"
 				    DataFormatString="{0:dd/mm/yy}" HeaderStyle-CssClass="col_general" 
                     ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />
 			    </asp:BoundField>
-			    <%--<asp:BoundField HeaderText="Expires" DataField="ExpirationDate"
-				    NullDisplayText="N/A" DataFormatString="{0:M}" HeaderStyle-CssClass="col_general"
-				    ItemStyle-CssClass="col_general"></asp:BoundField>--%>
-			    <asp:BoundField HeaderText="# Views" DataField="SoLanXem"
+			    <asp:BoundField HeaderText="Số lần xem" DataField="SoLanXem"
 				    HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
                 <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />
                 </asp:BoundField>
-			    <%--<asp:BoundField HeaderText="# Resp." DataField="NumResponses"
-				    HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general"></asp:BoundField>--%>
-			    <%--<asp:BoundField HeaderText="Category" DataField="CategoryName"
-				    HeaderStyle-CssClass="col_category" ItemStyle-CssClass="col_category"></asp:BoundField>--%>
-				<asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../DanhMuc/XemNoiDungTin.aspx?id={0}"
+				<asp:HyperLinkField HeaderText="Xem chi tiết" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../DanhMuc/XemNoiDungTin.aspx?id={0}"
 				    Text="Xem Chi Tiết" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />
 			    </asp:HyperLinkField>
 			    
-			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/ChinhSuaBaiRaoVat.aspx?id={0}"
+			    <asp:HyperLinkField HeaderText="Chỉnh sửa" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/ChinhSuaBaiRaoVat.aspx?id={0}"
 				    Text="Edit" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />
 			    </asp:HyperLinkField>
-			    <asp:HyperLinkField DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/HienThiAnh.aspx?id={0}"
-				    Text="Photos" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
+			    <asp:HyperLinkField HeaderText="Xem ảnh" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/HienThiAnh.aspx?id={0}"
+				    Text="Xem ảnh" HeaderStyle-CssClass="col_general" ItemStyle-CssClass="col_general">
 			    <HeaderStyle CssClass="col_general" />
                 <ItemStyle CssClass="col_general" />
 			    </asp:HyperLinkField>
 		    </Columns>
-		    <RowStyle CssClass="row1"></RowStyle>
+		    <RowStyle CssClass="row1" HorizontalAlign="Center"></RowStyle>
 		    <AlternatingRowStyle CssClass="row2"></AlternatingRowStyle>
 		    <FooterStyle CssClass="item_list_footer"></FooterStyle>
 	    </asp:GridView>
+<asp:LinqDataSource ID="lqTinRaoVatMoiNhat" runat="server" 
+    ContextTypeName="DAO.RaoVatDataClassesDataContext" 
+    Select="new (MaTinRaoVat, ThoiGianDang, ThoiHanLuuTin, MaDiaDiem, SoLanXem, MaNguoiDung, MaDanhMucCon, TieuDe, Thumbnail, GhiChuHinhAnh, Deleted, HOSOTUYENDUNGs, LICHSUTINRAOVATVIPHAMs, LIKEDs, TINRAOVATBATDONGSANs, TINRAOVATDALUUs, TINRAOVATTHUONGs, TINTUYENDUNGs, DANHMUCCON, DIADIEM, NGUOIDUNG)" 
+    TableName="TINRAOVATs" Where="Deleted == @Deleted">
+    <WhereParameters>
+        <asp:Parameter DefaultValue="false" Name="Deleted" Type="Boolean" />
+    </WhereParameters>
+</asp:LinqDataSource>
 <asp:MultiView ID="MyAdsMultiView" runat="server" ActiveViewIndex="0">
     <asp:View ID="FeaturedAd" runat="server">
 	    <h2 class="section">

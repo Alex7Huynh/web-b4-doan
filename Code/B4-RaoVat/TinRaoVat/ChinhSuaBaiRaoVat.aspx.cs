@@ -18,7 +18,8 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Nếu chưa đăng nhập        
+
+        //Nếu chưa đăng nhập
         Session["userID"] = "19";
         if (Session["userID"] == null)
         {
@@ -39,27 +40,29 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
         {
             //Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
         }
-
-        //Hiển thị view tương ứng với chuyên mục
-        if (DanhMucChinh.MaChuyenMuc == 1)
+        if (!IsPostBack)
         {
-            MultiView1.SetActiveView(View1);
-            InitFirstView();
-        }
-        else if (DanhMucChinh.MaChuyenMuc == 2)
-        {
-            MultiView1.SetActiveView(View2);
-            InitSecondView();
-        }
-        else if (DanhMucChinh.MaChuyenMuc == 3)
-        {
-            MultiView1.SetActiveView(View3);
-            InitThirdView();
-        }
-        else if (DanhMucChinh.MaChuyenMuc == 4)
-        {
-            MultiView1.SetActiveView(View4);
-            InitFourthView();
+            //Hiển thị view tương ứng với chuyên mục
+            if (DanhMucChinh.MaChuyenMuc == 1)
+            {
+                MultiView1.SetActiveView(View1);
+                InitFirstView();
+            }
+            else if (DanhMucChinh.MaChuyenMuc == 2)
+            {
+                MultiView1.SetActiveView(View2);
+                InitSecondView();
+            }
+            else if (DanhMucChinh.MaChuyenMuc == 3)
+            {
+                MultiView1.SetActiveView(View3);
+                InitThirdView();
+            }
+            else if (DanhMucChinh.MaChuyenMuc == 4)
+            {
+                MultiView1.SetActiveView(View4);
+                InitFourthView();
+            }
         }
     }
 
@@ -262,7 +265,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
     protected void btnCapNhat1_Click(object sender, EventArgs e)
     {
         //Cập nhật tin rao vặt
-        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);
+        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);        
         TinRaoVatMoi.ThoiGianDang = DateTime.Now;
         TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin1.SelectedValue);
         TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem1.SelectedValue).MaDiaDiem;
@@ -466,7 +469,7 @@ public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
     protected void btnCapNhat4_Click(object sender, EventArgs e)
     {
         //Cập nhật tin rao vặt
-        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);
+        TINRAOVAT TinRaoVatMoi = TinRaoVatBUS.TimTinRaoVatTheoMa(TinRaoVat.MaTinRaoVat);        
         TinRaoVatMoi.ThoiGianDang = DateTime.Now;
         TinRaoVatMoi.ThoiHanLuuTin = int.Parse(ddlThoiHanLuuTin4.SelectedValue);
         TinRaoVatMoi.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem4.SelectedValue).MaDiaDiem;
