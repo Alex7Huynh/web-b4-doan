@@ -175,7 +175,8 @@
                 </tr>
                 <tr>
                     <td style="width: 129px" align="right">
-                        <asp:Label ID="Label26" runat="server" Text="Diện tích:" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="Label26" runat="server" Text="Diện tích (mét vuông):" 
+                            ForeColor="#003399"></asp:Label>
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
                         <asp:TextBox ID="txtDienTich" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
@@ -279,8 +280,9 @@
                     </td>
                     <td colspan="3" style="margin-left: 80px;">
                         <asp:TextBox ID="txtNamXayDung" runat="server" ForeColor="#003399" Width="300px"></asp:TextBox>
-                        <asp:RangeValidator ID="rvdNamXayDung" runat="server" ControlToValidate="txtLung"
-                            ErrorMessage="Nhập số" MaximumValue="2020" MinimumValue="1000" Type="Integer"></asp:RangeValidator>
+                        <asp:RangeValidator ID="rvdNamXayDung" runat="server" ControlToValidate="txtNamXayDung"
+                            ErrorMessage="Nhập số" MaximumValue="2020" MinimumValue="1000" 
+                            Type="Integer"></asp:RangeValidator>
                     </td>
                 </tr>
                 <tr>
