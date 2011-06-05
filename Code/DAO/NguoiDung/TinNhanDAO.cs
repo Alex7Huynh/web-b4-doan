@@ -7,7 +7,7 @@ using System.Data;
 
 namespace DAO
 {
-    public class TimKiemDAO
+    public class TinNhanDAO
     {
         /// <summary>
         /// Insert new TINNHAN

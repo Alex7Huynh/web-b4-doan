@@ -169,9 +169,9 @@ namespace DAO
 
             return tinRaoVatBatDongSan;
         }
-        public static TINRAOVATBATDONGSAN TimTinRaoVatBatDongSanTheoChuoi(string chuoi)
+        public static List<TINRAOVATBATDONGSAN> TimTinRaoVatBatDongSanTheoChuoi(string chuoi)
         {
-            TINRAOVATBATDONGSAN tinRaoVatBatDongSan = new TINRAOVATBATDONGSAN();
+            List<TINRAOVATBATDONGSAN> lstTinRaoVatBatDongSan = new List<TINRAOVATBATDONGSAN>();
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
@@ -180,14 +180,14 @@ namespace DAO
                                             q.GiayTo.Contains(chuoi) || q.Huong.Contains(chuoi) || 
                                             q.LoGioi.Contains(chuoi) || q.NoiDungTinRaoVat.Contains(chuoi)
                                             select q;
-                tinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>().First();
+                lstTinRaoVatBatDongSan = dsTinRaoVatBatDongSan.ToList<TINRAOVATBATDONGSAN>();
             }
             catch (Exception ex)
             {
                 return null;
             }
 
-            return tinRaoVatBatDongSan;
+            return lstTinRaoVatBatDongSan;
         }
     }
 }

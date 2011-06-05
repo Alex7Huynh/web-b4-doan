@@ -62,7 +62,7 @@
                         </ItemTemplate>
                     </asp:DataList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString3 %>" 
                         
                         SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)" 
                         onselecting="SqlDataSource1_Selecting">
@@ -260,7 +260,7 @@
                         </ItemTemplate>
                     </asp:DataList>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString3 %>" 
                         SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)">
                         <SelectParameters>
                             <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 
@@ -386,7 +386,7 @@
                         </ItemTemplate>
                     </asp:DataList>
                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString3 %>" 
                         SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)">
                         <SelectParameters>
                             <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 
@@ -537,7 +537,7 @@
                         </ItemTemplate>
                     </asp:DataList>
                     <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
-                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString %>" 
+                        ConnectionString="<%$ ConnectionStrings:RAO_VATConnectionString3 %>" 
                         SelectCommand="SELECT [NoiDungTraLoi], [ThoiGianTraLoi] FROM [BAITRALOI] WHERE ([MaTinRaoVat] = @MaTinRaoVat)">
                         <SelectParameters>
                             <asp:SessionParameter Name="MaTinRaoVat" SessionField="matinraovat" 

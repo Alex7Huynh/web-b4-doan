@@ -32,7 +32,7 @@ namespace BUS
         {
             return TinRaoVatBatDongSanDAO.TimTinRaoVatBatDongSanTheoMaTinRaoVat(maTinRaoVat);
         }
-        public static TINRAOVATBATDONGSAN TimTinRaoVatBatDongSanTheoChuoi(string chuoi)
+        public static List<TINRAOVATBATDONGSAN> TimTinRaoVatBatDongSanTheoChuoi(string chuoi)
         {
             return TinRaoVatBatDongSanDAO.TimTinRaoVatBatDongSanTheoChuoi(chuoi);
         }

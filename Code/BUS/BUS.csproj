@@ -53,6 +53,7 @@
     <Compile Include="NguoiDung\LoaiNguoiDungBUS.cs" />
     <Compile Include="NguoiDung\NguoiDungBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaoCaoBaiVietViPhamBUS.cs" />
     <Compile Include="TinRaoVat\BaiTraLoiTinRaoVatBUS.cs" />
     <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungBUS.cs" />
     <Compile Include="TinRaoVat\HoSoTuyenDungBUS.cs" />
