@@ -22,28 +22,28 @@
     <asp:DataList ID="dlTinraovatbatdongsan" runat="server" >
         <ItemTemplate>
             <asp:HyperLink ID="HyperLink1" runat="server" 
-                NavigateUrl='<%# "HuongDan.aspx?Id="+Eval("NoiDungTinRaoVat") %>' 
+                NavigateUrl='<%# "./DanhMuc/XemNoiDungTin.aspx?Id="+Eval("NoiDungTinRaoVat") %>' 
                 Text='<%# Eval("NoiDungTinRaoVat") %>'></asp:HyperLink>
         </ItemTemplate>
     </asp:DataList>
     <asp:DataList ID="dlTinraovat" runat="server" >
         <ItemTemplate>
             <asp:HyperLink ID="HyperLink1" runat="server" 
-                NavigateUrl='<%# "HuongDan.aspx?Id="+Eval("TieuDe") %>' 
+                NavigateUrl='<%# "./DanhMuc/XemNoiDungTin.aspx?Id="+Eval("TieuDe") %>' 
                 Text='<%# Eval("TieuDe") %>'></asp:HyperLink>
         </ItemTemplate>
     </asp:DataList>
     <asp:DataList ID="dlTinraovatthuong" runat="server" >
         <ItemTemplate>
             <asp:HyperLink ID="HyperLink1" runat="server" 
-                NavigateUrl='<%# "HuongDan.aspx?Id="+Eval("NoiDungTinRaoVat") %>' 
+                NavigateUrl='<%# "./DanhMuc/XemNoiDungTin.aspx?Id="+Eval("NoiDungTinRaoVat") %>' 
                 Text='<%# Eval("NoiDungTinRaoVat") %>'></asp:HyperLink>
         </ItemTemplate>
     </asp:DataList>
     <asp:DataList ID="dlTintuyendung" runat="server" >
         <ItemTemplate>
             <asp:HyperLink ID="HyperLink1" runat="server" 
-                NavigateUrl='<%# "HuongDan.aspx?Id="+Eval("TieuDe") %>' 
+                NavigateUrl='<%# "./DanhMuc/XemNoiDungTin.aspx?Id="+Eval("TieuDe") %>' 
                 Text='<%# Eval("TieuDe") %>'></asp:HyperLink>
         </ItemTemplate>
     </asp:DataList>
