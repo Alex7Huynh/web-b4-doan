@@ -8,9 +8,9 @@
             </td>
             <td>
                 <asp:TextBox ID="txtTimKiem" runat="server" Width="300px" ForeColor="#003399"></asp:TextBox>
-                <asp:Button ID="btnNhanTin1" runat="server" BackColor="#FF9933" 
+                <asp:Button ID="btnTim1" runat="server" BackColor="#FF9933" 
                     BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
-                            onclick="btnNhanTin1_Click" Text="Tìm" Width="62px" />
+                            onclick="btnTim1_Click" Text="Tìm" Width="62px" />
             </td>
             <td>   
                <asp:RequiredFieldValidator ID="rfvTimKiem" runat="server" 

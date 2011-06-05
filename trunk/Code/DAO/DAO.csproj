@@ -62,6 +62,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="BaoCaoBaiVietViPhamDAO.cs" />
     <Compile Include="TinRaoVat\BaiTraLoiTinRaoVatDAO.cs" />
     <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungDAO.cs" />
     <Compile Include="TinRaoVat\HoSoTuyenDungDAO.cs" />

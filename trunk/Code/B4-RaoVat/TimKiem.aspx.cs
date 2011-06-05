@@ -13,11 +13,11 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
-    protected void btnNhanTin1_Click(object sender, EventArgs e)
+    protected void btnTim1_Click(object sender, EventArgs e)
     {
         RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
         var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
-                                    where  q.DiaChi.Contains(txtTimKiem.Text.Trim()) || q.DuongTruocNha.Contains(txtTimKiem.Text.Trim()) ||
+                                    where q.DiaChi.Contains(txtTimKiem.Text.Trim()) || q.DuongTruocNha.Contains(txtTimKiem.Text.Trim()) ||
                                     q.GiayTo.Contains(txtTimKiem.Text.Trim()) || q.Huong.Contains(txtTimKiem.Text.Trim()) ||
                                     q.LoGioi.Contains(txtTimKiem.Text.Trim()) || q.NoiDungTinRaoVat.Contains(txtTimKiem.Text.Trim())
                                     select q;
