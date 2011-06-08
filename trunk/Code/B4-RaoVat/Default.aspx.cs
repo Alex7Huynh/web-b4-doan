@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Threading;
+using System.Globalization;
 
 public partial class Default2 : System.Web.UI.Page
 {
@@ -18,6 +20,16 @@ public partial class Default2 : System.Web.UI.Page
             }
             else if (result == "fail") { MessageBox("Thao tác thành công!"); }
         }
+    }
+    protected override void InitializeCulture()
+    {
+        if (Request["Language"] != null)
+        {
+            CultureInfo ci = CultureInfo.CreateSpecificCulture(Request["Language"].ToString());
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
+        }
+        base.InitializeCulture();
     }
     private void MessageBox(string msg)
     {

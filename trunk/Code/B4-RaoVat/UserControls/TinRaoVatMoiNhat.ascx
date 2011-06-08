@@ -5,7 +5,7 @@
 		    BorderWidth="0px" CssClass="item_list"
 		    ShowFooter="True" 
     onselectedindexchanged="FeaturedAdGrid_SelectedIndexChanged" 
-    AllowPaging="True" BorderStyle="Dashed">
+    AllowPaging="True" BorderStyle="Dotted">
 		    <EmptyDataTemplate>
 			    You have no currently active ads.
 			    <asp:HyperLink ID="PostAdLink" runat="server" NavigateUrl="~/PostAd.aspx">Click here to Post a new Ad.</asp:HyperLink>

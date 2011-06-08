@@ -19,20 +19,4 @@ public partial class Default2 : System.Web.UI.Page
         Panel1.Controls.Clear();
         Panel1.Controls.Add(literal);
     }
-    protected void btnCapNhat1_Click(object sender, EventArgs e)
-    {
-        
-    }
-    protected void btnCapNhat2_Click(object sender, EventArgs e)
-    {
-        
-    }
-    protected void btnCapNhat3_Click(object sender, EventArgs e)
-    {
-        
-    }
-    protected void btnCapNhat4_Click(object sender, EventArgs e)
-    {
-        
-    }
 }
