@@ -1,12 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default2" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <%@ Register TagPrefix="uc1" TagName="TinRaoVatMoiNhat" Src="UserControls/TinRaoVatMoiNhat.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="JQueryMenu" Src="UserControls/JQueryMenu.ascx" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
     <div id="body">
+    <asp:Label ID="Label2" runat="server" Text="Label" 
+            meta:resourcekey="Label2Resource1"></asp:Label>
 		<div id="col_main_left">
 		    <div id="featured_item">
+			    
 			</div>
             <div id="announcements">
 				<ul>
