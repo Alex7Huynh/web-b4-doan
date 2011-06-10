@@ -9,6 +9,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        lblUserNameMP.Text = Session["UserName"] as string;
         Label1.ForeColor = System.Drawing.Color.White;
         //Label1.Font.Size = 40;
         Label1.Text = Request.Url.AbsolutePath;
@@ -28,6 +29,15 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Label1.Text = FullPath;
         ImageButton1.PostBackUrl = FullPath + "vi";
         ImageButton2.PostBackUrl = FullPath + "en-us";
+    }
+    protected void linkbntXemThongTin_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("..\\TaiKhoan\\XemThongTinTaiKhoan.aspx");
+    }
+    protected void linkbntDangXuat_Click(object sender, EventArgs e)
+    {
+        lblUserNameMP.Text = "Guest-Khách";
+            Session["UserName"]=null;
     }
 }
 

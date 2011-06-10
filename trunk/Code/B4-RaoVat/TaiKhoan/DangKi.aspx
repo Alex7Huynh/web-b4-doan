@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DangKi.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" 
+    <asp:CreateUserWizard ID="userDangKy" runat="server" 
         AnswerLabelText="Câu Trả Lời Bảo Mật:" 
         CompleteSuccessText="Tài khoản của bạn đã tạo thành công. Xin hãy đăng nhập để sữ dụng các dịch vụ có 1 không hai của chúng tôi. Đội phát triển website RaoVat." 
         ConfirmPasswordCompareErrorMessage="Mật khẩu cần phải giống nhau." 
