@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDangTin1Resource1.Text" xml:space="preserve">
-    <value>POST NEW AD</value>
+  <data name="btnCapNhat1Resource1.Text" xml:space="preserve">
+    <value>UPDATE INFORMATION</value>
   </data>
-  <data name="btnDangTin1Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDangTin2Resource1.Text" xml:space="preserve">
-    <value>POST NEW AD</value>
+  <data name="btnCapNhat2Resource1.Text" xml:space="preserve">
+    <value>UPDATE INFORMATION</value>
   </data>
-  <data name="btnDangTin2Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDangTin3Resource1.Text" xml:space="preserve">
-    <value>POST EMPLOYMENT PROFILE</value>
+  <data name="btnCapNhat3Resource1.Text" xml:space="preserve">
+    <value>UPDATE INFORMATION</value>
   </data>
-  <data name="btnDangTin3Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDangTin4Resource1.Text" xml:space="preserve">
-    <value>POST RESUME</value>
+  <data name="btnCapNhat4Resource1.Text" xml:space="preserve">
+    <value>UPDATE INFORMATION</value>
   </data>
-  <data name="btnDangTin4Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat4Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbDienResource1.Text" xml:space="preserve">
@@ -151,18 +151,6 @@
     <value>Air conditioner</value>
   </data>
   <data name="ckbDieuHoaResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ckbDongY1Resource1.Text" xml:space="preserve">
-    <value>I agree after reading regulations</value>
-  </data>
-  <data name="ckbDongY1Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ckbDongY2Resource1.Text" xml:space="preserve">
-    <value>I agree after reading regulations</value>
-  </data>
-  <data name="ckbDongY2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbDongYHienThiResource1.Text" xml:space="preserve">
@@ -387,6 +375,30 @@
   <data name="fupHinhAnh4Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="hplHinhAnh1Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hplHinhAnh2Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hplHinhAnh3Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hplHinhAnh4Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="Label100Resource1.Text" xml:space="preserve">
     <value>Year of experience</value>
   </data>
@@ -454,20 +466,19 @@
     <value />
   </data>
   <data name="Label114Resource1.Text" xml:space="preserve">
-    <value>(* Introducing correctly about your skills will make the employer care much more about you.) </value>
+    <value>(* Introducing correctly about your skills will make the employer care much more about you.)</value>
   </data>
   <data name="Label114Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label115Resource1.Text" xml:space="preserve">
-    <value>(* Summarizing your experience, the companies you worked for, job titles you took will help you a lot to find a good job.) </value>
+    <value>(* Summarizing your experience, the companies you worked for, job titles you took will help you a lot to find a good job.)</value>
   </data>
   <data name="Label115Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label117Resource1.Text" xml:space="preserve">
-    <value>(10.000 letters limited)
-	</value>
+    <value>(10.000 letters limited)</value>
   </data>
   <data name="Label117Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -488,18 +499,6 @@
     <value>Detailed information:</value>
   </data>
   <data name="Label11Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Label120Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
-  </data>
-  <data name="Label120Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Label121Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
-  </data>
-  <data name="Label121Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label122Resource1.Text" xml:space="preserve">
@@ -527,33 +526,51 @@
     <value />
   </data>
   <data name="Label128Resource1.Text" xml:space="preserve">
-    <value>*Place</value>
+    <value>Time to keep (days):</value>
   </data>
   <data name="Label128Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label129Resource1.Text" xml:space="preserve">
-    <value>*Place</value>
+    <value>Time to keep (days):</value>
   </data>
   <data name="Label129Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label12Resource1.Text" xml:space="preserve">
-    <value> (*Note: Please provide complete information)</value>
+    <value>(*Note: Please provide complete information)</value>
   </data>
   <data name="Label12Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label130Resource1.Text" xml:space="preserve">
-    <value>* Title</value>
+    <value>Time to keep (days):</value>
   </data>
   <data name="Label130Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label131Resource1.Text" xml:space="preserve">
+  <data name="Label132Resource1.Text" xml:space="preserve">
     <value>* Title</value>
   </data>
-  <data name="Label131Resource1.ToolTip" xml:space="preserve">
+  <data name="Label132Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label133Resource1.Text" xml:space="preserve">
+    <value>* Title</value>
+  </data>
+  <data name="Label133Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label135Resource1.Text" xml:space="preserve">
+    <value>* Place</value>
+  </data>
+  <data name="Label135Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label136Resource1.Text" xml:space="preserve">
+    <value>* Place</value>
+  </data>
+  <data name="Label136Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label13Resource1.Text" xml:space="preserve">
@@ -712,12 +729,6 @@
   <data name="Label42Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label43Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
-  </data>
-  <data name="Label43Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="Label44Resource1.Text" xml:space="preserve">
     <value>Image:</value>
   </data>
@@ -749,7 +760,7 @@
     <value />
   </data>
   <data name="Label53Resource1.Text" xml:space="preserve">
-    <value>POST NEW EMPLOYMENT PROFILE</value>
+    <value>UPDATE EMPLOYMENT PROFILE</value>
   </data>
   <data name="Label53Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -761,7 +772,7 @@
     <value />
   </data>
   <data name="Label55Resource1.Text" xml:space="preserve">
-    <value>Website: </value>
+    <value>Website:</value>
   </data>
   <data name="Label55Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -887,7 +898,7 @@
     <value />
   </data>
   <data name="Label77Resource1.Text" xml:space="preserve">
-    <value>POST NEW EMPLOYMENT PROFILE</value>
+    <value>UPDATE  EMPLOYMENT PROFILE</value>
   </data>
   <data name="Label77Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -905,7 +916,7 @@
     <value />
   </data>
   <data name="Label80Resource1.Text" xml:space="preserve">
-    <value>(* The employer can find and contact you whenever your profile is in looking for job page. If you disagree, you won't find a job.) </value>
+    <value>(* The employer can find and contact you whenever your profile is in looking for job page. If you disagree, you won't find a job.)</value>
   </data>
   <data name="Label80Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -917,7 +928,7 @@
     <value />
   </data>
   <data name="Label82Resource1.Text" xml:space="preserve">
-    <value>Personal Information : </value>
+    <value>Personal Information :</value>
   </data>
   <data name="Label82Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -1195,13 +1206,13 @@
   <data name="rfvTieuDe3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="rfvTieuDe6Resource1.ErrorMessage" xml:space="preserve">
+  <data name="rfvTieuDe5Resource1.ErrorMessage" xml:space="preserve">
     <value>Need information</value>
   </data>
-  <data name="rfvTieuDe6Resource1.Text" xml:space="preserve">
+  <data name="rfvTieuDe5Resource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="rfvTieuDe6Resource1.ToolTip" xml:space="preserve">
+  <data name="rfvTieuDe5Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="rfvViTriTuyenDungResource1.ErrorMessage" xml:space="preserve">

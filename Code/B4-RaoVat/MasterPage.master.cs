@@ -9,22 +9,27 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        lblUserNameMP.Text = Session["UserName"] as string;
         Label1.ForeColor = System.Drawing.Color.White;
         //Label1.Font.Size = 40;
-        Label1.Text = Request.Url.AbsolutePath;
-        Label1.Text += "---" + Request.Url.Query;
+        //Label1.Text = Request.Url.AbsolutePath;
+        //Label1.Text += "---" + Request.Url.Query;
         string FullPath = Request.Url.AbsolutePath;
 
         string Query = Request.Url.Query;
+        //Đã có truy vấn gì đó và đang chọn ngôn ngữ
         if (Query.Contains("&Language"))
         {
             int pos = Query.IndexOf("&Language");
             Query = Query.Substring(0, pos);
-        }
-        FullPath += Query;
-        FullPath += (Request.Url.Query == string.Empty) ? "?Language=" : "&Language=";
 
+        }
+        if (!Query.Contains("?Language"))
+            FullPath += Query;
+
+        if (Request.Url.Query == string.Empty || Query.Contains("?Language"))
+            FullPath += "?Language=";
+        else
+            FullPath += "&Language=";
 
         Label1.Text = FullPath;
         ImageButton1.PostBackUrl = FullPath + "vi";

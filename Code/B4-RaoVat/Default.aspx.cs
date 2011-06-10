@@ -18,7 +18,7 @@ public partial class Default2 : System.Web.UI.Page
             {
                 MessageBox("Thao tác thất bại! Vui lòng thử lại.");
             }
-            else if (result == "fail") { MessageBox("Thao tác thành công!"); }
+            else if (result == "success") { MessageBox("Thao tác thành công!"); }
         }
     }
     protected override void InitializeCulture()

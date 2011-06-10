@@ -117,170 +117,158 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDangTin1Resource1.Text" xml:space="preserve">
-    <value>POST NEW AD</value>
+  <data name="btnCapNhat1Resource1.Text" xml:space="preserve">
+    <value>CẬP NHẬT THÔNG TIN</value>
   </data>
-  <data name="btnDangTin1Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDangTin2Resource1.Text" xml:space="preserve">
-    <value>POST NEW AD</value>
+  <data name="btnCapNhat2Resource1.Text" xml:space="preserve">
+    <value>CẬP NHẬT THÔNG TIN</value>
   </data>
-  <data name="btnDangTin2Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDangTin3Resource1.Text" xml:space="preserve">
-    <value>POST EMPLOYMENT PROFILE</value>
+  <data name="btnCapNhat3Resource1.Text" xml:space="preserve">
+    <value>CẬP NHẬT THÔNG TIN</value>
   </data>
-  <data name="btnDangTin3Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDangTin4Resource1.Text" xml:space="preserve">
-    <value>POST RESUME</value>
+  <data name="btnCapNhat4Resource1.Text" xml:space="preserve">
+    <value>CẬP NHẬT THÔNG TIN</value>
   </data>
-  <data name="btnDangTin4Resource1.ToolTip" xml:space="preserve">
+  <data name="btnCapNhat4Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbDienResource1.Text" xml:space="preserve">
-    <value>Electricity meter</value>
+    <value>Đồng hồ điện</value>
   </data>
   <data name="ckbDienResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbDieuHoaResource1.Text" xml:space="preserve">
-    <value>Air conditioner</value>
+    <value>Điều hòa</value>
   </data>
   <data name="ckbDieuHoaResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="ckbDongY1Resource1.Text" xml:space="preserve">
-    <value>I agree after reading regulations</value>
-  </data>
-  <data name="ckbDongY1Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ckbDongY2Resource1.Text" xml:space="preserve">
-    <value>I agree after reading regulations</value>
-  </data>
-  <data name="ckbDongY2Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ckbDongYHienThiResource1.Text" xml:space="preserve">
-    <value>Agree</value>
+    <value>Đồng ý</value>
   </data>
   <data name="ckbDongYHienThiResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanBenhVienResource1.Text" xml:space="preserve">
-    <value>Near hospital</value>
+    <value>Gần bệnh viện</value>
   </data>
   <data name="ckbGanBenhVienResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanChoResource1.Text" xml:space="preserve">
-    <value>Near market</value>
+    <value>Gần chợ</value>
   </data>
   <data name="ckbGanChoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanCongVienResource1.Text" xml:space="preserve">
-    <value>Near park</value>
+    <value>Gần công viên</value>
   </data>
   <data name="ckbGanCongVienResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanTrungTamGiaiTriResource1.Text" xml:space="preserve">
-    <value>Near recreation center</value>
+    <value>Gần trung tâm giải trí</value>
   </data>
   <data name="ckbGanTrungTamGiaiTriResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanTrungTamThuongMaiResource1.Text" xml:space="preserve">
-    <value>Near shopping center</value>
+    <value>Gần trung tâm thương mại</value>
   </data>
   <data name="ckbGanTrungTamThuongMaiResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanTruongCapBaResource1.Text" xml:space="preserve">
-    <value>Near highschool</value>
+    <value>Gần trường cấp III</value>
   </data>
   <data name="ckbGanTruongCapBaResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanTruongCapHaiResource1.Text" xml:space="preserve">
-    <value>Near middle school</value>
+    <value>Gần trường cấp II</value>
   </data>
   <data name="ckbGanTruongCapHaiResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanTruongCapMotResource1.Text" xml:space="preserve">
-    <value>Near elemental school</value>
+    <value>Gần trường cấp I</value>
   </data>
   <data name="ckbGanTruongCapMotResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGanTruongMauGiaoResource1.Text" xml:space="preserve">
-    <value>Near nursery school</value>
+    <value>Gần trường mẫu giáo</value>
   </data>
   <data name="ckbGanTruongMauGiaoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGaraOtoResource1.Text" xml:space="preserve">
-    <value>Car garage</value>
+    <value>Gara Ôtô</value>
   </data>
   <data name="ckbGaraOtoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbGioiTinhResource1.Text" xml:space="preserve">
-    <value>Male</value>
+    <value>Nam</value>
   </data>
   <data name="ckbGioiTinhResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbHoBoiResource1.Text" xml:space="preserve">
-    <value>Swimming pool</value>
+    <value>Hồ bơi</value>
   </data>
   <data name="ckbHoBoiResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbNhaBepResource1.Text" xml:space="preserve">
-    <value>Kitchen</value>
+    <value>Nhà bếp</value>
   </data>
   <data name="ckbNhaBepResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbNuocMayResource1.Text" xml:space="preserve">
-    <value>Tap-water</value>
+    <value>Nước máy</value>
   </data>
   <data name="ckbNuocMayResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbPhongKhachResource1.Text" xml:space="preserve">
-    <value>Living room</value>
+    <value>Phòng khách</value>
   </data>
   <data name="ckbPhongKhachResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbSanThuongResource1.Text" xml:space="preserve">
-    <value>Terrace</value>
+    <value>Sân thượng</value>
   </data>
   <data name="ckbSanThuongResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbSanVuonResource1.Text" xml:space="preserve">
-    <value>Garden</value>
+    <value>Sân vườn</value>
   </data>
   <data name="ckbSanVuonResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbThangMayResource1.Text" xml:space="preserve">
-    <value>Elevator</value>
+    <value>Thang máy</value>
   </data>
   <data name="ckbThangMayResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="ckbTinhTrangHonNhanResource1.Text" xml:space="preserve">
-    <value>Marriage</value>
+    <value>Đã kết hôn</value>
   </data>
   <data name="ckbTinhTrangHonNhanResource1.ToolTip" xml:space="preserve">
     <value />
@@ -387,375 +375,401 @@
   <data name="fupHinhAnh4Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="hplHinhAnh1Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hplHinhAnh2Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hplHinhAnh3Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hplHinhAnh4Resource1.Text" xml:space="preserve">
+    <value>HyperLink</value>
+  </data>
+  <data name="hplHinhAnh4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="Label100Resource1.Text" xml:space="preserve">
-    <value>Year of experience</value>
+    <value>Số năm kinh nghiệm:</value>
   </data>
   <data name="Label100Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label101Resource1.Text" xml:space="preserve">
-    <value>Current company you work for:</value>
+    <value>Công ty làm việc hiện tại:</value>
   </data>
   <data name="Label101Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label102Resource1.Text" xml:space="preserve">
-    <value>Latest job title:</value>
+    <value>Chức danh gần đây nhất:</value>
   </data>
   <data name="Label102Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label103Resource1.Text" xml:space="preserve">
-    <value>Experience:</value>
+    <value>Kinh nghiệm làm việc :</value>
   </data>
   <data name="Label103Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label104Resource1.Text" xml:space="preserve">
-    <value>Summarize experience:</value>
+    <value>Tóm tắt kinh nghiệm:</value>
   </data>
   <data name="Label104Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label106Resource1.Text" xml:space="preserve">
-    <value>Describe ideal job:</value>
+    <value>Mô tả công việc lý tưởng:
+	</value>
   </data>
   <data name="Label106Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label107Resource1.Text" xml:space="preserve">
-    <value>Job need information:</value>
+    <value>Thông tin nhu cầu tìm việc : </value>
   </data>
   <data name="Label107Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label109Resource1.Text" xml:space="preserve">
-    <value>* Expectation:</value>
+    <value>*Nguyện vọng:</value>
   </data>
   <data name="Label109Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label111Resource1.Text" xml:space="preserve">
-    <value>* Time to work:</value>
+    <value>*Thời gian làm việc:</value>
   </data>
   <data name="Label111Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label112Resource1.Text" xml:space="preserve">
-    <value>* Salary:</value>
+    <value>*Mức lương:</value>
   </data>
   <data name="Label112Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label113Resource1.Text" xml:space="preserve">
-    <value>Mobile phone:</value>
+    <value>Di động:</value>
   </data>
   <data name="Label113Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label114Resource1.Text" xml:space="preserve">
-    <value>(* Introducing correctly about your skills will make the employer care much more about you.) </value>
+    <value>(*Hãy giới thiệu thật chính xác và chi tiết các kỹ năng làm việc của bạn, điều này giúp nhà tuyển dụng quan tâm đến bạn nhiều hơn.) </value>
   </data>
   <data name="Label114Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label115Resource1.Text" xml:space="preserve">
-    <value>(* Summarizing your experience, the companies you worked for, job titles you took will help you a lot to find a good job.) </value>
+    <value>(*Tóm tắt các kinh nghiệm về công việc, các công ty đã làm và các chức vụ đã năm giữ, điều đó sẽ giúp bạn rất nhiều trong việc tìm kiếm được 1 công việc tốt.) </value>
   </data>
   <data name="Label115Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label117Resource1.Text" xml:space="preserve">
-    <value>(10.000 letters limited)
+    <value>(Giới hạn 10.000 ký tự)
 	</value>
   </data>
   <data name="Label117Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label118Resource1.Text" xml:space="preserve">
-    <value>(10.000 letters limited)</value>
+    <value>(Giới hạn 10.000 ký tự)
+	</value>
   </data>
   <data name="Label118Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label119Resource1.Text" xml:space="preserve">
-    <value>* Place:</value>
+    <value>*Địa điểm</value>
   </data>
   <data name="Label119Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label11Resource1.Text" xml:space="preserve">
-    <value>Detailed information:</value>
+    <value>Thông tin chi tiết rao vặt của bạn :</value>
   </data>
   <data name="Label11Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label120Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
-  </data>
-  <data name="Label120Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Label121Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
-  </data>
-  <data name="Label121Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="Label122Resource1.Text" xml:space="preserve">
-    <value>Image:</value>
+    <value>Hình ảnh:</value>
   </data>
   <data name="Label122Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label124Resource1.Text" xml:space="preserve">
-    <value>Image note:</value>
+    <value>Ghi chú hình ảnh:</value>
   </data>
   <data name="Label124Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label125Resource1.Text" xml:space="preserve">
-    <value>Image:</value>
+    <value>Hình ảnh:</value>
   </data>
   <data name="Label125Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label127Resource1.Text" xml:space="preserve">
-    <value>Image note:</value>
+    <value>Ghi chú hình ảnh:</value>
   </data>
   <data name="Label127Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label128Resource1.Text" xml:space="preserve">
-    <value>*Place</value>
+    <value>Thời hạn lưu tin (ngày):</value>
   </data>
   <data name="Label128Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label129Resource1.Text" xml:space="preserve">
-    <value>*Place</value>
+    <value>Thời hạn lưu tin (ngày):</value>
   </data>
   <data name="Label129Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label12Resource1.Text" xml:space="preserve">
-    <value> (*Note: Please provide complete information)</value>
+    <value> (*Ghi chú : Bạn vui lòng nhập Tiếng Việt có dấu và thông tin đầy đủ)</value>
   </data>
   <data name="Label12Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label130Resource1.Text" xml:space="preserve">
-    <value>* Title</value>
+    <value>Thời hạn lưu tin (ngày):</value>
   </data>
   <data name="Label130Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label131Resource1.Text" xml:space="preserve">
-    <value>* Title</value>
+  <data name="Label132Resource1.Text" xml:space="preserve">
+    <value>* Tiêu đề</value>
   </data>
-  <data name="Label131Resource1.ToolTip" xml:space="preserve">
+  <data name="Label132Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label133Resource1.Text" xml:space="preserve">
+    <value>* Tiêu đề</value>
+  </data>
+  <data name="Label133Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label135Resource1.Text" xml:space="preserve">
+    <value>*Địa điểm</value>
+  </data>
+  <data name="Label135Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label136Resource1.Text" xml:space="preserve">
+    <value>*Địa điểm</value>
+  </data>
+  <data name="Label136Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label13Resource1.Text" xml:space="preserve">
-    <value>* Category:</value>
+    <value>* Chuyên mục rao vặt :</value>
   </data>
   <data name="Label13Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label14Resource1.Text" xml:space="preserve">
-    <value>* Place</value>
+    <value>*Địa điểm</value>
   </data>
   <data name="Label14Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label15Resource1.Text" xml:space="preserve">
-    <value>Detailed information:</value>
+    <value>Thông tin chi tiết rao vặt của bạn :</value>
   </data>
   <data name="Label15Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label16Resource1.Text" xml:space="preserve">
-    <value>(*Note: Please provide complete information)</value>
+    <value> (*Ghi chú : Bạn vui lòng nhập Tiếng Việt có dấu và thông tin đầy đủ)</value>
   </data>
   <data name="Label16Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label17Resource1.Text" xml:space="preserve">
-    <value>* Category:</value>
+    <value>* Chuyên mục rao vặt :</value>
   </data>
   <data name="Label17Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label18Resource1.Text" xml:space="preserve">
-    <value>* Title</value>
+    <value>* Tiêu đề</value>
   </data>
   <data name="Label18Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label19Resource1.Text" xml:space="preserve">
-    <value>Content:</value>
+    <value>Nội dung:</value>
   </data>
   <data name="Label19Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label1Resource1.Text" xml:space="preserve">
-    <value>* Title</value>
+    <value>* Tiêu đề</value>
   </data>
   <data name="Label1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label20Resource1.Text" xml:space="preserve">
-    <value>* Price:</value>
+    <value>*Giá:</value>
   </data>
   <data name="Label20Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label24Resource1.Text" xml:space="preserve">
-    <value>Address:</value>
+    <value>Địa chỉ :</value>
   </data>
   <data name="Label24Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label26Resource1.Text" xml:space="preserve">
-    <value>Area (meter square):</value>
+    <value>Diện tích (mét vuông):</value>
   </data>
   <data name="Label26Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label29Resource1.Text" xml:space="preserve">
-    <value>Direction:</value>
+    <value>Hướng :</value>
   </data>
   <data name="Label29Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label2Resource1.Text" xml:space="preserve">
-    <value>Content:</value>
+    <value>Nội dung:</value>
   </data>
   <data name="Label2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label30Resource1.Text" xml:space="preserve">
-    <value>Road:</value>
+    <value>Lộ giới : </value>
   </data>
   <data name="Label30Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label31Resource1.Text" xml:space="preserve">
-    <value>Storey:</value>
+    <value>Lầu : </value>
   </data>
   <data name="Label31Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label32Resource1.Text" xml:space="preserve">
-    <value>Mezzanine:</value>
+    <value>Lửng : </value>
   </data>
   <data name="Label32Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label33Resource1.Text" xml:space="preserve">
-    <value>* Place:</value>
+    <value>Vị trí :</value>
   </data>
   <data name="Label33Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label34Resource1.Text" xml:space="preserve">
-    <value>Document :</value>
+    <value>Giấy tờ :</value>
   </data>
   <data name="Label34Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label35Resource1.Text" xml:space="preserve">
-    <value>Street across:</value>
+    <value>Đường trước nhà :</value>
   </data>
   <data name="Label35Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label36Resource1.Text" xml:space="preserve">
-    <value>Electric - water:</value>
+    <value>Điện - nước</value>
   </data>
   <data name="Label36Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label38Resource1.Text" xml:space="preserve">
-    <value>Number of bedroom:</value>
+    <value>Số phòng ngủ :</value>
   </data>
   <data name="Label38Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label39Resource1.Text" xml:space="preserve">
-    <value>Number of bathroom:</value>
+    <value>Số nhà tắm / vệ sinh :</value>
   </data>
   <data name="Label39Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label3Resource1.Text" xml:space="preserve">
-    <value>* Price:</value>
+    <value>* Giá</value>
   </data>
   <data name="Label3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label40Resource1.Text" xml:space="preserve">
-    <value>Year contructed:</value>
+    <value>Năm xây dựng :</value>
   </data>
   <data name="Label40Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label41Resource1.Text" xml:space="preserve">
-    <value>Furniture:</value>
+    <value>Nội thất - Tiện nghi :</value>
   </data>
   <data name="Label41Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label42Resource1.Text" xml:space="preserve">
-    <value>Cultural - social:</value>
+    <value>Văn hóa - Xã hội:</value>
   </data>
   <data name="Label42Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label43Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
-  </data>
-  <data name="Label43Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="Label44Resource1.Text" xml:space="preserve">
-    <value>Image:</value>
+    <value>Hình ảnh:</value>
   </data>
   <data name="Label44Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label45Resource1.Text" xml:space="preserve">
-    <value>Image note:</value>
+    <value>Ghi chú hình ảnh:</value>
   </data>
   <data name="Label45Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label4Resource1.Text" xml:space="preserve">
-    <value>Time to keep (days):</value>
+    <value>Thời hạn lưu tin (ngày):</value>
   </data>
   <data name="Label4Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label50Resource1.Text" xml:space="preserve">
-    <value>Employer information</value>
+    <value>Thông tin nhà tuyển dụng :</value>
   </data>
   <data name="Label50Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label52Resource1.Text" xml:space="preserve">
-    <value>Employername:</value>
+    <value>*Tên công ty/nhà tuyển dụng :</value>
   </data>
   <data name="Label52Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label53Resource1.Text" xml:space="preserve">
-    <value>POST NEW EMPLOYMENT PROFILE</value>
+    <value>ĐĂNG TIN TUYỂN DỤNG MỚI </value>
   </data>
   <data name="Label53Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label54Resource1.Text" xml:space="preserve">
-    <value>* Introduce the employer</value>
+    <value>*Giới thiệu về nhà tuyển dụng:</value>
   </data>
   <data name="Label54Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -767,247 +781,247 @@
     <value />
   </data>
   <data name="Label56Resource1.Text" xml:space="preserve">
-    <value>Contact:</value>
+    <value>Thông tin liên hệ : </value>
   </data>
   <data name="Label56Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label57Resource1.Text" xml:space="preserve">
-    <value>* Representative:</value>
+    <value>*Người đại diện:</value>
   </data>
   <data name="Label57Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label58Resource1.Text" xml:space="preserve">
-    <value>* Contact address:</value>
+    <value>*Địa chỉ liên hệ:</value>
   </data>
   <data name="Label58Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label59Resource1.Text" xml:space="preserve">
-    <value>* Phone number:</value>
+    <value>*Điện thoai:</value>
   </data>
   <data name="Label59Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label5Resource1.Text" xml:space="preserve">
-    <value>Image:</value>
+    <value>Hình ảnh:</value>
   </data>
   <data name="Label5Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label60Resource1.Text" xml:space="preserve">
-    <value>* Email:</value>
+    <value>*Email:</value>
   </data>
   <data name="Label60Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label61Resource1.Text" xml:space="preserve">
-    <value>Recruitment requirements:</value>
+    <value>Thông tin yêu cầu tuyển dụng : </value>
   </data>
   <data name="Label61Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label62Resource1.Text" xml:space="preserve">
-    <value>* Job:</value>
+    <value>*Nghành Nghề:</value>
   </data>
   <data name="Label62Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label63Resource1.Text" xml:space="preserve">
-    <value>* Job title:</value>
+    <value>*Vị trí tuyển dụng:</value>
   </data>
   <data name="Label63Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label64Resource1.Text" xml:space="preserve">
-    <value>* Job requirement:</value>
+    <value>*Yêu cầu công việc:</value>
   </data>
   <data name="Label64Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label67Resource1.Text" xml:space="preserve">
-    <value>Experience requirement:</value>
+    <value>Yêu cầu kinh nghiệm:</value>
   </data>
   <data name="Label67Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label68Resource1.Text" xml:space="preserve">
-    <value>* Working time:</value>
+    <value>*Thời gian làm việc:</value>
   </data>
   <data name="Label68Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label6Resource1.Text" xml:space="preserve">
-    <value>Image note:</value>
+    <value>Ghi chú hình ảnh:</value>
   </data>
   <data name="Label6Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label70Resource1.Text" xml:space="preserve">
-    <value>* Number to recruit:</value>
+    <value>*Số lượng cần tuyển:</value>
   </data>
   <data name="Label70Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label71Resource1.Text" xml:space="preserve">
-    <value>Base salary:</value>
+    <value>Mức lương khởi điểm</value>
   </data>
   <data name="Label71Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label72Resource1.Text" xml:space="preserve">
-    <value>Probation time:</value>
+    <value>Thời gian thử việc:</value>
   </data>
   <data name="Label72Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label73Resource1.Text" xml:space="preserve">
-    <value>Probation salary</value>
+    <value>Mức lương thử việc:</value>
   </data>
   <data name="Label73Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label74Resource1.Text" xml:space="preserve">
-    <value>Rights:</value>
+    <value>Quyền lợi được hưởng:</value>
   </data>
   <data name="Label74Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label75Resource1.Text" xml:space="preserve">
-    <value>Content of profile:</value>
+    <value>Hồ sơ bao gồm:</value>
   </data>
   <data name="Label75Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label76Resource1.Text" xml:space="preserve">
-    <value>* Deadline:</value>
+    <value>*Thời hạn kết thúc nộp hồ sơ: </value>
   </data>
   <data name="Label76Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label77Resource1.Text" xml:space="preserve">
-    <value>POST NEW EMPLOYMENT PROFILE</value>
+    <value>ĐĂNG TIN TUYỂN DỤNG MỚI </value>
   </data>
   <data name="Label77Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label78Resource1.Text" xml:space="preserve">
-    <value>Job option:</value>
+    <value>Tuỳ chọn chuyên mục việc làm :</value>
   </data>
   <data name="Label78Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label79Resource1.Text" xml:space="preserve">
-    <value>Your profile will appear in looking your job page:</value>
+    <value>Xuất hiện hồ sơ của bạn trong trang người tìm việc :</value>
   </data>
   <data name="Label79Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label80Resource1.Text" xml:space="preserve">
-    <value>(* The employer can find and contact you whenever your profile is in looking for job page. If you disagree, you won't find a job.) </value>
+    <value>(*Nhà tuyển dụng có thể tìm thấy và liên lạc bạn bất cứ lúc nào khi hồ sơ của bạn có trong trang tìm việc. Nếu bạn chọn không đồng ý, tức bạn đang có việc làm hoặc không mong muốn tìm 1 việc làm) </value>
   </data>
   <data name="Label80Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label81Resource1.Text" xml:space="preserve">
-    <value>Job you want to work as:</value>
+    <value>Ngành nghề công việc bạn mong muốn làm việc :</value>
   </data>
   <data name="Label81Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label82Resource1.Text" xml:space="preserve">
-    <value>Personal Information : </value>
+    <value>Thông tin cá nhân : </value>
   </data>
   <data name="Label82Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label84Resource1.Text" xml:space="preserve">
-    <value>* Fullname:</value>
+    <value>*Họ và tên:</value>
   </data>
   <data name="Label84Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label85Resource1.Text" xml:space="preserve">
-    <value>* Birthday:</value>
+    <value>*Ngày sinh:</value>
   </data>
   <data name="Label85Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label86Resource1.Text" xml:space="preserve">
-    <value>* Gender:</value>
+    <value>*Giới tính:</value>
   </data>
   <data name="Label86Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label87Resource1.Text" xml:space="preserve">
-    <value>* Marriage:</value>
+    <value>*Tình trạng hôn nhân:</value>
   </data>
   <data name="Label87Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label88Resource1.Text" xml:space="preserve">
-    <value>* Nationality:</value>
+    <value>*Quốc tịch:</value>
   </data>
   <data name="Label88Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label89Resource1.Text" xml:space="preserve">
-    <value>Contact information:</value>
+    <value>Thông tin liên lạc :</value>
   </data>
   <data name="Label89Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label90Resource1.Text" xml:space="preserve">
-    <value>* Contact address:</value>
+    <value>*Địa chỉ liên lạc:</value>
   </data>
   <data name="Label90Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label92Resource1.Text" xml:space="preserve">
-    <value>* Phone number to contact:</value>
+    <value>*Số điện thoại liên lạc:</value>
   </data>
   <data name="Label92Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label93Resource1.Text" xml:space="preserve">
-    <value>Email:</value>
+    <value>Địa chỉ email:</value>
   </data>
   <data name="Label93Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label94Resource1.Text" xml:space="preserve">
-    <value>Knowledge level:</value>
+    <value>Trình độ học vấn : </value>
   </data>
   <data name="Label94Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label95Resource1.Text" xml:space="preserve">
-    <value>* Knowledge information:</value>
+    <value>*Thông tin học vấn:</value>
   </data>
   <data name="Label95Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label96Resource1.Text" xml:space="preserve">
-    <value>* Degree:</value>
+    <value>*Bằng cấp:</value>
   </data>
   <data name="Label96Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label97Resource1.Text" xml:space="preserve">
-    <value>Foreign language level:</value>
+    <value>Trình độ ngoại ngữ:</value>
   </data>
   <data name="Label97Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label98Resource1.Text" xml:space="preserve">
-    <value>* Skill</value>
+    <value>*Kỹ năng:</value>
   </data>
   <data name="Label98Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label99Resource1.Text" xml:space="preserve">
-    <value>* Job tittle:</value>
+    <value>*Cấp bậc:</value>
   </data>
   <data name="Label99Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -1016,7 +1030,7 @@
     <value />
   </data>
   <data name="rfvDiaChi0Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvDiaChi0Resource1.Text" xml:space="preserve">
     <value />
@@ -1025,7 +1039,7 @@
     <value />
   </data>
   <data name="rfvDiaChiLienHeResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvDiaChiLienHeResource1.Text" xml:space="preserve">
     <value />
@@ -1034,7 +1048,7 @@
     <value />
   </data>
   <data name="rfvDienThoai4Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvDienThoai4Resource1.Text" xml:space="preserve">
     <value />
@@ -1043,7 +1057,7 @@
     <value />
   </data>
   <data name="rfvDienThoaiResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvDienThoaiResource1.Text" xml:space="preserve">
     <value />
@@ -1052,7 +1066,7 @@
     <value />
   </data>
   <data name="rfvEmailResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvEmailResource1.Text" xml:space="preserve">
     <value />
@@ -1061,7 +1075,7 @@
     <value />
   </data>
   <data name="rfvGia1Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvGia1Resource1.Text" xml:space="preserve">
     <value />
@@ -1070,7 +1084,7 @@
     <value />
   </data>
   <data name="rfvGia2Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvGia2Resource1.Text" xml:space="preserve">
     <value />
@@ -1079,7 +1093,7 @@
     <value />
   </data>
   <data name="rfvGioiThieuNhaTuyenDungResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvGioiThieuNhaTuyenDungResource1.Text" xml:space="preserve">
     <value />
@@ -1088,7 +1102,7 @@
     <value />
   </data>
   <data name="rfvHoTen0Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvHoTen0Resource1.Text" xml:space="preserve">
     <value />
@@ -1097,7 +1111,7 @@
     <value />
   </data>
   <data name="rfvKyNangResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvKyNangResource1.Text" xml:space="preserve">
     <value />
@@ -1106,7 +1120,7 @@
     <value />
   </data>
   <data name="rfvMucLuong0Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvMucLuong0Resource1.Text" xml:space="preserve">
     <value />
@@ -1115,7 +1129,7 @@
     <value />
   </data>
   <data name="rfvNguoiDaiDienResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvNguoiDaiDienResource1.Text" xml:space="preserve">
     <value />
@@ -1124,7 +1138,7 @@
     <value />
   </data>
   <data name="rfvNguyenVongResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvNguyenVongResource1.Text" xml:space="preserve">
     <value />
@@ -1133,7 +1147,7 @@
     <value />
   </data>
   <data name="rfvQuocTich0Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvQuocTich0Resource1.Text" xml:space="preserve">
     <value />
@@ -1142,7 +1156,7 @@
     <value />
   </data>
   <data name="rfvSoLuongCanTuyenResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvSoLuongCanTuyenResource1.Text" xml:space="preserve">
     <value />
@@ -1151,7 +1165,7 @@
     <value />
   </data>
   <data name="rfvTenNhaTuyenDungResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvTenNhaTuyenDungResource1.Text" xml:space="preserve">
     <value />
@@ -1160,7 +1174,7 @@
     <value />
   </data>
   <data name="rfvThongTinHocVanResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvThongTinHocVanResource1.Text" xml:space="preserve">
     <value />
@@ -1169,7 +1183,7 @@
     <value />
   </data>
   <data name="rfvTieuDe1Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvTieuDe1Resource1.Text" xml:space="preserve">
     <value />
@@ -1178,7 +1192,7 @@
     <value />
   </data>
   <data name="rfvTieuDe2Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvTieuDe2Resource1.Text" xml:space="preserve">
     <value />
@@ -1187,7 +1201,7 @@
     <value />
   </data>
   <data name="rfvTieuDe3Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvTieuDe3Resource1.Text" xml:space="preserve">
     <value />
@@ -1195,17 +1209,17 @@
   <data name="rfvTieuDe3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="rfvTieuDe6Resource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+  <data name="rfvTieuDe5Resource1.ErrorMessage" xml:space="preserve">
+    <value>Không bỏ trống</value>
   </data>
-  <data name="rfvTieuDe6Resource1.Text" xml:space="preserve">
+  <data name="rfvTieuDe5Resource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="rfvTieuDe6Resource1.ToolTip" xml:space="preserve">
+  <data name="rfvTieuDe5Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="rfvViTriTuyenDungResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvViTriTuyenDungResource1.Text" xml:space="preserve">
     <value />
@@ -1214,7 +1228,7 @@
     <value />
   </data>
   <data name="rfvYeuCauCongViecResource1.ErrorMessage" xml:space="preserve">
-    <value>Need information</value>
+    <value>Không bỏ trống</value>
   </data>
   <data name="rfvYeuCauCongViecResource1.Text" xml:space="preserve">
     <value />
@@ -1223,7 +1237,7 @@
     <value />
   </data>
   <data name="rvdDienTichResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdDienTichResource1.Text" xml:space="preserve">
     <value />
@@ -1232,7 +1246,7 @@
     <value />
   </data>
   <data name="rvdGia1Resource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdGia1Resource1.Text" xml:space="preserve">
     <value />
@@ -1241,7 +1255,7 @@
     <value />
   </data>
   <data name="rvdGia2Resource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdGia2Resource1.Text" xml:space="preserve">
     <value />
@@ -1250,7 +1264,7 @@
     <value />
   </data>
   <data name="rvdLauResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdLauResource1.Text" xml:space="preserve">
     <value />
@@ -1259,7 +1273,7 @@
     <value />
   </data>
   <data name="rvdLungResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdLungResource1.Text" xml:space="preserve">
     <value />
@@ -1268,7 +1282,7 @@
     <value />
   </data>
   <data name="rvdMucLuongKhoiDiemResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdMucLuongKhoiDiemResource1.Text" xml:space="preserve">
     <value />
@@ -1277,7 +1291,7 @@
     <value />
   </data>
   <data name="rvdMucLuongThuViecResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdMucLuongThuViecResource1.Text" xml:space="preserve">
     <value />
@@ -1286,7 +1300,7 @@
     <value />
   </data>
   <data name="rvdNamXayDungResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdNamXayDungResource1.Text" xml:space="preserve">
     <value />
@@ -1295,7 +1309,7 @@
     <value />
   </data>
   <data name="rvdSoLuongCanTuyenResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdSoLuongCanTuyenResource1.Text" xml:space="preserve">
     <value />
@@ -1304,7 +1318,7 @@
     <value />
   </data>
   <data name="rvdSoNamKinhNghiem0Resource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdSoNamKinhNghiem0Resource1.Text" xml:space="preserve">
     <value />
@@ -1313,7 +1327,7 @@
     <value />
   </data>
   <data name="rvdSoNhaVeSinhResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdSoNhaVeSinhResource1.Text" xml:space="preserve">
     <value />
@@ -1322,12 +1336,18 @@
     <value />
   </data>
   <data name="rvdSoPhongNguResource1.ErrorMessage" xml:space="preserve">
-    <value>Type a number</value>
+    <value>Nhập số</value>
   </data>
   <data name="rvdSoPhongNguResource1.Text" xml:space="preserve">
     <value />
   </data>
   <data name="rvdSoPhongNguResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox1Resource1.Text" xml:space="preserve">
+    <value>abc</value>
+  </data>
+  <data name="TextBox1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="txtChuyenMuc1Resource1.Text" xml:space="preserve">
