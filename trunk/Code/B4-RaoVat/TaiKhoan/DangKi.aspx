@@ -121,6 +121,26 @@
                                     ToolTip="Trả lời câu hỏi bảo mật." ValidationGroup="CreateUserWizard1">Câu trả lời bảo mật.</asp:RequiredFieldValidator>
                             </td>
                         </tr>
+                         <tr>
+                            <td align="right">
+                                <asp:Label ID="lblLuaChon" runat="server">Lựa chọn khác:</asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td>
+                                <asp:CheckBox ID="cboxGiauEmail" runat="server" Text="Giấu Email của tôi." />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                &nbsp;</td>
+                            <td>
+                                <asp:CheckBox ID="cboxDangKy" runat="server" 
+                                    Text="Đăng ký email để nhận tin rao vặt mới theo từng mục hay tất cả." />
+                            </td>
+                        </tr>
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:CompareValidator ID="PasswordCompare" runat="server" 

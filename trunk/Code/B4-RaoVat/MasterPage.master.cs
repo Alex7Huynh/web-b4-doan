@@ -32,7 +32,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     protected void linkbntXemThongTin_Click(object sender, EventArgs e)
     {
-        Response.Redirect("..\\TaiKhoan\\XemThongTinTaiKhoan.aspx");
+        Response.Redirect("/B4-RaoVat/TaiKhoan/XemThongTinTaiKhoan.aspx");
     }
     protected void linkbntDangXuat_Click(object sender, EventArgs e)
     {
