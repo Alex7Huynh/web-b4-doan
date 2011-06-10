@@ -210,13 +210,13 @@ public class MyMembershipProvider : MembershipProvider
     public override int MinRequiredPasswordLength
     {
         //get { throw new NotImplementedException(); }
-        get { return 7; }
+        get { return 20; }
     }
 
     public override int PasswordAttemptWindow
     {
         //get { throw new NotImplementedException(); }
-        get { return 1; }
+        get { return 3; }
     }
 
     public override MembershipPasswordFormat PasswordFormat
@@ -248,9 +248,16 @@ public class MyMembershipProvider : MembershipProvider
     {
         //throw new NotImplementedException();
         RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
-        NGUOIDUNG ng = db.NGUOIDUNGs.SingleOrDefault(p => p.TenNguoiDung == username && p.Email == answer);
+        NGUOIDUNG ng = db.NGUOIDUNGs.SingleOrDefault(p => p.TenNguoiDung == username);
         if (ng != null)
+        {
+
             return ng.MatKhau;
+        }
+      
+        //NGUOIDUNG ng = db.NGUOIDUNGs.SingleOrDefault(p => p.TenNguoiDung == username && p.Email == answer);
+        //if (ng != null)
+        //    return ng.MatKhau;
         return null;
 
     }
