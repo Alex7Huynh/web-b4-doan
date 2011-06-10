@@ -7,9 +7,22 @@ using System.Web.UI.WebControls;
 using BUS;
 using DAO;
 using System.IO;
+using System.Globalization;
+using System.Threading;
 
 public partial class DangTinRaoVat : System.Web.UI.Page
 {
+    protected override void InitializeCulture()
+    {
+        if (Request["Language"] != null)
+        {
+            CultureInfo ci = CultureInfo.CreateSpecificCulture(Request["Language"].ToString());
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
+        }
+        base.InitializeCulture();
+    }
+    
     /// <summary>
     /// Page_Load
     /// </summary>
