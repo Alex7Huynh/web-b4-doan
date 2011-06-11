@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using BUS;
 using DAO;
 using System.IO;
-public partial class Default2 : System.Web.UI.Page
+public partial class Default2 : BUS.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
