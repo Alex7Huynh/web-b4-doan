@@ -17,13 +17,13 @@ public partial class Default2 : BUS.BasePage
     {
         NGUOIDUNG NguoiDung = new NGUOIDUNG();
         TINNHAN TinNhan = new TINNHAN();
-        if (Request.Cookies["userID"] != null)
+        if (Session["userID"] != null)
         {
-            int userID = int.Parse(Request.Cookies["userID"].Value);
+            int userID = (Int32)Session["userID"];
             TinNhan.MaNguoiDung = userID;
         }
         else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
-        //Response.Redirect("~/TaiKhoan/NhanTin.aspx");
+        Response.Redirect("~/TaiKhoan/NhanTin.aspx");
         TinNhan.MaNguoiNhanTin = NguoiDungBUS.LayNguoiDungTheoTen(ddlNguoiNhanTin.SelectedValue).MaNguoiDung;
         TinNhan.TieuDeTinNhan= txtTieuDe1.Text;
         TinNhan.NoiDungTinNhan = txtNoiDung1.Text;
