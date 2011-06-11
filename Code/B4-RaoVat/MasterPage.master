@@ -12,10 +12,10 @@
         <div id="header">
             <div id="menu">
                 <ul>
-                    <li><a href="/B4-RaoVat/Default.aspx" class="first">
+                    <li class="current_page_item"><a href="/B4-RaoVat/Default.aspx" class="first">
                         <asp:Label ID="Label2" runat="server" Text="Trang Chủ"></asp:Label>
                     </a></li>
-                    <li class="current_page_item"><a href="#">
+                    <li><a href="/B4-RaoVat/HuongDan.aspx">
                         <asp:Label ID="Label3" runat="server" Text="Hướng dẫn"></asp:Label></a></li>
                     <li><a href="/B4-RaoVat/TaiKhoan/DangKi.aspx">
                         <asp:Label ID="Label4" runat="server" Text="Đăng Ký"></asp:Label></a></li>
@@ -85,8 +85,7 @@
                         OnClick="linkbntXemThongTin_Click" ForeColor="White">Xem Thông Tin Tài Khoản</asp:LinkButton>
                 </div>
                 <div id="nav_browse">
-                    <asp:HyperLink ID="BrowseAllLink" runat="server" NavigateUrl="~/DanhMuc/DanhMucChinh.aspx"
-                        ForeColor="White" meta:resourcekey="BrowseAllLinkResource1">Xem tất cả danh mục chính</asp:HyperLink>
+                    
                 </div>
             </div>
             <div id="crumbs">

@@ -26,12 +26,20 @@
 	                                    float:left">
 			<a id="content_start"></a>
 			<h2>
-				<asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("TenDanhMucChinh") %>' NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></h2>
+				<asp:HyperLink ID="HyperLink1" runat="server" 
+                    Text='<%# Eval("TenDanhMucChinh") %>' 
+                    NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>' 
+                    meta:resourcekey="HyperLink1Resource1"></asp:HyperLink></h2>
 			
 		    <p>
-                <asp:Image ID="PhotoLinkAsp" runat="server" Width="176" ImageUrl='<%# Eval("Thumbnail", "~/images/DanhMucChinh/{0}")%>'/></p>
+                <asp:Image ID="PhotoLinkAsp" runat="server" Width="176px" 
+                    ImageUrl='<%# Eval("Thumbnail", "~/images/DanhMucChinh/{0}") %>' 
+                    meta:resourcekey="PhotoLinkAspResource1"/></p>
 			<p>
-				<asp:HyperLink ID="SubCategoriesLink" runat="server" Text='Xem Tất Cả Các Mục Con' NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>'></asp:HyperLink></p>
+				<asp:HyperLink ID="SubCategoriesLink" runat="server" 
+                    Text='Xem Tất Cả Các Mục Con' 
+                    NavigateUrl='<%# Eval("MaDanhMucChinh", "../DanhMuc/DanhMucCon.aspx?id={0}") %>' 
+                    meta:resourcekey="SubCategoriesLinkResource1"></asp:HyperLink></p>
 		</div>
 	</ItemTemplate>
 	<FooterTemplate>

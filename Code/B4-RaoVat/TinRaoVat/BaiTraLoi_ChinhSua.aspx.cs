@@ -25,7 +25,7 @@ public partial class BaiTraLoi_ChinhSua : System.Web.UI.Page
         DateTime dateTime = DateTime.Now;
         string maTinRaoVat = Session["matinraovat"].ToString();
         string maNguoiDung = Session["manguoidung"].ToString();
-        baiTraLoi.MaTinRaoVat = int.Parse(maTinRaoVat); 
+        baiTraLoi.MaTinRaoVat = int.Parse(maTinRaoVat);
         baiTraLoi.MaNguoiDung = int.Parse(maNguoiDung);
 
         baiTraLoi.NoiDungTraLoi = txttraloi.Text;
