@@ -1,33 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using BUS;
 using DAO;
 using System.IO;
-using System.Globalization;
-using System.Threading;
 
-public partial class ChinhSuaBaiRaoVat : System.Web.UI.Page
+public partial class ChinhSuaBaiRaoVat : BUS.BasePage
 {
     int UserID;
     TINRAOVAT TinRaoVat = new TINRAOVAT();
     DANHMUCCON DanhMucCon = new DANHMUCCON();
     DANHMUCCHINH DanhMucChinh = new DANHMUCCHINH();
     string ThumbnailLocation = "~/images/TinRaoVat/";
-
-    protected override void InitializeCulture()
-    {
-        if (Request["Language"] != null)
-        {
-            CultureInfo ci = CultureInfo.CreateSpecificCulture(Request["Language"].ToString());
-            Thread.CurrentThread.CurrentCulture = ci;
-            Thread.CurrentThread.CurrentUICulture = ci;
-        }
-        base.InitializeCulture();
-    }
 
     protected void Page_Load(object sender, EventArgs e)
     {

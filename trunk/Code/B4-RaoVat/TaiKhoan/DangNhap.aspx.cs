@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAO;
 
-public partial class Default2 : System.Web.UI.Page
+public partial class Default2 : BUS.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
