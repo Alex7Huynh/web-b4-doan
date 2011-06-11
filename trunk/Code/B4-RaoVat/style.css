@@ -305,6 +305,8 @@ hr { display: none; }
 	padding: 10px;
 	height: 100%;
 	background: #F7F6F2;
+	width: 80%;
+	border: ridge;
 }
 
 #announcements ul
