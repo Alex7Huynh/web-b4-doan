@@ -181,5 +181,22 @@ namespace DAO
 
             return nguoiDung;
         }
+
+        public static bool ChinhSuaLoaiNguoiDung(NGUOIDUNG NguoiDung)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                NGUOIDUNG NguoiDungUpdate = new NGUOIDUNG();
+                NguoiDungUpdate = db.NGUOIDUNGs.Single(t => t.MaNguoiDung == NguoiDung.MaNguoiDung);
+                NguoiDungUpdate.MaLoaiNguoiDung = NguoiDung.MaLoaiNguoiDung;
+                db.SubmitChanges();
+
+            }
+            catch (Exception ex)
+            { return false; }
+
+            return true;
+        }
     }
 }

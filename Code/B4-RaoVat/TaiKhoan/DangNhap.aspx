@@ -27,26 +27,33 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right">
+                                <td align="right" style="width: 93px">
                                     <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" 
                                         meta:resourcekey="UserNameLabelResource1">Người Dùng:</asp:Label>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="UserName" runat="server" Font-Size="0.8em" 
-                                        meta:resourcekey="UserNameResource1"></asp:TextBox>
+                                        meta:resourcekey="UserNameResource1" style="margin-bottom: 0px" 
+                                        Width="83px" ></asp:TextBox>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
                                         ErrorMessage="Tên người dùng yêu cầu." ToolTip="Tên người dùng yêu cầu." 
                                         ValidationGroup="Login1" meta:resourcekey="UserNameRequiredResource1">Tên người dùng.</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right">
+                            <td style="width: 93px"></td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="width: 93px">
                                     <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" 
                                         meta:resourcekey="PasswordLabelResource1">Mât Khẩu:</asp:Label>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="Password" runat="server" Font-Size="0.8em" TextMode="Password" 
-                                        meta:resourcekey="PasswordResource1"></asp:TextBox>
+                                        meta:resourcekey="PasswordResource1" style="margin-bottom: 0px" 
+                                        Width="83px"></asp:TextBox>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
                                         ErrorMessage="Mật khẩu yêu cầu." ToolTip="Mật khẩu yêu cầu." 
                                         ValidationGroup="Login1" meta:resourcekey="PasswordRequiredResource1">Mật khẩu người dùng.</asp:RequiredFieldValidator>

@@ -98,20 +98,26 @@
             </tr>
             </tr>
             <tr>
-                <td>
+                <td style="height: 22px">
                     <asp:Label ID="Label15" runat="server" meta:resourcekey="Label15Resource1" 
                         Text="Loại người dùng:"></asp:Label>
                 </td>
-                <td>
+                <td style="height: 22px">
                     <asp:Label ID="lblLoaiNguoiDung" runat="server" Font-Bold="True" 
                         Font-Names="Tahoma" Font-Size="11pt" 
                         meta:resourceKey="lblLoaiNguoiDungResource1"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" style="height: 33px">
                     <asp:Button ID="btnLogin" runat="server" Text="Chuyển Tài Khoản" 
                         Width="123px" meta:resourceKey="btnLoginResource1" />
+                        
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                     <asp:Button ID="btnNangCap" runat="server" Text="nâng cấp tài khoản" 
+                        Width="123px" meta:resourceKey="btnLoginResource1" 
+                        onclick="btnNangCap_Click" />
                 </td>
             </tr>
         </table>

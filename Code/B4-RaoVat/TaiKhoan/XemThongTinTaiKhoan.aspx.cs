@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAO;
+using BUS;
 
 public partial class Default2 : BUS.BasePage
 {
@@ -93,5 +94,9 @@ public partial class Default2 : BUS.BasePage
         {
             Response.Redirect("..\\TaiKhoan\\DangNhap.aspx");
         }
+    }
+    protected void btnNangCap_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/TaiKhoan/NangCapTaiKhoan.aspx");
     }
 }
