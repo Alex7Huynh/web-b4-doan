@@ -44,7 +44,7 @@
                         CausesValidation="False" />
                     <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/images/English.png"
                         PostBackUrl="~/Default.aspx?Language=en-us" Width="30px" meta:resourcekey="ImageButton2Resource1"
-                        CausesValidation="False" />
+                        CausesValidation="False" onclick="ImageButton2_Click" />
                     <asp:Label ID="Label1" runat="server" Text="Label" meta:resourcekey="Label1Resource1"></asp:Label>
                 </fieldset>
             </div>

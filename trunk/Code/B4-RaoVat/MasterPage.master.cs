@@ -44,5 +44,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
         lblUserNameMP.Text = "Guest-Khách";
             Session["UserName"]=null;
     }
+    protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+    {
+
+    }
 }
 
