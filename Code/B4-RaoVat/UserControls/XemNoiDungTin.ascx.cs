@@ -179,9 +179,8 @@ public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
         }
     }
     protected void btt_TraLoi_Click(object sender, EventArgs e)
-    {
-       
-        Response.Redirect("~/TinRaoVat/BaiTraLoi_ChinhSua.aspx");
+    {       
+        Response.Redirect("~/TinRaoVat/TraLoiTinRaoVat.aspx");
     }
     protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
     {
