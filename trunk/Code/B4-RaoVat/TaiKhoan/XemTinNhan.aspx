@@ -5,16 +5,15 @@
         AlternatingRowStyle-CssClass="even" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" 
         BorderWidth="1px" CellPadding="2" DataSourceID="LinqDataSource1" 
-        ForeColor="Black" GridLines="None" DataKeyNames="MaTinNhan" >
+        ForeColor="Black" GridLines="None" >
     
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="TieuDeTinNhan" HeaderText="TieuDeTinNhan" 
-                SortExpression="TieuDeTinNhan" />
+                SortExpression="TieuDeTinNhan" ReadOnly="True" />
             <asp:BoundField DataField="NoiDungTinNhan" HeaderText="NoiDungTinNhan" 
-                SortExpression="NoiDungTinNhan" />
+                SortExpression="NoiDungTinNhan" ReadOnly="True" />
             <asp:BoundField DataField="ThoiGianNhanTin" HeaderText="ThoiGianNhanTin" 
-                SortExpression="ThoiGianNhanTin" />
+                SortExpression="ThoiGianNhanTin" ReadOnly="True" />
         </Columns>
         <FooterStyle BackColor="Tan" />
         <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" 
@@ -25,12 +24,12 @@
     </asp:GridView>
         <a href="NhanTin.aspx">Nhắn Tin</a>
     <asp:LinqDataSource ID="LinqDataSource1" runat="server" 
-        ContextTypeName="DAO.RaoVatDataClassesDataContext" EnableDelete="True" 
-        EnableInsert="True" EnableUpdate="True" 
-        TableName="TINNHANs" Where="MaNguoiDung == @MaNguoiDung">
+        ContextTypeName="DAO.RaoVatDataClassesDataContext" 
+        TableName="TINNHANs" Where="MaNguoiDung == @MaNguoiDung1" 
+        Select="new (TieuDeTinNhan, NoiDungTinNhan, ThoiGianNhanTin)">
         <WhereParameters>
-            <asp:CookieParameter CookieName="userID" DefaultValue="11" Name="MaNguoiDung" 
-                Type="Int32" />
+            <asp:SessionParameter DefaultValue="11" Name="MaNguoiDung1" 
+                SessionField="userID" Type="Int32" />
         </WhereParameters>
     </asp:LinqDataSource>
     
