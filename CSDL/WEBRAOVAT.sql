@@ -438,7 +438,8 @@ Create table LICHSUTINRAOVATVIPHAM
 	MaTinRaoVatViPham int,
 	MaNguoiDungBaoCaoViPham int,
 	ThoiGianBaoCaoViPham datetime,
-	deleted bit,	
+	deleted bit,
+	LyDo nvarchar(100),	
 	CONSTRAINT PY_LSTINRAOVATVIPHAM PRIMARY KEY(MaLichSuTinRaoVatViPham),
 )
 
@@ -1500,13 +1501,13 @@ insert into  TINNHAN(MaNguoiDung,	MaNguoiNhanTin,	TieuDeTinNhan,	NoiDungTinNhan,
 values (1,7,N'Kaka',N'Còn hàng không bạn','11/04/2011', 1,1 )
 
 --13. LICHSUTINRAOVATVIPHAM
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (1, null, '2/3/2011',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (2, null, '3/4/2009',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (3, null, '5/6/2008',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (4, null, '2/3/2011',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, 15, '5/6/2009',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, 16, '2/3/2018',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (null, 17, '2/3/2011',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (3, null, '3/4/2009',0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (3, null, '5/6/2008',	0)
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted) VALUES (3, null, '2/3/2011',    0)
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (1, null, '2/3/2011',	0,N'Nhầm chuyên mục')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (2, null, '3/4/2009',	0,N'Spam')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, null, '5/6/2008',	0,N'Nhầm chuyên mục')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (4, null, '2/3/2011',	0,N'Nói tục')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (null, 15, '5/6/2009',	0,N'Không tiêu đề')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (null, 16, '2/3/2018',	0,N'Viết không dấu')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (null, 17, '2/3/2011',	0,N'Nói tục')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, null, '3/4/2009',	0,N'Spam nick')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, null, '5/6/2008',	0,N'Spam')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, null, '2/3/2011',    0,N'Spam')

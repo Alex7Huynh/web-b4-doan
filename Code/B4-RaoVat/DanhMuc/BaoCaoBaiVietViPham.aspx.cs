@@ -23,7 +23,16 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
     protected void btnBaoCao1_Click(object sender, EventArgs e)
     {
         LICHSUTINRAOVATVIPHAM tinViPham = new LICHSUTINRAOVATVIPHAM();
-        int userID = (Int32)Session["userID"];
+        int userID = -1;
+        string s = null;
+        if (Session["userID"] == null)
+        {
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
+        }
+        else
+        {
+            userID = (Int32)Session["userID"];
+        }
         int MaDanhMucCon = int.Parse(Request.QueryString["sub"]);
         if(ckbNickSpam.Checked || ckbSpam.Checked || ckbTenSai.Checked || ckbTieuDeSai.Checked)
         {
@@ -31,6 +40,23 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
             tinViPham.MaNguoiDungBaoCaoViPham = userID;
             tinViPham.ThoiGianBaoCaoViPham = DateTime.Now;
             tinViPham.deleted = false;
+            if (ckbNickSpam.Checked)
+            {
+                s += "Lập nhiều nick đăng tin. ";
+            }
+            if (ckbSpam.Checked)
+            {
+                s += "Spam/Làm mới tin/Đăng tin quá qui định. ";
+            }
+            if (ckbTenSai.Checked)
+            {
+                s += "Tên sai chuyên mục. ";
+            }
+            if (ckbTieuDeSai.Checked)
+            {
+                s += "Tiêu đề tin không dấu. ";
+            }
+            tinViPham.LyDo = s;
             BaoCaoBaiVietViPhamBUS.ThemBaoCaoViPham(tinViPham);
         }
     }

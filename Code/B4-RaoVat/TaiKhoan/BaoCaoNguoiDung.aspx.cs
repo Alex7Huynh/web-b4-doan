@@ -8,7 +8,7 @@ using BUS;
 using DAO;
 using System.IO;
 
-public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
+public partial class BaoCaoNguoiDungViPham : System.Web.UI.Page
 {
     /// <summary>
     /// Page_Load
@@ -22,16 +22,43 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
 
     protected void btnBaoCao1_Click(object sender, EventArgs e)
     {
-        LICHSUTINRAOVATVIPHAM tinViPham = new LICHSUTINRAOVATVIPHAM();
-        int userID = (Int32)Session["userID"];
-        int MaDanhMucCon = int.Parse(Request.QueryString["sub"]);
-        if(ckbNickSpam.Checked || ckbSpam.Checked || ckbTenSai.Checked || ckbTieuDeSai.Checked)
+        NGUOIDUNG NguoiDung = new NGUOIDUNG();
+        LICHSUNGUOIDUNGVIPHAM nguoiViPham = new LICHSUNGUOIDUNGVIPHAM();
+        int userID = -1;
+        if (Session["userID"] == null)
         {
-            tinViPham.MaTinRaoVatViPham = MaDanhMucCon;
-            tinViPham.MaNguoiDungBaoCaoViPham = userID;
-            tinViPham.ThoiGianBaoCaoViPham = DateTime.Now;
-            tinViPham.deleted = false;
-            BaoCaoBaiVietViPhamBUS.ThemBaoCaoViPham(tinViPham);
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
+        }
+        else
+        {
+            userID = (Int32)Session["userID"];
+        }
+        string s=null;
+        if(ckbNickSpam.Checked || ckbSpam.Checked || ckbXucPham.Checked || ckbTuSai.Checked)
+        {
+            nguoiViPham.MaNguoiDungViPham = NguoiDungBUS.LayNguoiDungTheoTen(ddlNguoiViPham.SelectedValue).MaNguoiDung;
+            nguoiViPham.MaNguoiDungBaoCaoViPham = userID;
+            nguoiViPham.ThoiGianBaoCaoViPham = DateTime.Now;
+            nguoiViPham.deleted = false;
+            nguoiViPham.ThoiGianCanhCao = 10;
+            if (ckbNickSpam.Checked)
+            {
+                s += "Lập nhiều nick đăng tin. ";
+            }
+            if (ckbSpam.Checked)
+            {
+                s += "Post nhiều tin có nội dung như nhau. ";
+            }
+            if (ckbXucPham.Checked)
+            {
+                s += "Post bài xúc phạm thành viên khác. ";
+            }
+            if (ckbTuSai.Checked)
+            {
+                s += "Dùng từ ngữ không dấu và ngôn ngữ thiếu văn hóa. ";
+            }
+            nguoiViPham.LyDo = s;
+            BaoCaoNguoiDungViPhamBUS.ThemBaoCaoViPham(nguoiViPham);
         }
     }
 }
