@@ -57,7 +57,7 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-CE2C677809DD\\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Securit" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Securit" +
             "y=True")]
         public string RAO_VATConnectionString3 {
             get {

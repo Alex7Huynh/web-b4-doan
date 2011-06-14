@@ -75,9 +75,6 @@ namespace DAO
     partial void InsertLICHSUNGUOIDUNGVIPHAM(LICHSUNGUOIDUNGVIPHAM instance);
     partial void UpdateLICHSUNGUOIDUNGVIPHAM(LICHSUNGUOIDUNGVIPHAM instance);
     partial void DeleteLICHSUNGUOIDUNGVIPHAM(LICHSUNGUOIDUNGVIPHAM instance);
-    partial void InsertLICHSUTINRAOVATVIPHAM(LICHSUTINRAOVATVIPHAM instance);
-    partial void UpdateLICHSUTINRAOVATVIPHAM(LICHSUTINRAOVATVIPHAM instance);
-    partial void DeleteLICHSUTINRAOVATVIPHAM(LICHSUTINRAOVATVIPHAM instance);
     partial void InsertLIKED(LIKED instance);
     partial void UpdateLIKED(LIKED instance);
     partial void DeleteLIKED(LIKED instance);
@@ -123,10 +120,13 @@ namespace DAO
     partial void InsertTINTUYENDUNG(TINTUYENDUNG instance);
     partial void UpdateTINTUYENDUNG(TINTUYENDUNG instance);
     partial void DeleteTINTUYENDUNG(TINTUYENDUNG instance);
+    partial void InsertLICHSUTINRAOVATVIPHAM(LICHSUTINRAOVATVIPHAM instance);
+    partial void UpdateLICHSUTINRAOVATVIPHAM(LICHSUTINRAOVATVIPHAM instance);
+    partial void DeleteLICHSUTINRAOVATVIPHAM(LICHSUTINRAOVATVIPHAM instance);
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
-				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString4, mappingSource)
+				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
@@ -275,14 +275,6 @@ namespace DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<LICHSUTINRAOVATVIPHAM> LICHSUTINRAOVATVIPHAMs
-		{
-			get
-			{
-				return this.GetTable<LICHSUTINRAOVATVIPHAM>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LIKED> LIKEDs
 		{
 			get
@@ -400,6 +392,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<TINTUYENDUNG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LICHSUTINRAOVATVIPHAM> LICHSUTINRAOVATVIPHAMs
+		{
+			get
+			{
+				return this.GetTable<LICHSUTINRAOVATVIPHAM>();
 			}
 		}
 	}
@@ -4029,246 +4029,6 @@ namespace DAO
 		}
 	}
 	
-	[Table(Name="dbo.LICHSUTINRAOVATVIPHAM")]
-	public partial class LICHSUTINRAOVATVIPHAM : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaLichSuTinRaoVatViPham;
-		
-		private System.Nullable<int> _MaTinRaoVatViPham;
-		
-		private System.Nullable<int> _MaNguoiDungBaoCaoViPham;
-		
-		private System.Nullable<System.DateTime> _ThoiGianBaoCaoViPham;
-		
-		private System.Nullable<bool> _deleted;
-		
-		private EntityRef<NGUOIDUNG> _NGUOIDUNG;
-		
-		private EntityRef<TINRAOVAT> _TINRAOVAT;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaLichSuTinRaoVatViPhamChanging(int value);
-    partial void OnMaLichSuTinRaoVatViPhamChanged();
-    partial void OnMaTinRaoVatViPhamChanging(System.Nullable<int> value);
-    partial void OnMaTinRaoVatViPhamChanged();
-    partial void OnMaNguoiDungBaoCaoViPhamChanging(System.Nullable<int> value);
-    partial void OnMaNguoiDungBaoCaoViPhamChanged();
-    partial void OnThoiGianBaoCaoViPhamChanging(System.Nullable<System.DateTime> value);
-    partial void OnThoiGianBaoCaoViPhamChanged();
-    partial void OndeletedChanging(System.Nullable<bool> value);
-    partial void OndeletedChanged();
-    #endregion
-		
-		public LICHSUTINRAOVATVIPHAM()
-		{
-			this._NGUOIDUNG = default(EntityRef<NGUOIDUNG>);
-			this._TINRAOVAT = default(EntityRef<TINRAOVAT>);
-			OnCreated();
-		}
-		
-		[Column(Storage="_MaLichSuTinRaoVatViPham", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaLichSuTinRaoVatViPham
-		{
-			get
-			{
-				return this._MaLichSuTinRaoVatViPham;
-			}
-			set
-			{
-				if ((this._MaLichSuTinRaoVatViPham != value))
-				{
-					this.OnMaLichSuTinRaoVatViPhamChanging(value);
-					this.SendPropertyChanging();
-					this._MaLichSuTinRaoVatViPham = value;
-					this.SendPropertyChanged("MaLichSuTinRaoVatViPham");
-					this.OnMaLichSuTinRaoVatViPhamChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaTinRaoVatViPham", DbType="Int")]
-		public System.Nullable<int> MaTinRaoVatViPham
-		{
-			get
-			{
-				return this._MaTinRaoVatViPham;
-			}
-			set
-			{
-				if ((this._MaTinRaoVatViPham != value))
-				{
-					if (this._TINRAOVAT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaTinRaoVatViPhamChanging(value);
-					this.SendPropertyChanging();
-					this._MaTinRaoVatViPham = value;
-					this.SendPropertyChanged("MaTinRaoVatViPham");
-					this.OnMaTinRaoVatViPhamChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MaNguoiDungBaoCaoViPham", DbType="Int")]
-		public System.Nullable<int> MaNguoiDungBaoCaoViPham
-		{
-			get
-			{
-				return this._MaNguoiDungBaoCaoViPham;
-			}
-			set
-			{
-				if ((this._MaNguoiDungBaoCaoViPham != value))
-				{
-					if (this._NGUOIDUNG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaNguoiDungBaoCaoViPhamChanging(value);
-					this.SendPropertyChanging();
-					this._MaNguoiDungBaoCaoViPham = value;
-					this.SendPropertyChanged("MaNguoiDungBaoCaoViPham");
-					this.OnMaNguoiDungBaoCaoViPhamChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ThoiGianBaoCaoViPham", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ThoiGianBaoCaoViPham
-		{
-			get
-			{
-				return this._ThoiGianBaoCaoViPham;
-			}
-			set
-			{
-				if ((this._ThoiGianBaoCaoViPham != value))
-				{
-					this.OnThoiGianBaoCaoViPhamChanging(value);
-					this.SendPropertyChanging();
-					this._ThoiGianBaoCaoViPham = value;
-					this.SendPropertyChanged("ThoiGianBaoCaoViPham");
-					this.OnThoiGianBaoCaoViPhamChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_deleted", DbType="Bit")]
-		public System.Nullable<bool> deleted
-		{
-			get
-			{
-				return this._deleted;
-			}
-			set
-			{
-				if ((this._deleted != value))
-				{
-					this.OndeletedChanging(value);
-					this.SendPropertyChanging();
-					this._deleted = value;
-					this.SendPropertyChanged("deleted");
-					this.OndeletedChanged();
-				}
-			}
-		}
-		
-		[Association(Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM", Storage="_NGUOIDUNG", ThisKey="MaNguoiDungBaoCaoViPham", OtherKey="MaNguoiDung", IsForeignKey=true)]
-		public NGUOIDUNG NGUOIDUNG
-		{
-			get
-			{
-				return this._NGUOIDUNG.Entity;
-			}
-			set
-			{
-				NGUOIDUNG previousValue = this._NGUOIDUNG.Entity;
-				if (((previousValue != value) 
-							|| (this._NGUOIDUNG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NGUOIDUNG.Entity = null;
-						previousValue.LICHSUTINRAOVATVIPHAMs.Remove(this);
-					}
-					this._NGUOIDUNG.Entity = value;
-					if ((value != null))
-					{
-						value.LICHSUTINRAOVATVIPHAMs.Add(this);
-						this._MaNguoiDungBaoCaoViPham = value.MaNguoiDung;
-					}
-					else
-					{
-						this._MaNguoiDungBaoCaoViPham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("NGUOIDUNG");
-				}
-			}
-		}
-		
-		[Association(Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM", Storage="_TINRAOVAT", ThisKey="MaTinRaoVatViPham", OtherKey="MaTinRaoVat", IsForeignKey=true)]
-		public TINRAOVAT TINRAOVAT
-		{
-			get
-			{
-				return this._TINRAOVAT.Entity;
-			}
-			set
-			{
-				TINRAOVAT previousValue = this._TINRAOVAT.Entity;
-				if (((previousValue != value) 
-							|| (this._TINRAOVAT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TINRAOVAT.Entity = null;
-						previousValue.LICHSUTINRAOVATVIPHAMs.Remove(this);
-					}
-					this._TINRAOVAT.Entity = value;
-					if ((value != null))
-					{
-						value.LICHSUTINRAOVATVIPHAMs.Add(this);
-						this._MaTinRaoVatViPham = value.MaTinRaoVat;
-					}
-					else
-					{
-						this._MaTinRaoVatViPham = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("TINRAOVAT");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[Table(Name="dbo.LIKED")]
 	public partial class LIKED : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -5467,8 +5227,6 @@ namespace DAO
 		
 		private EntitySet<LICHSUNGUOIDUNGVIPHAM> _LICHSUNGUOIDUNGVIPHAMs1;
 		
-		private EntitySet<LICHSUTINRAOVATVIPHAM> _LICHSUTINRAOVATVIPHAMs;
-		
 		private EntitySet<LIKED> _LIKEDs;
 		
 		private EntitySet<QUANGCAO> _QUANGCAOs;
@@ -5480,6 +5238,8 @@ namespace DAO
 		private EntitySet<TINRAOVAT> _TINRAOVATs;
 		
 		private EntitySet<TINRAOVATDALUU> _TINRAOVATDALUUs;
+		
+		private EntitySet<LICHSUTINRAOVATVIPHAM> _LICHSUTINRAOVATVIPHAMs;
 		
 		private EntityRef<LOAINGUOIDUNG> _LOAINGUOIDUNG;
 		
@@ -5520,13 +5280,13 @@ namespace DAO
 			this._LICHSUNGUOIDUNGs = new EntitySet<LICHSUNGUOIDUNG>(new Action<LICHSUNGUOIDUNG>(this.attach_LICHSUNGUOIDUNGs), new Action<LICHSUNGUOIDUNG>(this.detach_LICHSUNGUOIDUNGs));
 			this._LICHSUNGUOIDUNGVIPHAMs = new EntitySet<LICHSUNGUOIDUNGVIPHAM>(new Action<LICHSUNGUOIDUNGVIPHAM>(this.attach_LICHSUNGUOIDUNGVIPHAMs), new Action<LICHSUNGUOIDUNGVIPHAM>(this.detach_LICHSUNGUOIDUNGVIPHAMs));
 			this._LICHSUNGUOIDUNGVIPHAMs1 = new EntitySet<LICHSUNGUOIDUNGVIPHAM>(new Action<LICHSUNGUOIDUNGVIPHAM>(this.attach_LICHSUNGUOIDUNGVIPHAMs1), new Action<LICHSUNGUOIDUNGVIPHAM>(this.detach_LICHSUNGUOIDUNGVIPHAMs1));
-			this._LICHSUTINRAOVATVIPHAMs = new EntitySet<LICHSUTINRAOVATVIPHAM>(new Action<LICHSUTINRAOVATVIPHAM>(this.attach_LICHSUTINRAOVATVIPHAMs), new Action<LICHSUTINRAOVATVIPHAM>(this.detach_LICHSUTINRAOVATVIPHAMs));
 			this._LIKEDs = new EntitySet<LIKED>(new Action<LIKED>(this.attach_LIKEDs), new Action<LIKED>(this.detach_LIKEDs));
 			this._QUANGCAOs = new EntitySet<QUANGCAO>(new Action<QUANGCAO>(this.attach_QUANGCAOs), new Action<QUANGCAO>(this.detach_QUANGCAOs));
 			this._TINNHANs = new EntitySet<TINNHAN>(new Action<TINNHAN>(this.attach_TINNHANs), new Action<TINNHAN>(this.detach_TINNHANs));
 			this._TINNHANs1 = new EntitySet<TINNHAN>(new Action<TINNHAN>(this.attach_TINNHANs1), new Action<TINNHAN>(this.detach_TINNHANs1));
 			this._TINRAOVATs = new EntitySet<TINRAOVAT>(new Action<TINRAOVAT>(this.attach_TINRAOVATs), new Action<TINRAOVAT>(this.detach_TINRAOVATs));
 			this._TINRAOVATDALUUs = new EntitySet<TINRAOVATDALUU>(new Action<TINRAOVATDALUU>(this.attach_TINRAOVATDALUUs), new Action<TINRAOVATDALUU>(this.detach_TINRAOVATDALUUs));
+			this._LICHSUTINRAOVATVIPHAMs = new EntitySet<LICHSUTINRAOVATVIPHAM>(new Action<LICHSUTINRAOVATVIPHAM>(this.attach_LICHSUTINRAOVATVIPHAMs), new Action<LICHSUTINRAOVATVIPHAM>(this.detach_LICHSUTINRAOVATVIPHAMs));
 			this._LOAINGUOIDUNG = default(EntityRef<LOAINGUOIDUNG>);
 			OnCreated();
 		}
@@ -5840,19 +5600,6 @@ namespace DAO
 			}
 		}
 		
-		[Association(Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM", Storage="_LICHSUTINRAOVATVIPHAMs", ThisKey="MaNguoiDung", OtherKey="MaNguoiDungBaoCaoViPham")]
-		public EntitySet<LICHSUTINRAOVATVIPHAM> LICHSUTINRAOVATVIPHAMs
-		{
-			get
-			{
-				return this._LICHSUTINRAOVATVIPHAMs;
-			}
-			set
-			{
-				this._LICHSUTINRAOVATVIPHAMs.Assign(value);
-			}
-		}
-		
 		[Association(Name="NGUOIDUNG_LIKED", Storage="_LIKEDs", ThisKey="MaNguoiDung", OtherKey="MaNguoiDung")]
 		public EntitySet<LIKED> LIKEDs
 		{
@@ -5928,6 +5675,19 @@ namespace DAO
 			set
 			{
 				this._TINRAOVATDALUUs.Assign(value);
+			}
+		}
+		
+		[Association(Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM", Storage="_LICHSUTINRAOVATVIPHAMs", ThisKey="MaNguoiDung", OtherKey="MaNguoiDungBaoCaoViPham")]
+		public EntitySet<LICHSUTINRAOVATVIPHAM> LICHSUTINRAOVATVIPHAMs
+		{
+			get
+			{
+				return this._LICHSUTINRAOVATVIPHAMs;
+			}
+			set
+			{
+				this._LICHSUTINRAOVATVIPHAMs.Assign(value);
 			}
 		}
 		
@@ -6045,18 +5805,6 @@ namespace DAO
 			entity.NGUOIDUNG1 = null;
 		}
 		
-		private void attach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.NGUOIDUNG = this;
-		}
-		
-		private void detach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.NGUOIDUNG = null;
-		}
-		
 		private void attach_LIKEDs(LIKED entity)
 		{
 			this.SendPropertyChanging();
@@ -6124,6 +5872,18 @@ namespace DAO
 		}
 		
 		private void detach_TINRAOVATDALUUs(TINRAOVATDALUU entity)
+		{
+			this.SendPropertyChanging();
+			entity.NGUOIDUNG = null;
+		}
+		
+		private void attach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.NGUOIDUNG = this;
+		}
+		
+		private void detach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
 		{
 			this.SendPropertyChanging();
 			entity.NGUOIDUNG = null;
@@ -7042,8 +6802,6 @@ namespace DAO
 		
 		private EntitySet<HOSOTUYENDUNG> _HOSOTUYENDUNGs;
 		
-		private EntitySet<LICHSUTINRAOVATVIPHAM> _LICHSUTINRAOVATVIPHAMs;
-		
 		private EntitySet<LIKED> _LIKEDs;
 		
 		private EntitySet<TINRAOVATBATDONGSAN> _TINRAOVATBATDONGSANs;
@@ -7053,6 +6811,8 @@ namespace DAO
 		private EntitySet<TINRAOVATTHUONG> _TINRAOVATTHUONGs;
 		
 		private EntitySet<TINTUYENDUNG> _TINTUYENDUNGs;
+		
+		private EntitySet<LICHSUTINRAOVATVIPHAM> _LICHSUTINRAOVATVIPHAMs;
 		
 		private EntityRef<DANHMUCCON> _DANHMUCCON;
 		
@@ -7091,12 +6851,12 @@ namespace DAO
 		public TINRAOVAT()
 		{
 			this._HOSOTUYENDUNGs = new EntitySet<HOSOTUYENDUNG>(new Action<HOSOTUYENDUNG>(this.attach_HOSOTUYENDUNGs), new Action<HOSOTUYENDUNG>(this.detach_HOSOTUYENDUNGs));
-			this._LICHSUTINRAOVATVIPHAMs = new EntitySet<LICHSUTINRAOVATVIPHAM>(new Action<LICHSUTINRAOVATVIPHAM>(this.attach_LICHSUTINRAOVATVIPHAMs), new Action<LICHSUTINRAOVATVIPHAM>(this.detach_LICHSUTINRAOVATVIPHAMs));
 			this._LIKEDs = new EntitySet<LIKED>(new Action<LIKED>(this.attach_LIKEDs), new Action<LIKED>(this.detach_LIKEDs));
 			this._TINRAOVATBATDONGSANs = new EntitySet<TINRAOVATBATDONGSAN>(new Action<TINRAOVATBATDONGSAN>(this.attach_TINRAOVATBATDONGSANs), new Action<TINRAOVATBATDONGSAN>(this.detach_TINRAOVATBATDONGSANs));
 			this._TINRAOVATDALUUs = new EntitySet<TINRAOVATDALUU>(new Action<TINRAOVATDALUU>(this.attach_TINRAOVATDALUUs), new Action<TINRAOVATDALUU>(this.detach_TINRAOVATDALUUs));
 			this._TINRAOVATTHUONGs = new EntitySet<TINRAOVATTHUONG>(new Action<TINRAOVATTHUONG>(this.attach_TINRAOVATTHUONGs), new Action<TINRAOVATTHUONG>(this.detach_TINRAOVATTHUONGs));
 			this._TINTUYENDUNGs = new EntitySet<TINTUYENDUNG>(new Action<TINTUYENDUNG>(this.attach_TINTUYENDUNGs), new Action<TINTUYENDUNG>(this.detach_TINTUYENDUNGs));
+			this._LICHSUTINRAOVATVIPHAMs = new EntitySet<LICHSUTINRAOVATVIPHAM>(new Action<LICHSUTINRAOVATVIPHAM>(this.attach_LICHSUTINRAOVATVIPHAMs), new Action<LICHSUTINRAOVATVIPHAM>(this.detach_LICHSUTINRAOVATVIPHAMs));
 			this._DANHMUCCON = default(EntityRef<DANHMUCCON>);
 			this._DIADIEM = default(EntityRef<DIADIEM>);
 			this._NGUOIDUNG = default(EntityRef<NGUOIDUNG>);
@@ -7348,19 +7108,6 @@ namespace DAO
 			}
 		}
 		
-		[Association(Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM", Storage="_LICHSUTINRAOVATVIPHAMs", ThisKey="MaTinRaoVat", OtherKey="MaTinRaoVatViPham")]
-		public EntitySet<LICHSUTINRAOVATVIPHAM> LICHSUTINRAOVATVIPHAMs
-		{
-			get
-			{
-				return this._LICHSUTINRAOVATVIPHAMs;
-			}
-			set
-			{
-				this._LICHSUTINRAOVATVIPHAMs.Assign(value);
-			}
-		}
-		
 		[Association(Name="TINRAOVAT_LIKED", Storage="_LIKEDs", ThisKey="MaTinRaoVat", OtherKey="MaTinRaoVat")]
 		public EntitySet<LIKED> LIKEDs
 		{
@@ -7423,6 +7170,19 @@ namespace DAO
 			set
 			{
 				this._TINTUYENDUNGs.Assign(value);
+			}
+		}
+		
+		[Association(Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM", Storage="_LICHSUTINRAOVATVIPHAMs", ThisKey="MaTinRaoVat", OtherKey="MaTinRaoVatViPham")]
+		public EntitySet<LICHSUTINRAOVATVIPHAM> LICHSUTINRAOVATVIPHAMs
+		{
+			get
+			{
+				return this._LICHSUTINRAOVATVIPHAMs;
+			}
+			set
+			{
+				this._LICHSUTINRAOVATVIPHAMs.Assign(value);
 			}
 		}
 		
@@ -7560,18 +7320,6 @@ namespace DAO
 			entity.TINRAOVAT = null;
 		}
 		
-		private void attach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.TINRAOVAT = this;
-		}
-		
-		private void detach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
-		{
-			this.SendPropertyChanging();
-			entity.TINRAOVAT = null;
-		}
-		
 		private void attach_LIKEDs(LIKED entity)
 		{
 			this.SendPropertyChanging();
@@ -7627,6 +7375,18 @@ namespace DAO
 		}
 		
 		private void detach_TINTUYENDUNGs(TINTUYENDUNG entity)
+		{
+			this.SendPropertyChanging();
+			entity.TINRAOVAT = null;
+		}
+		
+		private void attach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.TINRAOVAT = this;
+		}
+		
+		private void detach_LICHSUTINRAOVATVIPHAMs(LICHSUTINRAOVATVIPHAM entity)
 		{
 			this.SendPropertyChanging();
 			entity.TINRAOVAT = null;
@@ -9636,6 +9396,270 @@ namespace DAO
 					else
 					{
 						this._MaTinRaoVat = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TINRAOVAT");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.LICHSUTINRAOVATVIPHAM")]
+	public partial class LICHSUTINRAOVATVIPHAM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaLichSuTinRaoVatViPham;
+		
+		private System.Nullable<int> _MaTinRaoVatViPham;
+		
+		private System.Nullable<int> _MaNguoiDungBaoCaoViPham;
+		
+		private System.Nullable<System.DateTime> _ThoiGianBaoCaoViPham;
+		
+		private System.Nullable<bool> _deleted;
+		
+		private string _LyDo;
+		
+		private EntityRef<NGUOIDUNG> _NGUOIDUNG;
+		
+		private EntityRef<TINRAOVAT> _TINRAOVAT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLichSuTinRaoVatViPhamChanging(int value);
+    partial void OnMaLichSuTinRaoVatViPhamChanged();
+    partial void OnMaTinRaoVatViPhamChanging(System.Nullable<int> value);
+    partial void OnMaTinRaoVatViPhamChanged();
+    partial void OnMaNguoiDungBaoCaoViPhamChanging(System.Nullable<int> value);
+    partial void OnMaNguoiDungBaoCaoViPhamChanged();
+    partial void OnThoiGianBaoCaoViPhamChanging(System.Nullable<System.DateTime> value);
+    partial void OnThoiGianBaoCaoViPhamChanged();
+    partial void OndeletedChanging(System.Nullable<bool> value);
+    partial void OndeletedChanged();
+    partial void OnLyDoChanging(string value);
+    partial void OnLyDoChanged();
+    #endregion
+		
+		public LICHSUTINRAOVATVIPHAM()
+		{
+			this._NGUOIDUNG = default(EntityRef<NGUOIDUNG>);
+			this._TINRAOVAT = default(EntityRef<TINRAOVAT>);
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaLichSuTinRaoVatViPham", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaLichSuTinRaoVatViPham
+		{
+			get
+			{
+				return this._MaLichSuTinRaoVatViPham;
+			}
+			set
+			{
+				if ((this._MaLichSuTinRaoVatViPham != value))
+				{
+					this.OnMaLichSuTinRaoVatViPhamChanging(value);
+					this.SendPropertyChanging();
+					this._MaLichSuTinRaoVatViPham = value;
+					this.SendPropertyChanged("MaLichSuTinRaoVatViPham");
+					this.OnMaLichSuTinRaoVatViPhamChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaTinRaoVatViPham", DbType="Int")]
+		public System.Nullable<int> MaTinRaoVatViPham
+		{
+			get
+			{
+				return this._MaTinRaoVatViPham;
+			}
+			set
+			{
+				if ((this._MaTinRaoVatViPham != value))
+				{
+					if (this._TINRAOVAT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaTinRaoVatViPhamChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinRaoVatViPham = value;
+					this.SendPropertyChanged("MaTinRaoVatViPham");
+					this.OnMaTinRaoVatViPhamChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_MaNguoiDungBaoCaoViPham", DbType="Int")]
+		public System.Nullable<int> MaNguoiDungBaoCaoViPham
+		{
+			get
+			{
+				return this._MaNguoiDungBaoCaoViPham;
+			}
+			set
+			{
+				if ((this._MaNguoiDungBaoCaoViPham != value))
+				{
+					if (this._NGUOIDUNG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaNguoiDungBaoCaoViPhamChanging(value);
+					this.SendPropertyChanging();
+					this._MaNguoiDungBaoCaoViPham = value;
+					this.SendPropertyChanged("MaNguoiDungBaoCaoViPham");
+					this.OnMaNguoiDungBaoCaoViPhamChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ThoiGianBaoCaoViPham", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianBaoCaoViPham
+		{
+			get
+			{
+				return this._ThoiGianBaoCaoViPham;
+			}
+			set
+			{
+				if ((this._ThoiGianBaoCaoViPham != value))
+				{
+					this.OnThoiGianBaoCaoViPhamChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianBaoCaoViPham = value;
+					this.SendPropertyChanged("ThoiGianBaoCaoViPham");
+					this.OnThoiGianBaoCaoViPhamChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_deleted", DbType="Bit")]
+		public System.Nullable<bool> deleted
+		{
+			get
+			{
+				return this._deleted;
+			}
+			set
+			{
+				if ((this._deleted != value))
+				{
+					this.OndeletedChanging(value);
+					this.SendPropertyChanging();
+					this._deleted = value;
+					this.SendPropertyChanged("deleted");
+					this.OndeletedChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_LyDo", DbType="NVarChar(100)")]
+		public string LyDo
+		{
+			get
+			{
+				return this._LyDo;
+			}
+			set
+			{
+				if ((this._LyDo != value))
+				{
+					this.OnLyDoChanging(value);
+					this.SendPropertyChanging();
+					this._LyDo = value;
+					this.SendPropertyChanged("LyDo");
+					this.OnLyDoChanged();
+				}
+			}
+		}
+		
+		[Association(Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM", Storage="_NGUOIDUNG", ThisKey="MaNguoiDungBaoCaoViPham", OtherKey="MaNguoiDung", IsForeignKey=true)]
+		public NGUOIDUNG NGUOIDUNG
+		{
+			get
+			{
+				return this._NGUOIDUNG.Entity;
+			}
+			set
+			{
+				NGUOIDUNG previousValue = this._NGUOIDUNG.Entity;
+				if (((previousValue != value) 
+							|| (this._NGUOIDUNG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NGUOIDUNG.Entity = null;
+						previousValue.LICHSUTINRAOVATVIPHAMs.Remove(this);
+					}
+					this._NGUOIDUNG.Entity = value;
+					if ((value != null))
+					{
+						value.LICHSUTINRAOVATVIPHAMs.Add(this);
+						this._MaNguoiDungBaoCaoViPham = value.MaNguoiDung;
+					}
+					else
+					{
+						this._MaNguoiDungBaoCaoViPham = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("NGUOIDUNG");
+				}
+			}
+		}
+		
+		[Association(Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM", Storage="_TINRAOVAT", ThisKey="MaTinRaoVatViPham", OtherKey="MaTinRaoVat", IsForeignKey=true)]
+		public TINRAOVAT TINRAOVAT
+		{
+			get
+			{
+				return this._TINRAOVAT.Entity;
+			}
+			set
+			{
+				TINRAOVAT previousValue = this._TINRAOVAT.Entity;
+				if (((previousValue != value) 
+							|| (this._TINRAOVAT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TINRAOVAT.Entity = null;
+						previousValue.LICHSUTINRAOVATVIPHAMs.Remove(this);
+					}
+					this._TINRAOVAT.Entity = value;
+					if ((value != null))
+					{
+						value.LICHSUTINRAOVATVIPHAMs.Add(this);
+						this._MaTinRaoVatViPham = value.MaTinRaoVat;
+					}
+					else
+					{
+						this._MaTinRaoVatViPham = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("TINRAOVAT");
 				}

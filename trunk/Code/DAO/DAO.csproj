@@ -53,6 +53,7 @@
     <Compile Include="DataProvider\DataProvider.cs" />
     <Compile Include="DiaDiemDAO.cs" />
     <Compile Include="NganhNgheDAO.cs" />
+    <Compile Include="NguoiDung\BaoCaoNguoiDungViPhamDAO.cs" />
     <Compile Include="NguoiDung\TinNhanDAO.cs" />
     <Compile Include="NguoiDung\LoaiNguoiDungDAO.cs" />
     <Compile Include="NguoiDung\NguoiDungDAO.cs" />
@@ -62,7 +63,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="BaoCaoBaiVietViPhamDAO.cs" />
+    <Compile Include="DanhMuc\BaoCaoBaiVietViPhamDAO.cs" />
     <Compile Include="RaoVatDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
