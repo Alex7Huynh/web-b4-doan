@@ -12,14 +12,9 @@ public partial class Default2 : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        //TINNHAN TinNhan = new TINNHAN();
-        //if (Request.Cookies["userID"] != null)
-        //{
-        //    int userID = int.Parse(Request.Cookies["userID"].Value);
-        //    TinNhan.MaNguoiDung = userID;
-        //}
-        //else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
-        Response.Cookies["userID"].Value = "11";
+        if (Session["userID"] == null)
+        { 
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx"); 
+        }
     }
 }
