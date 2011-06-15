@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="JQueryMenu.ascx.cs" Inherits="UserControls_JQueryMenu" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="JQueryMenu.ascx.cs" Inherits="UserControls_JQueryMenu"%>
 <%--<div id="accordion" style="width:150px">
 <asp:Literal ID="LiteralJQueryMenu" runat="server"></asp:Literal>
 </div>--%>
@@ -52,8 +52,6 @@
 </style>
 
 <div style="float:left" > <!--This is the first division of left-->
-  <p><strong>&nbsp;Works on clicking </strong></p>
-
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
 		<p class="menu_head">Header-1</p>
 		<div class="menu_body">
