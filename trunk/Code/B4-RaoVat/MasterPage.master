@@ -22,7 +22,7 @@
                     <li><a href="/B4-RaoVat/TaiKhoan/DangKi.aspx">
                         <asp:Label ID="Label4" runat="server" Text="Đăng Ký" 
                             meta:resourcekey="Label4Resource1"></asp:Label></a></li>
-                    <li><a href="/B4-RaoVat/TaiKhoan/QuenMatKhau.aspx">
+                    <li><a href="/B4-RaoVat/TaiKhoan/QuenMatKhau2.aspx">
                         <asp:Label ID="Label5" runat="server" Text="Quên Mật Khẩu" 
                             meta:resourcekey="Label5Resource1"></asp:Label></a></li>
                     <li><a href="/B4-RaoVat/TaiKhoan/DangNhap.aspx">

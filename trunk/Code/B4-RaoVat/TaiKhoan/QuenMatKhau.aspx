@@ -17,7 +17,8 @@
         BorderWidth="1px" Font-Names="Tahoma" Font-Size="11pt" 
         GeneralFailureText="Khôi phục mật khẩu không thành công. Xin thử lại." 
         style="margin-left: 299px" Width="429px" 
-        meta:resourcekey="PasswordRecovery1Resource1">
+        meta:resourcekey="PasswordRecovery1Resource1" 
+        onsendingmail="PasswordRecovery1_SendingMail">
         <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
         <SuccessTextStyle Font-Bold="True" ForeColor="#5D7B9D" />
         <TextBoxStyle Font-Size="0.8em" />

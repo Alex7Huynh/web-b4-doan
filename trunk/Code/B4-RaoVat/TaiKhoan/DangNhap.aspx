@@ -97,6 +97,6 @@
         PostBackUrl="~/TaiKhoan/DangKi.aspx" meta:resourcekey="lbntDangKiResource1"> Đăng Kí</asp:LinkButton>
     &nbsp;
     <asp:LinkButton ID="lbntQuenMatKhau" runat="server" 
-        PostBackUrl="~/TaiKhoan/QuenMatKhau.aspx" 
+        PostBackUrl="~/TaiKhoan/QuenMatKhau2.aspx" 
         meta:resourcekey="lbntQuenMatKhauResource1"> Quên Mật Khẩu</asp:LinkButton>
 </asp:Content>

@@ -1,6 +1,6 @@
 ﻿----------------------------------------------------------------------------------------------------------------------------------------
 --Xoa CSDL
-drop database RAO_VAT
+--drop database RAO_VAT
 --Tao CSDL
 create database RAO_VAT
 go

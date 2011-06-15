@@ -15,9 +15,9 @@ public partial class Default2 : System.Web.UI.Page
     protected void btnSend_Click(object sender, EventArgs e)
     {
         //Chỉnh lại địa chỉ email và password
-        string EmailAddress = "";
+        string EmailAddress = "nhocnhobuon@gmail.com";
         string EmailPassword = "";
-        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com",587);
+        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com", 587);
         SmtpServer.Credentials = new System.Net.NetworkCredential(EmailAddress, EmailPassword);
         SmtpServer.EnableSsl = true;
         MailMessage mail = new MailMessage();
