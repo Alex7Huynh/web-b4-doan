@@ -2,26 +2,8 @@
 <%@ Register TagPrefix="uc1" TagName="DanhMucTinRaoVat" Src="../UserControls/DanhMucTinRaoVat.ascx" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <div id="body">
-		<div id="col_main_left">
-			<div id="announcements">
-				<ul>
-					<li>The latest activity relating to your ads and offers will appear on the My Ads &amp;
-						Profile page. <a href="../MyAds.aspx" title="My Ads & Profile">My Ads & Profile</a>
-					</li>
-					<li>Placing a new ad is fast and easy. <a href="../PostAd.aspx" title="New Ad">Place a
-						New Ad</a> </li>
-				</ul>
-			</div>
-		</div>
-		<div id="col_main_right">
-			<h3 class="section">
-				Browse Add</h3>
-			<div class="content_right">
-				<uc1:DanhMucTinRaoVat ID="AddBrowser" runat="server" AutoNavigate="True">
-                </uc1:DanhMucTinRaoVat>
-			</div>
-		</div>
-	</div>
+    <uc1:DanhMucTinRaoVat ID="AddBrowser" runat="server" AutoNavigate="True" TypeName="BUS.TinRaoVatBUS" 
+        SelectMethod="LayDanhSachTinRaoVatTheoNoiDung">
+    </uc1:DanhMucTinRaoVat>
 </asp:Content>
 

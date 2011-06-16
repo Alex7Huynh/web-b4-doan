@@ -9,6 +9,8 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        AddBrowser.ParameterList.Clear();
+        Parameter parameter = new Parameter("maDanhMucCon", TypeCode.Int32, "1");
+        AddBrowser.ParameterList.Add(parameter);
     }
 }
