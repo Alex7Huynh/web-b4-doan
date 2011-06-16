@@ -18,15 +18,11 @@ public partial class Default2 : System.Web.UI.Page
         {
             lblThongBaoUser.Text = "Xin vui lòng nhập tên người dùng để lấy lại mật khẩu.";
         }
-        if (txtEmail.Text == "")
-        {
-            lblThongBaoEmail.Text = "Xin vui lòng nhập vào địa chỉ Email để lấy lại mật khẩu.";
-        }
-        if (txtUser.Text != "" && txtEmail.Text != "")
+        if (txtUser.Text.Trim() != "")
         {
             NGUOIDUNG ng = new NGUOIDUNG();
             ng = NguoiDungDAO.LayNguoiDungTheoTen(txtUser.Text.Trim());
-            System.Net.Mail.MailMessage MyMailMessage = new System.Net.Mail.MailMessage("araovat10@gmail.com", txtEmail.Text.ToString().Trim(), "[Rao vặt] Lấy lại mật khẩu", "");
+            System.Net.Mail.MailMessage MyMailMessage = new System.Net.Mail.MailMessage("araovat10@gmail.com", ng.Email.ToString().Trim(), "[Rao vặt] Lấy lại mật khẩu", "");
             MyMailMessage.IsBodyHtml = false;
             MyMailMessage.Body = "Recovery password in Raovat for B4:" + "\nUser Name: " + ng.TenNguoiDung.ToString() + "\nPassword: " + ng.MatKhau.ToString() + "\nThank you for much, admin!";
             //provide Authentication Details need to be passed when sending email from gmail
@@ -42,7 +38,7 @@ public partial class Default2 : System.Web.UI.Page
             mailClient.Credentials = mailAuthentication;
             mailClient.Send(MyMailMessage);
 
-            lblThank.Text = "Mật khẩu đã gửi đến địa chỉ email:" + txtEmail.Text.ToString().Trim() + "\nCảm Ơn bạn nhiều lắm.";
+            lblThank.Text = "Mật khẩu đã gửi đến địa chỉ email:" + ng.Email.ToString().Trim() + "\nCảm Ơn bạn nhiều lắm.";
 
         }
     }

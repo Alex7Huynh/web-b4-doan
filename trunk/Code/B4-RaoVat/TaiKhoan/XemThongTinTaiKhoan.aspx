@@ -110,8 +110,6 @@
             </tr>
             <tr>
                 <td colspan="2" style="height: 33px">
-                    <asp:Button ID="btnLogin" runat="server" Text="Chuyển Tài Khoản" 
-                        Width="123px" meta:resourceKey="btnLoginResource1" />
                         
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
