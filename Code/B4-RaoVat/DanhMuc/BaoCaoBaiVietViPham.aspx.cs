@@ -33,6 +33,7 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
         {
             userID = (Int32)Session["userID"];
         }
+        ccJoin.ValidateCaptcha(TextBox1.Text);
         int MaDanhMucCon = int.Parse(Request.QueryString["id"]);
         if(ckbNickSpam.Checked || ckbSpam.Checked || ckbTenSai.Checked || ckbTieuDeSai.Checked)
         {
@@ -57,7 +58,16 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
                 s += "Tiêu đề tin không dấu. ";
             }
             tinViPham.LyDo = s;
-            BaoCaoBaiVietViPhamBUS.ThemBaoCaoViPham(tinViPham);
+            if (!ccJoin.UserValidated)
+            {
+                Label1.Text = "Mã bảo vệ chưa chính xác";
+                return;
+            }
+            else
+            {
+                Label1.Text = "Thành công";
+                BaoCaoBaiVietViPhamBUS.ThemBaoCaoViPham(tinViPham);
+            }
         }
     }
 }
