@@ -24,7 +24,7 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
     {
         LICHSUTINRAOVATVIPHAM tinViPham = new LICHSUTINRAOVATVIPHAM();
         int userID = -1;
-        string s = null;
+        string s = string.Empty;
         if (Session["userID"] == null)
         {
             Response.Redirect("~/TaiKhoan/DangNhap.aspx");
@@ -33,7 +33,7 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
         {
             userID = (Int32)Session["userID"];
         }
-        int MaDanhMucCon = int.Parse(Request.QueryString["sub"]);
+        int MaDanhMucCon = int.Parse(Request.QueryString["id"]);
         if(ckbNickSpam.Checked || ckbSpam.Checked || ckbTenSai.Checked || ckbTieuDeSai.Checked)
         {
             tinViPham.MaTinRaoVatViPham = MaDanhMucCon;

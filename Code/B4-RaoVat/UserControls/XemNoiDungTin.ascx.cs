@@ -184,6 +184,14 @@ public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
     }
     protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
     {
-
+       
+    }
+    protected void btnChinhSua_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/TinRaoVat/ChinhSuaBaiRaoVat.aspx?id=" + Session["matinraovat"]);
+    }
+    protected void btnBaoCaoViPham_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/DanhMuc/BaoCaoBaiVietViPham.aspx?id=" + Session["matinraovat"]);
     }
 }

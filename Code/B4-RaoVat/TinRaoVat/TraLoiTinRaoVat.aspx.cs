@@ -33,7 +33,6 @@ public partial class TraLoiTinRaoVat : BUS.BasePage
         BaiTraLoi.Deleted = false;
 
         BaiTraLoiTinRaoVatBUS.ThemBaiTraLoi(BaiTraLoi);
-        Response.Redirect(PrevPage);
-        //Response.Redirect("~/DanhMuc/XemNoiDungTin.aspx");
+        Response.Redirect(PrevPage);        
     }
 }

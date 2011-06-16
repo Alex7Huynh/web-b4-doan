@@ -11,84 +11,61 @@ public partial class Default2 : BUS.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //RaoVatDataClassesDataContext ng = new RaoVatDataClassesDataContext();
+        //RaoVatDataClassesDataContext NguoiDung = new RaoVatDataClassesDataContext();
         if (Session["UserName"] as string != null)
         {
-            NGUOIDUNG ng = new NGUOIDUNG();
-            ng = NguoiDungDAO.LayNguoiDungTheoTen(Session["UserName"] as string);
+            NGUOIDUNG NguoiDung = new NGUOIDUNG();
+            NguoiDung = NguoiDungDAO.LayNguoiDungTheoTen(Session["UserName"] as string);
 
-            lblTenDangNhap.Text = ng.TenNguoiDung.ToString();
-            if (ng.Email != null)
+            lblTenDangNhap.Text = NguoiDung.TenNguoiDung.ToString();
+            if (NguoiDung.Email != null)
             {
-                lblEmail.Text = ng.Email.ToString();
+                lblEmail.Text = NguoiDung.Email.ToString();
             }
             else
                 lblEmail.Text = "Chưa có thông tin";
 
-            if (ng.DienThoai != null)
+            if (NguoiDung.DienThoai != null)
             {
-                lblDienThoai.Text = ng.DienThoai.ToString();
+                lblDienThoai.Text = NguoiDung.DienThoai.ToString();
             }
             else
                 lblDienThoai.Text = "Chưa có thông tin";
 
-            if (ng.DiaChi != null)
+            if (NguoiDung.DiaChi != null)
             {
-                lblDiaChi.Text = ng.DiaChi.ToString();
+                lblDiaChi.Text = NguoiDung.DiaChi.ToString();
             }
             else
                 lblDiaChi.Text = "Chưa có thông tin";
 
-            if (ng.MaKichHoatTaiKhoan != null)
+            if (NguoiDung.MaKichHoatTaiKhoan != null)
             {
-                lblMaKH.Text = ng.MaKichHoatTaiKhoan.ToString();
+                lblMaKH.Text = NguoiDung.MaKichHoatTaiKhoan.ToString();
             }
             else
                 lblMaKH.Text = "Chưa có thông tin";
-            if (ng.TinhTrangKichHoatTaiKhoan != null)
+            if (NguoiDung.TinhTrangKichHoatTaiKhoan != null)
             {
-                lblTrinhTrangKH.Text = ng.TinhTrangKichHoatTaiKhoan.ToString();
+                lblTrinhTrangKH.Text = NguoiDung.TinhTrangKichHoatTaiKhoan.ToString();
             }
             else
                 lblTrinhTrangKH.Text = "Chưa có thông tin";
 
-            if (ng.ThoiGianDangKy != null)
+            if (NguoiDung.ThoiGianDangKy != null)
             {
-                lblThoiGianDK.Text = ng.ThoiGianDangKy.ToString();
+                lblThoiGianDK.Text = NguoiDung.ThoiGianDangKy.ToString();
             }
             else
                 lblThoiGianDK.Text = "Chưa có thông tin";
-            if (ng.ThoiGianHetHan != null)
+            if (NguoiDung.ThoiGianHetHan != null)
             {
-                lblThoiGianHH.Text = ng.ThoiGianHetHan.ToString();
+                lblThoiGianHH.Text = NguoiDung.ThoiGianHetHan.ToString();
             }
             else
                 lblThoiGianHH.Text = "Chưa có thông tin";
-            if (ng.MaLoaiNguoiDung != null)
-            {
-                if (ng.MaLoaiNguoiDung == 1)
-                {
-                    lblLoaiNguoiDung.Text = "Thành viên thường";
-                }
-                if (ng.MaLoaiNguoiDung == 2)
-                {
-                    lblLoaiNguoiDung.Text = "Thành viên Vip";
-                }
-                if (ng.MaLoaiNguoiDung == 3)
-                {
-                    lblLoaiNguoiDung.Text = "Mod";
-                }
-                if (ng.MaLoaiNguoiDung == 4)
-                {
-                    lblLoaiNguoiDung.Text = "Quản Trị Viên";
-                }
-                if (ng.MaLoaiNguoiDung == 5)
-                {
-                    lblLoaiNguoiDung.Text = "Khách";
-                }
-            }
-            else
-                lblLoaiNguoiDung.Text = "Khách";
+            LOAINGUOIDUNG LoaiNguoiDung = LoaiNguoiDungBUS.TimLoaiNguoiDungTheoMa(NguoiDung.MaLoaiNguoiDung.Value);
+            lblLoaiNguoiDung.Text = LoaiNguoiDung.TenLoaiNguoiDung;            
         }
         else
         {

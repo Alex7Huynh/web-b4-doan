@@ -45,9 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiaoDien\BannerBUS.cs" />
     <Compile Include="DanhMuc\DanhMucChinhBUS.cs" />
     <Compile Include="DanhMuc\DanhMucConBUS.cs" />
     <Compile Include="DiaDiemBUS.cs" />
+    <Compile Include="GiaoDien\ChiTietGiaoDienBUS.cs" />
+    <Compile Include="GiaoDien\LogoBUS.cs" />
     <Compile Include="NganhNgheBUS.cs" />
     <Compile Include="NguoiDung\BaoCaoBaiVietViPhamBUS.cs" />
     <Compile Include="NguoiDung\TinNhanBUS.cs" />

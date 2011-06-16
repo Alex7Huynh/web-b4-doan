@@ -48,10 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiaoDien\BannerDAO.cs" />
+    <Compile Include="GiaoDien\ChiTietGiaoDienDAO.cs" />
     <Compile Include="DanhMuc\DanhMucChinhDAO.cs" />
     <Compile Include="DanhMuc\DanhMucConDAO.cs" />
     <Compile Include="DataProvider\DataProvider.cs" />
     <Compile Include="DiaDiemDAO.cs" />
+    <Compile Include="GiaoDien\LogoDAO.cs" />
     <Compile Include="NganhNgheDAO.cs" />
     <Compile Include="NguoiDung\BaoCaoNguoiDungViPhamDAO.cs" />
     <Compile Include="NguoiDung\TinNhanDAO.cs" />

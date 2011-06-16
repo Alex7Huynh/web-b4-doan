@@ -24,5 +24,18 @@ namespace BUS
             }
             base.InitializeCulture();
         }
+        protected override void OnPreInit(EventArgs e)
+        {
+            base.OnPreInit(e);
+            if (Session["MyTheme"] == null)
+            {
+                Session.Add("MyTheme", "Theme1");
+                Page.Theme = (string)Session["Theme1"];
+            }
+            else if (Session["MyTheme"] == "Theme2")
+            { Page.Theme = "Theme2"; }
+            else if(Session["MyTheme"] == "Theme3")
+            { Page.Theme = "Theme3"; }
+        }
     }
 }
