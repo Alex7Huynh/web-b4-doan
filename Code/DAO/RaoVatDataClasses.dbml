@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PC-CE2C677809DD\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KID\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=sa" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAITRALOI" Member="BAITRALOIs">
     <Type Name="BAITRALOI">
       <Column Name="MaBaiTraLoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -24,8 +24,8 @@
   <Table Name="dbo.BANNERGIAODIEN" Member="BANNERGIAODIENs">
     <Type Name="BANNERGIAODIEN">
       <Column Name="MaBannerGiaoDien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenBannerGiaoDien" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="DuongDanBannerGiaoDien" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
+      <Column Name="TenBannerGiaoDien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DuongDanBannerGiaoDien" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="BANNERGIAODIEN_CHITIETGIAODIEN" Member="CHITIETGIAODIENs" ThisKey="MaBannerGiaoDien" OtherKey="MaBannerGiaoDien" Type="CHITIETGIAODIEN" />
     </Type>
@@ -33,7 +33,7 @@
   <Table Name="dbo.CHITIETGIAODIEN" Member="CHITIETGIAODIENs">
     <Type Name="CHITIETGIAODIEN">
       <Column Name="MaChiTietGiaoDien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenGiaoDien" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="TenGiaoDien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaBannerGiaoDien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaLogo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaTheme" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -78,7 +78,7 @@
   <Table Name="dbo.DANHMUCCON" Member="DANHMUCCONs">
     <Type Name="DANHMUCCON">
       <Column Name="MaDanhMucCon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDanhMucCon" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="TenDanhMucCon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaDanhMucChinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="DANHMUCCON_EMAILNHANTINRAOVATTHEOMUCCON" Member="EMAILNHANTINRAOVATTHEOMUCCONs" ThisKey="MaDanhMucCon" OtherKey="MaDanhMucCon" Type="EMAILNHANTINRAOVATTHEOMUCCON" />
@@ -220,8 +220,8 @@
   <Table Name="dbo.LOGO" Member="LOGOs">
     <Type Name="LOGO">
       <Column Name="MaLogo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenLogo" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="DuongDanLogo" Type="System.String" DbType="VarChar(155)" CanBeNull="true" />
+      <Column Name="TenLogo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DuongDanLogo" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="LOGO_CHITIETGIAODIEN" Member="CHITIETGIAODIENs" ThisKey="MaLogo" OtherKey="MaLogo" Type="CHITIETGIAODIEN" />
     </Type>

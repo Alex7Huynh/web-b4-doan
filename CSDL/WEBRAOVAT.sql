@@ -72,8 +72,8 @@ Create table THEME
 Create table LOGO
 (
 	MaLogo int identity(1,1),
-	TenLogo nchar(50),
-	DuongDanLogo varchar(155),	
+	TenLogo nvarchar(50),
+	DuongDanLogo nvarchar(155),	
 	Deleted bit,
 	CONSTRAINT PK_LOGO PRIMARY KEY (MaLogo)
 )
@@ -82,8 +82,8 @@ Create table LOGO
 Create table BANNERGIAODIEN
 (
 	MaBannerGiaoDien int identity(1,1),
-	TenBannerGiaoDien nchar(50),	
-	DuongDanBannerGiaoDien varchar(155),	
+	TenBannerGiaoDien nvarchar(50),	
+	DuongDanBannerGiaoDien nvarchar(155),	
 	Deleted bit,
 	CONSTRAINT PK_BANNERGIAODIEN PRIMARY KEY (MaBannerGiaoDien)
 )
@@ -92,7 +92,7 @@ Create table BANNERGIAODIEN
 Create table CHITIETGIAODIEN
 (
 	MaChiTietGiaoDien int identity(1,1),
-	TenGiaoDien nchar(50),
+	TenGiaoDien nvarchar(50),
 	MaBannerGiaoDien int,
 	MaLogo int,
 	MaTheme int,
@@ -173,7 +173,7 @@ Create table CHUYENMUC
 Create table DANHMUCCON
 (
 	MaDanhMucCon int identity(1,1),
-	TenDanhMucCon nchar(50),	
+	TenDanhMucCon nvarchar(50),	
 	MaDanhMucChinh int,	
 	Deleted bit,	
 	CONSTRAINT PK_DANHMUCCON PRIMARY KEY (MaDanhMucCon),
@@ -1491,4 +1491,24 @@ INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	T
 INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (2, 4, '2/3/2011',	0,N'Nói tục')
 INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, 7, '3/4/2009',	0,N'Spam nick')
 INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, 8, '5/6/2008',	0,N'Spam')
-INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, 9, '2/3/2011',    0,N'Spam')
+INSERT INTO LICHSUTINRAOVATVIPHAM (MaTinRaoVatViPham,	MaNguoiDungBaoCaoViPham,	ThoiGianBaoCaoViPham,	Deleted,	LyDo) VALUES (3, 9, '2/3/2011', 0,N'Spam')
+
+--14. LOGO
+INSERT INTO LOGO (TenLogo, DuongDanLogo, Deleted) VALUES (N'Logo01', N'~/images/Logo/Logo01.JPG', 0)
+INSERT INTO LOGO (TenLogo, DuongDanLogo, Deleted) VALUES (N'Logo02', N'~/images/Logo/Logo02.JPG', 0)
+INSERT INTO LOGO (TenLogo, DuongDanLogo, Deleted) VALUES (N'Logo03', N'~/images/Logo/Logo03.JPG', 0)
+INSERT INTO LOGO (TenLogo, DuongDanLogo, Deleted) VALUES (N'Logo04', N'~/images/Logo/Logo04.JPG', 0)
+INSERT INTO LOGO (TenLogo, DuongDanLogo, Deleted) VALUES (N'Logo05', N'~/images/Logo/Logo05.JPG', 0)
+INSERT INTO LOGO (TenLogo, DuongDanLogo, Deleted) VALUES (N'Logo06', N'~/images/Logo/Logo06.JPG', 0)
+
+--15. BANNERGIAODIEN
+INSERT INTO BANNERGIAODIEN (TenBannerGiaoDien, DuongDanBannerGiaoDien, Deleted) VALUES (N'Banner01', N'~/images/Banner/Banner01.jpg', 0)
+INSERT INTO BANNERGIAODIEN (TenBannerGiaoDien, DuongDanBannerGiaoDien, Deleted) VALUES (N'Banner02', N'~/images/Banner/Banner02.jpg', 0)
+INSERT INTO BANNERGIAODIEN (TenBannerGiaoDien, DuongDanBannerGiaoDien, Deleted) VALUES (N'Banner03', N'~/images/Banner/Banner03.jpg', 0)
+INSERT INTO BANNERGIAODIEN (TenBannerGiaoDien, DuongDanBannerGiaoDien, Deleted) VALUES (N'Banner04', N'~/images/Banner/Banner04.jpg', 0)
+INSERT INTO BANNERGIAODIEN (TenBannerGiaoDien, DuongDanBannerGiaoDien, Deleted) VALUES (N'Banner05', N'~/images/Banner/Banner05.jpg', 0)
+INSERT INTO BANNERGIAODIEN (TenBannerGiaoDien, DuongDanBannerGiaoDien, Deleted) VALUES (N'Banner06', N'~/images/Banner/Banner06.jpg', 0)
+
+--16. CHITIETGIAODIEN
+INSERT INTO CHITIETGIAODIEN (TenGiaoDien,		MaBannerGiaoDien,	MaLogo, MaTheme,	Deleted,	MaNguoiDung,	ThoiGianThayDoi)
+VALUES						(N'Giao diện 1',	1,					1,		NULL,		0,			1,				'10/18/2010 20:15')
