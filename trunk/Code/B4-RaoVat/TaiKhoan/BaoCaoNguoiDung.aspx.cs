@@ -34,6 +34,7 @@ public partial class BaoCaoNguoiDungViPham : System.Web.UI.Page
             userID = (Int32)Session["userID"];
         }
         string s=null;
+        ccJoin.ValidateCaptcha(TextBox1.Text);
         if(ckbNickSpam.Checked || ckbSpam.Checked || ckbXucPham.Checked || ckbTuSai.Checked)
         {
             nguoiViPham.MaNguoiDungViPham = NguoiDungBUS.LayNguoiDungTheoTen(ddlNguoiViPham.SelectedValue).MaNguoiDung;
@@ -58,7 +59,17 @@ public partial class BaoCaoNguoiDungViPham : System.Web.UI.Page
                 s += "Dùng từ ngữ không dấu và ngôn ngữ thiếu văn hóa. ";
             }
             nguoiViPham.LyDo = s;
-            BaoCaoNguoiDungViPhamBUS.ThemBaoCaoViPham(nguoiViPham);
+            if (!ccJoin.UserValidated)
+            {
+                Label2.Text = "Mã bảo vệ chưa chính xác";
+                return;
+            }
+            else
+            {
+                Label2.Text = "Thành công";
+                BaoCaoNguoiDungViPhamBUS.ThemBaoCaoViPham(nguoiViPham);
+            }
+            
         }
     }
 }
