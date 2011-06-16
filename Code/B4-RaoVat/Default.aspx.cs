@@ -11,6 +11,8 @@ public partial class Default2 : BUS.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //FeaturedAd.Class = "BUS.TinRaoVatBUS";
+        //FeaturedAd.Method = "LayDanhSachTinRaoVatMoiNhat";
         Page.Title = "Trang chủ";
         if (Request.QueryString["ss"] != null)
         {
