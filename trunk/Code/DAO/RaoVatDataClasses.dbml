@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PC-CE2C677809DD\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KID\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=sa" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAITRALOI" Member="BAITRALOIs">
     <Type Name="BAITRALOI">
       <Column Name="MaBaiTraLoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -176,6 +176,18 @@
       <Association Name="NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM1" Member="NGUOIDUNG1" ThisKey="MaNguoiDungBaoCaoViPham" OtherKey="MaNguoiDung" Type="NGUOIDUNG" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs">
+    <Type Name="LICHSUTINRAOVATVIPHAM">
+      <Column Name="MaLichSuTinRaoVatViPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaTinRaoVatViPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaNguoiDungBaoCaoViPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiGianBaoCaoViPham" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM" Member="NGUOIDUNG" ThisKey="MaNguoiDungBaoCaoViPham" OtherKey="MaNguoiDung" Type="NGUOIDUNG" IsForeignKey="true" />
+      <Association Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM" Member="TINRAOVAT" ThisKey="MaTinRaoVatViPham" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.LIKED" Member="LIKEDs">
     <Type Name="LIKED">
       <Column Name="MaTinRaoVat" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -254,13 +266,13 @@
       <Association Name="NGUOIDUNG_LICHSUNGUOIDUNG" Member="LICHSUNGUOIDUNGs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="LICHSUNGUOIDUNG" />
       <Association Name="NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM" Member="LICHSUNGUOIDUNGVIPHAMs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDungViPham" Type="LICHSUNGUOIDUNGVIPHAM" />
       <Association Name="NGUOIDUNG_LICHSUNGUOIDUNGVIPHAM1" Member="LICHSUNGUOIDUNGVIPHAMs1" ThisKey="MaNguoiDung" OtherKey="MaNguoiDungBaoCaoViPham" Type="LICHSUNGUOIDUNGVIPHAM" />
+      <Association Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDungBaoCaoViPham" Type="LICHSUTINRAOVATVIPHAM" />
       <Association Name="NGUOIDUNG_LIKED" Member="LIKEDs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="LIKED" />
       <Association Name="NGUOIDUNG_QUANGCAO" Member="QUANGCAOs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="QUANGCAO" />
       <Association Name="NGUOIDUNG_TINNHAN" Member="TINNHANs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="TINNHAN" />
       <Association Name="NGUOIDUNG_TINNHAN1" Member="TINNHANs1" ThisKey="MaNguoiDung" OtherKey="MaNguoiNhanTin" Type="TINNHAN" />
       <Association Name="NGUOIDUNG_TINRAOVAT" Member="TINRAOVATs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="TINRAOVAT" />
       <Association Name="NGUOIDUNG_TINRAOVATDALUU" Member="TINRAOVATDALUUs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="TINRAOVATDALUU" />
-      <Association Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs" ThisKey="MaNguoiDung" OtherKey="MaNguoiDungBaoCaoViPham" Type="LICHSUTINRAOVATVIPHAM" />
       <Association Name="LOAINGUOIDUNG_NGUOIDUNG" Member="LOAINGUOIDUNG" ThisKey="MaLoaiNguoiDung" OtherKey="MaLoaiNguoiDung" Type="LOAINGUOIDUNG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -319,12 +331,12 @@
       <Column Name="GhiChuHinhAnh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="TINRAOVAT_HOSOTUYENDUNG" Member="HOSOTUYENDUNGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="HOSOTUYENDUNG" />
+      <Association Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVatViPham" Type="LICHSUTINRAOVATVIPHAM" />
       <Association Name="TINRAOVAT_LIKED" Member="LIKEDs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="LIKED" />
       <Association Name="TINRAOVAT_TINRAOVATBATDONGSAN" Member="TINRAOVATBATDONGSANs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATBATDONGSAN" />
       <Association Name="TINRAOVAT_TINRAOVATDALUU" Member="TINRAOVATDALUUs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATDALUU" />
       <Association Name="TINRAOVAT_TINRAOVATTHUONG" Member="TINRAOVATTHUONGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVATTHUONG" />
       <Association Name="TINRAOVAT_TINTUYENDUNG" Member="TINTUYENDUNGs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINTUYENDUNG" />
-      <Association Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVatViPham" Type="LICHSUTINRAOVATVIPHAM" />
       <Association Name="DANHMUCCON_TINRAOVAT" Member="DANHMUCCON" ThisKey="MaDanhMucCon" OtherKey="MaDanhMucCon" Type="DANHMUCCON" IsForeignKey="true" />
       <Association Name="DIADIEM_TINRAOVAT" Member="DIADIEM" ThisKey="MaDiaDiem" OtherKey="MaDiaDiem" Type="DIADIEM" IsForeignKey="true" />
       <Association Name="NGUOIDUNG_TINRAOVAT" Member="NGUOIDUNG" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NGUOIDUNG" IsForeignKey="true" />
@@ -418,18 +430,6 @@
       <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NGANHNGHE_TINTUYENDUNG" Member="NGANHNGHE" ThisKey="MaNganhNghe" OtherKey="MaNganhNghe" Type="NGANHNGHE" IsForeignKey="true" />
       <Association Name="TINRAOVAT_TINTUYENDUNG" Member="TINRAOVAT" ThisKey="MaTinRaoVat" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LICHSUTINRAOVATVIPHAM" Member="LICHSUTINRAOVATVIPHAMs">
-    <Type Name="LICHSUTINRAOVATVIPHAM">
-      <Column Name="MaLichSuTinRaoVatViPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaTinRaoVatViPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNguoiDungBaoCaoViPham" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThoiGianBaoCaoViPham" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="NGUOIDUNG_LICHSUTINRAOVATVIPHAM" Member="NGUOIDUNG" ThisKey="MaNguoiDungBaoCaoViPham" OtherKey="MaNguoiDung" Type="NGUOIDUNG" IsForeignKey="true" />
-      <Association Name="TINRAOVAT_LICHSUTINRAOVATVIPHAM" Member="TINRAOVAT" ThisKey="MaTinRaoVatViPham" OtherKey="MaTinRaoVat" Type="TINRAOVAT" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

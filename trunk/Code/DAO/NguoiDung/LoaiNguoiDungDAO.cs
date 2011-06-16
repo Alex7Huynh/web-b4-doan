@@ -87,27 +87,90 @@ namespace DAO
         //    }
         //    return lstLoaiNguoiDung;
         //}
+        
+        /// <summary>
+        /// Find a LOAINGUOIDUNG with maLoaiNguoiDung
+        /// </summary>
+        /// <param name="maLoaiNguoiDung"></param>
+        /// <returns></returns>
+        public static LOAINGUOIDUNG TimLoaiNguoiDungTheoMa(int maLoaiNguoiDung)
+        {
+            LOAINGUOIDUNG LoaiNguoiDung = new LOAINGUOIDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                LoaiNguoiDung = db.LOAINGUOIDUNGs.Single(t => t.MaLoaiNguoiDung == maLoaiNguoiDung);
+            }
+            catch (Exception ex)
+            { return null; }
 
-        ////Find a LOAINGUOIDUNG
-        //public static LoaiNguoiDungDTO timLoaiNguoiDungTheoMa(int maLoaiNguoiDung)
-        //{
-        //    LoaiNguoiDungDTO lnd = new LoaiNguoiDungDTO();
-        //    try
-        //    {
-        //        DataProvider d = new DataProvider();
-        //        String strSQL = "SELECT * FROM LOAINGUOIDUNG WHERE MaLoaiNguoiDung = "
-        //            + maLoaiNguoiDung.ToString();
+            return LoaiNguoiDung;
+        }
 
-        //        DataTable dt = d.ExecuteQuery(strSQL);
-        //        lnd.MaLoaiNguoiDung = (int)dt.Rows[0]["MaLoaiNguoiDung"];
-        //        lnd.TenLoaiNguoiDung = dt.Rows[0]["TenLoaiNguoiDung"].ToString();
-        //        lnd.Deleted = (bool)dt.Rows[0]["Deleted"];
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-        //    return lnd;
-        //}
+        /// <summary>
+        /// Find ID of Admin
+        /// </summary>
+        /// <returns></returns>
+        public static int TimMaAdmin()
+        {
+            LOAINGUOIDUNG LoaiNguoiDung = new LOAINGUOIDUNG();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                LoaiNguoiDung = db.LOAINGUOIDUNGs.Single(t => t.TenLoaiNguoiDung == "Quản trị viên");
+            }
+            catch (Exception ex)
+            { return 0; }
+
+            return LoaiNguoiDung.MaLoaiNguoiDung;
+        }
+
+        /// <summary>
+        /// Check admin with maLoaiNguoiDung
+        /// </summary>
+        /// <param name="maLoaiNguoiDung"></param>
+        /// <returns></returns>
+        public static bool LaQuanTri(int maLoaiNguoiDung)
+        {
+            LOAINGUOIDUNG LoaiNguoiDung = new LOAINGUOIDUNG();
+            LoaiNguoiDung = TimLoaiNguoiDungTheoMa(maLoaiNguoiDung);
+            if (LoaiNguoiDung != null)
+                if (LoaiNguoiDung.TenLoaiNguoiDung == "Quản trị viên")
+                    return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check VIP user with maLoaiNguoiDung
+        /// </summary>
+        /// <param name="maLoaiNguoiDung"></param>
+        /// <returns></returns>
+        public static bool LaNguoiDungVIP(int maLoaiNguoiDung)
+        { 
+            LOAINGUOIDUNG LoaiNguoiDung = new LOAINGUOIDUNG();
+            LoaiNguoiDung = TimLoaiNguoiDungTheoMa(maLoaiNguoiDung);
+            if (LoaiNguoiDung != null)
+                if (LoaiNguoiDung.TenLoaiNguoiDung == "Thành viên VIP")
+                    return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check user with maLoaiNguoiDung
+        /// </summary>
+        /// <param name="maLoaiNguoiDung"></param>
+        /// <returns></returns>
+        public static bool LaNguoiDungThuong(int maLoaiNguoiDung)
+        {
+            LOAINGUOIDUNG LoaiNguoiDung = new LOAINGUOIDUNG();
+            LoaiNguoiDung = TimLoaiNguoiDungTheoMa(maLoaiNguoiDung);
+            if (LoaiNguoiDung != null)
+                if (LoaiNguoiDung.TenLoaiNguoiDung == "Thành viên thường")
+                    return true;
+
+            return false;
+        }
     }
 }

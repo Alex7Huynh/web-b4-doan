@@ -23,6 +23,14 @@
     {
         width: 171px;
     }
+    .style6
+    {
+        width: 151px;
+    }
+    .style7
+    {
+        width: 215px;
+    }
 </style>
 <div>
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
@@ -30,40 +38,48 @@
             &nbsp;
             <table cellpadding="4" cellspacing="4" class="style3">
                 <tr align="center">
-                    <td colspan="2">
+                    <td colspan="4">
                         <b>Nội Dung</b>
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style5" colspan="2">
                         <asp:Label ID="Label7" runat="server" Text="Nội Dung:"></asp:Label>
                     </td>
-                    <td class="style4">
+                    <td class="style4" colspan="2">
                         <asp:Label ID="lblNoiDungThuong" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style5" colspan="2">
                         <asp:Label ID="Label8" runat="server" Text="Giá:"></asp:Label>
                     </td>
-                    <td class="style4">
+                    <td class="style4" colspan="2">
                         <asp:Label ID="lblGiaThuong" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style7" align="center">
                         <asp:Button ID="btt_TraLoi" runat="server" Text="Trả Lời" OnClick="btt_TraLoi_Click"
                             Height="26px" />
                     </td>
+                    <td align="center" class="style6" colspan="2">
+                        <asp:Button ID="btnChinhSua" runat="server" onclick="btnChinhSua_Click" 
+                            Text="Chỉnh sửa" />
+                    </td>
+                    <td align="center" class="style5">
+                        <asp:Button ID="btnBaoCaoViPham" runat="server" onclick="btnBaoCaoViPham_Click" 
+                            Text="Báo cáo bài viết vi phạm" />
+                    </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style5" colspan="4">
                         <asp:Label ID="Label1" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
                         :
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5" colspan="2">
+                    <td class="style5" colspan="4">
                         <asp:DataList ID="DataList1" runat="server" DataSourceID="BaiTraLoi" Width="231px">
                             <ItemTemplate>
                                 <asp:Panel runat="server" ID="pnTraLoi1" BorderStyle="Inset" BorderColor="Blue"
@@ -90,7 +106,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style5">
+                    <td class="style5" colspan="2">
                         &nbsp;
                     </td>
                 </tr>

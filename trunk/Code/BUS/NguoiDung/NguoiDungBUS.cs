@@ -36,7 +36,6 @@ namespace BUS
         {
             return NguoiDungDAO.LayNguoiDungTheoTen(tenNguoiDung);
         }
-
         public static bool ChinhSuaLoaiNguoiDung(NGUOIDUNG NguoiDung)
         {
             return NguoiDungDAO.ChinhSuaLoaiNguoiDung(NguoiDung);

@@ -115,8 +115,8 @@
                         
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
-                     <asp:Button ID="btnNangCap" runat="server" Text="nâng cấp tài khoản" 
-                        Width="123px" meta:resourceKey="btnLoginResource1" 
+                     <asp:Button ID="btnNangCap" runat="server" Text="Nâng cấp tài khoản" 
+                        Width="123px" meta:resourceKey="btnNangCapResource1" 
                         onclick="btnNangCap_Click" />
                 </td>
             </tr>
