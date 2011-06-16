@@ -7,7 +7,7 @@
     onselectedindexchanged="FeaturedAdGrid_SelectedIndexChanged" 
     AllowPaging="True" BorderStyle="None" BackColor="White" 
     BorderColor="#999999" CellPadding="3" GridLines="Vertical" 
-    meta:resourcekey="FeaturedAdGridResource1">
+    meta:resourcekey="FeaturedAdGridResource1" Width="572px">
 		    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
 		    <EmptyDataTemplate>
 			    You have no currently active ads.
@@ -68,11 +68,5 @@
         <asp:Parameter DefaultValue="false" Name="Deleted" Type="Boolean" />
     </WhereParameters>
 </asp:LinqDataSource>
-<asp:MultiView ID="MyAdsMultiView" runat="server" ActiveViewIndex="0">
-    <asp:View ID="FeaturedAd" runat="server">
-	    <h2 class="section">
-		    Tin Rao Vặt Mới Nhất</h2>
-    </asp:View>
-</asp:MultiView>
 <asp:ObjectDataSource ID="FeaturedAdDataSource" runat="server" TypeName="BUS.TinRaoVatBUS"
 	SelectMethod="LayDanhSachTinRaoVatMoiNhat"></asp:ObjectDataSource>
