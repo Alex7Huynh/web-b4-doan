@@ -79,11 +79,6 @@ hr { display: none; }
 	margin-right: 0;
 }
 
-#wrapper {
-	margin: 0px;
-	padding: 0px 0px 0px 0px;
-}
-
 /* Header */
 
 #header-wrapper {
@@ -194,6 +189,14 @@ hr { display: none; }
 
 /* Page */
 
+
+#wrapper {
+	/*margin: 0px;*/
+	/*padding: 0px 0px 0px 0px;*/
+	/*background: url(images/img02.jpg) repeat-x left top;*/
+	background: url(images/img02.jpg) repeat left top;
+}
+
 #page {
 	width: 1000px;
 	margin: 0 auto;
@@ -243,37 +246,32 @@ hr { display: none; }
 	margin: 0px auto 5px;
 }
 
-/*col_main_left*/
+/*col_main_left and right*/
 
 #col_main_left
 {
-	width: 198px;
+	width: 20%;
 	float: left;
 	border-right: 3px solid #DFDCCB;
+	background: #E1DFCF;
+}
+
+#col_main_right
+{
+	width: 20%;
+	float: right;
+	border-left: 3px solid #DFDCCB;
 	background: #E1DFCF;
 }
 
 #featured_item
 {
 	/*height: 200px;*/
-	width: 176px;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: #FFFFFF;
-	border-right-color: #A29F93;
-	border-bottom-color: #A29F93;
-	border-left-color: #FFFFFF;
-	text-align: center;
-	font-size: 0.8em;
-	margin-bottom: 3px;
-	margin-right: 0px;
-	background: #DCDACE url(images/background_feature.jpg) repeat-x top;
+	border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #A29F93;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #A29F93;
+	background: #DCDACE url('images/background_feature.jpg') repeat-x 50% top;
 }
 
 .display_left #featured_item
@@ -303,10 +301,8 @@ hr { display: none; }
 #announcements
 {
 	font-size: 0.8em;
-	padding: 10px;
 	height: 100%;
 	background: #F7F6F2;
-	width: 80%;
 	border: ridge;
 }
 
@@ -323,12 +319,13 @@ hr { display: none; }
 	margin-left: -24px;
 }
 
-/*col_main_right*/
+/*col_main_center*/
 
-#col_main_right
+#col_main_center
 {
+	float: left;
+	width: 58%;
 	border-left: 3px solid #DFDCCB;
-	margin-left: 198px;
 	border-right: 1px solid #CAC7B8;
 	background: #F7F6F2;
 }
@@ -348,7 +345,7 @@ h3.section
 	font-size: 1.2em;
 }
 
-.content_right
+.content_center
 {
 	font-size: 0.8em;
 }
@@ -430,7 +427,6 @@ h3.section
 #footer-bgcontent {
 	margin: 0px;
 	padding: 0px;
-	height: 70px;
 	background: url(images/img02.jpg) repeat-x left top;
 }
 
@@ -438,7 +434,6 @@ h3.section
 	width: 1000px;
 	height: 49px;
 	margin: 0 auto;
-	padding-top: 50px;
 	background: url(images/img03.jpg) no-repeat left top;
 }
 

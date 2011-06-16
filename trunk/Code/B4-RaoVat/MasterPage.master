@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
+<%@ Register TagPrefix="uc1" TagName="JQueryMenu" Src="UserControls/JQueryMenu.ascx" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -77,7 +79,6 @@
                     </asp:LoginView>
                 </div>
                 <div id="nav_dangtin">
-                    &nbsp;&nbsp;&nbsp; &nbsp;
                     <asp:Label ID="lblUserNameMP" runat="server" Text="Label" meta:resourcekey="lblUserNameMPResource1"></asp:Label>
                     &nbsp;
                     <asp:LinkButton ID="linkbntDangXuat" runat="server" Font-Names="Tahoma" Font-Size="10pt"
@@ -95,23 +96,20 @@
                 </div>
             </div>
             <div id="content">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
                     <div id="col_main_left">
-                        <div id="featured_item">
-                        </div>
-                        <div id="announcements">
-                        </div>
+                        <uc1:jquerymenu ID="JQueryMenuMain" runat="server"></uc1:jquerymenu>
                     </div>
+                    
+                    <div id="col_main_center">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    
                     <div id="col_main_right">
-                        <h3 class="section">
-                            Browse Categories</h3>
-                        <div class="content_right">
-                        </div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderRight" runat="server">
+                        </asp:ContentPlaceHolder>
                     </div>
-                </asp:ContentPlaceHolder>
             </div>
-            <div style="clear: both;">
-                &nbsp;</div>
         </div>
     </div>
     <div id="footer-bgcontent">
