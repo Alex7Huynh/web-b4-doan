@@ -1,9 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="True" CodeFile="JQueryMenu.ascx.cs" Inherits="UserControls_JQueryMenu" %>
-<%--<div id="accordion" style="width:150px">
-<asp:Literal ID="LiteralJQueryMenu" runat="server"></asp:Literal>
-</div>--%>
 
-<script type="text/javascript" language="javascript" src="jquery.js"></script>
+<asp:Literal ID="LiteralJQueryMenu" runat="server"></asp:Literal>
+
+<%--<script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript">
 <!--    //---------------------------------+
     //  Developed by Roshan Bhattarai 
@@ -25,26 +24,28 @@
 </script>
 <style type="text/css">
 .menu_list {	
-	width: 150px;
+	width: 198px;
 }
 .menu_head {
-	padding: 5px 10px;
 	cursor: pointer;
 	position: relative;
 	margin:1px;
     font-weight:bold;
     background: #eef4d3 url(left.png) center right no-repeat;
+    width: 198px;
+    height: 25px;
 }
 .menu_body {
 	display:none;
+	width: 198px;
 }
 .menu_body a{
   display:block;
   color:#006699;
   background-color:#EFEFEF;
-  padding-left:10px;
   font-weight:bold;
   text-decoration:none;
+  width: 198px;
 }
 .menu_body a:hover{
   color: #000000;
@@ -74,75 +75,4 @@
          <a href="#">Link-3</a>			
        </div>
   </div>  <!--Code for menu ends here-->
-</div>
-
-
-<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit"%>
-
-<link type="text/css" rel="Stylesheet" href="_assets/css/accordion.css" />
-    
-<ajaxToolkit:Accordion 
-    ID="accordion" runat="server" 
-    FadeTransitions="false" FramesPerSecond="100" TransitionDuration="250" 
-    CssClass="accordion" HeaderCssClass="header" ContentCssClass="content" 
-    RequireOpenedPane="True" AutoSize="None">
-    <Panes>
-        <ajaxToolkit:AccordionPane ID="mail" runat="server">
-            <Header>
-                <div style="background-image:url(_assets/img/mail_large.gif)">
-                    <span>Mail</span>
-                </div>
-            </Header>
-            <Content>
-            <asp:ListView ID="lvMailItems" runat="server">
-                <LayoutTemplate>
-                    <ul>
-                        <li id="itemPlaceholder" runat="server" />
-                    </ul>
-                </LayoutTemplate>
-                <ItemTemplate>
-                    <li style='background-image:url(<%# Eval("ImageUrl") %>)'><%# Eval("Name") %></li>
-                </ItemTemplate>
-            </asp:ListView>
-            </Content>
-        </ajaxToolkit:AccordionPane>
-        <ajaxToolkit:AccordionPane ID="notes" runat="server">
-            <Header>
-                <div style="background-image:url(_assets/img/notes_large.gif)">
-                    <span>Notes</span>
-                </div>
-            </Header>
-            <Content>
-            <asp:ListView ID="lvNoteItems" runat="server">
-                <LayoutTemplate>
-                    <ul>
-                        <li id="itemPlaceholder" runat="server" />
-                    </ul>
-                </LayoutTemplate>
-                <ItemTemplate>
-                    <li style='background-image:url(<%# Eval("ImageUrl") %>)' title='<%# Eval("Name")%>'><%# Eval("Name") %></li>
-                </ItemTemplate>
-            </asp:ListView>
-            </Content>
-        </ajaxToolkit:AccordionPane> 
-        <ajaxToolkit:AccordionPane ID="contacts" runat="server">
-            <Header>
-                <div style="background-image:url(_assets/img/contact_large.gif)">
-                    <span>Contacts</span>
-                </div>
-            </Header>
-            <Content>
-            <asp:ListView ID="lvContactItems" runat="server">
-                <LayoutTemplate>
-                    <ul>
-                        <li id="itemPlaceholder" runat="server" />
-                    </ul>
-                </LayoutTemplate>
-                <ItemTemplate>
-                    <li style='background-image:url(<%# Eval("ImageUrl") %>)' title='<%# Eval("Name")%>'><%# Eval("Name") %></li>
-                </ItemTemplate>
-            </asp:ListView>                        
-            </Content>
-        </ajaxToolkit:AccordionPane>  
-    </Panes>
-</ajaxToolkit:Accordion>--%>
+</div>--%>
