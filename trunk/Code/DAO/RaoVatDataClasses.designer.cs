@@ -126,7 +126,7 @@ namespace DAO
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
-				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -849,7 +849,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_TenBannerGiaoDien", DbType="NChar(50)")]
+		[Column(Storage="_TenBannerGiaoDien", DbType="NVarChar(50)")]
 		public string TenBannerGiaoDien
 		{
 			get
@@ -869,7 +869,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_DuongDanBannerGiaoDien", DbType="VarChar(155)")]
+		[Column(Storage="_DuongDanBannerGiaoDien", DbType="NVarChar(155)")]
 		public string DuongDanBannerGiaoDien
 		{
 			get
@@ -1036,7 +1036,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_TenGiaoDien", DbType="NChar(50)")]
+		[Column(Storage="_TenGiaoDien", DbType="NVarChar(50)")]
 		public string TenGiaoDien
 		{
 			get
@@ -1996,7 +1996,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_TenDanhMucCon", DbType="NChar(50)")]
+		[Column(Storage="_TenDanhMucCon", DbType="NVarChar(50)")]
 		public string TenDanhMucCon
 		{
 			get
@@ -4932,7 +4932,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_TenLogo", DbType="NChar(50)")]
+		[Column(Storage="_TenLogo", DbType="NVarChar(50)")]
 		public string TenLogo
 		{
 			get
@@ -4952,7 +4952,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_DuongDanLogo", DbType="VarChar(155)")]
+		[Column(Storage="_DuongDanLogo", DbType="NVarChar(155)")]
 		public string DuongDanLogo
 		{
 			get

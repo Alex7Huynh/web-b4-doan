@@ -24,7 +24,7 @@
 				    DataTextField="TieuDe" meta:resourcekey="HyperLinkFieldResource1">
                 </asp:HyperLinkField>
 			    <asp:BoundField HeaderText="Ngày đăng" DataField="ThoiGianDang"
-				    DataFormatString="{0:dd/mm/yy}" meta:resourcekey="BoundFieldResource1">
+				    DataFormatString="{0:dd/MM/yy}" meta:resourcekey="BoundFieldResource1">
 			    </asp:BoundField>
 			    <asp:BoundField HeaderText="Số lần xem" DataField="SoLanXem"
                     meta:resourcekey="BoundFieldResource2">
@@ -34,10 +34,6 @@
 				    Text="Xem Chi Tiết" meta:resourcekey="HyperLinkFieldResource2">
 			    </asp:HyperLinkField>
 			    
-			    <asp:HyperLinkField HeaderText="Chỉnh sửa" DataNavigateUrlFields="MaTinRaoVat" DataNavigateUrlFormatString="../TinRaoVat/ChinhSuaBaiRaoVat.aspx?id={0}"
-				    Text="Sửa"
-                    meta:resourcekey="HyperLinkFieldResource3">
-			    </asp:HyperLinkField>
 		    </Columns>
 		    <RowStyle HorizontalAlign="Center" BackColor="#EEEEEE" 
                 ForeColor="Black"></RowStyle>

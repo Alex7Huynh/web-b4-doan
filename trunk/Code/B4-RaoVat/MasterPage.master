@@ -5,10 +5,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+    
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="SHORTCUT ICON" href="~/images/Logo/Logo01.jpg" />
+    
     <title></title>
 </head>
-<body>
+<body>    
     <form id="form1" runat="server">
     <div id="header-wrapper">
         <div id="header">
@@ -49,11 +52,11 @@
         </div>
     </div>
     <div id="logo">
-        <asp:Image ID="imgBanner" runat="server" ImageUrl="~/images/Banner/Banner01.jpg"
+        <asp:Image ID="imgBanner" runat="server"
             Style="float: right; margin-top: 0px; padding: 0px 0px 0px 0px;" Height="170px"
             Width="681px" meta:resourcekey="bannerAspResource1" />
         <h1>
-            <asp:Image ID="imgLogo" runat="server" Height="32px" ImageUrl="~/images/Logo/Logo01.JPG"
+            <asp:Image ID="imgLogo" runat="server" Height="32px"
                 Width="32px" />
             <a href="/B4-RaoVat/Default.aspx">B4-StarFish</a>
                 <asp:Label ID="Label8" runat="server" Text="Chính xác, Tin cậy, Hiệu quả" 
