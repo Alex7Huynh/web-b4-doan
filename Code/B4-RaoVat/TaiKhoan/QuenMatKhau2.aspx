@@ -28,25 +28,11 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 277px">
-                <asp:Label ID="lblEmail" runat="server" Text="Email nhận mật khẩu:" Font-Bold="True"></asp:Label>
-            </td>
-            <td style="width: 288px">
-                <asp:TextBox ID="txtEmail" runat="server" Width="226px"></asp:TextBox>
-            </td>
-            <td>
-                <asp:Label ID="lblThongBaoEmail" runat="server" Font-Bold="True" 
-                    ForeColor="#FF3300"></asp:Label>
-            </td>
-        </tr>
-        <tr>
             <td style="width: 277px; height: 19px;">
                 &nbsp;
             </td>
-            <td style="width: 288px; height: 19px;">
+            <td style="height: 19px;" colspan="2">
                 <asp:Label ID="lblThank" runat="server" Font-Bold="True" ForeColor="#3366CC"></asp:Label>
-            </td>
-            <td style="height: 19px">
                 &nbsp;
             </td>
         </tr>
