@@ -1,7 +1,8 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="JQueryMenu.ascx.cs" Inherits="UserControls_JQueryMenu"%>
+﻿<%@ Control Language="C#" AutoEventWireup="True" CodeFile="JQueryMenu.ascx.cs" Inherits="UserControls_JQueryMenu" %>
 <%--<div id="accordion" style="width:150px">
 <asp:Literal ID="LiteralJQueryMenu" runat="server"></asp:Literal>
 </div>--%>
+
 <script type="text/javascript" language="javascript" src="jquery.js"></script>
 <script type="text/javascript">
 <!--    //---------------------------------+
@@ -23,6 +24,12 @@
     });
 </script>
 <style type="text/css">
+body {
+	margin: 10px auto;
+	font: 75%/120% Verdana,Arial, Helvetica, sans-serif;
+	width: 150px;
+	height: 76px;
+}
 .menu_list {	
 	width: 150px;
 }
@@ -50,8 +57,7 @@
   text-decoration:underline;
   }
 </style>
-
-<div style="float:left" > <!--This is the first division of left-->
+<div style="float:left;width:150;height:76" align="left" >
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
 		<p class="menu_head">Header-1</p>
 		<div class="menu_body">
@@ -75,6 +81,8 @@
        </div>
   </div>  <!--Code for menu ends here-->
 </div>
+
+
 <%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit"%>
 
 <link type="text/css" rel="Stylesheet" href="_assets/css/accordion.css" />
