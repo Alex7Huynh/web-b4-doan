@@ -50,6 +50,25 @@ namespace DAO
         }
 
         /// <summary>
+        /// Xoa tin tuyen dung lien quan
+        /// </summary>
+        /// <param name="maTinTuyenDung"></param>
+        /// <returns></returns>
+        public static bool XoaTinTuyenDungLienQuan(int maTinRaoVat)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                TINTUYENDUNG tinTuyenDung = db.TINTUYENDUNGs.Single(t => t.MaTinRaoVat == maTinRaoVat);
+                tinTuyenDung.Deleted = true;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            { return false; }
+
+            return true;
+        }
+        /// <summary>
         /// //Update information for TINTUYENDUNG Object
         /// </summary>
         /// <param name="trvDTO"></param>

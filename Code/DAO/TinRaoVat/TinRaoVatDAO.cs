@@ -49,6 +49,29 @@ namespace DAO
         }
 
         /// <summary>
+        /// Xoa tat ca TinRaoVat lien quan
+        /// </summary>
+        /// <param name="maTinRaoVat"></param>
+        /// <returns></returns>
+        public static bool XoaTatCaTinRaoVatLienQuan(int maTinRaoVat)
+        {
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                TINRAOVAT tinRaoVat = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat);
+                tinRaoVat.Deleted = true;
+                db.SubmitChanges();
+                TinRaoVatBatDongSanDAO.XoaTinRaoVatBatDongSan(maTinRaoVat);
+                TinTuyenDungDAO.XoaTinTuyenDungLienQuan(maTinRaoVat);
+                TinRaoVatThuongDAO.XoaTinRaoVatThuongLienQuan(maTinRaoVat);
+                HoSoTuyenDungDAO.XoaHoSoTuyenDungLienQuan(maTinRaoVat);
+            }
+            catch (Exception ex)
+            { return false; }
+
+            return true;
+        }
+        /// <summary>
         /// //Update information for TINRAOVAT Object
         /// </summary>
         /// <param name="trvDTO"></param>

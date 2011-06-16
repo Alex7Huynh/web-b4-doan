@@ -16,6 +16,10 @@ namespace BUS
         {
             return TinRaoVatDAO.XoaTinRaoVat(maTinRaoVat);
         }
+        public static bool XoaTatCaTinRaoVatLienQuan(int maTinRaoVat)
+        {
+            return TinRaoVatDAO.XoaTatCaTinRaoVatLienQuan(maTinRaoVat);
+        }
         public static bool CapNhatTinRaoVat(TINRAOVAT tinRaoVat)
         {
             return TinRaoVatDAO.CapNhatTinRaoVat(tinRaoVat);
