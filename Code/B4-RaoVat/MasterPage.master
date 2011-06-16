@@ -25,14 +25,16 @@
                         <asp:Label ID="Label6" runat="server" Text="Đăng Nhập" meta:resourcekey="Label6Resource1"></asp:Label></a></li>
                     <li><a href="/B4-RaoVat/TaiKhoan/XemThongTinTaiKhoan.aspx">
                         <asp:Label ID="Label7" runat="server" Text="Thông Tin Tài Khoản" meta:resourcekey="Label7Resource1"></asp:Label></a></li>
-                    <li></li>
+                    
                 </ul>
             </div>
             <!-- end #menu -->
             <div id="search">
                 <fieldset>
-                    <input type="text" name="s" id="search-text" size="15" />
-                    <input type="submit" id="search-submit" value="GO" />
+                    <asp:TextBox ID="text" runat="server" Height="28px" Width="205px" 
+                        Font-Size="Small"></asp:TextBox>
+                    <asp:Button ID="submit" runat="server" Text="Search" BackColor="#660033" 
+                        Height="28px" Width="56px" Font-Size="Medium" />
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/images/Vietnam.png"
                         PostBackUrl="~/Default.aspx?Language=vi" Width="30px" meta:resourcekey="ImageButton1Resource1"
                         CausesValidation="False" />
@@ -45,16 +47,16 @@
         </div>
     </div>
     <div id="logo">
+        <asp:Image ID="imgBanner" runat="server" ImageUrl="~/images/Banner/Banner01.jpg"
+            Style="float: right; margin-top: 0px; padding: 0px 0px 0px 0px;" Height="170px"
+            Width="681px" meta:resourcekey="bannerAspResource1" />
         <h1>
             <asp:Image ID="imgLogo" runat="server" Height="32px" ImageUrl="~/images/Logo/Logo01.JPG"
                 Width="32px" />
-            <a href="/B4-RaoVat/Default.aspx">B4-StarFish</a></h1>
-        <asp:Image ID="imgBanner" runat="server" ImageUrl="~/images/Banner/Banner01.jpg"
-            Style="float: right; margin-top: -50px; padding: 0px 0px 0px 0px;" Height="150px"
-            Width="670px" meta:resourcekey="bannerAspResource1" />
-        <p>
-            <asp:Label ID="Label8" runat="server" Text="Chính xác, Tin cậy, Hiệu quả"></asp:Label>
-        </p>
+            <a href="/B4-RaoVat/Default.aspx">B4-StarFish</a>
+                <asp:Label ID="Label8" runat="server" Text="Chính xác, Tin cậy, Hiệu quả" 
+                Font-Size="Small"></asp:Label>
+        </h1>
     </div>
     <div id="wrapper">
         <div id="page">
@@ -84,8 +86,6 @@
                     <asp:LinkButton ID="linkbntXemThongTin" runat="server" Font-Names="Tahoma" Font-Size="10pt"
                         OnClick="linkbntXemThongTin_Click" ForeColor="White" meta:resourcekey="linkbntXemThongTinResource1">Xem Thông Tin Tài Khoản</asp:LinkButton>
                 </div>
-                <div id="nav_browse">
-                </div>
             </div>
             <div id="crumbs">
                 <div id="crumbs_text">
@@ -93,8 +93,6 @@
                         meta:resourcekey="SiteMapPathResource1">
                     </asp:SiteMapPath>
                 </div>
-            </div>
-            <div id="sidebar">
             </div>
             <div id="content">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
