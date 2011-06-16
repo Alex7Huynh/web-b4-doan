@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="ajaxToolkit" TagName="JQueryMenu" Src="UserControls/JQueryMenu.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <asp:TreeView ID="TreeView1" runat="server" ImageSet="XPFileExplorer" 
+    <asp:TreeView ID="TreeView1" runat="server" 
         NodeIndent="15">
         <ParentNodeStyle Font-Bold="False" />
         <HoverNodeStyle Font-Underline="True" ForeColor="#6666AA" />

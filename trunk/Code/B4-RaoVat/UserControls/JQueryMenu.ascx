@@ -24,12 +24,6 @@
     });
 </script>
 <style type="text/css">
-body {
-	margin: 10px auto;
-	font: 75%/120% Verdana,Arial, Helvetica, sans-serif;
-	width: 150px;
-	height: 76px;
-}
 .menu_list {	
 	width: 150px;
 }
@@ -57,7 +51,7 @@ body {
   text-decoration:underline;
   }
 </style>
-<div style="float:left;width:150;height:76" align="left" >
+<div style="float:left" >
   <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
 		<p class="menu_head">Header-1</p>
 		<div class="menu_body">
