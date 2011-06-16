@@ -13,56 +13,9 @@ public partial class UserControls_JQueryMenu : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //LiteralJQueryMenu.Text = LoadStyle();
-        //LiteralJQueryMenu.Text += LoadMenu();
-
-        //FetchMailItems();
-        //FetchNoteItems();
-        //FetchContactItems();
+        LiteralJQueryMenu.Text = LoadStyle();
+        LiteralJQueryMenu.Text += LoadMenu();
     }
-    /*
-    #region sdfkaslf
-    private void FetchMailItems()
-    {
-        ArrayList mailItems = new ArrayList();
-        mailItems.Add(new { Name = "Mailbox", ImageUrl = "_assets/img/mailbox.gif" });
-        mailItems.Add(new { Name = "Inbox", ImageUrl = "_assets/img/inbox.gif" });
-        mailItems.Add(new { Name = "Drafts", ImageUrl = "_assets/img/drafts.gif" });
-        mailItems.Add(new { Name = "Outbox", ImageUrl = "_assets/img/outbox.gif" });
-        mailItems.Add(new { Name = "Junk Mail", ImageUrl = "_assets/img/junk.gif" });
-        mailItems.Add(new { Name = "Deleted Items", ImageUrl = "_assets/img/deleted.gif" });
-        mailItems.Add(new { Name = "Search Folders", ImageUrl = "_assets/img/search.gif" });
-        mailItems.Add(new { Name = "Sent Items", ImageUrl = "_assets/img/sentitems.gif" });
-
-        lvMailItems.DataSource = mailItems;
-        lvMailItems.DataBind();
-    }
-    private void FetchNoteItems()
-    {
-        ArrayList mailItems = new ArrayList();
-        mailItems.Add(new { Name = "Icons", ImageUrl = "_assets/img/note_small.gif" });
-        mailItems.Add(new { Name = "Note List", ImageUrl = "_assets/img/note_small.gif" });
-        mailItems.Add(new { Name = "Last Seven Days", ImageUrl = "_assets/img/note_small.gif" });
-        mailItems.Add(new { Name = "By Category", ImageUrl = "_assets/img/note_small.gif" });
-        mailItems.Add(new { Name = "By Color", ImageUrl = "_assets/img/note_small.gif" });
-
-        lvNoteItems.DataSource = mailItems;
-        lvNoteItems.DataBind();
-    }
-    private void FetchContactItems()
-    {
-        ArrayList mailItems = new ArrayList();
-        mailItems.Add(new { Name = "Address Cards", ImageUrl = "_assets/img/contact_small.gif" });
-        mailItems.Add(new { Name = "Detailed Address List", ImageUrl = "_assets/img/contact_small.gif" });
-        mailItems.Add(new { Name = "By Category", ImageUrl = "_assets/img/contact_small.gif" });
-        mailItems.Add(new { Name = "By Company", ImageUrl = "_assets/img/contact_small.gif" });
-        mailItems.Add(new { Name = "By Follow-up Flag", ImageUrl = "_assets/img/contact_small.gif" });
-
-        lvContactItems.DataSource = mailItems;
-        lvContactItems.DataBind();
-    }
-    #endregion
-    */
 
     private string LoadStyle()
     {

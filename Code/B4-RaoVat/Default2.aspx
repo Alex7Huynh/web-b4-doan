@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
     <asp:TreeView ID="TreeView1" runat="server" 
-        NodeIndent="15">
+        NodeIndent="15" SkipLinkText="">
         <ParentNodeStyle Font-Bold="False" />
         <HoverNodeStyle Font-Underline="True" ForeColor="#6666AA" />
         <SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" 

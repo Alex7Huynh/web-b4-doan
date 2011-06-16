@@ -20,26 +20,28 @@
 </script>
 <style type="text/css">
 .menu_list {	
-	width: 150px;
+	width: 198px;
 }
 .menu_head {
-	padding: 5px 10px;
 	cursor: pointer;
 	position: relative;
 	margin:1px;
     font-weight:bold;
     background: #eef4d3 url(left.png) center right no-repeat;
+    width: 198px;
+    height: 25px;
 }
 .menu_body {
 	display:none;
+	width: 198px;
 }
 .menu_body a{
   display:block;
   color:#006699;
   background-color:#EFEFEF;
-  padding-left:10px;
   font-weight:bold;
   text-decoration:none;
+  width: 198px;
 }
 .menu_body a:hover{
   color: #000000;
