@@ -32,9 +32,10 @@
             <!-- end #menu -->
             <div id="search">
                 <fieldset>
-                    <asp:TextBox ID="text" runat="server" Height="28px" Width="205px" Font-Size="Small"></asp:TextBox>
-                    <asp:Button ID="submit" runat="server" Text="Search" BackColor="#660033" Height="28px"
-                        Width="56px" Font-Size="Medium" />
+                    <asp:TextBox ID="txtTimKiemMaster" runat="server" Height="28px" Width="205px" 
+                        Font-Size="Small"></asp:TextBox>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Search" BackColor="#660033" 
+                        Height="28px" Width="56px" Font-Size="Medium" onclick="btnSubmit_Click" />
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/images/Vietnam.png"
                         PostBackUrl="~/Default.aspx?Language=vi" Width="30px" meta:resourcekey="ImageButton1Resource1"
                         CausesValidation="False" />
@@ -112,6 +113,13 @@
                 Copyright (c) 2008 B4-StarFish. All rights reserved.
                 <br />
                 Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.</p>
+            <asp:Label ID="Copyright" runat="server" 
+                Text="Copyright (c) 2008 B4-StarFish. All rights reserved." Width="280px" 
+                Height="16px"></asp:Label>
+            <br />
+            <asp:Label ID="Reff" runat="server" 
+                Text='Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.' 
+                Width="136px"></asp:Label>
         </div>
     </div>
     </form>
