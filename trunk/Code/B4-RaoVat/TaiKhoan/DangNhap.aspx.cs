@@ -9,11 +9,12 @@ using BUS;
 
 public partial class Default2 : BUS.BasePage
 {
-    //static string PrevPage = String.Empty;
+    static string PrevPage;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         this.lblUserName.Text = Session["UserName"] as string;
+        PrevPage = string.Empty;
         //if (!IsPostBack)
         //{
         //    PrevPage = Request.UrlReferrer.ToString();
@@ -41,10 +42,10 @@ public partial class Default2 : BUS.BasePage
         if (db.NGUOIDUNGs.Where(p => p.TenNguoiDung == this.Login1.UserName && p.MatKhau == this.Login1.Password).Count() == 1)
         {            
             e.Authenticated = true;
-            //if(PrevPage != string.Empty)
-               // Response.Redirect(PrevPage);
+            //if (PrevPage != string.Empty)
+            //    Response.Redirect(PrevPage);
             //else
-                //Response.Redirect("/B4-RaoVat/Default.aspx");
+            //    Response.Redirect("/B4-RaoVat/Default.aspx");
         }
         else
             e.Authenticated = false;

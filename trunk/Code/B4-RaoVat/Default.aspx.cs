@@ -24,6 +24,7 @@ public partial class Default2 : BUS.BasePage
             else if (result == "success") { MessageBox("Thao tác thành công!"); }
         }
     }
+    
     protected override void InitializeCulture()
     {
         if (Request["Language"] != null)
