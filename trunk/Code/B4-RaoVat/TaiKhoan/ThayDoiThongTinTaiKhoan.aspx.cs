@@ -6,12 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAO;
 using BUS;
-
-public partial class Default2 : BUS.BasePage
+public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //RaoVatDataClassesDataContext NguoiDung = new RaoVatDataClassesDataContext();
         if (Session["UserName"] as string != null)
         {
             NGUOIDUNG NguoiDung = new NGUOIDUNG();
@@ -20,24 +18,24 @@ public partial class Default2 : BUS.BasePage
             lblTenDangNhap.Text = NguoiDung.TenNguoiDung.ToString();
             if (NguoiDung.Email != null)
             {
-                lblEmail.Text = NguoiDung.Email.ToString();
+                txtEmail.Text = NguoiDung.Email.ToString();
             }
             else
-                lblEmail.Text = "Chưa có thông tin";
+                txtEmail.Text = "Chưa có thông tin";
 
             if (NguoiDung.DienThoai != null)
             {
-                lblDienThoai.Text = NguoiDung.DienThoai.ToString();
+                txtDT.Text = NguoiDung.DienThoai.ToString();
             }
             else
-                lblDienThoai.Text = "Chưa có thông tin";
+                txtDT.Text = "Chưa có thông tin";
 
             if (NguoiDung.DiaChi != null)
             {
-                lblDiaChi.Text = NguoiDung.DiaChi.ToString();
+                txtDiaChi.Text = NguoiDung.DiaChi.ToString();
             }
             else
-                lblDiaChi.Text = "Chưa có thông tin";
+                txtDiaChi.Text = "Chưa có thông tin";
 
             if (NguoiDung.MaKichHoatTaiKhoan != null)
             {
@@ -65,19 +63,43 @@ public partial class Default2 : BUS.BasePage
             else
                 lblThoiGianHH.Text = "Chưa có thông tin";
             LOAINGUOIDUNG LoaiNguoiDung = LoaiNguoiDungBUS.TimLoaiNguoiDungTheoMa(NguoiDung.MaLoaiNguoiDung.Value);
-            lblLoaiNguoiDung.Text = LoaiNguoiDung.TenLoaiNguoiDung;            
+            lblLoaiNguoiDung.Text = LoaiNguoiDung.TenLoaiNguoiDung;
         }
         else
         {
             Response.Redirect("..\\TaiKhoan\\DangNhap.aspx");
         }
     }
-    protected void btnNangCap_Click(object sender, EventArgs e)
+
+    private void ThayDoiThongTinUser()
     {
-        Response.Redirect("~/TaiKhoan/NangCapTaiKhoan.aspx");
+        if (Session["UserName"] as string != null)
+        {
+            RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+
+            if (db.NGUOIDUNGs.Where(p => p.TenNguoiDung == this.lblTenDangNhap.Text).Count() == 1)
+            {
+                NGUOIDUNG NguoiDungUpdate = new NGUOIDUNG();
+                NguoiDungUpdate.Email = txtEmail.Text.ToString().Trim();
+                NguoiDungUpdate.DienThoai = txtDT.Text.ToString().Trim();
+                NguoiDungUpdate.DiaChi = txtDiaChi.Text.ToString().Trim();
+                
+                if (NguoiDungDAO.ChinhSuaNguoiDung(NguoiDungUpdate))
+                {
+                    lblThankYou.Text = "Cảm ơn bạn, thông tin của bạn đã thay đổi thành công.";
+                }
+                else
+                    lblThankYou.Text = "Thay đổi thông tin thất bại.";
+            }
+
+        }
+        else
+        {
+            Response.Redirect("..\\TaiKhoan\\DangNhap.aspx");
+        }
     }
-    protected void bntThayDoiThongTin_Click(object sender, EventArgs e)
+    protected void bntDongY_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/TaiKhoan/ThayDoiThongTinTaiKhoan.aspx");
+        ThayDoiThongTinUser();
     }
 }

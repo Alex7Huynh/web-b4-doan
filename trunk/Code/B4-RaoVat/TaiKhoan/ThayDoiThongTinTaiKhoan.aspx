@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
-    CodeFile="XemThongTinTaiKhoan.aspx.cs" Inherits="Default2" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ThayDoiThongTinTaiKhoan.aspx.cs" Inherits="Default2" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
-    <asp:Panel ID="Panel1" runat="server" Height="373px" Width="1010px" 
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
+  <asp:Panel ID="Panel1" runat="server" Height="373px" Width="1010px" 
         meta:resourcekey="Panel1Resource1">
-        <table style="width: 466px; margin-left: 106px">
+        <table style="width: 466px; margin-left: 132px">
             <tr>
                 <td colspan="2">
                     <asp:Label ID="lblThongTin" runat="server" Text="Thông Tin Tài Khoản" 
@@ -29,8 +28,7 @@
                         Text="Email:"></asp:Label>
                 </td>
                 <td>
-                    <asp:Label ID="lblEmail" runat="server" Font-Bold="True" Font-Names="Tahoma" 
-                        Font-Size="11pt" meta:resourceKey="lblEmailResource1"></asp:Label>
+                    <asp:TextBox ID="txtEmail" runat="server" Width="281px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -39,9 +37,7 @@
                         Text="Điện thoại:"></asp:Label>
                 </td>
                 <td>
-                    <asp:Label ID="lblDienThoai" runat="server" Font-Bold="True" 
-                        Font-Names="Tahoma" Font-Size="11pt" 
-                        meta:resourceKey="lblDienThoaiResource1"></asp:Label>
+                    <asp:TextBox ID="txtDT" runat="server" Width="281px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -50,8 +46,7 @@
                         Text="Địa chỉ: "></asp:Label>
                 </td>
                 <td>
-                    <asp:Label ID="lblDiaChi" runat="server" Font-Bold="True" Font-Names="Tahoma" 
-                        Font-Size="11pt" meta:resourceKey="lblDiaChiResource1"></asp:Label>
+                    <asp:TextBox ID="txtDiaChi" runat="server" Width="281px" Height="81px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -108,18 +103,27 @@
                         meta:resourceKey="lblLoaiNguoiDungResource1"></asp:Label>
                 </td>
             </tr>
+                        <tr>
+                <td colspan="2" style="height: 33px">
+                        
+                     &nbsp;&nbsp;<asp:Label ID="lblThankYou" runat="server"></asp:Label>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                </td>
+            </tr>
             <tr>
                 <td colspan="2" style="height: 33px">
                         
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="bntThayDoiThongTin" runat="server" 
-                         onclick="bntThayDoiThongTin_Click" Text="Thay Đổi Thông Tin" Width="157px" />
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
-                     <asp:Button ID="btnNangCap" runat="server" Text="Nâng cấp tài khoản" 
-                        Width="123px" meta:resourceKey="btnNangCapResource1" 
-                        onclick="btnNangCap_Click" />
+                     <asp:Button ID="bntDongY" runat="server" onclick="bntDongY_Click" 
+                         Text="Đồng Ý" />
+                        
                 </td>
             </tr>
         </table>
     </asp:Panel>
 </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderRight" Runat="Server">
+</asp:Content>
+
