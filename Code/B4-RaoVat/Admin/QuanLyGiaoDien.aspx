@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="QuanLyGiaoDien.aspx.cs" Inherits="QuanLyGiaoDien" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <table style="width: 99%; height: 438px;">
+    <table style="width: 100%; height: 438px;">
         <tr>
             <td align="center" colspan="2">
                 <asp:Label ID="Label8" runat="server" Text="QUẢN LÝ BANNER"></asp:Label>
@@ -84,10 +84,10 @@
             
         </tr>
         <tr>
-            <td style="width: 121px">
+            <td style="width: 121px; height: 46px;">
                 <asp:Label ID="Label13" runat="server" Text="Chọn theme"></asp:Label>
             </td>
-            <td>
+            <td style="height: 46px">
                 <asp:DropDownList ID="ddlTheme" runat="server">
                 </asp:DropDownList>
                 <asp:Button ID="btnChonTheme" runat="server" Text="Chọn làm theme" 

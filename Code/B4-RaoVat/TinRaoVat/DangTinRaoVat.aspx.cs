@@ -9,8 +9,8 @@ public partial class DangTinRaoVat : BUS.BasePage
     string DanhMucChinh = string.Empty;
     string DanhMucCon = string.Empty;
     int MaDanhMucCon;
-    string ThumbnailLocation = "~/images/TinRaoVat/";    
-
+    string ThumbnailLocation = "~/images/TinRaoVat/";
+    
     /// <summary>
     /// Page_Load
     /// </summary>
@@ -20,6 +20,9 @@ public partial class DangTinRaoVat : BUS.BasePage
     {
         string ChuyenMuc = string.Empty;
         int MaDanhMucChinh;
+        //Kiểm tra đăng nhập
+        if (Session["userID"] == null)
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
         //Lấy thông tin chuyên mục, danh mục chính, danh mục con
         if (Request.QueryString["cm"] != null)
             ChuyenMuc = Request.QueryString["cm"];
@@ -172,7 +175,7 @@ public partial class DangTinRaoVat : BUS.BasePage
             //Thêm tin rao vặt thường
             TINRAOVATTHUONG TinRaoVatThuong = new TINRAOVATTHUONG();
             TinRaoVatThuong.MaTinRaoVat = TinRaoVatBUS.TimTinRaoVatMoiNhat().MaTinRaoVat;
-            TinRaoVatThuong.NoiDungTinRaoVat = txtNoiDung1.Text;
+            TinRaoVatThuong.NoiDungTinRaoVat = Editor1.Content;
             TinRaoVatThuong.Gia = int.Parse(txtGia1.Text);            
             TinRaoVatThuong.Deleted = false;
             if (!TinRaoVatThuongBUS.ThemTinRaoVatThuong(TinRaoVatThuong))
@@ -234,7 +237,7 @@ public partial class DangTinRaoVat : BUS.BasePage
             //Thêm tin rao vặt bất động sản
             TINRAOVATBATDONGSAN TinRaoVatBatDongSan = new TINRAOVATBATDONGSAN();
             TinRaoVatBatDongSan.MaTinRaoVat = TinRaoVatBUS.TimTinRaoVatMoiNhat().MaTinRaoVat;
-            TinRaoVatBatDongSan.NoiDungTinRaoVat = txtNoiDung2.Text;
+            TinRaoVatBatDongSan.NoiDungTinRaoVat = Editor2.Content;
             TinRaoVatBatDongSan.Gia = int.Parse(txtGia2.Text);
 	        TinRaoVatBatDongSan.DiaChi = txtDiaChi.Text;
             TinRaoVatBatDongSan.DienTich = int.Parse(txtDienTich.Text);

@@ -7,7 +7,7 @@ using System.IO;
 
 public partial class ChinhSuaBaiRaoVat : BUS.BasePage
 {
-    int UserID;
+    int AdID;
     TINRAOVAT TinRaoVat = new TINRAOVAT();
     DANHMUCCON DanhMucCon = new DANHMUCCON();
     DANHMUCCHINH DanhMucChinh = new DANHMUCCHINH();
@@ -16,30 +16,19 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
     protected void Page_Load(object sender, EventArgs e)
     {
         Page.Title = "Chỉnh sửa tin rao vặt";
-        //Nếu chưa đăng nhập
-        Session["userID"] = "1";
+        //Kiểm tra đăng nhập        
         if (Session["userID"] == null)
-        {
             Response.Redirect("~/TaiKhoan/DangNhap.aspx");
-        }
         //Lấy ID của tin rao vặt
         if (Request.QueryString["id"] != null)
         {
-            UserID = int.Parse(Request.QueryString["id"]);
+            AdID = int.Parse(Request.QueryString["id"]);
         }
 
-        TinRaoVat = TinRaoVatBUS.TimTinRaoVatTheoMa(UserID);
+        TinRaoVat = TinRaoVatBUS.TimTinRaoVatTheoMa(AdID);
         DanhMucCon = DanhMucConBUS.TimDanhMucConTheoMa(TinRaoVat.MaDanhMucCon.Value);
         DanhMucChinh = DanhMucChinhBUS.TimDanhMucChinhTheoMa(DanhMucCon.MaDanhMucChinh.Value);
 
-        //Nếu tin rao vặt không phải do user tạo ra        
-        if (Session["userID"].ToString() != "1")
-        {
-            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
-            {
-                //Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
-            }
-        }
         if (!IsPostBack)
         {
             //Hiển thị view tương ứng với chuyên mục
@@ -84,7 +73,7 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
 
         //Thêm tin rao vặt thường
         TINRAOVATTHUONG TinRaoVatThuong = TinRaoVatThuongBUS.TimTinRaoVatThuongTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
-        txtNoiDung1.Text = TinRaoVatThuong.NoiDungTinRaoVat;
+        Editor1.Content = TinRaoVatThuong.NoiDungTinRaoVat;
         txtGia1.Text = TinRaoVatThuong.Gia.ToString();
     }
     private void InitSecondView()
@@ -109,7 +98,7 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
 
         //Thêm tin rao vặt bất động sản
         TINRAOVATBATDONGSAN TinRaoVatBatDongSan = TinRaoVatBatDongSanBUS.TimTinRaoVatBatDongSanTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
-        txtNoiDung2.Text = TinRaoVatBatDongSan.NoiDungTinRaoVat;
+        Editor2.Content = TinRaoVatBatDongSan.NoiDungTinRaoVat;
         txtGia2.Text = TinRaoVatBatDongSan.Gia.ToString();
         txtDiaChi.Text = TinRaoVatBatDongSan.DiaChi;
         txtDienTich.Text = TinRaoVatBatDongSan.DienTich.ToString();
@@ -274,7 +263,7 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
         if (Session["userID"] != null)
         {
             //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
-            if (Session["userID"].ToString() != "1")
+            if (!LoaiNguoiDungBUS.LaQuanTri(int.Parse(Session["userID"].ToString())))
             {
                 if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
                 {
@@ -307,7 +296,7 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
 
         //Cập nhật tin rao vặt thường
         TINRAOVATTHUONG TinRaoVatThuong = TinRaoVatThuongBUS.TimTinRaoVatThuongTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
-        TinRaoVatThuong.NoiDungTinRaoVat = txtNoiDung1.Text;
+        TinRaoVatThuong.NoiDungTinRaoVat = Editor1.Content;
         TinRaoVatThuong.Gia = int.Parse(txtGia1.Text);
 
         if (!TinRaoVatThuongBUS.CapNhatTinRaoVatThuong(TinRaoVatThuong))
@@ -329,9 +318,12 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
         if (Session["userID"] != null)
         {
             //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
-            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            if (!LoaiNguoiDungBUS.LaQuanTri(int.Parse(Session["userID"].ToString())))
             {
-                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+                if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+                {
+                    Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+                }
             }
         }
         else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
@@ -359,7 +351,7 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
 
         //Cập nhật tin rao vặt bất động sản
         TINRAOVATBATDONGSAN TinRaoVatBatDongSan = TinRaoVatBatDongSanBUS.TimTinRaoVatBatDongSanTheoMaTinRaoVat(TinRaoVat.MaTinRaoVat);
-        TinRaoVatBatDongSan.NoiDungTinRaoVat = txtNoiDung2.Text;
+        TinRaoVatBatDongSan.NoiDungTinRaoVat = Editor2.Content;
         TinRaoVatBatDongSan.Gia = int.Parse(txtGia2.Text);
         TinRaoVatBatDongSan.DiaChi = txtDiaChi.Text;
         TinRaoVatBatDongSan.DienTich = int.Parse(txtDienTich.Text);
@@ -412,9 +404,12 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
         if (Session["userID"] != null)
         {
             //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
-            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            if (!LoaiNguoiDungBUS.LaQuanTri(int.Parse(Session["userID"].ToString())))
             {
-                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+                if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+                {
+                    Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+                }
             }
         }
         else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
@@ -481,9 +476,12 @@ public partial class ChinhSuaBaiRaoVat : BUS.BasePage
         if (Session["userID"] != null)
         {
             //Kiểm tra quyền hạn chỉnh sửa (nếu là người đăng)
-            if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+            if (!LoaiNguoiDungBUS.LaQuanTri(int.Parse(Session["userID"].ToString())))
             {
-                Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+                if (Session["userID"].ToString() != TinRaoVat.MaNguoiDung.Value.ToString())
+                {
+                    Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+                }
             }
         }
         else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }

@@ -10,7 +10,7 @@ go
 Create table LOAINGUOIDUNG
 (
 	MaLoaiNguoiDung int identity(1,1),
-	TenLoaiNguoiDung nchar(50),		
+	TenLoaiNguoiDung nvarchar(50),		
 	Deleted bit,
 	CONSTRAINT PK_LOAINGUOIDUNG PRIMARY KEY (MaLoaiNguoiDung),
 )

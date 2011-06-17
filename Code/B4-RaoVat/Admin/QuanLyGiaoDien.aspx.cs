@@ -14,9 +14,18 @@ public partial class QuanLyGiaoDien : BUS.BasePage
     // Để tui tìm hiểu thử
     protected void Page_Load(object sender, EventArgs e)
     {
-        List<string> DanhSachTheme = new List<string>() { "Theme1", "Theme2", "Theme3" };
-        ddlTheme.DataSource = DanhSachTheme;
-        ddlTheme.DataBind();
+        //Kiểm tra đăng nhập
+        if (Session["userID"] == null)
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
+        //Kiểm tra quyền là admin
+        if (!LoaiNguoiDungBUS.LaQuanTri(int.Parse(Session["userID"].ToString())))
+            Response.Redirect("/B4-RaoVat/Default.aspx");
+        if (!IsPostBack)
+        {
+            List<string> DanhSachTheme = new List<string>() { "Theme1", "Theme2", "Theme3" };
+            ddlTheme.DataSource = DanhSachTheme;
+            ddlTheme.DataBind();
+        }
     }
     protected void btnChonBanner_Click(object sender, EventArgs e)
     {        
@@ -86,6 +95,7 @@ public partial class QuanLyGiaoDien : BUS.BasePage
     }
     protected void btnChonTheme_Click(object sender, EventArgs e)
     {
+        Session["MyTheme"] = ddlTheme.SelectedValue;
         Response.Redirect("~/Admin/QuanLyGiaoDien.aspx");
     }
 }

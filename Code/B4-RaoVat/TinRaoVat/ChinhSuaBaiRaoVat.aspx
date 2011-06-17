@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
     CodeFile="ChinhSuaBaiRaoVat.aspx.cs" Inherits="ChinhSuaBaiRaoVat" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit.HTMLEditor" tagprefix="cc1" %>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="View1" runat="server">
-            <table style="width: 56%; background-color: #EAFFFF;">
+            <table style="width: 100%; background-color: #EAFFFF;">
                 <tr>
                     <td colspan="2">
                         <asp:Label ID="Label11" runat="server" Font-Bold="True" ForeColor="#003399" 
@@ -22,7 +26,7 @@
                     <td bgcolor="#FF9900">
                         <asp:TextBox ID="txtChuyenMuc1" runat="server" BackColor="#FF9900" BorderStyle="None"
                             ForeColor="#003399" Width="300px" 
-                            meta:resourceKey="txtChuyenMuc1Resource1"></asp:TextBox>
+                            meta:resourceKey="txtChuyenMuc1Resource1" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -45,8 +49,8 @@
                             meta:resourceKey="Label2Resource1"></asp:Label>
                     </td>
                     <td style="width: 301px">
-                        <asp:TextBox ID="txtNoiDung1" runat="server" Height="116px" TextMode="MultiLine"
-                            Width="417px" ForeColor="#003399" meta:resourceKey="txtNoiDung1Resource1"></asp:TextBox>
+                        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+                        <cc1:Editor ID="Editor1" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -125,7 +129,7 @@
             </table>
         </asp:View>
         <asp:View ID="View2" runat="server">
-            <table style="width: 61%; background-color: #FFF2BF;">
+            <table style="width: 100%; background-color: #FFF2BF;">
                 <tr>
                     <td colspan="4">
                         <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399" 
@@ -143,7 +147,7 @@
                     <td bgcolor="#FF9900" colspan="3">
                         <asp:TextBox ID="txtChuyenMuc2" runat="server" BackColor="#FF9900" BorderStyle="None"
                             ForeColor="#003399" Width="300px" 
-                            meta:resourceKey="txtChuyenMuc2Resource1"></asp:TextBox>
+                            meta:resourceKey="txtChuyenMuc2Resource1" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -164,8 +168,7 @@
                             meta:resourceKey="Label19Resource1"></asp:Label>
                     </td>
                     <td colspan="3">
-                        <asp:TextBox ID="txtNoiDung2" runat="server" Height="116px" TextMode="MultiLine"
-                            Width="417px" ForeColor="#003399" meta:resourceKey="txtNoiDung2Resource1"></asp:TextBox>
+                        <cc1:Editor ID="Editor2" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -490,16 +493,15 @@
             </table>
         </asp:View>
         <asp:View ID="View3" runat="server">
-            <table style="width: 60%; background-color: #D9FFF0;">
+            <table style="width: 100%; background-color: #D9FFF0;">
                 <tr>
-                    <td align="center">
+                    <td align="center" colspan=2>
                         <asp:Label ID="Label53" runat="server" Text="ĐĂNG TIN TUYỂN DỤNG MỚI " Style="font-weight: 700"
                             ForeColor="#33CC33" meta:resourceKey="Label53Resource1"></asp:Label>
                         <br />
                     </td>
-                </tr>
-            </table>
-            <table style="width: 60%; background-color: #D9FFF0;">
+                </tr>           
+            
                 <tr>
                     <td align="right">
                         <asp:Label ID="Label132" runat="server" ForeColor="#003399" 
@@ -542,7 +544,7 @@
                     </td>
                     <td style="margin-left: 40px">
                         <asp:TextBox ID="txtGioiThieuNhaTuyenDung" runat="server" ForeColor="#003399" 
-                            Height="116px" TextMode="MultiLine" Width="417px" 
+                            Height="116px" TextMode="MultiLine" Width="403px" 
                             meta:resourceKey="txtGioiThieuNhaTuyenDungResource1"></asp:TextBox>
                         <br />
                         <asp:RequiredFieldValidator ID="rfvGioiThieuNhaTuyenDung" runat="server" 
@@ -834,7 +836,7 @@
             </table>
         </asp:View>
         <asp:View ID="View4" runat="server">
-            <table style="width: 80%; background-color: #FFE1E1;">
+            <table style="width: 100%; background-color: #FFE1E1;">
                 <tr>
                     <td align="center" colspan="3">
                         <asp:Label ID="Label77" runat="server" ForeColor="#33CC33" Style="font-weight: 700"
@@ -1058,7 +1060,7 @@
                     </td>
                     <td style="width: 288px">
                         <asp:TextBox ID="txtThongTinHocVan" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px" 
+                            TextMode="MultiLine" Width="300px" 
                             meta:resourceKey="txtThongTinHocVanResource1"></asp:TextBox>
                     </td>
                     <td>
@@ -1105,12 +1107,12 @@
                     </td>
                     <td style="width: 288px">
                         <asp:TextBox ID="txtKyNang" runat="server" ForeColor="#003399" Height="116px" TextMode="MultiLine"
-                            Width="417px" meta:resourceKey="txtKyNangResource1"></asp:TextBox>
+                            Width="300px" meta:resourceKey="txtKyNangResource1"></asp:TextBox>
                     </td>
                     <td>
                         <asp:Label ID="Label114" runat="server" 
                             Text="(*Hãy giới thiệu thật chính xác và chi tiết các kỹ năng làm việc của bạn, điều này giúp nhà tuyển dụng quan tâm đến bạn nhiều hơn.) " 
-                            meta:resourceKey="Label114Resource1"></asp:Label>
+                            meta:resourceKey="Label114Resource1" Font-Size="X-Small"></asp:Label>
                         <asp:RequiredFieldValidator ID="rfvKyNang" runat="server" ControlToValidate="txtKyNang"
                             ErrorMessage="Không bỏ trống" meta:resourceKey="rfvKyNangResource1"></asp:RequiredFieldValidator>
                     </td>
@@ -1186,13 +1188,13 @@
                     </td>
                     <td style="width: 288px">
                         <asp:TextBox ID="txtTomTatKinhNghiem" runat="server" ForeColor="#003399" Height="116px"
-                            TextMode="MultiLine" Width="417px" 
+                            TextMode="MultiLine" Width="300px" 
                             meta:resourceKey="txtTomTatKinhNghiemResource1"></asp:TextBox>
                     </td>
                     <td>
                         <asp:Label ID="Label115" runat="server" 
                             Text="(*Tóm tắt các kinh nghiệm về công việc, các công ty đã làm và các chức vụ đã năm giữ, điều đó sẽ giúp bạn rất nhiều trong việc tìm kiếm được 1 công việc tốt.) " 
-                            meta:resourceKey="Label115Resource1"></asp:Label>
+                            meta:resourceKey="Label115Resource1" Font-Size="X-Small"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -1201,7 +1203,7 @@
 	" meta:resourceKey="Label106Resource1"></asp:Label>
                     </td>
                     <td style="width: 288px">
-                        <asp:TextBox ID="txtMoTaCongViecLyTuong" runat="server" ForeColor="#003399" Width="417px"
+                        <asp:TextBox ID="txtMoTaCongViecLyTuong" runat="server" ForeColor="#003399" Width="300px"
                             Height="116px" TextMode="MultiLine" 
                             meta:resourceKey="txtMoTaCongViecLyTuongResource1"></asp:TextBox>
                     </td>
@@ -1221,9 +1223,9 @@
                             Style="font-weight: bold" meta:resourceKey="Label109Resource1"></asp:Label>
                     </td>
                     <td style="width: 288px">
-                        <asp:TextBox ID="txtNguyenVong" runat="server" ForeColor="#003399" Width="417px"
+                        <asp:TextBox ID="txtNguyenVong" runat="server" ForeColor="#003399" Width="300px"
                             Height="116px" TextMode="MultiLine" 
-                            meta:resourceKey="txtNguyenVongResource1"></asp:TextBox>
+                            meta:resourceKey="txtNguyenVongResource1" Font-Size="X-Small"></asp:TextBox>
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="rfvNguyenVong" runat="server" ControlToValidate="txtNguyenVong"
