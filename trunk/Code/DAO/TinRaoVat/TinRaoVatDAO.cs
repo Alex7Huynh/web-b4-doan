@@ -267,6 +267,10 @@ namespace DAO
         /// <returns>danh sách tin rao vặt</returns>
         public static List<TINRAOVAT> TimKiem(string tuKhoa)
         {
+            if (tuKhoa == "" || tuKhoa == null)
+            {
+                return new List<TINRAOVAT>();
+            }
             RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
             List<TINRAOVAT> dsTinRaoVatTimDuoc = new List<TINRAOVAT>();
             List<TINRAOVAT> dsTinRaoVatKhongThoa = new List<TINRAOVAT>();
@@ -277,7 +281,7 @@ namespace DAO
                                   where p.Deleted == false
                                   select p;
 
-                dsTinRaoVatKhongThoa.AddRange((List<TINRAOVAT>)dsTinRaoVat);
+                dsTinRaoVatKhongThoa.AddRange(dsTinRaoVat.ToList());
             }
 
             string tuKhoaChuaChuanHoa = "";
@@ -285,12 +289,13 @@ namespace DAO
 
             char[] separates = new char[] {'~', '!', '@', '#',  '%', '^', '&', '*', '(', ')', '-', '_', '+', '=',
                                                 '\t', '{', '}', '[', ']', '\\', '|', ';', ':', '\"', '\'', 
-                                                '<', '>', ',', '.', '?', '/'};
+                                                '<', '>', ',', '.', '?', '/', ' '};
 
             // Tìm kiếm lần lượt từng từ khóa
-            foreach (string tu in tuKhoaChuaChuanHoa.Split(separates)
+            List<string> dayTuKhoa = tuKhoaChuaChuanHoa.Split(separates)
                                                             .Select(s => s.Trim())
-                                                            .Where(s => !string.IsNullOrEmpty(s)))
+                                                            .Where(s => !string.IsNullOrEmpty(s)).ToList();
+            foreach (string tu in dayTuKhoa)
             {
                 var dsTinRaoVat = from p in db.TINRAOVATs
                                   where p.GhiChuHinhAnh.Contains(tu) || p.Thumbnail.Contains(tu) ||
@@ -298,7 +303,7 @@ namespace DAO
                                   select p;
 
                 // Nếu có sẽ thêm vào danh sách tìm được
-                dsTinRaoVatTimDuoc.AddRange((List<TINRAOVAT>)dsTinRaoVat);
+                dsTinRaoVatTimDuoc.AddRange(dsTinRaoVat.ToList());
 
                 // Update lại danh sách tin rao vặt không thỏa
                 foreach (TINRAOVAT tin in dsTinRaoVatTimDuoc)
@@ -310,105 +315,177 @@ namespace DAO
             // Đối với những tin rao vặt không thỏa, tìm tiếp với các thông tin chi tiết
 
             // Tìm kiếm lần lượt từng từ khóa
-            foreach (string tu in tuKhoaChuaChuanHoa.Split(separates)
-                                                            .Select(s => s.Trim())
-                                                            .Where(s => !string.IsNullOrEmpty(s)))
+            foreach (string tu in dayTuKhoa)
             {
                 // Biến tạm
-                List<TINRAOVAT> dsTinRaoVatKhongThoaTam = dsTinRaoVatKhongThoa;
+                List<TINRAOVAT> dsTinRaoVatKhongThoaTam = dsTinRaoVatKhongThoa.ToList();
                 // Xét từng tin rao vặt không thỏa
                 foreach (TINRAOVAT tin in dsTinRaoVatKhongThoaTam)
                 {
                     // tin Bất Động Sản
-                    var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
-                                                where q.MaTinRaoVat == tin.MaTinRaoVat &&
-                                                (
-                                                    q.DiaChi.Contains(tu) || q.DuongTruocNha.Contains(tu) ||
-                                                    q.GiayTo.Contains(tu) || q.Huong.Contains(tu) ||
-                                                    q.LoGioi.Contains(tu) || q.NoiDungTinRaoVat.Contains(tu)
-                                                )
-                                                select q;
-
-                    if (dsTinRaoVatBatDongSan != null)
+                    TINRAOVATBATDONGSAN tinRaoVatBatDongSan = db.TINRAOVATBATDONGSANs.SingleOrDefault(t => t.MaTinRaoVat.Value == tin.MaTinRaoVat);
+                    if (tinRaoVatBatDongSan != null)
                     {
-                        dsTinRaoVatTimDuoc.Add(tin);
-                        dsTinRaoVatKhongThoa.Remove(tin);
+                        if (tinRaoVatBatDongSan.DiaChi.Contains(tu) || tinRaoVatBatDongSan.DuongTruocNha.Contains(tu) ||
+                            tinRaoVatBatDongSan.GiayTo.Contains(tu) || tinRaoVatBatDongSan.Huong.Contains(tu) ||
+                            tinRaoVatBatDongSan.LoGioi.Contains(tu) || tinRaoVatBatDongSan.NoiDungTinRaoVat.Contains(tu))
+                        {
+                            dsTinRaoVatTimDuoc.Add(tin);
+                            dsTinRaoVatKhongThoa.Remove(tin);
 
-                        continue;
+                            continue;
+                        }
                     }
+
+                    //var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
+                    //                            where (q.MaTinRaoVat.Value == tin.MaTinRaoVat) &&
+                    //                            (
+                    //                                q.DiaChi.Contains(tu) || q.DuongTruocNha.Contains(tu) ||
+                    //                                q.GiayTo.Contains(tu) || q.Huong.Contains(tu) ||
+                    //                                q.LoGioi.Contains(tu) || q.NoiDungTinRaoVat.Contains(tu)
+                    //                            )
+                    //                            select q;
+
+                    //if (dsTinRaoVatBatDongSan != null)
+                    //{
+                    //    dsTinRaoVatTimDuoc.Add(tin);
+                    //    dsTinRaoVatKhongThoa.Remove(tin);
+
+                    //    continue;
+                    //}
 
                     // Tin tuyển dụng
-                    var dsTinTuyenDung = from g in db.TINTUYENDUNGs
-                                         where g.MaTinRaoVat == tin.MaTinRaoVat &&
-                                         (
-                                              g.DiaChiLienHe.Contains(tu) || g.DienThoai.Contains(tu) ||
-                                              g.Email.Contains(tu) || g.GioiThieuNhaTuyenDung.Contains(tu) ||
-                                              g.HoSoBaoGom.Contains(tu) || g.NguoiDaiDien.Contains(tu) ||
-                                              g.QuyenLoiDuocHuong.Contains(tu) || g.TenNhaTuyenDung.Contains(tu) ||
-                                              g.ThoiGianLamViec.Contains(tu) || g.ThoiGianThuViec.Contains(tu) ||
-                                              g.ViTriTuyenDung.Contains(tu) || g.Website.Contains(tu) ||
-                                              g.YeuCauCongViec.Contains(tu) || g.YeuCauKinhNghiem.Contains(tu)
-                                         )
-                                         select g;
-
-                    if (dsTinTuyenDung != null)
+                    TINTUYENDUNG tinTuyenDung = db.TINTUYENDUNGs.SingleOrDefault(t => t.MaTinRaoVat.Value == tin.MaTinRaoVat);
+                    if (tinTuyenDung != null)
                     {
-                        dsTinRaoVatTimDuoc.Add(tin);
-                        dsTinRaoVatKhongThoa.Remove(tin);
+                        if (tinTuyenDung.DiaChiLienHe.Contains(tu) || tinTuyenDung.DienThoai.Contains(tu) ||
+                              tinTuyenDung.Email.Contains(tu) || tinTuyenDung.GioiThieuNhaTuyenDung.Contains(tu) ||
+                              tinTuyenDung.HoSoBaoGom.Contains(tu) || tinTuyenDung.NguoiDaiDien.Contains(tu) ||
+                              tinTuyenDung.QuyenLoiDuocHuong.Contains(tu) || tinTuyenDung.TenNhaTuyenDung.Contains(tu) ||
+                              tinTuyenDung.ThoiGianLamViec.Contains(tu) || tinTuyenDung.ThoiGianThuViec.Contains(tu) ||
+                              tinTuyenDung.ViTriTuyenDung.Contains(tu) || tinTuyenDung.Website.Contains(tu) ||
+                              tinTuyenDung.YeuCauCongViec.Contains(tu) || tinTuyenDung.YeuCauKinhNghiem.Contains(tu))
+                        {
+                            dsTinRaoVatTimDuoc.Add(tin);
+                            dsTinRaoVatKhongThoa.Remove(tin);
 
-                        continue;
+                            continue;
+                        }
                     }
+
+                    //var dsTinTuyenDung = from g in db.TINTUYENDUNGs
+                    //                     where g.MaTinRaoVat == tin.MaTinRaoVat &&
+                    //                     (
+                    //                          g.DiaChiLienHe.Contains(tu) || g.DienThoai.Contains(tu) ||
+                    //                          g.Email.Contains(tu) || g.GioiThieuNhaTuyenDung.Contains(tu) ||
+                    //                          g.HoSoBaoGom.Contains(tu) || g.NguoiDaiDien.Contains(tu) ||
+                    //                          g.QuyenLoiDuocHuong.Contains(tu) || g.TenNhaTuyenDung.Contains(tu) ||
+                    //                          g.ThoiGianLamViec.Contains(tu) || g.ThoiGianThuViec.Contains(tu) ||
+                    //                          g.ViTriTuyenDung.Contains(tu) || g.Website.Contains(tu) ||
+                    //                          g.YeuCauCongViec.Contains(tu) || g.YeuCauKinhNghiem.Contains(tu)
+                    //                     )
+                    //                     select g;
+
+                    //if (dsTinTuyenDung != null)
+                    //{
+                    //    dsTinRaoVatTimDuoc.Add(tin);
+                    //    dsTinRaoVatKhongThoa.Remove(tin);
+
+                    //    continue;
+                    //}
 
                     // Tin rao vặt thường
-                    var dsTinRaoVatThuong = from o in db.TINRAOVATTHUONGs
-                                            where o.MaTinRaoVat == tin.MaTinRaoVat &&
-                                            (
-                                                o.NoiDungTinRaoVat.Contains(tu)
-                                            )
-                                            select o;
-
-                    if (dsTinRaoVatThuong != null)
+                    TINRAOVATTHUONG tinRaoVatThuong = db.TINRAOVATTHUONGs.SingleOrDefault(t => t.MaTinRaoVat.Value == tin.MaTinRaoVat);
+                    if (tinRaoVatThuong != null)
                     {
-                        dsTinRaoVatTimDuoc.Add(tin);
-                        dsTinRaoVatKhongThoa.Remove(tin);
+                        if (tinRaoVatThuong.NoiDungTinRaoVat.Contains(tu))
+                        {
+                            dsTinRaoVatTimDuoc.Add(tin);
+                            dsTinRaoVatKhongThoa.Remove(tin);
 
-                        continue;
+                            continue;
+                        }
                     }
+                    //var dsTinRaoVatThuong = from o in db.TINRAOVATTHUONGs
+                    //                        where o.MaTinRaoVat == tin.MaTinRaoVat &&
+                    //                        (
+                    //                            o.NoiDungTinRaoVat.Contains(tu)
+                    //                        )
+                    //                        select o;
+
+                    //if (dsTinRaoVatThuong != null)
+                    //{
+                    //    dsTinRaoVatTimDuoc.Add(tin);
+                    //    dsTinRaoVatKhongThoa.Remove(tin);
+
+                    //    continue;
+                    //}
 
                     // Hồ sơ tuyển dụng
-                    var dsHoSoTuyenDung = from o in db.HOSOTUYENDUNGs
-                                          where o.MaTinRaoVat == tin.MaTinRaoVat &&
-                                          (
-                                              o.HoTen.Contains(tu) ||
-                                              o.QuocTich.Contains(tu) ||
-                                              o.DiaChiLienLac.Contains(tu) ||
-                                              o.SoDienThoai.Contains(tu) ||
-                                              o.DiDong.Contains(tu) ||
-                                              o.Email.Contains(tu) ||
-                                              o.ThongTinHocVan.Contains(tu) ||
-                                              o.BangCap.Contains(tu) ||
-                                              o.NgoaiNgu.Contains(tu) ||
-                                              o.KyNang.Contains(tu) ||
-                                              o.CapBac.Contains(tu) ||
-                                              o.CongTyLamViec.Contains(tu) ||
-                                              o.ChucDanh.Contains(tu) ||
-                                              o.ChucDanh.Contains(tu) ||
-                                              o.TomTatKinhNghiem.Contains(tu) ||
-                                              o.MoTaCongViecLyTuong.Contains(tu) ||
-                                              o.NguyenVong.Contains(tu) ||
-                                              o.ThoiGianLamViec.Contains(tu) ||
-                                              o.LuongMongMuon.Contains(tu) ||
-                                              o.ChucDanh.Contains(tu)
-                                          )
-                                          select o;
-
-                    if (dsHoSoTuyenDung != null)
+                    HOSOTUYENDUNG hoSoTuyenDung = db.HOSOTUYENDUNGs.SingleOrDefault(t => t.MaTinRaoVat.Value == tin.MaTinRaoVat);
+                    if (hoSoTuyenDung != null)
                     {
-                        dsTinRaoVatTimDuoc.Add(tin);
-                        dsTinRaoVatKhongThoa.Remove(tin);
+                        if (hoSoTuyenDung.HoTen.Contains(tu) ||
+                              hoSoTuyenDung.QuocTich.Contains(tu) ||
+                              hoSoTuyenDung.DiaChiLienLac.Contains(tu) ||
+                              hoSoTuyenDung.SoDienThoai.Contains(tu) ||
+                              hoSoTuyenDung.DiDong.Contains(tu) ||
+                              hoSoTuyenDung.Email.Contains(tu) ||
+                              hoSoTuyenDung.ThongTinHocVan.Contains(tu) ||
+                              hoSoTuyenDung.BangCap.Contains(tu) ||
+                              hoSoTuyenDung.NgoaiNgu.Contains(tu) ||
+                              hoSoTuyenDung.KyNang.Contains(tu) ||
+                              hoSoTuyenDung.CapBac.Contains(tu) ||
+                              hoSoTuyenDung.CongTyLamViec.Contains(tu) ||
+                              hoSoTuyenDung.ChucDanh.Contains(tu) ||
+                              hoSoTuyenDung.ChucDanh.Contains(tu) ||
+                              hoSoTuyenDung.TomTatKinhNghiem.Contains(tu) ||
+                              hoSoTuyenDung.MoTaCongViecLyTuong.Contains(tu) ||
+                              hoSoTuyenDung.NguyenVong.Contains(tu) ||
+                              hoSoTuyenDung.ThoiGianLamViec.Contains(tu) ||
+                              hoSoTuyenDung.LuongMongMuon.Contains(tu) ||
+                              hoSoTuyenDung.ChucDanh.Contains(tu))
+                        {
+                            dsTinRaoVatTimDuoc.Add(tin);
+                            dsTinRaoVatKhongThoa.Remove(tin);
 
-                        continue;
+                            continue;
+                        }
                     }
+
+                    //var dsHoSoTuyenDung = from o in db.HOSOTUYENDUNGs
+                    //                      where o.MaTinRaoVat == tin.MaTinRaoVat &&
+                    //                      (
+                    //                          o.HoTen.Contains(tu) ||
+                    //                          o.QuocTich.Contains(tu) ||
+                    //                          o.DiaChiLienLac.Contains(tu) ||
+                    //                          o.SoDienThoai.Contains(tu) ||
+                    //                          o.DiDong.Contains(tu) ||
+                    //                          o.Email.Contains(tu) ||
+                    //                          o.ThongTinHocVan.Contains(tu) ||
+                    //                          o.BangCap.Contains(tu) ||
+                    //                          o.NgoaiNgu.Contains(tu) ||
+                    //                          o.KyNang.Contains(tu) ||
+                    //                          o.CapBac.Contains(tu) ||
+                    //                          o.CongTyLamViec.Contains(tu) ||
+                    //                          o.ChucDanh.Contains(tu) ||
+                    //                          o.ChucDanh.Contains(tu) ||
+                    //                          o.TomTatKinhNghiem.Contains(tu) ||
+                    //                          o.MoTaCongViecLyTuong.Contains(tu) ||
+                    //                          o.NguyenVong.Contains(tu) ||
+                    //                          o.ThoiGianLamViec.Contains(tu) ||
+                    //                          o.LuongMongMuon.Contains(tu) ||
+                    //                          o.ChucDanh.Contains(tu)
+                    //                      )
+                    //                      select o;
+
+                    //if (dsHoSoTuyenDung != null)
+                    //{
+                    //    dsTinRaoVatTimDuoc.Add(tin);
+                    //    dsTinRaoVatKhongThoa.Remove(tin);
+
+                    //    continue;
+                    //}
                 }
             }
 

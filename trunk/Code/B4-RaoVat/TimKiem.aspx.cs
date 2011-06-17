@@ -11,16 +11,21 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        SearchResult.ParameterList.Clear();
-        Parameter parameter = new Parameter("tuKhoa", TypeCode.String, txtTimKiem.Text);
-        SearchResult.ParameterList.Add(parameter);
+        string tuKhoa = txtTimKiem.Text;
+        TimKiem(tuKhoa);
     }
     protected void btnTim_Click(object sender, EventArgs e)
     {
-        SearchResult.ParameterList.Clear();
-        Parameter parameter = new Parameter("tuKhoa", TypeCode.String, txtTimKiem.Text);
-        SearchResult.ParameterList.Add(parameter);
+        string tuKhoa = txtTimKiem.Text;
+        TimKiem(tuKhoa);
 
         SearchResult.DataBind();
+    }
+
+    public void TimKiem(string tuKhoa)
+    {
+        SearchResult.ParameterList.Clear();
+        Parameter parameter = new Parameter("tuKhoa", TypeCode.String, tuKhoa);
+        SearchResult.ParameterList.Add(parameter);
     }
 }

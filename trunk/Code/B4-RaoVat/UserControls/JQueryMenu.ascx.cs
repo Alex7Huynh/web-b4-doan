@@ -13,8 +13,11 @@ public partial class UserControls_JQueryMenu : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //LiteralJQueryMenu.Text = LoadStyle();
-        LiteralJQueryMenu.Text += LoadMenu();
+        if (LiteralJQueryMenu.Text == "" || LiteralJQueryMenu.Text == null)
+        {
+            //LiteralJQueryMenu.Text = LoadStyle();
+            LiteralJQueryMenu.Text += LoadMenu();
+        }
     }
 
     private string LoadStyle()
