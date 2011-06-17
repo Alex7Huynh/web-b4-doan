@@ -75,15 +75,15 @@
                                 ForeColor="White" meta:resourcekey="RegisterLinkResource1">Register</asp:HyperLink>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            Welcome,
-                            <asp:LoginName ID="MemberName" runat="server" ForeColor="White" meta:resourcekey="MemberNameResource1" />
-                            <asp:LoginStatus ID="MemberLoginStatus" runat="server" ForeColor="White" meta:resourcekey="MemberLoginStatusResource1" />
+                            Welcome, 
+                            <%-- <asp:LoginName ID="MemberName" runat="server" ForeColor="White" meta:resourcekey="MemberNameResource1" />
+                            <asp:LoginStatus ID="MemberLoginStatus" runat="server" ForeColor="White" meta:resourcekey="MemberLoginStatusResource1" />--%>
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </div>
                 <div id="nav_dangtin">
-                    <asp:Label ID="lblUserNameMP" runat="server" Text="Label" meta:resourcekey="lblUserNameMPResource1"></asp:Label>
-                    &nbsp;
+                    <asp:Label ID="lblWelcome" runat="server" Font-Names="Tahoma" Font-Size="10pt"></asp:Label>
+                &nbsp;
                     <asp:LinkButton ID="linkbntDangXuat" runat="server" Font-Names="Tahoma" Font-Size="10pt"
                         OnClick="linkbntDangXuat_Click" ForeColor="White" meta:resourcekey="linkbntDangXuatResource1">Đăng Xuất</asp:LinkButton>
                     &nbsp;
