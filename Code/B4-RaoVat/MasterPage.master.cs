@@ -10,6 +10,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Khi load lan dau tien thi hien thi ten user la khach
+        ViewUserName();
         ThayDoiURLChonNgonNgu();
         KhoiTaoGiaoDien();
     }
@@ -19,7 +21,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     protected void linkbntDangXuat_Click(object sender, EventArgs e)
     {
-        lblUserNameMP.Text = "Guest-Khách";
+        
+        lblWelcome.Text = "Guest-Khách";
         Session["UserName"] = null;
     }
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
@@ -55,6 +58,15 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         imgBanner.ImageUrl = Banner.DuongDanBannerGiaoDien;
         imgLogo.ImageUrl = Logo.DuongDanLogo;
-        
+
+    }
+    private void ViewUserName()
+    {
+        if (Session["UserName"] != null)
+        {
+            lblWelcome.Text = Session["UserName"] as string;
+        }
+        else
+            lblWelcome.Text = "Guest-Khách";
     }
 }
