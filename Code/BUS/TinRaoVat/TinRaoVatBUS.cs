@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using DAO;
 
@@ -51,6 +52,11 @@ namespace BUS
         public static NGUOIDUNG LayNguoiDung(int maTinRaoVat)
         {
             return TinRaoVatDAO.LayNguoiDung(maTinRaoVat);
+        }
+
+        public static List<TINRAOVAT> TimKiem(string tuKhoa)
+        {
+            return TinRaoVatDAO.TimKiem(tuKhoa);
         }
     }
 }
