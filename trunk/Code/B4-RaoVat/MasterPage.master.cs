@@ -59,7 +59,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     private void KhoiTaoGiaoDien()
     {
         CHITIETGIAODIEN ChiTietGiaoDien = ChiTietGiaoDienBUS.TimChiTietGiaoDienTheoMa(1);
-        BANNERGIAODIEN Banner = BannerBUS.TimBannerTheoMa(ChiTietGiaoDien.MaBannerGiaoDien.Value);
+        BANNERGIAODIEN Banner = new BANNERGIAODIEN();
+            Banner = BannerBUS.TimBannerTheoMa(ChiTietGiaoDien.MaBannerGiaoDien.Value);
         LOGO Logo = LogoBUS.TimLogoTheoMa(ChiTietGiaoDien.MaLogo.Value);
 
         imgBanner.ImageUrl = Banner.DuongDanBannerGiaoDien;

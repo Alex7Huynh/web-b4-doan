@@ -7,7 +7,8 @@
             onselectedindexchanged="FeaturedAdGrid_SelectedIndexChanged" 
             AllowPaging="True" BorderStyle="None" BackColor="White" 
             BorderColor="#999999" CellPadding="3" GridLines="Vertical" 
-            meta:resourcekey="FeaturedAdGridResource1" Width="572px">
+            meta:resourcekey="FeaturedAdGridResource1" Width="572px" 
+    style="margin-right: 0px">
 		    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
 		    <EmptyDataTemplate>
 			    You have no currently active ads.

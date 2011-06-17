@@ -11,4 +11,12 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
+    protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void LinqDataSource1_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+    {
+        
+    }
 }

@@ -110,9 +110,7 @@
     <div id="footer-bgcontent">
         <div id="footer">
             <p>
-                Copyright (c) 2008 B4-StarFish. All rights reserved.
                 <br />
-                Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.</p>
             <asp:Label ID="Copyright" runat="server" 
                 Text="Copyright (c) 2008 B4-StarFish. All rights reserved." Width="280px" 
                 Height="16px"></asp:Label>

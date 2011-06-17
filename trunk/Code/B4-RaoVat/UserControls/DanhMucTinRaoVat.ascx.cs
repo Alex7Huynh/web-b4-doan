@@ -58,4 +58,8 @@ public partial class UserControl_TinRaoVatMoiNhat : System.Web.UI.UserControl
     {
 
     }
+    protected void lqTinRaoVatMoiNhat_Selecting(object sender, LinqDataSourceSelectEventArgs e)
+    {
+
+    }
 }
