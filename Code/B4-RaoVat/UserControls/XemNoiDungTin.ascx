@@ -11,9 +11,10 @@
     }
     .style3
     {
-        width: 686px;
+        width: 592px;
         margin-right: 3px;
         border: Ridge 1px green;
+        height: 752px;
     }
     .style4
     {
@@ -31,12 +32,16 @@
     {
         width: 215px;
     }
+    .style8
+    {
+        width: 268435360px;
+    }
 </style>
 <div>
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="ThuongView" runat="server">
             &nbsp;
-            <table cellpadding="4" cellspacing="4" class="style3">
+            <table cellpadding="4" cellspacing="4" >
                 <tr align="center">
                     <td colspan="4">
                         <b>Nội Dung</b>
@@ -67,7 +72,7 @@
                         <asp:Button ID="btnChinhSua" runat="server" onclick="btnChinhSua_Click" 
                             Text="Chỉnh sửa" />
                     </td>
-                    <td align="center" class="style5">
+                    <td align="center" class="style8">
                         <asp:Button ID="btnBaoCaoViPham" runat="server" onclick="btnBaoCaoViPham_Click" 
                             Text="Báo cáo bài viết vi phạm" />
                     </td>
@@ -80,10 +85,11 @@
                 </tr>
                 <tr>
                     <td class="style5" colspan="4">
-                        <asp:DataList ID="DataList1" runat="server" DataSourceID="BaiTraLoi" Width="231px">
+                        <asp:DataList ID="DataList1" runat="server" DataSourceID="BaiTraLoi" 
+                            Width="205px">
                             <ItemTemplate>
-                                <asp:Panel runat="server" ID="pnTraLoi1" BorderStyle="Inset" BorderColor="Blue"
-                                    Width="600px">
+                                <asp:Panel runat="server" ID="pnTraLoi1" BorderStyle="Groove" BorderColor="#656598"
+                                    Width="542px">
                                     Thời gian trả lời:
                                     <asp:Label ID="ThoiGianTraLoiLabel" runat="server" Text='<%# Eval("ThoiGianTraLoi") %>' />
                                     <br />
@@ -412,8 +418,8 @@
                     <td class="style2" colspan="2">
                         <asp:DataList ID="DataList2" runat="server" DataSourceID="BaiTraLoi" Width="231px">
                             <ItemTemplate>
-                                <asp:Panel runat="server" ID="pnTraLoi2" BorderStyle="Double" BorderColor="Blue"
-                                    Width="600px">
+                                <asp:Panel runat="server" ID="pnTraLoi2" BorderStyle="Groove" BorderColor="#656598"
+                                    Width="542px">
                                     Thời gian trả lời:
                                     <asp:Label ID="ThoiGianTraLoiLabel" runat="server" Text='<%# Eval("ThoiGianTraLoi") %>' />
                                     <br />
@@ -607,8 +613,8 @@
                     <td class="style2" colspan="2">
                         <asp:DataList ID="DataList3" runat="server" DataSourceID="BaiTraLoi" Width="231px">
                             <ItemTemplate>
-                                <asp:Panel runat="server" ID="pnTraLoi3" BorderStyle="Double" BorderColor="Blue"
-                                    Width="600px">
+                                <asp:Panel runat="server" ID="pnTraLoi3" BorderStyle="Groove" BorderColor="#656598"
+                                    Width="542px">
                                     Thời gian trả lời:
                                     <asp:Label ID="ThoiGianTraLoiLabel" runat="server" Text='<%# Eval("ThoiGianTraLoi") %>' />
                                     <br />
@@ -844,8 +850,8 @@
                     <td class="style2" colspan="2">
                         <asp:DataList ID="DataList4" runat="server" DataSourceID="BaiTraLoi" Width="231px">
                             <ItemTemplate>
-                                <asp:Panel runat="server" ID="pnTraLoi4" BorderStyle="Double" BorderColor="Blue"
-                                    Width="600px">
+                                <asp:Panel runat="server" ID="pnTraLoi4" BorderStyle="Groove" BorderColor="#656598"
+                                    Width="542px">
                                     Thời gian trả lời:
                                     <asp:Label ID="ThoiGianTraLoiLabel" runat="server" Text='<%# Eval("ThoiGianTraLoi") %>' />
                                     <br />

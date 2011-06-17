@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DangKi.aspx.cs" Inherits="Default2" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
+
     <asp:CreateUserWizard ID="userDangKy" runat="server" 
         AnswerLabelText="Câu Trả Lời Bảo Mật:" 
         CompleteSuccessText="Tài khoản của bạn đã tạo thành công. Xin hãy đăng nhập để sữ dụng các dịch vụ có 1 không hai của chúng tôi. Đội phát triển website RaoVat." 
@@ -44,11 +45,11 @@
         <CreateUserButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" 
             BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
             ForeColor="#284775" />
-        <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <StepStyle BorderWidth="0px" />
+        <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
         <WizardSteps>
-            <asp:CreateUserWizardStep runat="server" Title="Đăng Ký Tài Khoản Mới." 
-                meta:resourcekey="CreateUserWizardStepResource1" >
+            <asp:CreateUserWizardStep runat="server" 
+                meta:resourceKey="CreateUserWizardStepResource1" Title="Đăng Ký Tài Khoản Mới.">
                 <ContentTemplate>
                     <table border="0" style="font-family:Tahoma;font-size:100%;width:689px;">
                         <tr>
@@ -65,8 +66,8 @@
                                 <asp:TextBox ID="UserName" runat="server" meta:resourcekey="UserNameResource1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
                                     ControlToValidate="UserName" ErrorMessage="Tên người dùng yêu cầu." 
-                                    ToolTip="Tên người dùng yêu cầu." ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="UserNameRequiredResource1">Cần điền tên người dùng</asp:RequiredFieldValidator>
+                                    meta:resourcekey="UserNameRequiredResource1" ToolTip="Tên người dùng yêu cầu." 
+                                    ValidationGroup="CreateUserWizard1">Cần điền tên người dùng</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -75,12 +76,12 @@
                                     meta:resourcekey="PasswordLabelResource1">Mật Khẩu:</asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="Password" runat="server" TextMode="Password" 
-                                    meta:resourcekey="PasswordResource1"></asp:TextBox>
+                                <asp:TextBox ID="Password" runat="server" meta:resourcekey="PasswordResource1" 
+                                    TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" 
                                     ControlToValidate="Password" ErrorMessage="Yêu cầu mật khẩu." 
-                                    ToolTip="Yêu cầu mật khẩu." ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="PasswordRequiredResource1">Cần điền mật khẩu.</asp:RequiredFieldValidator>
+                                    meta:resourcekey="PasswordRequiredResource1" ToolTip="Yêu cầu mật khẩu." 
+                                    ValidationGroup="CreateUserWizard1">Cần điền mật khẩu.</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -90,12 +91,12 @@
                                     meta:resourcekey="ConfirmPasswordLabelResource1">Điền Lại Mật Khẩu:</asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" 
-                                    meta:resourcekey="ConfirmPasswordResource1"></asp:TextBox>
+                                <asp:TextBox ID="ConfirmPassword" runat="server" 
+                                    meta:resourcekey="ConfirmPasswordResource1" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" 
                                     ControlToValidate="ConfirmPassword" ErrorMessage="Đánh lại mật khẩu." 
-                                    ToolTip="Đánh lại mật khẩu." ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="ConfirmPasswordRequiredResource1">Cần điền lại mật khẩu.</asp:RequiredFieldValidator>
+                                    meta:resourcekey="ConfirmPasswordRequiredResource1" 
+                                    ToolTip="Đánh lại mật khẩu." ValidationGroup="CreateUserWizard1">Cần điền lại mật khẩu.</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -107,21 +108,21 @@
                                 <asp:TextBox ID="Email" runat="server" meta:resourcekey="EmailResource1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" 
                                     ControlToValidate="Email" ErrorMessage="Yêu cầu e-mail." 
-                                    ToolTip="Yêu cầu e-mail." ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="EmailRequiredResource1">Cần điền địa chỉ e-mail.</asp:RequiredFieldValidator>
+                                    meta:resourcekey="EmailRequiredResource1" ToolTip="Yêu cầu e-mail." 
+                                    ValidationGroup="CreateUserWizard1">Cần điền địa chỉ e-mail.</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
+                            <td align="right" style="height: 29px">
                                 <asp:Label ID="QuestionLabel" runat="server" AssociatedControlID="Question" 
                                     meta:resourcekey="QuestionLabelResource1">Câu Hỏi Bảo Mật:</asp:Label>
                             </td>
-                            <td>
+                            <td style="height: 29px">
                                 <asp:TextBox ID="Question" runat="server" meta:resourcekey="QuestionResource1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="QuestionRequired" runat="server" 
                                     ControlToValidate="Question" ErrorMessage="Yêu cầu câu hỏi bảo mật." 
-                                    ToolTip="Yêu cầu câu hỏi bảo mật." ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="QuestionRequiredResource1">Câu hỏi bảo mật.</asp:RequiredFieldValidator>
+                                    meta:resourcekey="QuestionRequiredResource1" ToolTip="Yêu cầu câu hỏi bảo mật." 
+                                    ValidationGroup="CreateUserWizard1">Câu hỏi bảo mật.</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -133,22 +134,22 @@
                                 <asp:TextBox ID="Answer" runat="server" meta:resourcekey="AnswerResource1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" 
                                     ControlToValidate="Answer" ErrorMessage="Trả lời câu hỏi bảo mật." 
-                                    ToolTip="Trả lời câu hỏi bảo mật." ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="AnswerRequiredResource1">Câu trả lời bảo mật.</asp:RequiredFieldValidator>
+                                    meta:resourcekey="AnswerRequiredResource1" ToolTip="Trả lời câu hỏi bảo mật." 
+                                    ValidationGroup="CreateUserWizard1">Câu trả lời bảo mật.</asp:RequiredFieldValidator>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td align="right">
                                 <asp:Label ID="lblLuaChon" runat="server" 
                                     meta:resourcekey="lblLuaChonResource1">Lựa chọn khác:</asp:Label>
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
-                                &nbsp;</td>
-                            <td>
-                                <asp:CheckBox ID="cboxGiauEmail" runat="server" Text="Giấu Email của tôi." 
-                                    meta:resourcekey="cboxGiauEmailResource1" />
+                            <td align="right" style="height: 25px">
+                            </td>
+                            <td style="height: 25px">
+                                <asp:CheckBox ID="cboxGiauEmail" runat="server" 
+                                    meta:resourcekey="cboxGiauEmailResource1" Text="Giấu Email của tôi." />
                             </td>
                         </tr>
                         <tr>
@@ -156,8 +157,8 @@
                                 &nbsp;</td>
                             <td>
                                 <asp:CheckBox ID="cboxDangKy" runat="server" 
-                                    Text="Đăng ký email để nhận tin rao vặt mới theo từng mục hay tất cả." 
-                                    meta:resourcekey="cboxDangKyResource1" />
+                                    meta:resourcekey="cboxDangKyResource1" 
+                                    Text="Đăng ký email để nhận tin rao vặt mới theo từng mục hay tất cả." />
                             </td>
                         </tr>
                         <tr>
@@ -165,24 +166,23 @@
                                 <asp:CompareValidator ID="PasswordCompare" runat="server" 
                                     ControlToCompare="Password" ControlToValidate="ConfirmPassword" 
                                     Display="Dynamic" ErrorMessage="Mật khẩu cần phải giống nhau." 
-                                    ValidationGroup="CreateUserWizard1" 
-                                    meta:resourcekey="PasswordCompareResource1"></asp:CompareValidator>
+                                    meta:resourcekey="PasswordCompareResource1" ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
                             </td>
                         </tr>
                         <tr>
                             <td align="center" colspan="2" style="color:Red;">
                                 <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False" 
-                                    Text="Các thông tin nhập vào chưa chính xác." 
-                                    meta:resourcekey="ErrorMessageResource1"></asp:Literal>
+                                    meta:resourcekey="ErrorMessageResource1" 
+                                    Text="Các thông tin nhập vào chưa chính xác."></asp:Literal>
                             </td>
                         </tr>
                     </table>
                 </ContentTemplate>
             </asp:CreateUserWizardStep>
             <asp:CompleteWizardStep runat="server" 
-                
-                Title="Xin chúc mừng quý khách. Chào mừng đến với website RaoVat của chúng tôi. Chúng tôi đặt lòng tin lên làm đầu." 
-                meta:resourcekey="CompleteWizardStepResource1" />
+                meta:resourceKey="CompleteWizardStepResource1" 
+                Title="Xin chúc mừng quý khách. Chào mừng đến với website RaoVat của chúng tôi. Chúng tôi đặt lòng tin lên làm đầu.">
+            </asp:CompleteWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
 </asp:Content>

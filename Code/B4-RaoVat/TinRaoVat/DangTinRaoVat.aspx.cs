@@ -37,25 +37,58 @@ public partial class DangTinRaoVat : BUS.BasePage
             DanhMucCon = DanhMucConBUS.TimDanhMucConTheoMa(MaDanhMucCon).TenDanhMucCon.Trim();
         }
         //Hiển thị view tương ứng với chuyên mục
+        NGUOIDUNG nguoidung = new NGUOIDUNG();
+        if (Session["UserName"] != null)
+            nguoidung = NguoiDungBUS.LayNguoiDungTheoTen(Session["UserName"].ToString());
+        
         if (ChuyenMuc == "1")
         {
             MultiView1.SetActiveView(View1);
             InitFirstView();
+            
+            if (nguoidung.MaLoaiNguoiDung == 2)
+            {
+                lb_dangbaitudong1.Visible = true;
+                tb_thoigiandangtintudong1.Visible = true;
+                lb_thongbaodv1.Visible = true;
+            }
+            
         }
         else if (ChuyenMuc == "2")
         {
             MultiView1.SetActiveView(View2);
             InitSecondView();
+
+            if (nguoidung.MaLoaiNguoiDung == 2)
+            {
+                lb_dangbaitudong2.Visible = true;
+                tb_thoigiandangtintudong2.Visible = true;
+                lb_thongbaodv2.Visible = true;
+            }
         }
         else if (ChuyenMuc == "3")
         {
             MultiView1.SetActiveView(View3);
             InitThirdView();
+
+            if (nguoidung.MaLoaiNguoiDung == 2)
+            {
+                lb_dangbaitudong3.Visible = true;
+                tb_thoigiandangtintudong3.Visible = true;
+                lb_thongbaodv3.Visible = true;
+            }
         }
         else if (ChuyenMuc == "4")
         {
             MultiView1.SetActiveView(View4);
             InitFourthView();
+
+            if (nguoidung.MaLoaiNguoiDung == 2)
+            {
+                lb_dangbaitudong4.Visible = true;
+                tb_thoigiandangtintudong4.Visible = true;
+                lb_thongbaodv4.Visible = true;
+            }
         }
     }
     /// <summary>
@@ -142,13 +175,14 @@ public partial class DangTinRaoVat : BUS.BasePage
             TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem1.SelectedValue).MaDiaDiem;
             TinRaoVat.SoLanXem = 0;
             ////Mã người dùng
-            if (Session["userID"] != null)
-            {
-                int userID = int.Parse(Session["userID"].ToString());
-                TinRaoVat.MaNguoiDung = userID;
-            }
-            else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+            NGUOIDUNG nguoidung = new NGUOIDUNG();
+            if (Session["UserName"] == null)
+                Response.Redirect("~/TaiKhoan/DangNhap.aspx");
 
+            if (Session["UserName"] != null)
+                nguoidung = NguoiDungBUS.LayNguoiDungTheoTen(Session["UserName"].ToString());
+
+            TinRaoVat.MaNguoiDung = nguoidung.MaNguoiDung;
             TinRaoVat.MaDanhMucCon = MaDanhMucCon;
             TinRaoVat.TieuDe = txtTieuDe1.Text;
             //Thumbnail            
@@ -166,6 +200,7 @@ public partial class DangTinRaoVat : BUS.BasePage
                     Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
                 }
             }
+
             TinRaoVat.Deleted = false;
             if (!TinRaoVatBUS.ThemTinRaoVat(TinRaoVat))
             {
@@ -178,12 +213,30 @@ public partial class DangTinRaoVat : BUS.BasePage
             TinRaoVatThuong.NoiDungTinRaoVat = Editor1.Content;
             TinRaoVatThuong.Gia = int.Parse(txtGia1.Text);            
             TinRaoVatThuong.Deleted = false;
+           
+
             if (!TinRaoVatThuongBUS.ThemTinRaoVatThuong(TinRaoVatThuong))
             {
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
+            if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong1.Text != "")
+            {
+                double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong1.Text);
+                thoigiandangtudong = thoigiandangtudong * 30000;
+                //TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 1, 0);
+                //taskscheduler.StartTask();
+
+            }
+
+            
             //Thêm thành công
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
+                
+            
+              
+            
+
+            
         }
         
     }
@@ -204,13 +257,16 @@ public partial class DangTinRaoVat : BUS.BasePage
             TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem2.SelectedValue).MaDiaDiem;
             TinRaoVat.SoLanXem = 0;
             ////Mã người dùng
-            if (Request.Cookies["userID"] != null)
-            {
-                int userID = int.Parse(Request.Cookies["userID"].Value);
-                TinRaoVat.MaNguoiDung = userID;
-            }
-            else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+            NGUOIDUNG nguoidung = new NGUOIDUNG();
+            if (Session["UserName"] == null)
+                Response.Redirect("~/TaiKhoan/DangNhap.aspx");
 
+            if (Session["UserName"] != null)
+                nguoidung = NguoiDungBUS.LayNguoiDungTheoTen(Session["UserName"].ToString());
+
+            TinRaoVat.MaNguoiDung = nguoidung.MaNguoiDung;
+
+           
             TinRaoVat.MaDanhMucCon = MaDanhMucCon;
             TinRaoVat.TieuDe = txtTieuDe2.Text;
             //Thumbnail            
@@ -295,12 +351,16 @@ public partial class DangTinRaoVat : BUS.BasePage
         TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem3.SelectedValue).MaDiaDiem;
         TinRaoVat.SoLanXem = 0;
         ////Mã người dùng
-        if (Request.Cookies["userID"] != null)
-        {
-            int userID = int.Parse(Request.Cookies["userID"].Value);
-            TinRaoVat.MaNguoiDung = userID;
-        }
-        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+        NGUOIDUNG nguoidung = new NGUOIDUNG();
+        if (Session["UserName"] == null)
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
+
+        if (Session["UserName"] != null)
+            nguoidung = NguoiDungBUS.LayNguoiDungTheoTen(Session["UserName"].ToString());
+
+        TinRaoVat.MaNguoiDung = nguoidung.MaNguoiDung;
+
+        
 
         TinRaoVat.MaDanhMucCon = MaDanhMucCon;
         TinRaoVat.TieuDe = txtTieuDe3.Text;
@@ -371,12 +431,14 @@ public partial class DangTinRaoVat : BUS.BasePage
         TinRaoVat.MaDiaDiem = DiaDiemBUS.TimDiaDiemTheoTen(ddlDiaDiem4.SelectedValue).MaDiaDiem;
         TinRaoVat.SoLanXem = 0;
         ////Mã người dùng
-        if (Request.Cookies["userID"] != null)
-        {
-            int userID = int.Parse(Request.Cookies["userID"].Value);
-            TinRaoVat.MaNguoiDung = userID;
-        }
-        else { Response.Redirect("~/TaiKhoan/DangNhap.aspx"); }
+        NGUOIDUNG nguoidung = new NGUOIDUNG();
+        if (Session["UserName"] == null)
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
+
+        if (Session["UserName"] != null)
+            nguoidung = NguoiDungBUS.LayNguoiDungTheoTen(Session["UserName"].ToString());
+
+        TinRaoVat.MaNguoiDung = nguoidung.MaNguoiDung;
 
         TinRaoVat.MaDanhMucCon = MaDanhMucCon;
         TinRaoVat.TieuDe = txtTieuDe4.Text;
