@@ -37,18 +37,43 @@ public partial class Default2 : BUS.BasePage
     }
     protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
     {
-        RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+        //RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
 
-        if (db.NGUOIDUNGs.Where(p => p.TenNguoiDung == this.Login1.UserName && p.MatKhau == this.Login1.Password).Count() == 1)
-        {            
-            e.Authenticated = true;
-            //if (PrevPage != string.Empty)
-            //    Response.Redirect(PrevPage);
-            //else
-            //    Response.Redirect("/B4-RaoVat/Default.aspx");
+        //if (db.NGUOIDUNGs.Where(p => p.TenNguoiDung == this.Login1.UserName && p.MatKhau == this.Login1.Password).Count() == 1)
+        //{            
+        //    e.Authenticated = true;
+        //    //if (PrevPage != string.Empty)
+        //    //    Response.Redirect(PrevPage);
+        //    //else
+        //    //    Response.Redirect("/B4-RaoVat/Default.aspx");
+        //}
+        //else
+        //    e.Authenticated = false;
+
+        if (Login1.UserName != "")
+        {
+            NGUOIDUNG NguoiDung = new NGUOIDUNG();
+            NguoiDung = NguoiDungDAO.LayNguoiDungTheoTen(Login1.UserName.ToString().Trim());
+            if (NguoiDung.Deleted == true)
+            {
+                Login1.FailureText = "Tài Khoản này đã bị admin xóa, do qui phạm qui định của diễn đang.\n Xin vui lòng đăng ký tài khoản khác.";
+            }
+            else
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                if (db.NGUOIDUNGs.Where(p => p.TenNguoiDung == this.Login1.UserName && p.MatKhau == this.Login1.Password).Count() == 1)
+                {
+                    e.Authenticated = true;
+                    //if(PrevPage != string.Empty)
+                    // Response.Redirect(PrevPage);
+                    //else
+                    //Response.Redirect("/B4-RaoVat/Default.aspx");
+                }
+                else
+                    e.Authenticated = false;
+            }
         }
-        else
-            e.Authenticated = false;
+
     }
     protected void lbntDangXuat_Click(object sender, EventArgs e)
     {
