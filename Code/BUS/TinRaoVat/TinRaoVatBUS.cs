@@ -56,6 +56,10 @@ namespace BUS
 
         public static List<TINRAOVAT> TimKiem(string tuKhoa)
         {
+            if (tuKhoa == "" || tuKhoa == null)
+            {
+                return new List<TINRAOVAT>();
+            }
             return TinRaoVatDAO.TimKiem(tuKhoa);
         }
     }

@@ -2,12 +2,12 @@
 <%@ Register TagPrefix="uc1" TagName="DanhMucTinRaoVat" Src="UserControls/DanhMucTinRaoVat.ascx" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <table style="width: 84%; background-color: #EAFFFF;">
+    <table style="width: 98%; background-color: #EAFFFF;">
         <tr>
             <td>
                 <asp:Label ID="Label1" runat="server" Text="Tìm kiếm" ForeColor="#003399"></asp:Label>
             </td>
-            <td>
+            <td style="width: 420px">
                 <asp:TextBox ID="txtTimKiem" runat="server" Width="300px" ForeColor="#003399"></asp:TextBox>
                 <asp:Button ID="btnTim" runat="server" BackColor="#FF9933" 
                     BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
@@ -20,7 +20,7 @@
         </tr>
     </table>
     <uc1:DanhMucTinRaoVat ID="SearchResult" runat="server" AutoNavigate="True" TypeName="BUS.TinRaoVatBUS" 
-        SelectMethod="LayDanhSachTinRaoVatTheoNoiDung">
+        SelectMethod="TimKiem">
     </uc1:DanhMucTinRaoVat>
 </asp:Content>
 
