@@ -5,7 +5,7 @@
     <table style="width: 98%; background-color: #EAFFFF;">
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Tìm kiếm" ForeColor="#003399"></asp:Label>
+                <asp:Label ID="lblTimKiem" runat="server" Text="Tìm kiếm" ForeColor="#003399"></asp:Label>
             </td>
             <td style="width: 420px">
                 <asp:TextBox ID="txtTimKiem" runat="server" Width="300px" ForeColor="#003399"></asp:TextBox>

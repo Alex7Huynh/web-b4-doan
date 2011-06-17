@@ -424,10 +424,12 @@ h3.section
 
 /* Footer */
 
-#footer-bgcontent {
-	margin: 0px;
-	padding: 0px;
-	background: url(images/img02.jpg) repeat-x left top;
+#footer-bgcontent
+{
+    background-position: left top;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    background: url(images/img02.jpg) repeat-x left top;
 }
 
 #footer {
@@ -435,16 +437,5 @@ h3.section
 	height: 49px;
 	margin: 0 auto;
 	background: url(images/img03.jpg) no-repeat left top;
-}
-
-#footer p {
-	margin: 0;
-	padding-right: 30px;
-	text-align: right;
-	line-height: normal;
-	font-size: 10px;
-}
-
-#footer a {
 }
 

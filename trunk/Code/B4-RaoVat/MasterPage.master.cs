@@ -75,4 +75,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         else
             lblWelcome.Text = "Guest-Khách";
     }
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/B4-RaoVat/TimKiem.aspx?search=" + txtTimKiemMaster.Text);
+    }
 }
