@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap>
-  <siteMapNode url="Default.aspx" title="Home" roles="*">
-    <siteMapNode url="~/" title="Thông Tin" roles="*">
+  <siteMapNode title="Home" roles="*">
+    <siteMapNode title="Thông Tin" roles="*">
       <siteMapNode url="HuongDan.aspx" title="Hướng Dẫn"  roles="*"/>
-      <siteMapNode url="TimKiem.aspx" title="Tìm Kiếm" roles="*"/>
       <siteMapNode url="TimKiemNangCao.aspx" title="Tìm Kiếm Nâng Cao" roles="*"/>
-      <siteMapNode url="./TaiKhoan/XemTinNhan.aspx" title="Xem Tin Nhắn" roles="*"/>
-      <siteMapNode url="./TaiKhoan/NhanTin.aspx" title="Nhắn Tin" roles="*"/>
-      <siteMapNode url="./TaiKhoan/DangKiEmail.aspx" title="Đăng Kí Email" roles="*"/>
     </siteMapNode>
 
-    <siteMapNode url="TaiKhoan/TaiKhoan.aspx" title="Tài Khoản" roles="*">
+    <siteMapNode title="Tài Khoản" roles="*">
       <siteMapNode url="./TaiKhoan/DangKi.aspx" title="Đăng Kí" roles="*"/>
       <siteMapNode url="./TaiKhoan/DangNhap.aspx" title="Đăng Nhập" roles="*"/>
       <siteMapNode url="./TaiKhoan/QuenMatKhau.aspx" title="Quên Mật Khẩu" roles="*"/>
       <siteMapNode url="./TaiKhoan/XemThongTinTaiKhoan.aspx" title="Xem Thông Tin Tài Khoản" roles="*"/>
       <siteMapNode url="./TaiKhoan/BaoCaoNguoiDung.aspx" title="Báo Cáo Người Dùng Vi Phạm" roles="*"/>
+	  <siteMapNode url="./TaiKhoan/XemTinNhan.aspx" title="Xem Tin Nhắn" roles="*"/>
+	  <siteMapNode url="./TaiKhoan/NhanTin.aspx" title="Nhắn Tin" roles="*"/>
+	  <siteMapNode url="./TaiKhoan/DangKiEmail.aspx" title="Đăng Kí Email" roles="*"/>
     </siteMapNode>
 
     <siteMapNode title="Danh Mục" roles="*">
