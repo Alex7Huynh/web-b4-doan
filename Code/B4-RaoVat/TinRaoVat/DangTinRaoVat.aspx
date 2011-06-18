@@ -784,7 +784,7 @@
                         <asp:Label ID="Label131" runat="server" ForeColor="#003399" Style="font-weight: 700"
                             Text="* Tiêu đề" meta:resourcekey="Label131Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtTieuDe4" runat="server" ForeColor="#003399" Width="300px" meta:resourcekey="txtTieuDe4Resource1"></asp:TextBox>
                     </td>
                     <td>
@@ -803,7 +803,7 @@
                         <asp:Label ID="Label79" runat="server" ForeColor="#003399" Text="Xuất hiện hồ sơ của bạn trong trang người tìm việc :"
                             Style="font-weight: bold" meta:resourcekey="Label79Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <br />
                         <asp:CheckBox ID="ckbDongYHienThi" runat="server" Text="Đồng ý" meta:resourcekey="ckbDongYHienThiResource1" />
                     </td>
@@ -817,7 +817,7 @@
                         <asp:Label ID="Label81" runat="server" ForeColor="#003399" Text="Ngành nghề công việc bạn mong muốn làm việc :"
                             Style="font-weight: bold" meta:resourcekey="Label81Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px" align="left">
+                    <td style="width: 283px" align="left">
                         <asp:DropDownList ID="ddlNganhNghe4a" runat="server" DataSourceID="lqNganhNghe" meta:resourcekey="ddlNganhNghe4aResource1">
                         </asp:DropDownList>
                         <br />
@@ -842,7 +842,7 @@
                         <asp:Label ID="Label84" runat="server" ForeColor="#003399" Text="*Họ và tên:" Style="font-weight: bold"
                             meta:resourcekey="Label84Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtHoTen" runat="server" ForeColor="#003399" Width="300px" meta:resourcekey="txtHoTenResource1"></asp:TextBox>
                     </td>
                     <td>
@@ -855,7 +855,7 @@
                         <asp:Label ID="Label85" runat="server" ForeColor="#003399" Text="*Ngày sinh:" Style="font-weight: bold"
                             meta:resourcekey="Label85Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:Calendar ID="cldNgaySinh" runat="server" meta:resourcekey="cldNgaySinhResource1">
                         </asp:Calendar>
                     </td>
@@ -868,7 +868,7 @@
                         <asp:Label ID="Label86" runat="server" ForeColor="#003399" Text="*Giới tính:" Style="font-weight: bold"
                             meta:resourcekey="Label86Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:CheckBox ID="ckbGioiTinh" runat="server" Text="Nam" meta:resourcekey="ckbGioiTinhResource1" />
                     </td>
                     <td>
@@ -880,7 +880,7 @@
                         <asp:Label ID="Label87" runat="server" ForeColor="#003399" Text="*Tình trạng hôn nhân:"
                             Style="font-weight: bold" meta:resourcekey="Label87Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:CheckBox ID="ckbTinhTrangHonNhan" runat="server" Text="Đã kết hôn" meta:resourcekey="ckbTinhTrangHonNhanResource1" />
                     </td>
                     <td>
@@ -892,7 +892,7 @@
                         <asp:Label ID="Label88" runat="server" ForeColor="#003399" Text="*Quốc tịch:" Style="font-weight: bold"
                             meta:resourcekey="Label88Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtQuocTich" runat="server" ForeColor="#003399" Width="300px" meta:resourcekey="txtQuocTichResource1"></asp:TextBox>
                     </td>
                     <td>
@@ -911,7 +911,7 @@
                         <asp:Label ID="Label90" runat="server" ForeColor="#003399" Text="*Địa chỉ liên lạc:"
                             Style="font-weight: 700" meta:resourcekey="Label90Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtDiaChiLienLac" runat="server" ForeColor="#003399" Width="300px"
                             meta:resourcekey="txtDiaChiLienLacResource1"></asp:TextBox>
                     </td>
@@ -925,7 +925,7 @@
                         <asp:Label ID="Label92" runat="server" ForeColor="#003399" Text="*Số điện thoại liên lạc:"
                             Style="font-weight: 700" meta:resourcekey="Label92Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtDienThoai4" runat="server" ForeColor="#003399" Width="105px"
                             meta:resourcekey="txtDienThoai4Resource1"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDienThoai4" runat="server" ControlToValidate="txtDienThoai4"
@@ -940,7 +940,7 @@
                         <asp:Label ID="Label113" runat="server" ForeColor="#003399" Style="font-weight: 700"
                             Text="Di động:" meta:resourcekey="Label113Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtDiDong" runat="server" ForeColor="#003399" Width="105px" meta:resourcekey="txtDiDongResource1"></asp:TextBox>
                     </td>
                     <td>
@@ -952,7 +952,7 @@
                         <asp:Label ID="Label93" runat="server" ForeColor="#003399" Text="Địa chỉ email:"
                             Style="font-weight: 700" meta:resourcekey="Label93Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtEmail4" runat="server" ForeColor="#003399" Width="300px" meta:resourcekey="txtEmail4Resource1"></asp:TextBox>
                     </td>
                     <td>
@@ -973,7 +973,7 @@
                         <asp:Label ID="Label118" runat="server" ForeColor="#003399" Text="(Giới hạn 10.000 ký tự)
 	" meta:resourcekey="Label118Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtThongTinHocVan" runat="server" ForeColor="#003399" Height="116px"
                             TextMode="MultiLine" Width="293px" meta:resourcekey="txtThongTinHocVanResource1"></asp:TextBox>
                     </td>
@@ -987,7 +987,7 @@
                         <asp:Label ID="Label96" runat="server" ForeColor="#003399" Text="*Bằng cấp:" Style="font-weight: 700"
                             meta:resourcekey="Label96Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:DropDownList ID="ddlBangCap" runat="server" meta:resourcekey="ddlBangCapResource1">
                         </asp:DropDownList>
                     </td>
@@ -1000,7 +1000,7 @@
                         <asp:Label ID="Label97" runat="server" ForeColor="#003399" Text="Trình độ ngoại ngữ:"
                             meta:resourcekey="Label97Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtTrinhDoNgoaiNgu" runat="server" ForeColor="#003399" Width="300px"
                             meta:resourcekey="txtTrinhDoNgoaiNguResource1"></asp:TextBox>
                         <br />
@@ -1017,7 +1017,7 @@
                         <asp:Label ID="Label117" runat="server" ForeColor="#003399" Text="(Giới hạn 10.000 ký tự)
 	" meta:resourcekey="Label117Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtKyNang" runat="server" ForeColor="#003399" Height="116px" TextMode="MultiLine"
                             Width="298px" meta:resourcekey="txtKyNangResource1" Font-Size="X-Small"></asp:TextBox>
                     </td>
@@ -1039,7 +1039,7 @@
                         <asp:Label ID="Label99" runat="server" ForeColor="#003399" Text="*Cấp bậc:" Style="font-weight: 700"
                             meta:resourcekey="Label99Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:DropDownList ID="ddlCapBac" runat="server" meta:resourcekey="ddlCapBacResource1">
                         </asp:DropDownList>
                     </td>
@@ -1052,7 +1052,7 @@
                         <asp:Label ID="Label100" runat="server" ForeColor="#003399" Text="Số năm kinh nghiệm:"
                             meta:resourcekey="Label100Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtSoNamKinhNghiem" runat="server" ForeColor="#003399" Width="300px"
                             meta:resourcekey="txtSoNamKinhNghiemResource1">0</asp:TextBox>
                     </td>
@@ -1066,7 +1066,7 @@
                         <asp:Label ID="Label101" runat="server" ForeColor="#003399" Text="Công ty làm việc hiện tại:"
                             meta:resourcekey="Label101Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtCongTyLamViec" runat="server" ForeColor="#003399" Width="300px"
                             meta:resourcekey="txtCongTyLamViecResource1"></asp:TextBox>
                     </td>
@@ -1079,7 +1079,7 @@
                         <asp:Label ID="Label102" runat="server" ForeColor="#003399" Text="Chức danh gần đây nhất:"
                             meta:resourcekey="Label102Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:DropDownList ID="ddlChucDanh" runat="server" meta:resourcekey="ddlChucDanhResource1">
                         </asp:DropDownList>
                     </td>
@@ -1092,7 +1092,7 @@
                         <asp:Label ID="Label104" runat="server" ForeColor="#003399" Text="Tóm tắt kinh nghiệm:"
                             Style="font-weight: 700" meta:resourcekey="Label104Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtTomTatKinhNghiem" runat="server" ForeColor="#003399" Height="116px"
                             TextMode="MultiLine" Width="292px" meta:resourcekey="txtTomTatKinhNghiemResource1"></asp:TextBox>
                     </td>
@@ -1106,7 +1106,7 @@
                         <asp:Label ID="Label106" runat="server" ForeColor="#003399" Text="Mô tả công việc lý tưởng:
 	" meta:resourcekey="Label106Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtMoTaCongViecLyTuong" runat="server" ForeColor="#003399" Width="289px"
                             Height="116px" TextMode="MultiLine" meta:resourcekey="txtMoTaCongViecLyTuongResource1"></asp:TextBox>
                     </td>
@@ -1125,7 +1125,7 @@
                         <asp:Label ID="Label109" runat="server" ForeColor="#003399" Text="*Nguyện vọng:"
                             Style="font-weight: bold" meta:resourcekey="Label109Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtNguyenVong" runat="server" ForeColor="#003399" Width="281px"
                             Height="116px" TextMode="MultiLine" meta:resourcekey="txtNguyenVongResource1"
                             Style="margin-left: 2px"></asp:TextBox>
@@ -1140,7 +1140,7 @@
                         <asp:Label ID="Label111" runat="server" ForeColor="#003399" Style="font-weight: bold"
                             Text="*Thời gian làm việc:" meta:resourcekey="Label111Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:DropDownList ID="ddlThoiGianLamViec4" runat="server" meta:resourcekey="ddlThoiGianLamViec4Resource1">
                         </asp:DropDownList>
                     </td>
@@ -1153,7 +1153,7 @@
                         <asp:Label ID="Label112" runat="server" ForeColor="#003399" Text="*Mức lương:" Style="font-weight: bold"
                             meta:resourcekey="Label112Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtLuongMongMuon" runat="server" ForeColor="#003399" Width="300px"
                             meta:resourcekey="txtLuongMongMuonResource1"></asp:TextBox>
                     </td>
@@ -1166,7 +1166,7 @@
                     <td align="RIGHT" style="width: 119px">
                         <asp:Label ID="Label129" runat="server" ForeColor="#003399" Text="*Địa điểm" meta:resourcekey="Label129Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:DropDownList ID="ddlDiaDiem4" runat="server" DataSourceID="lqDiaDiem" ForeColor="#003399"
                             meta:resourcekey="ddlDiaDiem4Resource1">
                         </asp:DropDownList>
@@ -1180,7 +1180,7 @@
                         <asp:Label ID="Label121" runat="server" ForeColor="#003399" Text="Thời hạn lưu tin:"
                             meta:resourcekey="Label121Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:DropDownList ID="ddlThoiHanLuuTin4" runat="server" ForeColor="#003399" Width="100px"
                             meta:resourcekey="ddlThoiHanLuuTin4Resource1">
                         </asp:DropDownList>
@@ -1193,7 +1193,7 @@
                     <td align="RIGHT" style="width: 119px">
                         <asp:Label ID="Label125" runat="server" ForeColor="#003399" Text="Hình ảnh:" meta:resourcekey="Label125Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:FileUpload ID="fupHinhAnh4" runat="server" ForeColor="#003399" meta:resourcekey="fupHinhAnh4Resource1" />
                     </td>
                     <td>
@@ -1205,7 +1205,7 @@
                         <asp:Label ID="Label127" runat="server" ForeColor="#003399" Text="Ghi chú hình ảnh:"
                             meta:resourcekey="Label127Resource1"></asp:Label>
                     </td>
-                    <td style="width: 107px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtGhiChuAnh4" runat="server" meta:resourcekey="txtGhiChuAnh4Resource1"></asp:TextBox>
                     </td>
                     <td>
@@ -1217,7 +1217,7 @@
                         <asp:Label ID="lblThoiGianDangTuDong4" runat="server" 
                             Text="Thời gian đăng tự động (phút)"></asp:Label>
                     </td>
-                    <td style="width: 409px">
+                    <td style="width: 283px">
                         <asp:TextBox ID="txtThoiGianDangTuDong4" runat="server"></asp:TextBox>
                     </td>
                 </tr>
