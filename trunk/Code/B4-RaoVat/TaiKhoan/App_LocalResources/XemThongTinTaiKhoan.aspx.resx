@@ -249,4 +249,7 @@
   <data name="btnNangCapResource1.Text" xml:space="preserve">
     <value>Nâng cấp tài khoản</value>
   </data>
+  <data name="bntThayDoiThongTinResource1.Text" xml:space="preserve">
+    <value>Thay đổi thông tin</value>
+  </data>
 </root>

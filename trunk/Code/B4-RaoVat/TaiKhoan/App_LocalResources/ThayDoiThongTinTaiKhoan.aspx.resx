@@ -117,50 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnLoginResource1.Text" xml:space="preserve">
-    <value>Change Account</value>
+  <data name="bntDongYResource1.Text" xml:space="preserve">
+    <value>Đồng Ý</value>
   </data>
-  <data name="btnLoginResource1.ToolTip" xml:space="preserve">
+  <data name="bntDongYResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label07Resource1.Text" xml:space="preserve">
-    <value>Username</value>
+    <value>Tên đăng nhập</value>
   </data>
   <data name="Label07Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label10Resource1.Text" xml:space="preserve">
-    <value>Address:</value>
+    <value>Địa chỉ: </value>
   </data>
   <data name="Label10Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label11Resource1.Text" xml:space="preserve">
-    <value>Activate code:</value>
+    <value>Mã kích hoạt:</value>
   </data>
   <data name="Label11Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label12Resource1.Text" xml:space="preserve">
-    <value>Activating status:</value>
+    <value>Trình trạng kích hoạt:</value>
   </data>
   <data name="Label12Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label13Resource1.Text" xml:space="preserve">
-    <value>Time when sign up:</value>
+    <value>Thời gian đăng ký:</value>
   </data>
   <data name="Label13Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label14Resource1.Text" xml:space="preserve">
-    <value>Time when expire:</value>
+    <value>Thời gian hết hạn:</value>
   </data>
   <data name="Label14Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label15Resource1.Text" xml:space="preserve">
-    <value>Type of user:</value>
+    <value>Loại người dùng:</value>
   </data>
   <data name="Label15Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -172,27 +172,9 @@
     <value />
   </data>
   <data name="Label9Resource1.Text" xml:space="preserve">
-    <value>Phone:</value>
+    <value>Điện thoại:</value>
   </data>
   <data name="Label9Resource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDiaChiResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDiaChiResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDienThoaiResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDienThoaiResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblEmailResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblEmailResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblLoaiNguoiDungResource1.Text" xml:space="preserve">
@@ -213,6 +195,12 @@
   <data name="lblTenDangNhapResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="lblThankYouResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblThankYouResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblThoiGianDKResource1.Text" xml:space="preserve">
     <value />
   </data>
@@ -226,7 +214,7 @@
     <value />
   </data>
   <data name="lblThongTinResource1.Text" xml:space="preserve">
-    <value>Account Information</value>
+    <value>Thông Tin Tài Khoản</value>
   </data>
   <data name="lblThongTinResource1.ToolTip" xml:space="preserve">
     <value />
@@ -246,10 +234,22 @@
   <data name="Panel1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnNangCapResource1.Text" xml:space="preserve">
-    <value>Upgrade account</value>
+  <data name="txtDiaChiResource1.Text" xml:space="preserve">
+    <value />
   </data>
-  <data name="bntThayDoiThongTinResource1.Text" xml:space="preserve">
-    <value>Update Information</value>
+  <data name="txtDiaChiResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDTResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDTResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

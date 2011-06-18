@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ThayDoiThongTinTaiKhoan.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ThayDoiThongTinTaiKhoan.aspx.cs" Inherits="Default2" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
   <asp:Panel ID="Panel1" runat="server" Height="373px" Width="1010px" 
@@ -28,7 +28,8 @@
                         Text="Email:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtEmail" runat="server" Width="281px"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" Width="281px" 
+                        meta:resourcekey="txtEmailResource1"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -37,7 +38,8 @@
                         Text="Điện thoại:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtDT" runat="server" Width="281px"></asp:TextBox>
+                    <asp:TextBox ID="txtDT" runat="server" Width="281px" 
+                        meta:resourcekey="txtDTResource1"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -46,7 +48,8 @@
                         Text="Địa chỉ: "></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtDiaChi" runat="server" Width="281px" Height="81px"></asp:TextBox>
+                    <asp:TextBox ID="txtDiaChi" runat="server" Width="281px" Height="81px" 
+                        meta:resourcekey="txtDiaChiResource1"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -106,7 +109,8 @@
                         <tr>
                 <td colspan="2" style="height: 33px">
                         
-                     &nbsp;&nbsp;<asp:Label ID="lblThankYou" runat="server"></asp:Label>
+                     &nbsp;&nbsp;<asp:Label ID="lblThankYou" runat="server" 
+                         meta:resourcekey="lblThankYouResource1"></asp:Label>
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                 </td>
@@ -117,7 +121,7 @@
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                      <asp:Button ID="bntDongY" runat="server" onclick="bntDongY_Click" 
-                         Text="Đồng Ý" />
+                         Text="Đồng Ý" meta:resourcekey="bntDongYResource1" />
                         
                 </td>
             </tr>

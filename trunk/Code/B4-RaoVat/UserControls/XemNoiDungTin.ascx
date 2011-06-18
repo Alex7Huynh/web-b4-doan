@@ -79,7 +79,8 @@
                 </tr>
                 <tr>
                     <td class="style5" colspan="4">
-                        <asp:Label ID="Label1" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Các Bài Trả Lời Đã Đăng:" 
+                            Font-Bold="True" ForeColor="Red" Width="400px"></asp:Label>
                         :
                     </td>
                 </tr>

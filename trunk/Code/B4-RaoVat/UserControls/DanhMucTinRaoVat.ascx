@@ -34,11 +34,4 @@
     <AlternatingRowStyle BackColor="Gainsboro"></AlternatingRowStyle>
     <FooterStyle BackColor="#CCCCCC" ForeColor="Black"></FooterStyle>
 </asp:GridView>
-<asp:LinqDataSource ID="lqTinRaoVatMoiNhat" runat="server" ContextTypeName="DAO.RaoVatDataClassesDataContext"
-    Select="new (MaTinRaoVat, ThoiGianDang, ThoiHanLuuTin, MaDiaDiem, SoLanXem, MaNguoiDung, MaDanhMucCon, TieuDe, Thumbnail, GhiChuHinhAnh, Deleted, HOSOTUYENDUNGs, LICHSUTINRAOVATVIPHAMs, LIKEDs, TINRAOVATBATDONGSANs, TINRAOVATDALUUs, TINRAOVATTHUONGs, TINTUYENDUNGs, DANHMUCCON, DIADIEM, NGUOIDUNG)"
-    TableName="TINRAOVATs" Where="Deleted == @Deleted">
-    <WhereParameters>
-        <asp:Parameter DefaultValue="false" Name="Deleted" Type="Boolean" />
-    </WhereParameters>
-</asp:LinqDataSource>
 <asp:ObjectDataSource ID="FeaturedAdDataSource" runat="server"></asp:ObjectDataSource>

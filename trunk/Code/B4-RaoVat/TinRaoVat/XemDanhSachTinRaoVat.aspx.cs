@@ -9,6 +9,7 @@ public partial class XemDanhSachTinRaoVat : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["userID"] == null)
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
     }
 }
