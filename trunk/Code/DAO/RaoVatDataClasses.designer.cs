@@ -30,12 +30,12 @@ namespace DAO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertBAITRALOI(BAITRALOI instance);
-    partial void UpdateBAITRALOI(BAITRALOI instance);
-    partial void DeleteBAITRALOI(BAITRALOI instance);
     partial void InsertTREATA(TREATA instance);
     partial void UpdateTREATA(TREATA instance);
     partial void DeleteTREATA(TREATA instance);
+    partial void InsertBAITRALOI(BAITRALOI instance);
+    partial void UpdateBAITRALOI(BAITRALOI instance);
+    partial void DeleteBAITRALOI(BAITRALOI instance);
     partial void InsertBANNERGIAODIEN(BANNERGIAODIEN instance);
     partial void UpdateBANNERGIAODIEN(BANNERGIAODIEN instance);
     partial void DeleteBANNERGIAODIEN(BANNERGIAODIEN instance);
@@ -155,19 +155,19 @@ namespace DAO
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<BAITRALOI> BAITRALOIs
-		{
-			get
-			{
-				return this.GetTable<BAITRALOI>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TREATA> TREATAs
 		{
 			get
 			{
 				return this.GetTable<TREATA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BAITRALOI> BAITRALOIs
+		{
+			get
+			{
+				return this.GetTable<BAITRALOI>();
 			}
 		}
 		
@@ -401,6 +401,144 @@ namespace DAO
 			{
 				return this.GetTable<TINTUYENDUNG>();
 			}
+		}
+	}
+	
+	[Table(Name="dbo.TREATAS")]
+	public partial class TREATA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTreatAs;
+		
+		private string _TreatAsName;
+		
+		private System.Nullable<bool> _Deleted;
+		
+		private EntitySet<MAILSERVER> _MAILSERVERs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTreatAsChanging(int value);
+    partial void OnMaTreatAsChanged();
+    partial void OnTreatAsNameChanging(string value);
+    partial void OnTreatAsNameChanged();
+    partial void OnDeletedChanging(System.Nullable<bool> value);
+    partial void OnDeletedChanged();
+    #endregion
+		
+		public TREATA()
+		{
+			this._MAILSERVERs = new EntitySet<MAILSERVER>(new Action<MAILSERVER>(this.attach_MAILSERVERs), new Action<MAILSERVER>(this.detach_MAILSERVERs));
+			OnCreated();
+		}
+		
+		[Column(Storage="_MaTreatAs", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTreatAs
+		{
+			get
+			{
+				return this._MaTreatAs;
+			}
+			set
+			{
+				if ((this._MaTreatAs != value))
+				{
+					this.OnMaTreatAsChanging(value);
+					this.SendPropertyChanging();
+					this._MaTreatAs = value;
+					this.SendPropertyChanged("MaTreatAs");
+					this.OnMaTreatAsChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TreatAsName", DbType="NChar(50)")]
+		public string TreatAsName
+		{
+			get
+			{
+				return this._TreatAsName;
+			}
+			set
+			{
+				if ((this._TreatAsName != value))
+				{
+					this.OnTreatAsNameChanging(value);
+					this.SendPropertyChanging();
+					this._TreatAsName = value;
+					this.SendPropertyChanged("TreatAsName");
+					this.OnTreatAsNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Deleted", DbType="Bit")]
+		public System.Nullable<bool> Deleted
+		{
+			get
+			{
+				return this._Deleted;
+			}
+			set
+			{
+				if ((this._Deleted != value))
+				{
+					this.OnDeletedChanging(value);
+					this.SendPropertyChanging();
+					this._Deleted = value;
+					this.SendPropertyChanged("Deleted");
+					this.OnDeletedChanged();
+				}
+			}
+		}
+		
+		[Association(Name="TREATA_MAILSERVER", Storage="_MAILSERVERs", ThisKey="MaTreatAs", OtherKey="MaTreatAs")]
+		public EntitySet<MAILSERVER> MAILSERVERs
+		{
+			get
+			{
+				return this._MAILSERVERs;
+			}
+			set
+			{
+				this._MAILSERVERs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_MAILSERVERs(MAILSERVER entity)
+		{
+			this.SendPropertyChanging();
+			entity.TREATA = this;
+		}
+		
+		private void detach_MAILSERVERs(MAILSERVER entity)
+		{
+			this.SendPropertyChanging();
+			entity.TREATA = null;
 		}
 	}
 	
@@ -652,144 +790,6 @@ namespace DAO
 		{
 			this.SendPropertyChanging();
 			entity.BAITRALOI = null;
-		}
-	}
-	
-	[Table(Name="dbo.TREATAS")]
-	public partial class TREATA : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaTreatAs;
-		
-		private string _TreatAsName;
-		
-		private System.Nullable<bool> _Deleted;
-		
-		private EntitySet<MAILSERVER> _MAILSERVERs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTreatAsChanging(int value);
-    partial void OnMaTreatAsChanged();
-    partial void OnTreatAsNameChanging(string value);
-    partial void OnTreatAsNameChanged();
-    partial void OnDeletedChanging(System.Nullable<bool> value);
-    partial void OnDeletedChanged();
-    #endregion
-		
-		public TREATA()
-		{
-			this._MAILSERVERs = new EntitySet<MAILSERVER>(new Action<MAILSERVER>(this.attach_MAILSERVERs), new Action<MAILSERVER>(this.detach_MAILSERVERs));
-			OnCreated();
-		}
-		
-		[Column(Storage="_MaTreatAs", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaTreatAs
-		{
-			get
-			{
-				return this._MaTreatAs;
-			}
-			set
-			{
-				if ((this._MaTreatAs != value))
-				{
-					this.OnMaTreatAsChanging(value);
-					this.SendPropertyChanging();
-					this._MaTreatAs = value;
-					this.SendPropertyChanged("MaTreatAs");
-					this.OnMaTreatAsChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_TreatAsName", DbType="NChar(50)")]
-		public string TreatAsName
-		{
-			get
-			{
-				return this._TreatAsName;
-			}
-			set
-			{
-				if ((this._TreatAsName != value))
-				{
-					this.OnTreatAsNameChanging(value);
-					this.SendPropertyChanging();
-					this._TreatAsName = value;
-					this.SendPropertyChanged("TreatAsName");
-					this.OnTreatAsNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Deleted", DbType="Bit")]
-		public System.Nullable<bool> Deleted
-		{
-			get
-			{
-				return this._Deleted;
-			}
-			set
-			{
-				if ((this._Deleted != value))
-				{
-					this.OnDeletedChanging(value);
-					this.SendPropertyChanging();
-					this._Deleted = value;
-					this.SendPropertyChanged("Deleted");
-					this.OnDeletedChanged();
-				}
-			}
-		}
-		
-		[Association(Name="TREATA_MAILSERVER", Storage="_MAILSERVERs", ThisKey="MaTreatAs", OtherKey="MaTreatAs")]
-		public EntitySet<MAILSERVER> MAILSERVERs
-		{
-			get
-			{
-				return this._MAILSERVERs;
-			}
-			set
-			{
-				this._MAILSERVERs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_MAILSERVERs(MAILSERVER entity)
-		{
-			this.SendPropertyChanging();
-			entity.TREATA = this;
-		}
-		
-		private void detach_MAILSERVERs(MAILSERVER entity)
-		{
-			this.SendPropertyChanging();
-			entity.TREATA = null;
 		}
 	}
 	

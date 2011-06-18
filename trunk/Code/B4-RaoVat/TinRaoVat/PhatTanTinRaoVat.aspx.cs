@@ -8,7 +8,7 @@ using System.Xml;
 using BUS;
 using DAO;
 
-public partial class XemDanhSachTinRaoVat : System.Web.UI.Page
+public partial class XemDanhSachTinRaoVat : BUS.BasePage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
