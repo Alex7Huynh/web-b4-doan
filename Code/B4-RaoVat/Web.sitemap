@@ -15,9 +15,11 @@
       <siteMapNode url="./TaiKhoan/DangNhap.aspx" title="Đăng Nhập" roles="*"/>
       <siteMapNode url="./TaiKhoan/QuenMatKhau.aspx" title="Quên Mật Khẩu" roles="*"/>
       <siteMapNode url="./TaiKhoan/XemThongTinTaiKhoan.aspx" title="Xem Thông Tin Tài Khoản" roles="*"/>
+      <siteMapNode url="./TaiKhoan/BaoCaoNguoiDung.aspx" title="Báo Cáo Người Dùng Vi Phạm" roles="*"/>
     </siteMapNode>
 
-    <siteMapNode url="DanhMuc/DanhMucChinh.aspx" title="Danh Mục" roles="*">
+    <siteMapNode title="Danh Mục" roles="*">
+      <siteMapNode url="./DanhMuc/DanhMucChinh.aspx" title="Danh Mục Chính" roles="*"/>
       <siteMapNode url="./DanhMuc/DanhMucCon.aspx?id=1" title="Danh Mục Con" roles="*"/>
       <siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx?id=1" title="Danh Mục Tin Rao Vặt" roles="*"/>
       <siteMapNode url="./DanhMuc/XemNoiDungTin.aspx?id=1" title="Xem Nội Dung Tin Rao Vặt" roles="*"/>
@@ -25,12 +27,14 @@
 
     <siteMapNode  title="Tin rao vặt" roles="*">
       <siteMapNode url="./TinRaoVat/ChonChuyenMucDang.aspx" title="Đăng tin rao vặt" roles="*"/>
-      <siteMapNode url="./TinRaoVat/QuanLyTinRaoVat.aspx" title="Quản lý tin đã đăng" roles="*"/>
+      <siteMapNode url="./TinRaoVat/XemDanhSachTinRaoVat.aspx" title="Xem tin đã đăng" roles="*"/>
+      
     </siteMapNode>
 
     <siteMapNode url="Admin/" title="Site Administration" roles="Administrators" description="parent">
       <siteMapNode url="Admin/Setting.aspx" title="My Profile" roles="Administrators" description=""/>
       <siteMapNode url="Admin/QuanLyGiaoDien.aspx" title="Chỉnh sửa giao diện" roles="Administrators" description=""/>
+      <siteMapNode url="./TinRaoVat/QuanLyTinRaoVat.aspx" title="Quản lý tin rao vặt" roles="*"/>
     </siteMapNode>
   </siteMapNode>
 </siteMap>
