@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=THANG-PC\SQLEXPRESS;Initial Catalog=RAO_VAT;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KID\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=sa" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BAITRALOI" Member="BAITRALOIs">
     <Type Name="BAITRALOI">
       <Column Name="MaBaiTraLoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
