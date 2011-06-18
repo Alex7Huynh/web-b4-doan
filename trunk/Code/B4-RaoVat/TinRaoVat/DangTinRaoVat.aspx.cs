@@ -551,4 +551,8 @@ public partial class DangTinRaoVat : BUS.BasePage
         Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
     }
 
+    protected void tb_thoigiandangtintudong1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
