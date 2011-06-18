@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="QuanLyTinRaoVat.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
+    <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">XÓA TIN RAO VẶT</asp:Label>
     <asp:Button ID="CheckAll" runat="server" Text="Check All" 
         onclick="CheckAll_Click" /> 
     <asp:Button ID="UncheckAll" runat="server" Text="Uncheck All" 
@@ -17,32 +18,32 @@
                         <asp:CheckBox ID="Deleted" runat="server" />
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="TieuDe" HeaderText="TieuDe" 
+            <asp:BoundField DataField="TieuDe" HeaderText="Tiêu Đề" 
                 SortExpression="TieuDe" />
-            <asp:BoundField DataField="ThoiGianDang" HeaderText="ThoiGianDang" 
+            <asp:BoundField DataField="ThoiGianDang" HeaderText="Thời Gian Đăng" 
                 SortExpression="ThoiGianDang" />
-            <asp:BoundField DataField="ThoiHanLuuTin" HeaderText="ThoiHanLuuTin" 
+            <asp:BoundField DataField="ThoiHanLuuTin" HeaderText="Thời Han Lưu Tin" 
                 SortExpression="ThoiHanLuuTin" />
-            <asp:TemplateField HeaderText="DIADIEM" SortExpression="DIADIEM.TenDiaDiem">
+            <asp:TemplateField HeaderText="Địa Điểm" SortExpression="DIADIEM.TenDiaDiem">
                  <ItemTemplate>
                         <%#Eval("DIADIEM.TenDiaDiem") %>
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="SoLanXem" HeaderText="SoLanXem" 
+            <asp:BoundField DataField="SoLanXem" HeaderText="Số Lần Xem" 
                 SortExpression="SoLanXem" />
-            <asp:TemplateField HeaderText="NGUOIDUNG" SortExpression="NGUOIDUNG.TenNguoiDung">
+            <asp:TemplateField HeaderText="Tên Người Dùng" SortExpression="NGUOIDUNG.TenNguoiDung">
                  <ItemTemplate>
                         <%#Eval("NGUOIDUNG.TenNguoiDung") %>
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="DANHMUCCON" SortExpression="DANHMUCCON.TenDanhMucCon">
+            <asp:TemplateField HeaderText="Tên Danh Mục Con" SortExpression="DANHMUCCON.TenDanhMucCon">
                  <ItemTemplate>
                         <%#Eval("DANHMUCCON.TenDanhMucCon") %>
                  </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="Thumbnail" HeaderText="Thumbnail" 
                 SortExpression="Thumbnail" />
-            <asp:BoundField DataField="GhiChuHinhAnh" HeaderText="GhiChuHinhAnh" 
+            <asp:BoundField DataField="GhiChuHinhAnh" HeaderText="Ghi Chú Hình Ảnh" 
                 SortExpression="GhiChuHinhAnh" />
             
         </Columns>

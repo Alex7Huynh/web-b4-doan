@@ -58,13 +58,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     private void KhoiTaoGiaoDien()
     {
-        CHITIETGIAODIEN ChiTietGiaoDien = ChiTietGiaoDienBUS.TimChiTietGiaoDienTheoMa(1);
-        BANNERGIAODIEN Banner = new BANNERGIAODIEN();
-            Banner = BannerBUS.TimBannerTheoMa(ChiTietGiaoDien.MaBannerGiaoDien.Value);
-        LOGO Logo = LogoBUS.TimLogoTheoMa(ChiTietGiaoDien.MaLogo.Value);
+        //CHITIETGIAODIEN ChiTietGiaoDien = ChiTietGiaoDienBUS.TimChiTietGiaoDienTheoMa(1);
+        //BANNERGIAODIEN Banner = new BANNERGIAODIEN();
+        //    Banner = BannerBUS.TimBannerTheoMa(ChiTietGiaoDien.MaBannerGiaoDien.Value);
+        //LOGO Logo = LogoBUS.TimLogoTheoMa(ChiTietGiaoDien.MaLogo.Value);
 
-        imgBanner.ImageUrl = Banner.DuongDanBannerGiaoDien;
-        imgLogo.ImageUrl = Logo.DuongDanLogo;
+        //imgBanner.ImageUrl = Banner.DuongDanBannerGiaoDien;
+        //imgLogo.ImageUrl = Logo.DuongDanLogo;
 
     }
     private void ViewUserName()

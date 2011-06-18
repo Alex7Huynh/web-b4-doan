@@ -3,7 +3,11 @@
     CodeFile="BaoCaoBaiVietViPham.aspx.cs" Inherits="BaoCaoBaiVietViPham" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
-    <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">Lý do vi phạm:</asp:Label>
+    <asp:Label ID="Label2" runat="server" Font-Bold="True" ForeColor="#003399">BÁO 
+    CÁO TIN RAO VẶT VI PHẠM</asp:Label>
+    <div>
+        <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">Lý do vi phạm:</asp:Label>
+    </div>
     <div>                   
          <asp:CheckBox ID="ckbTenSai" runat="server" Text="Tên sai chuyên mục" />
     </div>
