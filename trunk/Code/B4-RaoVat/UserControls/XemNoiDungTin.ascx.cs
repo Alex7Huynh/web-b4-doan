@@ -35,6 +35,31 @@ public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
         Session["matinraovat"] = maTinRaoVat.ToString();
         Session["manguoidung"] = nguoiDung.MaNguoiDung.ToString();
 
+        
+        //Kiểm tra quyền hạn
+        btnChinhSua1.Visible = true;
+        btnChinhSua2.Visible = true;
+        btnChinhSua3.Visible = true;
+        btnChinhSua4.Visible = true;
+
+        if (Session["userID"] == null)
+        {
+            btnChinhSua1.Visible = false;
+            btnChinhSua2.Visible = false;
+            btnChinhSua3.Visible = false;
+            btnChinhSua4.Visible = false;
+        }
+        else if (!LoaiNguoiDungBUS.LaQuanTri(int.Parse(Session["userID"].ToString())))
+        {
+            if (int.Parse(Session["userID"].ToString()) != nguoiDung.MaNguoiDung)
+            {
+                btnChinhSua1.Visible = false;
+                btnChinhSua2.Visible = false;
+                btnChinhSua3.Visible = false;
+                btnChinhSua4.Visible = false;
+            }
+        }
+
         hypXemThongTinLienHe.NavigateUrl = "../DanhMuc/XemThongTinLienHe.aspx?id=" + nguoiDung.MaNguoiDung.ToString();
 
         CHUYENMUC chuyenMuc = TinRaoVatBUS.LayChuyenMuc(maTinRaoVat);
