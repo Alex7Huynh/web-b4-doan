@@ -32,11 +32,12 @@
             <!-- end #menu -->
             <div id="search">
                 <fieldset>
-                    <asp:TextBox ID="txtTimKiemMaster" runat="server" Height="28px" Width="205px" 
-                        Font-Size="Small"></asp:TextBox>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Search" BackColor="#660033" 
-                        Height="28px" Width="56px" Font-Size="Medium" onclick="btnSubmit_Click" />
-                    <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/images/Vietnam.png"
+                    <asp:TextBox ID="txtTimKiemMaster" runat="server" Height="28px" Width="184px" Font-Size="Small"
+                        meta:resourcekey="txtTimKiemMasterResource1"></asp:TextBox>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Search" BackColor="#660033" Height="28px"
+                        Width="75px" Font-Size="Medium" OnClick="btnSubmit_Click" 
+                        meta:resourcekey="btnSubmitResource1" />
+                    &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/images/Vietnam.png"
                         PostBackUrl="~/Default.aspx?Language=vi" Width="30px" meta:resourcekey="ImageButton1Resource1"
                         CausesValidation="False" />
                     <asp:ImageButton ID="ImageButton2" runat="server" Height="30px" ImageUrl="~/images/English.png"
@@ -51,10 +52,10 @@
         <asp:Image ID="imgBanner" runat="server" Style="float: right; margin-top: 0px; padding: 0px 0px 0px 0px;"
             Height="170px" Width="681px" meta:resourcekey="bannerAspResource1" />
         <h1>
-            <asp:Image ID="imgLogo" runat="server" Height="32px" Width="32px" />
+            <asp:Image ID="imgLogo" runat="server" Height="32px" Width="32px" meta:resourcekey="imgLogoResource1" />
             <a href="/B4-RaoVat/Default.aspx">B4-StarFish</a>
-            <asp:Label ID="Label8" runat="server" Text="Chính xác, Tin cậy, Hiệu quả" Font-Size="Small"></asp:Label>
-            <asp:Label ID="Label9" runat="server" Font-Size="Medium" Text="Label"></asp:Label>
+            <asp:Label ID="Label8" runat="server" Text="Chính xác, Tin cậy, Hiệu quả" Font-Size="Small"
+                meta:resourcekey="Label8Resource1"></asp:Label>
         </h1>
     </div>
     <div id="wrapper">
@@ -70,13 +71,11 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             Welcome,
-                            <%-- <asp:LoginName ID="MemberName" runat="server" ForeColor="White" meta:resourcekey="MemberNameResource1" />
-                            <asp:LoginStatus ID="MemberLoginStatus" runat="server" ForeColor="White" meta:resourcekey="MemberLoginStatusResource1" />--%>
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </div>
                 <div id="nav_dangtin">
-                    <asp:Label ID="lblWelcome" runat="server" Font-Names="Tahoma" Font-Size="10pt"></asp:Label>
+                    <asp:Label ID="lblWelcome" runat="server" Font-Names="Tahoma" Font-Size="10pt" meta:resourcekey="lblWelcomeResource1"></asp:Label>
                     &nbsp;
                     <asp:LinkButton ID="linkbntDangXuat" runat="server" Font-Names="Tahoma" Font-Size="10pt"
                         OnClick="linkbntDangXuat_Click" ForeColor="White" meta:resourcekey="linkbntDangXuatResource1">Đăng Xuất</asp:LinkButton>
@@ -111,13 +110,11 @@
         <div id="footer">
             <p>
                 <br />
-            <asp:Label ID="Copyright" runat="server" 
-                Text="Copyright (c) 2008 B4-StarFish. All rights reserved." Width="280px" 
-                Height="16px"></asp:Label>
-            <br />
-            <asp:Label ID="Reff" runat="server" 
-                Text='Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.' 
-                Width="136px"></asp:Label>
+                <asp:Label ID="Copyright" runat="server" Text="Copyright (c) 2008 B4-StarFish. All rights reserved."
+                    Width="280px" Height="16px" meta:resourcekey="CopyrightResource1"></asp:Label>
+                <br />
+                <asp:Label ID="Reff" runat="server" Text='Design by <a href="http://www.freecsstemplates.org/">B4-StarFish</a>.'
+                    Width="136px" meta:resourcekey="ReffResource1"></asp:Label>
         </div>
     </div>
     </form>

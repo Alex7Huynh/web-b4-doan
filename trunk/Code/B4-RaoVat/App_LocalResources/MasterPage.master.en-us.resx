@@ -123,6 +123,18 @@
   <data name="bannerAspResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="btnSubmitResource1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="btnSubmitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CopyrightResource1.Text" xml:space="preserve">
+    <value>Copyright (c) 2008 B4-StarFish. All rights reserved.</value>
+  </data>
+  <data name="CopyrightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="ImageButton1Resource1.AlternateText" xml:space="preserve">
     <value />
   </data>
@@ -135,10 +147,10 @@
   <data name="ImageButton2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="Label1Resource1.Text" xml:space="preserve">
-    <value>Label</value>
+  <data name="imgLogoResource1.AlternateText" xml:space="preserve">
+    <value />
   </data>
-  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+  <data name="imgLogoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label2Resource1.Text" xml:space="preserve">
@@ -160,7 +172,7 @@
     <value />
   </data>
   <data name="Label5Resource1.Text" xml:space="preserve">
-    <value>Forgot Password</value>
+    <value>Forgot password</value>
   </data>
   <data name="Label5Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -172,25 +184,31 @@
     <value />
   </data>
   <data name="Label7Resource1.Text" xml:space="preserve">
-    <value>Account Information</value>
+    <value>My Account</value>
   </data>
   <data name="Label7Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="lblUserNameMPResource1.Text" xml:space="preserve">
-    <value>Label</value>
+  <data name="Label8Resource1.Text" xml:space="preserve">
+    <value>Accuracy, Trusty, Effective</value>
   </data>
-  <data name="lblUserNameMPResource1.ToolTip" xml:space="preserve">
+  <data name="Label8Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblWelcomeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblWelcomeResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="linkbntDangXuatResource1.Text" xml:space="preserve">
-    <value>Sign Out</value>
+    <value>Log out</value>
   </data>
   <data name="linkbntDangXuatResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="linkbntXemThongTinResource1.Text" xml:space="preserve">
-    <value>Account Information</value>
+    <value>My Account</value>
   </data>
   <data name="linkbntXemThongTinResource1.ToolTip" xml:space="preserve">
     <value />
@@ -201,19 +219,10 @@
   <data name="LoginLinkResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="MemberLoginStatusResource1.LoginText" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="MemberLoginStatusResource1.LogoutText" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="MemberLoginStatusResource1.ToolTip" xml:space="preserve">
+  <data name="ReffResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="MemberNameResource1.FormatString" xml:space="preserve">
-    <value>{0}</value>
-  </data>
-  <data name="MemberNameResource1.ToolTip" xml:space="preserve">
+  <data name="ReffResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="RegisterLinkResource1.Text" xml:space="preserve">
@@ -229,6 +238,12 @@
     <value />
   </data>
   <data name="SiteMapPathResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTimKiemMasterResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTimKiemMasterResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>

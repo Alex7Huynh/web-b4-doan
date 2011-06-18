@@ -126,7 +126,7 @@ namespace DAO
     #endregion
 		
 		public RaoVatDataClassesDataContext() : 
-				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.RAO_VATConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -4652,7 +4652,7 @@ namespace DAO
 			}
 		}
 		
-		[Column(Storage="_TenLoaiNguoiDung", DbType="NChar(50)")]
+		[Column(Storage="_TenLoaiNguoiDung", DbType="NVarChar(50)")]
 		public string TenLoaiNguoiDung
 		{
 			get
