@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="RAO_VAT" Class="RaoVatDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=KID\SQLEE;Initial Catalog=RAO_VAT;Persist Security Info=True;User ID=sa" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="RAO_VATConnectionString4" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TREATAS" Member="TREATAs">
-    <Type Name="TREATA">
-      <Column Name="MaTreatAs" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TreatAsName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="TREATA_MAILSERVER" Member="MAILSERVERs" ThisKey="MaTreatAs" OtherKey="MaTreatAs" Type="MAILSERVER" />
-    </Type>
-  </Table>
   <Table Name="dbo.BAITRALOI" Member="BAITRALOIs">
     <Type Name="BAITRALOI">
       <Column Name="MaBaiTraLoi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -19,6 +11,14 @@
       <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="BAITRALOI_LIKED" Member="LIKEDs" ThisKey="MaBaiTraLoi,MaTinRaoVat" OtherKey="MaBaiTraLoi,MaTinRaoVat" Type="LIKED" />
       <Association Name="NGUOIDUNG_BAITRALOI" Member="NGUOIDUNG" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NGUOIDUNG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TREATAS" Member="TREATAs">
+    <Type Name="TREATA">
+      <Column Name="MaTreatAs" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TreatAsName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TREATA_MAILSERVER" Member="MAILSERVERs" ThisKey="MaTreatAs" OtherKey="MaTreatAs" Type="MAILSERVER" />
     </Type>
   </Table>
   <Table Name="dbo.BANNERGIAODIEN" Member="BANNERGIAODIENs">

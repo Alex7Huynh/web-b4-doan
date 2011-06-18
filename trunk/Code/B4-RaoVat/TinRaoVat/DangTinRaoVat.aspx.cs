@@ -45,25 +45,31 @@ public partial class DangTinRaoVat : BUS.BasePage
         {
             MultiView1.SetActiveView(View1);
             InitFirstView();
-            
-            if (nguoidung.MaLoaiNguoiDung == 2)
-            {
-                lb_dangbaitudong1.Visible = true;
-                tb_thoigiandangtintudong1.Visible = true;
-                lb_thongbaodv1.Visible = true;
+            if (LoaiNguoiDungBUS.LaNguoiDungThuong(nguoidung.MaLoaiNguoiDung.Value))
+            {                
+                lblThoiGianDangTuDong1.Visible = false;
+                txtThoiGianDangTuDong1.Visible = false;
             }
-            
+            else
+            {
+                lblThoiGianDangTuDong1.Visible = true;
+                txtThoiGianDangTuDong1.Visible = true;
+            }
         }
         else if (ChuyenMuc == "2")
         {
             MultiView1.SetActiveView(View2);
             InitSecondView();
 
-            if (nguoidung.MaLoaiNguoiDung == 2)
+            if (LoaiNguoiDungBUS.LaNguoiDungThuong(nguoidung.MaLoaiNguoiDung.Value))
+            {                
+                lblThoiGianDangTuDong2.Visible = false;
+                txtThoiGianDangTuDong2.Visible = false;
+            }
+            else
             {
-                lb_dangbaitudong2.Visible = true;
-                tb_thoigiandangtintudong2.Visible = true;
-                lb_thongbaodv2.Visible = true;
+                lblThoiGianDangTuDong2.Visible = true;
+                txtThoiGianDangTuDong2.Visible = true;
             }
         }
         else if (ChuyenMuc == "3")
@@ -71,11 +77,15 @@ public partial class DangTinRaoVat : BUS.BasePage
             MultiView1.SetActiveView(View3);
             InitThirdView();
 
-            if (nguoidung.MaLoaiNguoiDung == 2)
+            if (LoaiNguoiDungBUS.LaNguoiDungThuong(nguoidung.MaLoaiNguoiDung.Value))
             {
-                lb_dangbaitudong3.Visible = true;
-                tb_thoigiandangtintudong3.Visible = true;
-                lb_thongbaodv3.Visible = true;
+                lblThoiGianDangTuDong3.Visible = false;
+                txtThoiGianDangTuDong3.Visible = false;
+            }
+            else
+            {
+                lblThoiGianDangTuDong3.Visible = true;
+                txtThoiGianDangTuDong3.Visible = true;
             }
         }
         else if (ChuyenMuc == "4")
@@ -83,11 +93,15 @@ public partial class DangTinRaoVat : BUS.BasePage
             MultiView1.SetActiveView(View4);
             InitFourthView();
 
-            if (nguoidung.MaLoaiNguoiDung == 2)
+            if (LoaiNguoiDungBUS.LaNguoiDungThuong(nguoidung.MaLoaiNguoiDung.Value))
             {
-                lb_dangbaitudong4.Visible = true;
-                tb_thoigiandangtintudong4.Visible = true;
-                lb_thongbaodv4.Visible = true;
+                lblThoiGianDangTuDong4.Visible = false;
+                txtThoiGianDangTuDong4.Visible = false;
+            }
+            else
+            {
+                lblThoiGianDangTuDong4.Visible = true;
+                txtThoiGianDangTuDong4.Visible = true;
             }
         }
     }
@@ -220,13 +234,12 @@ public partial class DangTinRaoVat : BUS.BasePage
             {
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
-            if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong1.Text != "")
+            if (nguoidung.MaLoaiNguoiDung == 2 && txtThoiGianDangTuDong1.Text != "")
             {
-                double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong1.Text);
+                double thoigiandangtudong = double.Parse(txtThoiGianDangTuDong1.Text);
                 thoigiandangtudong = thoigiandangtudong * 120000;
                 TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 1, 0);
                 taskscheduler.StartTask();
-
             }
 
             
@@ -335,9 +348,9 @@ public partial class DangTinRaoVat : BUS.BasePage
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
             //Thêm thành công
-            if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong2.Text != "")
+            if (nguoidung.MaLoaiNguoiDung == 2 && txtThoiGianDangTuDong2.Text != "")
             {
-                double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong2.Text);
+                double thoigiandangtudong = double.Parse(txtThoiGianDangTuDong2.Text);
                 thoigiandangtudong = thoigiandangtudong * 120000;
                 TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 2, 0);
                 taskscheduler.StartTask();
@@ -421,9 +434,9 @@ public partial class DangTinRaoVat : BUS.BasePage
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
         }
         //Thêm thành công
-        if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong3.Text != "")
+        if (nguoidung.MaLoaiNguoiDung == 2 && txtThoiGianDangTuDong3.Text != "")
         {
-            double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong3.Text);
+            double thoigiandangtudong = double.Parse(txtThoiGianDangTuDong3.Text);
             thoigiandangtudong = thoigiandangtudong * 120000;
             TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 3, 0);
             taskscheduler.StartTask();
@@ -538,9 +551,9 @@ public partial class DangTinRaoVat : BUS.BasePage
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
         }
 
-        if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong4.Text != "")
+        if (nguoidung.MaLoaiNguoiDung == 2 && txtThoiGianDangTuDong4.Text != "")
         {
-            double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong4.Text);
+            double thoigiandangtudong = double.Parse(txtThoiGianDangTuDong4.Text);
             thoigiandangtudong = thoigiandangtudong * 120000;
             TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 4, ChiTietHSTD.MaChiTietHoSoTuyenDung);
             taskscheduler.StartTask();
