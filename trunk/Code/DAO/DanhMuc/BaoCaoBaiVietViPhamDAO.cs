@@ -19,9 +19,23 @@ namespace DAO
             }
             catch (Exception ex)
             { return false; }
-
             return true;
+        }
+        public static List<LICHSUTINRAOVATVIPHAM> LayDanhSachTinViPham()
+        {
+            List<LICHSUTINRAOVATVIPHAM> lstTinViPham = new List<LICHSUTINRAOVATVIPHAM>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsTinViPham = from q in db.LICHSUTINRAOVATVIPHAMs
+                                     where q.deleted == false
+                                     select q;
+                lstTinViPham = dsTinViPham.ToList<LICHSUTINRAOVATVIPHAM>();
 
+            }
+            catch (Exception ex)
+            { return null; }
+            return lstTinViPham;
         }
     }
 }

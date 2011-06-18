@@ -39,4 +39,5 @@
             <asp:SessionParameter Name="MaNguoiDung" SessionField="userID" Type="object" />
         </WhereParameters>
     </asp:LinqDataSource>
+
 </asp:Content>

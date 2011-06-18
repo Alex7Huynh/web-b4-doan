@@ -15,7 +15,6 @@ public partial class Default2 : BUS.BasePage
     }
     protected void btnNhanTin1_Click(object sender, EventArgs e)
     {
-        NGUOIDUNG NguoiDung = new NGUOIDUNG();
         TINNHAN TinNhan = new TINNHAN();
         if (Session["userID"] != null)
         {

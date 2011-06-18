@@ -12,5 +12,9 @@ namespace BUS
         {
             return BaoCaoBaiVietViPhamDAO.ThemBaoCaoViPham(tinViPham);
         }
+        public static List<LICHSUTINRAOVATVIPHAM> LayDanhSachTinViPham()
+        {
+            return BaoCaoBaiVietViPhamDAO.LayDanhSachTinViPham();
+        }
     }
 }

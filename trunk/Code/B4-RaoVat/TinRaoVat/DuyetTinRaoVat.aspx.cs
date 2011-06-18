@@ -22,15 +22,34 @@ public partial class Default2 : System.Web.UI.Page
             if (cb != null) cb.Checked = checkState; 
         } 
     }
-    protected void btnSubmit1_Click(object sender, EventArgs e)
+    protected void btnDuyet1_Click(object sender, EventArgs e)
     {
+        TINRAOVATDALUU tinRaoVatDaLuu = new TINRAOVATDALUU();
         foreach (GridViewRow row in GridView.Rows)
         {
             CheckBox cb = (CheckBox)row.FindControl("Deleted");
-            if (cb != null && cb.Checked) 
-            { 
+            if (cb != null && cb.Checked)
+            {
                 int maTinRaoVat = Convert.ToInt32(GridView.DataKeys[row.RowIndex].Value);
-                TinRaoVatBUS.XoaTatCaTinRaoVatLienQuan(maTinRaoVat);
+                tinRaoVatDaLuu.MaTinRaoVat = GridView.Rows[row.RowIndex].Cells[1].Text;
+                tinRaoVatDaLuu.MaNguoiDung = NguoiDungBUS.LayNguoiDungTheoMa(maTinRaoVat).MaNguoiDung;
+                tinRaoVatDaLuu.ThoiGianLuu = DateTime.Now;
+                tinRaoVatDaLuu.Deleted = false;
+                TinRaoVatDaLuuBUS.ThemTinRaoVatDaLuu(tinRaoVatDaLuu);
+            }
+        }
+        GridView.DataBind();
+    }
+    protected void btnXoa1_Click(object sender, EventArgs e)
+    {
+        LICHSUTINRAOVATVIPHAM tinRaoVat = new LICHSUTINRAOVATVIPHAM();
+        foreach (GridViewRow row in GridView.Rows)
+        {
+            CheckBox cb = (CheckBox)row.FindControl("Deleted");
+            if (cb != null && cb.Checked)
+            {
+                int maTinRaoVat = Convert.ToInt32(GridView.DataKeys[row.RowIndex].Value);
+                TinRaoVatDaLuuBUS.XoaTinRaoVatViPham(maTinRaoVat);
             }
         }
         GridView.DataBind();
