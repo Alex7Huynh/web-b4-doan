@@ -15,21 +15,21 @@ public partial class XemDanhSachTinRaoVat : BUS.BasePage
         RSS rss = new RSS();
         rss.NewRSS();
         RSS.RssChannel channel = new RSS.RssChannel();
-
+        string port = Request.Url.Port.ToString();
         channel.Title = "Website Rao Vặt";
-        channel.Link = "http://localhost:3866/B4-RaoVat/Default.aspx";
+        channel.Link = "http://localhost:"+ port + "/B4-RaoVat/Default.aspx";
         channel.Description = "Website Đăng tin rao vặt.";
         rss.AddRssChannel(channel);
 
         RSS.RssItem item = new RSS.RssItem();
         item.Title = "Home";
-        item.Link = "http://localhost:3866/B4-RaoVat/Default.aspx";
+        item.Link = "http://localhost:"+ port + "/B4-RaoVat/Default.aspx";
         item.Description = "Trang chủ tin rao vặt.";
         rss.AddRssItem(item);
 
         RSS.RssItem item1 = new RSS.RssItem();
         item1.Title = "Xem nội dung tin rao vặt.";
-        item1.Link = "http://localhost:3866/B4-RaoVat/DanhMuc/XemNoiDungTin.aspx";
+        item1.Link = "http://localhost:" +port + "/B4-RaoVat/DanhMuc/XemNoiDungTin.aspx";
         item1.Description = "Các tin rao vặt được đăng mới nhất";
         rss.AddRssItem(item1);
         
