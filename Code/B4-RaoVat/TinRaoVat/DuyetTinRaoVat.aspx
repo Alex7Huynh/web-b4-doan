@@ -1,42 +1,52 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DuyetTinRaoVat.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DuyetTinRaoVat.aspx.cs" Inherits="Default2" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">DUYỆT TIN RAO VẶT</asp:Label>
+    <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399" 
+        meta:resourcekey="Label15Resource1">DUYỆT TIN RAO VẶT</asp:Label>
     <asp:Button ID="CheckAll" runat="server" Text="Check All" 
-        onclick="CheckAll_Click" /> 
+        onclick="CheckAll_Click" meta:resourcekey="CheckAllResource1" /> 
     <asp:Button ID="UncheckAll" runat="server" Text="Uncheck All" 
-        onclick="UncheckAll_Click" />
+        onclick="UncheckAll_Click" meta:resourcekey="UncheckAllResource1" />
     <asp:GridView ID="GridView" CssClass="gridview" 
         AlternatingRowStyle-CssClass="even" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" 
         BorderWidth="1px" CellPadding="3" DataSourceID="LinqDataSource1" AllowSorting="True" 
-        DataKeyNames="MaLichSuTinRaoVatViPham" BorderStyle="None" CellSpacing="2" >
+        DataKeyNames="MaLichSuTinRaoVatViPham" BorderStyle="None" CellSpacing="2" 
+        meta:resourcekey="GridViewResource1" >
         <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
         <Columns>
-            <asp:TemplateField HeaderText="Check" SortExpression="Deleted">
+            <asp:TemplateField HeaderText="Check" SortExpression="Deleted" 
+                meta:resourcekey="TemplateFieldResource1">
                  <ItemTemplate>
-                        <asp:CheckBox ID="Deleted" runat="server" />
+                        <asp:CheckBox ID="Deleted" runat="server" meta:resourcekey="DeletedResource1" />
                  </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="MaTinRaoVatViPham" HeaderText="MaTinRaoVatViPham" 
-                SortExpression="MaTinRaoVatViPham" Visible="false" />
-            <asp:TemplateField HeaderText="Tin Vi Phạm" SortExpression="TINRAOVAT.TieuDe">
+                SortExpression="MaTinRaoVatViPham" Visible="false" 
+                meta:resourcekey="BoundFieldResource1" />
+            <asp:TemplateField HeaderText="Tin Vi Phạm" SortExpression="TINRAOVAT.TieuDe" 
+                meta:resourcekey="TemplateFieldResource2">
                  <ItemTemplate>
                         <%#Eval("TINRAOVAT.TieuDe")%>            
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Thời Gian Đăng" SortExpression="TINRAOVAT.ThoiGianDang">
+            <asp:TemplateField HeaderText="Thời Gian Đăng" 
+                SortExpression="TINRAOVAT.ThoiGianDang" 
+                meta:resourcekey="TemplateFieldResource3">
                  <ItemTemplate>
                         <%#Eval("TINRAOVAT.ThoiGianDang")%>
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Người Báo Cáo" SortExpression="NGUOIDUNG.TenNguoiDung">
+            <asp:TemplateField HeaderText="Người Báo Cáo" 
+                SortExpression="NGUOIDUNG.TenNguoiDung" 
+                meta:resourcekey="TemplateFieldResource4">
                  <ItemTemplate>
                         <%#Eval("NGUOIDUNG.TenNguoiDung")%>
                  </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="ThoiGianBaoCaoViPham" HeaderText="Thời Gian Báo Cáo Vi Phạm" 
-                SortExpression="ThoiGianBaoCaoViPham" />            
+                SortExpression="ThoiGianBaoCaoViPham" 
+                meta:resourcekey="BoundFieldResource2" />            
         </Columns>
         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
@@ -55,9 +65,11 @@
     
     <asp:Button ID="btnDuyet" runat="server" BackColor="#FF9933" 
                             BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
-                            onclick="btnDuyet1_Click" Text="Duyệt" />
+                            onclick="btnDuyet1_Click" Text="Duyệt" 
+        meta:resourcekey="btnDuyetResource1" />
     <asp:Button ID="btnXoa" runat="server" BackColor="#FF9933" 
                             BorderStyle="Groove" Font-Bold="True" ForeColor="White" 
-                            onclick="btnXoa1_Click" Text="Xóa" />                        
+                            onclick="btnXoa1_Click" Text="Xóa" 
+        meta:resourcekey="btnXoaResource1" />                        
 </asp:Content>
 

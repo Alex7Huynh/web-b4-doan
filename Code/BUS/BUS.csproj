@@ -65,6 +65,7 @@
     <Compile Include="TinRaoVat\HoSoTuyenDungBUS.cs" />
     <Compile Include="TinRaoVat\TinRaoVatBatDongSanBUS.cs" />
     <Compile Include="TinRaoVat\TinRaoVatBUS.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatDaLuuBUS.cs" />
     <Compile Include="TinRaoVat\TinRaoVatThuongBUS.cs" />
     <Compile Include="TinRaoVat\TinTuyenDungBUS.cs" />
   </ItemGroup>

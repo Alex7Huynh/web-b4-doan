@@ -26,14 +26,16 @@
 
     <siteMapNode  title="Tin rao vặt" roles="*">
       <siteMapNode url="./TinRaoVat/ChonChuyenMucDang.aspx" title="Đăng tin rao vặt" roles="*"/>
-      <siteMapNode url="./TinRaoVat/XemDanhSachTinRaoVat.aspx" title="Xem tin đã đăng" roles="*"/>
-      
+      <siteMapNode url="./TinRaoVat/XemDanhSachTinRaoVat.aspx" title="Xem tin đã đăng" roles="*"/>      
     </siteMapNode>
 
     <siteMapNode url="Admin/" title="Site Administration" roles="Administrators" description="parent">
       <siteMapNode url="Admin/Setting.aspx" title="My Profile" roles="Administrators" description=""/>
-      <siteMapNode url="Admin/QuanLyGiaoDien.aspx" title="Chỉnh sửa giao diện" roles="Administrators" description=""/>
-      <siteMapNode url="./TinRaoVat/QuanLyTinRaoVat.aspx" title="Quản lý tin rao vặt" roles="*"/>
+      <siteMapNode url="Admin/QuanLyDanhMuc.aspx" title="Quản lý danh mục" roles="Administrators" description=""/>
+      <siteMapNode url="Admin/QuanLyGiaoDien.aspx" title="Quản lý giao diện" roles="*"/>
+      <siteMapNode url="Admin/QuanLyTaiKhoan.aspx" title="Quản lý tài khoản" roles="*"/>
+      <siteMapNode url="TinRaoVat/QuanLyTinRaoVat.aspx" title="Quản lý tin rao vặt" roles="*"/>
+      <siteMapNode url="TinRaoVat/DuyetTinRaoVat.aspx" title="Quản lý tin vi phạm" roles="*"/>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

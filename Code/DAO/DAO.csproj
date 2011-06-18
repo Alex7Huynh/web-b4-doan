@@ -76,6 +76,7 @@
     <Compile Include="TinRaoVat\ChiTietHoSoTuyenDungDAO.cs" />
     <Compile Include="TinRaoVat\HoSoTuyenDungDAO.cs" />
     <Compile Include="TinRaoVat\TinRaoVatBatDongSanDAO.cs" />
+    <Compile Include="TinRaoVat\TinRaoVatDaLuuDAO.cs" />
     <Compile Include="TinRaoVat\TinRaoVatDAO.cs" />
     <Compile Include="TinRaoVat\TinRaoVatThuongDAO.cs" />
     <Compile Include="TinRaoVat\TinTuyenDungDAO.cs" />
