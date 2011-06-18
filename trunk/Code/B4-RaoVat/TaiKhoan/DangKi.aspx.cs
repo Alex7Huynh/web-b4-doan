@@ -11,8 +11,4 @@ public partial class Default2 : BUS.BasePage
     {
         this.userDangKy.MembershipProvider = "MyMembership";
     }
-    protected void CreateUserWizard1_Load(object sender, EventArgs e)
-    {
-
-    }
 }

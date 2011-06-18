@@ -24,6 +24,10 @@ namespace BUS
         {
             return DanhMucChinhDAO.LayDanhSachDanhMucChinh();
         }
+        public static List<DANHMUCCHINH> LayDanhSachDanhMucChinhTheoChuyenMuc(int maChuyenMuc)
+        {
+            return DanhMucChinhDAO.LayDanhSachDanhMucChinhTheoChuyenMuc(maChuyenMuc);
+        }
         public static DANHMUCCHINH TimDanhMucChinhTheoMa(int maDanhMucChinh)
         {
             return DanhMucChinhDAO.TimDanhMucChinhTheoMa(maDanhMucChinh);

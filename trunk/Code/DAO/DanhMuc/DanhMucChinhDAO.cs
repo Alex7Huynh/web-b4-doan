@@ -80,6 +80,27 @@ namespace DAO
             return lstDanhMucChinh;
         }
 
+        /// <summary>
+        /// Load list of DANHMUCCHINH
+        /// </summary>
+        /// <returns></returns>
+        public static List<DANHMUCCHINH> LayDanhSachDanhMucChinhTheoChuyenMuc(int maChuyenMuc)
+        {
+            List<DANHMUCCHINH> lstDanhMucChinh = new List<DANHMUCCHINH>();
+            try
+            {
+                RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                var dsDanhMucChinh = from q in db.DANHMUCCHINHs
+                                     where q.Deleted == false && q.MaChuyenMuc == maChuyenMuc
+                                     select q;
+                lstDanhMucChinh = dsDanhMucChinh.ToList<DANHMUCCHINH>();
+
+            }
+            catch (Exception ex)
+            { return null; }
+            return lstDanhMucChinh;
+        }
+
        
     }
 }
