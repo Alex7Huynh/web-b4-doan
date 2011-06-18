@@ -2,6 +2,8 @@
 using System.Data;
 using System.Configuration;
 using System.Linq;
+using System.Collections.Generic;
+using System.Text;
 using System.Web;
 using System.Xml.Linq;
 using System.Timers;
@@ -86,10 +88,9 @@ namespace TaskSchedulerSample
             
             if (!this.Stopped)
             {
+                Execute();
 
-                Thread thread = new Thread(new ThreadStart(Execute));
-
-                thread.Start();
+               
 
             }
         }
@@ -105,35 +106,28 @@ namespace TaskSchedulerSample
                 // them tin rao vat tu dong vao co so du lieu
 
                 TINRAOVAT tinraovat = new TINRAOVAT();
-                TINRAOVAT tinraovatnew = new TINRAOVAT();
-
+               
                 tinraovat = TinRaoVatBUS.TimTinRaoVatTheoMa(this.MaTinRaoVat);
-                tinraovatnew.ThoiGianDang = tinraovat.ThoiGianDang;
-                tinraovatnew.ThoiHanLuuTin = tinraovat.ThoiHanLuuTin;
-                tinraovatnew.MaDiaDiem = tinraovat.SoLanXem;
-                tinraovatnew.ThoiHanLuuTin = tinraovat.MaNguoiDung;
-                tinraovatnew.ThoiHanLuuTin = tinraovat.MaDanhMucCon;
-                tinraovatnew.TieuDe = tinraovat.TieuDe;
-                tinraovatnew.Thumbnail = tinraovat.Thumbnail;
-                tinraovatnew.GhiChuHinhAnh = tinraovat.GhiChuHinhAnh;
-                tinraovatnew.Deleted = tinraovat.Deleted;
-
-                TinRaoVatBUS.ThemTinRaoVat(tinraovatnew);
-                
-
-
+                tinraovat.MaTinRaoVat = default(int);
+                TinRaoVatBUS.ThemTinRaoVat(tinraovat);
                 if (this.LoaiTinRaoVat == 1)
                 {
                     TINRAOVATTHUONG tinraovatthuong = new TINRAOVATTHUONG();
                     tinraovatthuong = TinRaoVatThuongBUS.TimTinRaoVatThuongTheoMaTinRaoVat(this.MaTinRaoVat);
-                    TinRaoVatThuongBUS.ThemTinRaoVatThuong(tinraovatthuong);
+                    tinraovatthuong.MaTinRaoVatThuong = default(int);
+                    tinraovatthuong.MaTinRaoVat = tinraovat.MaTinRaoVat;
+                    bool kiemtra = false;
+                    kiemtra = TinRaoVatThuongBUS.ThemTinRaoVatThuong(tinraovatthuong);
                 }
 
                 if (this.LoaiTinRaoVat == 2)
                 {
                     TINRAOVATBATDONGSAN tinraovatbatdongsan = new TINRAOVATBATDONGSAN();
                     tinraovatbatdongsan = TinRaoVatBatDongSanBUS.TimTinRaoVatBatDongSanTheoMaTinRaoVat(this.MaTinRaoVat);
-                    TinRaoVatBatDongSanBUS.ThemTinRaoVatBatDongSan(tinraovatbatdongsan);
+                    tinraovatbatdongsan.MaTinRaoVatBatDongSan = default(int);
+                    tinraovatbatdongsan.MaTinRaoVat = tinraovat.MaTinRaoVat;
+                    bool kiemtra = false;
+                    kiemtra = TinRaoVatBatDongSanBUS.ThemTinRaoVatBatDongSan(tinraovatbatdongsan);
 
                 }
 
@@ -141,17 +135,24 @@ namespace TaskSchedulerSample
                 {
                     TINTUYENDUNG tintuyendung = new TINTUYENDUNG();
                     tintuyendung = TinTuyenDungBUS.TimTinTuyenDungTheoMaTinRaoVat(this.MaTinRaoVat);
-                    TinTuyenDungBUS.ThemTinTuyenDung(tintuyendung);
+                    tintuyendung.MaTinTuyenDung = default(int);
+                    tintuyendung.MaTinRaoVat = tinraovat.MaTinRaoVat;
+                    bool kiemtra = false;
+                    kiemtra = TinTuyenDungBUS.ThemTinTuyenDung(tintuyendung);
                 }
 
                 if (this.LoaiTinRaoVat == 4)
                 {
                     HOSOTUYENDUNG hosotuyendung = new HOSOTUYENDUNG();
                     hosotuyendung = HoSoTuyenDungBUS.TimHoSoTuyenDungTheoMaTinRaoVat(this.MaTinRaoVat);
-                    HoSoTuyenDungBUS.ThemHoSoTuyenDung(hosotuyendung);
-
+                    hosotuyendung.MaHoSoTuyenDung = default(int);
+                    hosotuyendung.MaTinRaoVat = tinraovat.MaTinRaoVat;
+                    bool kiemtra = false;
+                    kiemtra = HoSoTuyenDungBUS.ThemHoSoTuyenDung(hosotuyendung);
+                    
                     CHITIETHOSOTUYENDUNG chitiethosotuyendung = new CHITIETHOSOTUYENDUNG();
                     chitiethosotuyendung = ChiTietHoSoTuyenDungBUS.TimChiTietHoSoTuyenDungTheoMa(this.chitiethosotuyendung);
+                    chitiethosotuyendung.MaHoSoTuyenDung = hosotuyendung.MaHoSoTuyenDung;
                     ChiTietHoSoTuyenDungBUS.ThemChiTietHoSoTuyenDung(chitiethosotuyendung);
                 }
 

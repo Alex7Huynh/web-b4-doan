@@ -185,6 +185,7 @@ public partial class DangTinRaoVat : BUS.BasePage
             TinRaoVat.MaNguoiDung = nguoidung.MaNguoiDung;
             TinRaoVat.MaDanhMucCon = MaDanhMucCon;
             TinRaoVat.TieuDe = txtTieuDe1.Text;
+            TinRaoVat.Deleted = false;
             //Thumbnail            
             if (fupHinhAnh1.HasFile)
             {
@@ -200,8 +201,8 @@ public partial class DangTinRaoVat : BUS.BasePage
                     Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
                 }
             }
+            
 
-            TinRaoVat.Deleted = false;
             if (!TinRaoVatBUS.ThemTinRaoVat(TinRaoVat))
             {
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
@@ -222,9 +223,9 @@ public partial class DangTinRaoVat : BUS.BasePage
             if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong1.Text != "")
             {
                 double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong1.Text);
-                thoigiandangtudong = thoigiandangtudong * 30000;
-                //TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 1, 0);
-                //taskscheduler.StartTask();
+                thoigiandangtudong = thoigiandangtudong * 120000;
+                TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 1, 0);
+                taskscheduler.StartTask();
 
             }
 
@@ -334,6 +335,14 @@ public partial class DangTinRaoVat : BUS.BasePage
                 Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
             }
             //Thêm thành công
+            if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong2.Text != "")
+            {
+                double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong2.Text);
+                thoigiandangtudong = thoigiandangtudong * 120000;
+                TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 2, 0);
+                taskscheduler.StartTask();
+
+            }
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
         }       
     }
@@ -359,9 +368,6 @@ public partial class DangTinRaoVat : BUS.BasePage
             nguoidung = NguoiDungBUS.LayNguoiDungTheoTen(Session["UserName"].ToString());
 
         TinRaoVat.MaNguoiDung = nguoidung.MaNguoiDung;
-
-        
-
         TinRaoVat.MaDanhMucCon = MaDanhMucCon;
         TinRaoVat.TieuDe = txtTieuDe3.Text;
         //Thumbnail
@@ -415,6 +421,14 @@ public partial class DangTinRaoVat : BUS.BasePage
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
         }
         //Thêm thành công
+        if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong3.Text != "")
+        {
+            double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong3.Text);
+            thoigiandangtudong = thoigiandangtudong * 120000;
+            TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 3, 0);
+            taskscheduler.StartTask();
+
+        }
         Response.Redirect("~/Default.aspx?rv=submitraovat&ss=success");
     }
     /// <summary>
@@ -522,6 +536,15 @@ public partial class DangTinRaoVat : BUS.BasePage
         if (!ChiTietHoSoTuyenDungBUS.ThemChiTietHoSoTuyenDung(ChiTietHSTD))
         {
             Response.Redirect("~/Default.aspx?rv=submitraovat&ss=fail");
+        }
+
+        if (nguoidung.MaLoaiNguoiDung == 2 && tb_thoigiandangtintudong4.Text != "")
+        {
+            double thoigiandangtudong = double.Parse(tb_thoigiandangtintudong4.Text);
+            thoigiandangtudong = thoigiandangtudong * 120000;
+            TaskSchedulerSample.TaskScheduler taskscheduler = new TaskSchedulerSample.TaskScheduler(thoigiandangtudong, TinRaoVat.MaTinRaoVat, 4, ChiTietHSTD.MaChiTietHoSoTuyenDung);
+            taskscheduler.StartTask();
+
         }
 
         //Thêm thành công

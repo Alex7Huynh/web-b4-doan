@@ -18,6 +18,8 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
+                chiTietHoSoTuyenDung.MaChiTietHoSoTuyenDung = default(int);
                 db.CHITIETHOSOTUYENDUNGs.InsertOnSubmit(chiTietHoSoTuyenDung);
                 db.SubmitChanges();
             }
@@ -82,6 +84,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
                 hstd = db.CHITIETHOSOTUYENDUNGs.Single(t => t.MaChiTietHoSoTuyenDung == maChiTietHoSoTuyenDung);
             }
             catch (Exception ex)
@@ -101,6 +104,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
                 var dsChiTietHoSoTuyenDung = from q in db.CHITIETHOSOTUYENDUNGs
                                              where q.MaHoSoTuyenDung == maHoSoTuyenDung
                                              select q;

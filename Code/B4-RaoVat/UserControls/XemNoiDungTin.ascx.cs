@@ -48,6 +48,8 @@ public partial class UserControls_XemNoiDungTin : System.Web.UI.UserControl
 
     private void FillSummary(CHUYENMUC chuyenMuc, int maTinRaoVat)
     {
+        
+
         switch (chuyenMuc.TenChuyenMuc)
         {
             case "Thường":

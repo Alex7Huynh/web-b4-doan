@@ -18,6 +18,8 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
+                hoSoTuyenDung.MaHoSoTuyenDung = default(int);
                 db.HOSOTUYENDUNGs.InsertOnSubmit(hoSoTuyenDung);
                 db.SubmitChanges();
             }
@@ -59,6 +61,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+
                 HOSOTUYENDUNG hoSoTuyenDung = db.HOSOTUYENDUNGs.Single(t => t.MaTinRaoVat == maTinRaoVat);
                 hoSoTuyenDung.Deleted = true;
                 db.SubmitChanges();
@@ -147,6 +150,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
                 var dsHoSoTuyenDung = from q in db.HOSOTUYENDUNGs
                                       where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
                                       select q;
