@@ -14,20 +14,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
         ViewUserName();
         ThayDoiURLChonNgonNgu();
         KhoiTaoGiaoDien();
-        //Label9.Text = Session["MyTheme"].ToString();
-    }
-    protected void Page_PreInit(object sender, EventArgs e)
-    {
-        //if (Session["MyTheme"] != null)
-        //    Page.Theme = Session["MyTheme"].ToString();
-        //Page.Theme = "Theme2";
     }
     protected void linkbntXemThongTin_Click(object sender, EventArgs e)
     {
         Response.Redirect("/B4-RaoVat/TaiKhoan/XemThongTinTaiKhoan.aspx");
     }
     protected void linkbntDangXuat_Click(object sender, EventArgs e)
-    {        
+    {
         lblWelcome.Text = "Guest-Khách";
         Session["UserName"] = null;
     }
@@ -58,14 +51,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     private void KhoiTaoGiaoDien()
     {
-        //CHITIETGIAODIEN ChiTietGiaoDien = ChiTietGiaoDienBUS.TimChiTietGiaoDienTheoMa(1);
-        //BANNERGIAODIEN Banner = new BANNERGIAODIEN();
-        //    Banner = BannerBUS.TimBannerTheoMa(ChiTietGiaoDien.MaBannerGiaoDien.Value);
-        //LOGO Logo = LogoBUS.TimLogoTheoMa(ChiTietGiaoDien.MaLogo.Value);
+        CHITIETGIAODIEN ChiTietGiaoDien = ChiTietGiaoDienBUS.TimChiTietGiaoDienTheoMa(1);
+        BANNERGIAODIEN Banner = new BANNERGIAODIEN();
+        Banner = BannerBUS.TimBannerTheoMa(ChiTietGiaoDien.MaBannerGiaoDien.Value);
+        LOGO Logo = LogoBUS.TimLogoTheoMa(ChiTietGiaoDien.MaLogo.Value);
 
-        //imgBanner.ImageUrl = Banner.DuongDanBannerGiaoDien;
-        //imgLogo.ImageUrl = Logo.DuongDanLogo;
-
+        imgBanner.ImageUrl = Banner.DuongDanBannerGiaoDien;
+        imgLogo.ImageUrl = Logo.DuongDanLogo;
     }
     private void ViewUserName()
     {

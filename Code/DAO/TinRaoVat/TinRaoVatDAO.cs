@@ -13,7 +13,7 @@ namespace DAO
         /// </summary>
         /// <param name="tinRaoVat"></param>
         /// <returns></returns>
-       
+
         public static bool ThemTinRaoVat(TINRAOVAT tinRaoVat)
         {
             try
@@ -23,22 +23,16 @@ namespace DAO
                 tinRaoVat.MaTinRaoVat = default(int);
                 db.TINRAOVATs.InsertOnSubmit(tinRaoVat);
                 db.SubmitChanges();
-               
-                
-               
             }
             catch (Exception ex)
             {
                 string loi = ex.Message.ToString();
-                return false; 
+                return false;
             }
 
             return true;
-
         }
-
-       
-
+        
         /// <summary>
         /// Delete old TINRAOVAT
         /// </summary>
@@ -104,7 +98,7 @@ namespace DAO
                 trv.MaDanhMucCon = tinRaoVat.MaDanhMucCon;
                 trv.TieuDe = tinRaoVat.TieuDe;
                 trv.Thumbnail = tinRaoVat.Thumbnail;
-                trv.GhiChuHinhAnh = tinRaoVat.GhiChuHinhAnh;               
+                trv.GhiChuHinhAnh = tinRaoVat.GhiChuHinhAnh;
                 //Submit
                 db.SubmitChanges();
             }
@@ -234,11 +228,15 @@ namespace DAO
         public static CHUYENMUC LayChuyenMuc(int maTinRaoVat)
         {
             CHUYENMUC chuyenMuc = new CHUYENMUC();
+            TINRAOVAT TinRaoVat = TimTinRaoVatTheoMa(maTinRaoVat);
+            DANHMUCCON DanhMucCon = DanhMucConDAO.TimDanhMucConTheoMa(TinRaoVat.MaDanhMucCon.Value);
+            DANHMUCCHINH DanhMucChinh = DanhMucChinhDAO.TimDanhMucChinhTheoMa(DanhMucCon.MaDanhMucChinh.Value);
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
                 var dsChuyenMuc = from q in db.CHUYENMUCs
-                                  where q.Deleted == false && TimTinRaoVatTheoMa(maTinRaoVat).DANHMUCCON.DANHMUCCHINH.CHUYENMUC.MaChuyenMuc == q.MaChuyenMuc
+                                  //where q.Deleted == false && TimTinRaoVatTheoMa(maTinRaoVat).DANHMUCCON.DANHMUCCHINH.CHUYENMUC.MaChuyenMuc == q.MaChuyenMuc
+                                  where q.Deleted == false && DanhMucChinh.MaChuyenMuc == q.MaChuyenMuc
                                   select q;
                 chuyenMuc = dsChuyenMuc.ToList<CHUYENMUC>().First();
             }
