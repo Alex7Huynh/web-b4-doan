@@ -17,7 +17,8 @@ public partial class BaoCaoBaiVietViPham : System.Web.UI.Page
     /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (Session["userID"] == null)
+            Response.Redirect("~/TaiKhoan/DangNhap.aspx");
     }
 
     protected void btnBaoCao1_Click(object sender, EventArgs e)

@@ -1,20 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="XemNoiDungTin.ascx.cs"
     Inherits="UserControls_XemNoiDungTin" %>
 <style type="text/css">
-    .style1
-    {
-        width: 128px;
-    }
     .style2
     {
         width: 184px;
-    }
-    .style3
-    {
-        width: 592px;
-        margin-right: 3px;
-        border: Ridge 1px green;
-        height: 752px;
     }
     .style4
     {
@@ -30,18 +19,21 @@
     }
     .style7
     {
-        width: 215px;
     }
     .style8
     {
         width: 268435360px;
+    }
+    .style9
+    {
+        width: 134px;
     }
 </style>
 <div>
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="ThuongView" runat="server">
             &nbsp;
-            <table cellpadding="4" cellspacing="4" >
+            <table cellpadding="4" cellspacing="4">
                 <tr align="center">
                     <td colspan="4">
                         <b>Nội Dung</b>
@@ -69,25 +61,22 @@
                             Height="26px" />
                     </td>
                     <td align="center" class="style6" colspan="2">
-                        <asp:Button ID="btnChinhSua" runat="server" onclick="btnChinhSua_Click" 
-                            Text="Chỉnh sửa" />
+                        <asp:Button ID="btnChinhSua1" runat="server" OnClick="btnChinhSua_Click" Text="Chỉnh sửa" />
                     </td>
                     <td align="center" class="style8">
-                        <asp:Button ID="btnBaoCaoViPham" runat="server" onclick="btnBaoCaoViPham_Click" 
+                        <asp:Button ID="btnBaoCaoViPham1" runat="server" OnClick="btnBaoCaoViPham_Click"
                             Text="Báo cáo bài viết vi phạm" />
                     </td>
                 </tr>
                 <tr>
                     <td class="style5" colspan="4">
-                        <asp:Label ID="Label1" runat="server" Text="Các Bài Trả Lời Đã Đăng:" 
-                            Font-Bold="True" ForeColor="Red" Width="400px"></asp:Label>
-                        :
+                        <asp:Label ID="Label1" runat="server" Text="Các Bài Trả Lời Đã Đăng:" Font-Bold="True"
+                            ForeColor="Red" Width="400px"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="style5" colspan="4">
-                        <asp:DataList ID="DataList1" runat="server" DataSourceID="BaiTraLoi" 
-                            Width="205px">
+                        <asp:DataList ID="DataList1" runat="server" DataSourceID="BaiTraLoi" Width="205px">
                             <ItemTemplate>
                                 <asp:Panel runat="server" ID="pnTraLoi1" BorderStyle="Groove" BorderColor="#656598"
                                     Width="542px">
@@ -404,28 +393,44 @@
                         <asp:CheckBox ID="chkGanCongVien" runat="server" Enabled="False" />
                     </td>
                 </tr>
+            </table>
+            <table cellpadding="4" cellspacing="4">
                 <tr>
-                    <td class="style1">
-                        <asp:Button ID="Button3" runat="server" Text="Trả Lời" OnClick="btt_TraLoi_Click" />
+                    <td align="center" class="style9">
+                        <asp:Button ID="Button1" runat="server" Height="26px" 
+                            OnClick="btt_TraLoi_Click" Text="Trả Lời" />
+                    </td>
+                    <td align="center" class="style7">
+                        <asp:Button ID="btnChinhSua2" runat="server" OnClick="btnChinhSua_Click" 
+                            Text="Chỉnh sửa" />
+                    </td>
+                    <td align="center" class="style7">
+                        <asp:Button ID="Button3" runat="server" OnClick="btnBaoCaoViPham_Click" 
+                            Text="Báo cáo bài viết vi phạm" />
+                    </td>
+                    <td align="center" class="style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="style5" colspan="4">
+                        <asp:Label ID="Label2" runat="server" Font-Bold="True" ForeColor="Red" 
+                            Text="Các Bài Trả Lời Đã Đăng:" Width="400px"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="style2">
-                        <asp:Label ID="Label2" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
-                        :
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style2" colspan="2">
-                        <asp:DataList ID="DataList2" runat="server" DataSourceID="BaiTraLoi" Width="231px">
+                    <td class="style2" colspan="3">
+                        <asp:DataList ID="DataList2" runat="server" DataSourceID="BaiTraLoi" 
+                            Width="231px">
                             <ItemTemplate>
-                                <asp:Panel runat="server" ID="pnTraLoi2" BorderStyle="Groove" BorderColor="#656598"
-                                    Width="542px">
+                                <asp:Panel ID="pnTraLoi2" runat="server" BorderColor="#656598" 
+                                    BorderStyle="Groove" Width="542px">
                                     Thời gian trả lời:
-                                    <asp:Label ID="ThoiGianTraLoiLabel" runat="server" Text='<%# Eval("ThoiGianTraLoi") %>' />
+                                    <asp:Label ID="ThoiGianTraLoiLabel" runat="server" 
+                                        Text='<%# Eval("ThoiGianTraLoi") %>' />
                                     <br />
                                     Nội dung trả lời:
-                                    <asp:Label ID="NoiDungTraLoiLabel" runat="server" Text='<%# Eval("NoiDungTraLoi") %>' />
+                                    <asp:Label ID="NoiDungTraLoiLabel" runat="server" 
+                                        Text='<%# Eval("NoiDungTraLoi") %>' />
                                     <br />
                                 </asp:Panel>
                                 <br />
@@ -435,7 +440,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style2">
+                    <td class="style2" colspan="2">
                         &nbsp;
                     </td>
                 </tr>
@@ -507,111 +512,122 @@
             </table>
             <table cellpadding="4" cellspacing="4">
                 <tr>
-                    <td colspan="2" align="center">
+                    <td colspan="4" align="center">
                         <b>Thông Tin Công Việc</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Vị Trí Tuyển Dụng:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblViTriTuyenDung" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Yêu Cầu Công Việc:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblYeuCauCongViec" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Yêu Cầu Kinh Nghiệm:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblYeuCauKinhNghiem" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Thời Gian Lam Việc:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblThoiGianLamViec" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Số Lượng Cần Tuyển:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblSoLuongCanTuyen" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Mức lương Khởi Điểm:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblMucLuongKhoiDiem" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Thời Gian Thử Việc:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblThoiGianThuViec" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Lương Thử Việc:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblLuongThuViec" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Quyền Lợi Được Hưởng:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblQuyenLoiDuocHuong" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Hồ Sơ Bao Gồm:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblHoSoBaoGom" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Thời Hạn Kết Thúc Nộp Hồ Sơ:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblThoiHanKetThucNopHoSo" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="style1">
-                        <asp:Button ID="Button5" runat="server" Text="Trả Lời" OnClick="btt_TraLoi_Click" />
+                    <td class="style7" align="center">
+                        <asp:Button ID="Button4" runat="server" Text="Trả Lời" OnClick="btt_TraLoi_Click"
+                            Height="26px" />
+                    </td>
+                    <td align="center" class="style7" colspan="2">
+                        <asp:Button ID="btnChinhSua3" runat="server" OnClick="btnChinhSua_Click" 
+                            Text="Chỉnh sửa" />
+                    </td>
+                    <td align="center" class="style7">
+                        <asp:Button ID="Button11" runat="server" OnClick="btnBaoCaoViPham_Click" 
+                            Text="Báo cáo bài viết vi phạm" />
+                    </td>
+                    <td align="center" class="style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="style5" colspan="5">
+                        <asp:Label ID="Label3" runat="server" Text="Các Bài Trả Lời Đã Đăng:" Font-Bold="True"
+                            ForeColor="Red" Width="400px"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="style2">
-                        <asp:Label ID="Label4" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
-                        :
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style2" colspan="2">
+                    <td class="style2" colspan="4">
                         <asp:DataList ID="DataList3" runat="server" DataSourceID="BaiTraLoi" Width="231px">
                             <ItemTemplate>
                                 <asp:Panel runat="server" ID="pnTraLoi3" BorderStyle="Groove" BorderColor="#656598"
@@ -630,7 +646,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style2">
+                    <td class="style2" colspan="2">
                         &nbsp;
                     </td>
                 </tr>
@@ -760,95 +776,106 @@
             </table>
             <table cellpadding="4" cellspacing="4">
                 <tr>
-                    <td colspan="2" align="center">
+                    <td colspan="4" align="center">
                         <b>Kinh Nghiệm Làm Việc</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Cấp Bậc:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblCapBac" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Số Năm Kinh Nghiệm:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblSoNamKinhNghiem" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Công Ty Làm Việc:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblCongTyLamViec" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Chức Danh:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblChucDanh" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Tóm Tắt Kinh Nghiệm:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblTomTatKinhNghiem" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Mô Tả Công Việc Lý Tưởng:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblMoTaCongViecLyTuong" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Nguyện Vọng:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblNguyenVong" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Thời Gian Làm Việc Mong Muốn:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblThoiGianLamViecMongMuon" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="2">
                         Lương Mong Muốn:
                     </td>
-                    <td>
+                    <td colspan="2">
                         <asp:Label ID="lblLuongMongMuon" runat="server" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="style1">
-                        <asp:Button ID="Button8" runat="server" Text="Trả Lời" OnClick="btt_TraLoi_Click" />
+                    <td class="style7" align="center">
+                        <asp:Button ID="Button8" runat="server" Text="Trả Lời" OnClick="btt_TraLoi_Click"
+                            Height="26px" />
+                    </td>
+                    <td align="center" class="style7" colspan="2">
+                        <asp:Button ID="btnChinhSua4" runat="server" OnClick="btnChinhSua_Click" 
+                            Text="Chỉnh sửa" />
+                    </td>
+                    <td align="center" class="style7">
+                        <asp:Button ID="Button12" runat="server" OnClick="btnBaoCaoViPham_Click" 
+                            Text="Báo cáo bài viết vi phạm" />
+                    </td>
+                    <td align="center" class="style8">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                   <td class="style5" colspan="5">
+                        <asp:Label ID="Label4" runat="server" Text="Các Bài Trả Lời Đã Đăng:" Font-Bold="True"
+                            ForeColor="Red" Width="400px"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="style2">
-                        <asp:Label ID="Label6" runat="server" Text="Các Bài Trả Lời Đã Đăng"></asp:Label>
-                        :
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style2" colspan="2">
+                    <td class="style2" colspan="4">
                         <asp:DataList ID="DataList4" runat="server" DataSourceID="BaiTraLoi" Width="231px">
                             <ItemTemplate>
                                 <asp:Panel runat="server" ID="pnTraLoi4" BorderStyle="Groove" BorderColor="#656598"
@@ -867,7 +894,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style2">
+                    <td class="style2" colspan="2">
                         &nbsp;
                     </td>
                 </tr>
