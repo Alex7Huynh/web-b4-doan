@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="XemTinNhan.aspx.cs" Inherits="Default2" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
+    <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">XEM TIN NHẮN</asp:Label>
     <asp:GridView ID="GridView" CssClass="gridview" 
         AlternatingRowStyle-CssClass="even" runat="server" AllowPaging="True" 
         AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" 

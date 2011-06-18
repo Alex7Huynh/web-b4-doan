@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DuyetTinRaoVat.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
+    <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#003399">DUYỆT TIN RAO VẶT</asp:Label>
     <asp:Button ID="CheckAll" runat="server" Text="Check All" 
         onclick="CheckAll_Click" /> 
     <asp:Button ID="UncheckAll" runat="server" Text="Uncheck All" 
@@ -19,22 +20,22 @@
             </asp:TemplateField>
             <asp:BoundField DataField="MaTinRaoVatViPham" HeaderText="MaTinRaoVatViPham" 
                 SortExpression="MaTinRaoVatViPham" Visible="false" />
-            <asp:TemplateField HeaderText="TinViPham" SortExpression="TINRAOVAT.TieuDe">
+            <asp:TemplateField HeaderText="Tin Vi Phạm" SortExpression="TINRAOVAT.TieuDe">
                  <ItemTemplate>
                         <%#Eval("TINRAOVAT.TieuDe")%>            
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="TINRAOVAT" SortExpression="TINRAOVAT.ThoiGianDang">
+            <asp:TemplateField HeaderText="Thời Gian Đăng" SortExpression="TINRAOVAT.ThoiGianDang">
                  <ItemTemplate>
                         <%#Eval("TINRAOVAT.ThoiGianDang")%>
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="NguoiBaoCao" SortExpression="NGUOIDUNG.TenNguoiDung">
+            <asp:TemplateField HeaderText="Người Báo Cáo" SortExpression="NGUOIDUNG.TenNguoiDung">
                  <ItemTemplate>
                         <%#Eval("NGUOIDUNG.TenNguoiDung")%>
                  </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="ThoiGianBaoCaoViPham" HeaderText="ThoiGianBaoCaoViPham" 
+            <asp:BoundField DataField="ThoiGianBaoCaoViPham" HeaderText="Thời Gian Báo Cáo Vi Phạm" 
                 SortExpression="ThoiGianBaoCaoViPham" />            
         </Columns>
         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />

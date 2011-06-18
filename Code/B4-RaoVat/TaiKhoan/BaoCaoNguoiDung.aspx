@@ -3,6 +3,9 @@
     CodeFile="BaoCaoNguoiDung.aspx.cs" Inherits="BaoCaoNguoiDungViPham" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
+    <asp:Label ID="Label3" runat="server" Font-Bold="True" ForeColor="#003399">BÁO 
+    CÁO NGƯỜI DÙNG VI PHẠM</asp:Label>
+    <br />
     <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#003399" 
         meta:resourcekey="Label1Resource1">Người vi phạm:</asp:Label>
     <div>
