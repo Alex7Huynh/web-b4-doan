@@ -13,20 +13,31 @@ namespace DAO
         /// </summary>
         /// <param name="tinRaoVat"></param>
         /// <returns></returns>
+       
         public static bool ThemTinRaoVat(TINRAOVAT tinRaoVat)
         {
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
+                tinRaoVat.MaTinRaoVat = default(int);
                 db.TINRAOVATs.InsertOnSubmit(tinRaoVat);
                 db.SubmitChanges();
+               
+                
+               
             }
             catch (Exception ex)
-            { return false; }
+            {
+                string loi = ex.Message.ToString();
+                return false; 
+            }
 
             return true;
 
         }
+
+       
 
         /// <summary>
         /// Delete old TINRAOVAT
@@ -181,6 +192,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
                 trv = db.TINRAOVATs.Single(t => t.MaTinRaoVat == maTinRaoVat
                     && t.Deleted == false);
             }

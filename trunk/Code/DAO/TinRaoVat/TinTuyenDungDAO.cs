@@ -18,11 +18,16 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+               // db.DeferredLoadingEnabled = false;
+                tinTuyenDung.MaTinTuyenDung = default(int);
                 db.TINTUYENDUNGs.InsertOnSubmit(tinTuyenDung);
                 db.SubmitChanges();
             }
             catch (Exception ex)
-            { return false; }
+            {
+                string loi = ex.Message.ToString();
+                return false;
+            }
 
             return true;
 
@@ -161,6 +166,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
                 var dsTinTuyenDung = from q in db.TINTUYENDUNGs
                                      where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
                                      select q;

@@ -18,6 +18,8 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
+                tinRaoVatBatDongSan.MaTinRaoVatBatDongSan = default(int);  
                 db.TINRAOVATBATDONGSANs.InsertOnSubmit(tinRaoVatBatDongSan);
                 db.SubmitChanges();
             }
@@ -176,6 +178,7 @@ namespace DAO
             try
             {
                 RaoVatDataClassesDataContext db = new RaoVatDataClassesDataContext();
+                db.DeferredLoadingEnabled = false;
                 var dsTinRaoVatBatDongSan = from q in db.TINRAOVATBATDONGSANs
                                             where q.Deleted == false && q.MaTinRaoVat == maTinRaoVat
                                             select q;
