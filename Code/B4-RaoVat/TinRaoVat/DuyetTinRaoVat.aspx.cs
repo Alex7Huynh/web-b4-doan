@@ -25,13 +25,16 @@ public partial class Default2 : System.Web.UI.Page
     protected void btnDuyet1_Click(object sender, EventArgs e)
     {
         TINRAOVATDALUU tinRaoVatDaLuu = new TINRAOVATDALUU();
+        TINRAOVAT tinRaoVat = new TINRAOVAT();
         foreach (GridViewRow row in GridView.Rows)
         {
             CheckBox cb = (CheckBox)row.FindControl("Deleted");
             if (cb != null && cb.Checked)
             {
                 int maTinRaoVat = Convert.ToInt32(GridView.DataKeys[row.RowIndex].Value);
-                tinRaoVatDaLuu.MaTinRaoVat = GridView.Rows[row.RowIndex].Cells[1].Text;
+                tinRaoVatDaLuu.MaTinRaoVat = Convert.ToInt32(GridView.Rows[row.RowIndex].Cells[1].Text);
+                tinRaoVat = TinRaoVatBUS.TimTinRaoVatTheoMa(maTinRaoVat);
+                maTinRaoVat = (int)tinRaoVat.MaNguoiDung;
                 tinRaoVatDaLuu.MaNguoiDung = NguoiDungBUS.LayNguoiDungTheoMa(maTinRaoVat).MaNguoiDung;
                 tinRaoVatDaLuu.ThoiGianLuu = DateTime.Now;
                 tinRaoVatDaLuu.Deleted = false;
