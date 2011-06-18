@@ -56,7 +56,7 @@ public partial class Default2 : BUS.BasePage
             NguoiDung = NguoiDungDAO.LayNguoiDungTheoTen(Login1.UserName.ToString().Trim());
             if (NguoiDung.Deleted == true)
             {
-                Login1.FailureText = "Tài Khoản này đã bị admin xóa, do qui phạm qui định của diễn đang.\n Xin vui lòng đăng ký tài khoản khác.";
+                Login1.FailureText = "Tài Khoản này đã bị admin xóa, do qui phạm qui định của diễn đàn.\n Xin vui lòng đăng ký tài khoản khác.";
             }
             else
             {
@@ -73,6 +73,7 @@ public partial class Default2 : BUS.BasePage
                     e.Authenticated = false;
             }
         }
+        
 
     }
     protected void lbntDangXuat_Click(object sender, EventArgs e)

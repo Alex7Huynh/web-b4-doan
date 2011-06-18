@@ -165,9 +165,12 @@ hr { display: none; }
 }
 
 #search input {
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
 	float: left;
-	font: 12px Georgia, "Times New Roman", Times, serif;
-	border: none;
+		font: 12px Georgia, "Times New Roman", Times, serif;
+		margin-left: 0px;
 }
 
 #search-text {

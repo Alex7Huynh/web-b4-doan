@@ -5,8 +5,8 @@
 <%@ Register TagPrefix="uc1" TagName="DanhMucTinRaoVat" Src="UserControls/DanhMucTinRaoVat.ascx" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="Server">
     <h3 class="section">
-        <asp:Button ID="Button1" runat="server" Text="Button" />
-        <asp:Label ID="lblSubTitle" runat="server" Text="Tin rao vặt mới nhất" /></h3>
+        <asp:Label ID="lblSubTitle" runat="server" Text="Tin rao vặt mới nhất" 
+            meta:resourcekey="lblSubTitleResource1" /></h3>
     <uc1:DanhMucTinRaoVat ID="FeaturedAd" runat="server" TypeName="BUS.TinRaoVatBUS"
         SelectMethod="LayDanhSachTinRaoVatMoiNhat"></uc1:DanhMucTinRaoVat>
     <br />
