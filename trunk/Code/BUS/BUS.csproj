@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanhMuc\ChuyenMucBUS.cs" />
     <Compile Include="GiaoDien\BannerBUS.cs" />
     <Compile Include="DanhMuc\DanhMucChinhBUS.cs" />
     <Compile Include="DanhMuc\DanhMucConBUS.cs" />
