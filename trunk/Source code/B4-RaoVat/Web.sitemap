@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap enableLocalization="true">
+  <siteMapNode title="Home" roles="*">
+    <siteMapNode title="Thông Tin" resourceKey="ThongTin" roles="*">
+      <siteMapNode url="HuongDan.aspx" resourceKey="HuongDan" title="Hướng Dẫn"  roles="*"/>      
+      <siteMapNode url="TimKiemNangCao.aspx" resourceKey="TimKiemNangCao" title="Tìm Kiếm Nâng Cao" roles="*"/>
+    </siteMapNode>
+
+    <siteMapNode title="Tài Khoản" resourceKey="TaiKhoan" roles="*">
+      <siteMapNode url="./TaiKhoan/DangKi.aspx" resourceKey="DangKy" title="Đăng Kí" roles="*"/>
+      <siteMapNode url="./TaiKhoan/DangNhap.aspx" resourceKey="DangNhap" title="Đăng Nhập" roles="*"/>
+      <siteMapNode url="./TaiKhoan/QuenMatKhau2.aspx" title="Quên Mật Khẩu" roles="*"/>
+      <siteMapNode url="./TaiKhoan/XemThongTinTaiKhoan.aspx" resourceKey="XemThongTinTaiKhoan" title="Xem Thông Tin Tài Khoản" roles="*"/>
+      <siteMapNode url="./TaiKhoan/BaoCaoNguoiDung.aspx" resourceKey="BaoCaoNguoiDung" title="Báo Cáo Người Dùng Vi Phạm" roles="*"/>
+	  <siteMapNode url="./TaiKhoan/XemTinNhan.aspx" resourceKey="XemTinNhan" title="Xem Tin Nhắn" roles="*"/>
+	  <siteMapNode url="./TaiKhoan/NhanTin.aspx" resourceKey="NhanTin" title="Nhắn Tin" roles="*"/>
+	  <siteMapNode url="./TaiKhoan/DangKiEmail.aspx" resourceKey="DanKyEmail" title="Đăng Kí Email" roles="*"/>
+    </siteMapNode>
+
+    <siteMapNode title="Danh Mục" resourceKey="DanhMuc" roles="*">
+      <siteMapNode url="./DanhMuc/DanhMucChinh.aspx" resourceKey="DanhMucChinh" title="Danh Mục Chính" roles="*"/>
+      <siteMapNode url="./DanhMuc/DanhMucCon.aspx?id=1" resourceKey="DanhMucCon" title="Danh Mục Con" roles="*"/>
+      <siteMapNode url="./DanhMuc/DanhMucTinRaoVat.aspx?id=1" resourceKey="DanhMucTinRaoVat" title="Danh Mục Tin Rao Vặt" roles="*"/>
+      <siteMapNode url="./DanhMuc/XemNoiDungTin.aspx?id=1" resourceKey="XemNoiDungTin" title="Xem Nội Dung Tin Rao Vặt" roles="*"/>
+    </siteMapNode>
+
+    <siteMapNode  title="Tin rao vặt" resourceKey="TinRaoVat" roles="*">
+      <siteMapNode url="./TinRaoVat/ChonChuyenMucDang.aspx" resourceKey="ChonChuyenMucDang" title="Đăng tin rao vặt" roles="*"/>
+      <siteMapNode url="./TinRaoVat/XemDanhSachTinRaoVat.aspx" resourceKey="XemDanhSachTinRaoVat" title="Xem tin đã đăng" roles="*"/>
+      <siteMapNode url="./TinRaoVat/PhatTanTinRaoVat.aspx" resourceKey="PhatTanTinRaoVat" title="Phát tán tin rao vặt" roles="*"/>
+    </siteMapNode>
+
+    <siteMapNode url="Admin/" title="Quản trị" resourceKey="QuanTri" roles="Administrators" description="parent">
+      <siteMapNode url="Admin/Setting.aspx" resourceKey="Setting" title="My Profile" roles="Administrators" description=""/>
+      <siteMapNode url="Admin/QuanLyDanhMuc.aspx" resourceKey="QuanLyDanhMuc" title="Quản lý danh mục" roles="Administrators" description=""/>
+      <siteMapNode url="Admin/QuanLyGiaoDien.aspx" resourceKey="QuanLyGiaoDien" title="Quản lý giao diện" roles="*"/>
+      <siteMapNode url="Admin/QuanLyTaiKhoan.aspx" resourceKey="QuanLyTaiKhoan" title="Quản lý tài khoản" roles="*"/>
+      <siteMapNode url="TinRaoVat/QuanLyTinRaoVat.aspx" resourceKey="QuanLyTinRaoVat" title="Quản lý tin rao vặt" roles="*"/>
+      <siteMapNode url="TinRaoVat/DuyetTinRaoVat.aspx" resourceKey="DuyetTinRaoVat" title="Quản lý tin vi phạm" roles="*"/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
