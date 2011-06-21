@@ -1,0 +1,444 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0px;
+	padding: 0;
+	background: url(images/img01.jpg) repeat-x left top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0E4456;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: normal;
+	color: #08252E;
+}
+
+h1 { font-size: 44px; }
+
+h2 { font-size: 18px; }
+
+h3 { }
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 220%;
+	text-align: justify;
+    height: 62px;
+    width: 675px;
+}
+
+ul, ol { }
+
+blockquote { }
+
+a { color: #842946; }
+
+a:hover { text-decoration: none; }
+
+a img {
+	border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    height: 125px;
+    width: 627px;
+}
+
+img.left {
+	float: left;
+	margin: 7px 30px 0 0;
+}
+
+img.right {
+	float: right;
+	margin: 7px 0 0 30px;
+}
+
+hr { display: none; }
+
+.list1 {
+}
+
+.list1 li {
+	float: left;
+	line-height: normal;
+}
+
+.list1 li img {
+	margin: 0 30px 30px 0;
+}
+
+.list1 li.alt img {
+	margin-right: 0;
+}
+
+/* Header */
+
+#header-wrapper {
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	width: 1000px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+/* Menu */
+
+#menu {
+	float: left;
+	width: 675px;
+	height: 60px;
+}
+
+#menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	display: block;
+	float: left;
+    height: 60px;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	height: 40px;
+	margin-right: 4px;
+	padding: 20px 10px 0px 10px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+#menu a:hover { 
+	text-decoration: none; 
+	height: 40px;
+	padding: 20px 10px 0px 10px;
+	background: #280612;
+}
+
+
+#menu .current_page_item a {
+	height: 40px;
+	padding: 20px 10px 0px 10px;
+	background: #280612;
+	color: #FFFFFF;
+}
+
+#menu .first {
+	background: none;
+}
+/* Search */
+
+#search {
+	float: right;
+	width: 323px;
+	height: 60px;
+}
+
+#search form {
+	float: right;
+	margin: 0;
+	padding: 24px 30px 0 0;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 15px 0 0 0px;
+	border: none;
+}
+
+#search input {
+	border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	float: left;
+		font: 12px Georgia, "Times New Roman", Times, serif;
+		margin-left: 0px;
+}
+
+#search-text {
+	width: 200px;
+	height: 18px;
+	padding: 3px 0 0 5px;
+	border: 1px solid #333333;
+	background: #ECF9E4;
+	color: #000000;
+}
+
+#search-submit {
+	height: 21px;
+	margin-left: 10px;
+	padding: 0px 5px;
+	background: #000000;
+	color: #FFFFFF;
+}
+
+/* Page */
+
+
+#wrapper {
+	/*margin: 0px;*/
+	/*padding: 0px 0px 0px 0px;*/
+	/*background: url(images/img02.jpg) repeat-x left top;*/
+	background: url(images/img02.jpg) repeat left top;
+}
+
+#page {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0px;
+	background: url(images/img04.jpg) no-repeat left bottom;
+}
+
+#color_bar
+{
+	font-size: 10px;
+	font-weight: bold;
+	border-bottom: #ccc 1px solid;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 27px;
+	padding-top: 13px;
+	color: #FFFFFF;
+}
+
+#color_bar
+{
+	background: #971B1E;
+}
+
+#nav_browse
+{
+	float: right;
+}
+
+#nav_login
+{
+	float: left;
+}
+
+#crumbs
+{
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	height: 26px;
+	padding-right: 10px;
+	padding-left: 10px;
+	vertical-align: middle;
+	background: #75746E url(images/background_crumbs.jpg) repeat-x top;
+	margin: 0px auto 5px;
+}
+
+/*col_main_left and right*/
+
+#col_main_left
+{
+	width: 20%;
+	float: left;
+	border-right: 3px solid #DFDCCB;
+	background: #E1DFCF;
+}
+
+#col_main_right
+{
+	width: 20%;
+	float: right;
+	border-left: 3px solid #DFDCCB;
+	background: #E1DFCF;
+}
+
+#featured_item
+{
+	/*height: 200px;*/
+	border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #A29F93;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #A29F93;
+	background: #DCDACE url('images/background_feature.jpg') repeat-x 50% top;
+}
+
+.display_left #featured_item
+{
+	width: 160px;
+	font-size: 1em;
+}
+
+
+#featured_item h2
+{
+	font-size: 1em;
+	font-weight: bold;
+	display: inline;
+}
+
+.row1 a:link img, .row2 a:link img, .display_left a:link img, #featured_item a:link img
+{
+	border: 1px solid #666;
+}
+
+.row1 a:visited img, .row2 a:visited img, .display_left a:visited img, #featured_item a:visited img
+{
+	border: 1px solid #666;
+}
+
+#announcements
+{
+	font-size: 0.8em;
+	height: 100%;
+	background: #F7F6F2;
+	border: ridge;
+}
+
+#announcements ul
+{
+	margin-top: 0px;
+}
+
+#announcements li
+{
+	list-style-position: outside;
+	list-style-image: url(images/ul_arrow.gif);
+	margin-bottom: 15px;
+	margin-left: -24px;
+}
+
+/*col_main_center*/
+
+#col_main_center
+{
+	float: left;
+	width: 58%;
+	border-left: 3px solid #DFDCCB;
+	border-right: 1px solid #CAC7B8;
+	background: #F7F6F2;
+}
+
+.section
+{
+	padding: 10px;
+	height: 17px;
+	font-size: 0.8em;
+	font-weight: bold;
+	border-bottom: 2px solid #E4E2D5;
+	margin-bottom: 0px;
+}
+
+h3.section
+{
+	font-size: 1.2em;
+}
+
+.content_center
+{
+	font-size: 0.8em;
+}
+
+/** LOGO */
+
+#logo {
+	width: 1000px;
+	height: 172px;
+	margin: 0 auto;
+}
+
+#logo h1, #logo p {
+	margin: 0px;
+	line-height: normal;
+	text-transform: lowercase;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+#logo p {
+	padding-left: 22px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#logo h1 {
+	padding-left: 20px;
+	padding-top: 50px;
+	font-size: 48px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#logo h1 a {
+	text-decoration: none;
+	text-transform: capitalize;
+	color: #FFFFFF;
+}
+
+#logo h1 p {
+	padding-left: 22px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+
+#banner {
+	float: right;
+	margin-top: -100px;
+	padding: 0px 20px 0px 0px;
+}
+
+
+#user_assistance
+{
+	color: #7F4728;
+	padding: 10px;
+	font-size: 0.8em;
+	float: left;
+	width: 178px;
+	background: #F9F9F8 url(images/background_user_assist.jpg) repeat-x top;
+}
+
+#user_assistance h2, #user_assistance h3
+{
+	color: #000000;
+	font-size: 1em;
+}
+
+
+/* Footer */
+
+#footer-bgcontent
+{
+    background-position: left top;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    background: url(images/img02.jpg) repeat-x left top;
+}
+
+#footer {
+	width: 1000px;
+	height: 49px;
+	margin: 0 auto;
+	background: url(images/img03.jpg) no-repeat left top;
+}
+
